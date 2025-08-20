@@ -18,16 +18,16 @@ const CookieConsent = () => {
   }, [cookieConsent])
 
   const acceptCookies = () => {
-    setCookieConsent('accepted')
+    setCookieConsent({ status: 'accepted', timestamp: Date.now() })
     setIsVisible(false)
   }
 
   const declineCookies = () => {
-    setCookieConsent('declined')
+    setCookieConsent({ status: 'declined', timestamp: Date.now() })
     setIsVisible(false)
   }
 
-  if (!isVisible || cookieConsent) return null
+  if (!isVisible || cookieConsent?.status) return null
 
   return (
     <AnimatePresence>
