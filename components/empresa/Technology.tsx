@@ -80,7 +80,7 @@ const Technology = () => {
         </motion.div>
 
         {/* Technology Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 max-w-6xl mx-auto">
           {technologies.map((tech, index) => (
             <motion.div
               key={index}
@@ -159,4 +159,3 @@ const Technology = () => {
 };
 
 export default Technology;
-

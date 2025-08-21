@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Eye, Mail, Phone, X, CheckCircle, ArrowRight } from "lucide-react";
-import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { UserContact } from "@/types";
 
 const BlurModal = () => {
@@ -15,26 +14,21 @@ const BlurModal = () => {
     name: "",
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [hasSeenModal, setHasSeenModal] = useLocalStorage(
-    "blurModalSeen",
-    false
-  );
 
   useEffect(() => {
     // Verificar se o formulário já foi preenchido
     const formSubmitted = localStorage.getItem("formSubmitted");
+    const sessionShown = sessionStorage.getItem("modalShownThisSession");
 
-    // Mostrar a modal após 3 segundos se:
+    // Mostrar a modal instantaneamente se:
     // 1. Não preencheu o formulário E
-    // 2. Não marcou como vista (ou seja, não preencheu dados antes)
-    if (!formSubmitted && !hasSeenModal) {
-      const timer = setTimeout(() => {
-        setIsVisible(true);
-      }, 3000);
-
-      return () => clearTimeout(timer);
+    // 2. Não foi mostrada nesta sessão
+    if (!formSubmitted && !sessionShown) {
+      setIsVisible(true);
+      // Marcar que foi mostrada nesta sessão
+      sessionStorage.setItem("modalShownThisSession", "true");
     }
-  }, [hasSeenModal]);
+  }, []); // Array vazio = executa apenas uma vez quando o componente monta
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -76,7 +70,6 @@ const BlurModal = () => {
       // Se tem dados, salvar e marcar como preenchido
       localStorage.setItem("userContact", JSON.stringify(formData));
       localStorage.setItem("formSubmitted", "true");
-      setHasSeenModal(true); // Só marca como vista se preencheu dados
     }
 
     setIsVisible(false);

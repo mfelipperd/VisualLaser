@@ -103,7 +103,7 @@ export default function RootLayout({
         <SchemaMarkup />
         <GoogleAnalytics />
         <Header />
-        <main>{children}</main>
+        <main className="mt-20">{children}</main>
         <Footer />
         <CookieConsent />
         <BlurModal />

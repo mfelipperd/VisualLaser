@@ -7,13 +7,13 @@ const CompanyHero = () => {
   const stats = [
     {
       icon: Building2,
-      value: "27",
+      value: "+25",
       label: "Anos de Experiência",
       description: "Tradição e confiança",
     },
     {
       icon: Users,
-      value: "1000+",
+      value: "50.000+",
       label: "Pacientes Atendidos",
       description: "Famílias cuidadas",
     },
@@ -25,9 +25,9 @@ const CompanyHero = () => {
     },
     {
       icon: Heart,
-      value: "24/7",
-      label: "Suporte",
-      description: "Sempre disponível",
+      value: "Seg-Sex",
+      label: "Horário de Funcionamento",
+      description: "08h às 18h | Sexta até 17h",
     },
   ];
 
@@ -38,7 +38,7 @@ const CompanyHero = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)`,
+            backgroundImage: `url(/images/fundo_empresa.JPG)`,
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-800/70 to-primary-700/50"></div>
@@ -48,7 +48,7 @@ const CompanyHero = () => {
       {/* Content */}
       <div className="relative z-10 h-full flex items-center">
         <div className="container mx-auto container-padding">
-          <div className="max-w-6xl">
+          <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -62,8 +62,8 @@ const CompanyHero = () => {
                 </h1>
 
                 <p className="text-xl md:text-2xl text-primary-200 mb-8 leading-relaxed max-w-4xl mx-auto">
-                  Nascemos há 27 anos com o espírito de inovar e servir com
-                  empatia e profissionalismo, conquistando a cada dia o
+                  Nascemos há mais de 25 anos com o espírito de inovar e servir
+                  com empatia e profissionalismo, conquistando a cada dia o
                   reconhecimento e preferência de nossos clientes.
                 </p>
 
@@ -88,7 +88,7 @@ const CompanyHero = () => {
         className="relative z-10 mt-16 mb-16"
       >
         <div className="container mx-auto container-padding">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
@@ -119,4 +119,3 @@ const CompanyHero = () => {
 };
 
 export default CompanyHero;
-

@@ -52,7 +52,7 @@ const MedicalTeam = () => {
         </motion.div>
 
         {/* Team Qualities Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-6xl mx-auto">
           {teamQualities.map((quality, index) => (
             <motion.div
               key={index}
@@ -60,7 +60,7 @@ const MedicalTeam = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105"
+              className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105 h-full flex flex-col justify-center"
             >
               <div className="flex items-start space-x-4">
                 <div className="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -147,4 +147,3 @@ const MedicalTeam = () => {
 };
 
 export default MedicalTeam;
-

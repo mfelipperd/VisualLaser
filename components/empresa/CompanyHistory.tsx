@@ -26,7 +26,7 @@ const CompanyHistory = () => {
     {
       year: "2024",
       title: "Referência Regional",
-      description: "27 anos de excelência em oftalmologia",
+      description: "25+ anos de excelência em oftalmologia",
       icon: Award,
     },
   ];
@@ -45,13 +45,13 @@ const CompanyHistory = () => {
             Nossa <span className="text-primary-600">História</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Uma jornada de 27 anos dedicada à excelência em oftalmologia, 
+            Uma jornada de 25+ anos dedicada à excelência em oftalmologia,
             sempre inovando e servindo com empatia e profissionalismo.
           </p>
         </motion.div>
 
         {/* Timeline */}
-        <div className="relative">
+        <div className="relative max-w-6xl mx-auto">
           {/* Timeline Line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary-200 via-primary-400 to-primary-600"></div>
 
@@ -68,11 +68,21 @@ const CompanyHistory = () => {
                 }`}
               >
                 {/* Content */}
-                <div className={`w-1/2 ${index % 2 === 0 ? "pr-12 text-right" : "pl-12 text-left"}`}>
+                <div
+                  className={`w-1/2 ${
+                    index % 2 === 0 ? "pr-12 text-right" : "pl-12 text-left"
+                  }`}
+                >
                   <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300">
-                    <div className="text-4xl font-bold text-primary-600 mb-4">{milestone.year}</div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">{milestone.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{milestone.description}</p>
+                    <div className="text-4xl font-bold text-primary-600 mb-4">
+                      {milestone.year}
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                      {milestone.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {milestone.description}
+                    </p>
                   </div>
                 </div>
 
@@ -94,13 +104,11 @@ const CompanyHistory = () => {
           className="mt-20 text-center"
         >
           <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-3xl p-12 text-white">
-            <h3 className="text-3xl font-bold mb-6">
-              Nossa Maior Satisfação
-            </h3>
+            <h3 className="text-3xl font-bold mb-6">Nossa Maior Satisfação</h3>
             <p className="text-xl leading-relaxed max-w-4xl mx-auto">
-              É poder contribuir de forma significativa para melhorar sua excelência visual 
-              e sua qualidade de vida! Continuamos focados em todos os aspectos no 
-              constante processo de aperfeiçoamento.
+              É poder contribuir de forma significativa para melhorar sua
+              excelência visual e sua qualidade de vida! Continuamos focados em
+              todos os aspectos no constante processo de aperfeiçoamento.
             </p>
           </div>
         </motion.div>

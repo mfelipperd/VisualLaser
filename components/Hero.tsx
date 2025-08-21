@@ -7,11 +7,11 @@ import Link from "next/link";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState<Set<string>>(new Set());
 
   const slides = [
     {
-      image:
-        "https://images.unsplash.com/photo-1576091160399-112c8b0a0f90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/excelencia.jpg",
       title: "Excelência em Oftalmologia",
       subtitle: "Tecnologia de última geração para cuidar da sua visão",
       description:
@@ -22,8 +22,7 @@ const Hero = () => {
       secondaryLink: "/empresa",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/cirurgia_refrativa.jpg",
       title: "Cirurgias Refrativas",
       subtitle: "Liberte-se dos óculos com segurança",
       description:
@@ -34,8 +33,7 @@ const Hero = () => {
       secondaryLink: "/equipe",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/atendimento_humanizado.png",
       title: "Atendimento Humanizado",
       subtitle: "Cuidamos de você com carinho e profissionalismo",
       description:
@@ -45,12 +43,43 @@ const Hero = () => {
       secondaryText: "Localização",
       secondaryLink: "/contato",
     },
+    {
+      image: "/images/psvl.jpg",
+      title: "PSVL - Programa Solidário",
+      subtitle: "Atendimento oftalmológico acessível para todos",
+      description:
+        "O PSVL é um programa de inclusão que oferece consultas, exames e procedimentos com valores diferenciados para pacientes sem plano de saúde conveniado.",
+      ctaText: "Conheça o PSVL",
+      ctaLink: "/psvl",
+      secondaryText: "Saiba Mais",
+      secondaryLink: "/psvl",
+    },
+    {
+      image: "/images/agendamento.jpg",
+      title: "Agendamento Online",
+      subtitle: "Agende sua consulta de forma rápida e prática",
+      description:
+        "Faça seu agendamento online 24 horas por dia. Escolha o horário que melhor se adapta à sua rotina e receba confirmação imediata.",
+      ctaText: "Agendar Agora",
+      ctaLink: "/agendamento",
+      secondaryText: "Ver Horários",
+      secondaryLink: "/agendamento",
+    },
   ];
 
   useEffect(() => {
+    // Pré-carregar todas as imagens
+    slides.forEach((slide) => {
+      const img = new Image();
+      img.onload = () => {
+        setImagesLoaded((prev) => new Set(prev).add(slide.image));
+      };
+      img.src = slide.image;
+    });
+
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 8000);
 
     return () => clearInterval(timer);
   }, [slides.length]);
@@ -84,6 +113,19 @@ const Hero = () => {
               src={slides[currentSlide].image}
               alt={slides[currentSlide].title}
               className="w-full h-full object-cover"
+              loading="eager"
+              sizes="100vw"
+              onLoad={(e) => {
+                // Marcar imagem como carregada
+                e.currentTarget.style.opacity = "1";
+                setImagesLoaded((prev) =>
+                  new Set(prev).add(slides[currentSlide].image)
+                );
+              }}
+              style={{
+                opacity: imagesLoaded.has(slides[currentSlide].image) ? 1 : 0,
+                transition: "opacity 0.3s ease-in-out",
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary-950/60 via-primary-950/40 to-transparent" />
           </motion.div>
@@ -104,9 +146,9 @@ const Hero = () => {
                 className="text-white"
               >
                 <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-5 border border-white/20 max-w-6xl">
-                  <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 items-end">
+                  <div className="flex flex-row justify-between items-end gap-8">
                     {/* Text Content */}
-                    <div className="space-y-6">
+                    <div className="space-y-6 flex-1">
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -139,7 +181,7 @@ const Hero = () => {
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="space-y-4">
+                    <div className="flex flex-row gap-4 flex-shrink-0">
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}

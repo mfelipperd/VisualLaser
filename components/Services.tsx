@@ -87,7 +87,7 @@ const Services = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -163,9 +163,6 @@ const Services = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-accent-500 hover:bg-accent-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
                 Agendar Consulta
-              </button>
-              <button className="bg-transparent hover:bg-white/10 text-white font-medium py-3 px-8 rounded-lg border border-white/30 hover:border-accent-400 transition-all duration-300">
-                Falar com Especialista
               </button>
             </div>
           </div>

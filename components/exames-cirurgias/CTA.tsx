@@ -27,21 +27,13 @@ const CTA = () => {
               sua saúde é prioridade!
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <div className="flex justify-center mb-8">
               <Link
                 href="/agendamento"
                 className="inline-flex items-center space-x-2 bg-accent-500 hover:bg-accent-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 <Calendar className="w-5 h-5" />
                 <span>Agendar Consulta Agora</span>
-              </Link>
-
-              <Link
-                href="/contato"
-                className="inline-flex items-center space-x-2 bg-white/20 hover:bg-white/30 text-white font-medium py-4 px-8 rounded-lg border border-white/30 hover:border-white/50 transition-all duration-300"
-              >
-                <Phone className="w-5 h-5" />
-                <span>Falar com Especialista</span>
               </Link>
             </div>
 

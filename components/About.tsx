@@ -13,15 +13,15 @@ const About = () => {
     },
     {
       icon: Award,
-      number: "30+",
+      number: "+25",
       label: "Anos de Experiência",
-      description: "Três décadas de excelência em oftalmologia",
+      description: "Mais de 25 anos de excelência em oftalmologia",
     },
     {
       icon: Clock,
-      number: "24/7",
-      label: "Suporte Médico",
-      description: "Atendimento de emergência disponível 24 horas",
+      number: "Seg-Sex",
+      label: "Horário de Funcionamento",
+      description: "Segunda a quinta: 08h às 18h | Sexta: 08h às 17h",
     },
     {
       icon: Heart,
@@ -36,7 +36,7 @@ const About = () => {
       <div className="container mx-auto container-padding">
         <div className="max-w-7xl mx-auto">
           {/* Main Content */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch mb-20 max-w-6xl mx-auto">
             {/* Text Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -130,7 +130,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
           >
             {stats.map((stat, index) => (
               <motion.div
@@ -139,7 +139,7 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100"
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100 h-full flex flex-col justify-center"
               >
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-primary-950 to-accent-500 rounded-2xl flex items-center justify-center mx-auto mb-4">

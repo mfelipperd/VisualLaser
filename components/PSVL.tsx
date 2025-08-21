@@ -1,41 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart, Users, Award, Star } from "lucide-react";
 
 const PSVL = () => {
-  const benefits = [
-    {
-      icon: Heart,
-      title: "Atendimento Humanizado",
-      description:
-        "Cuidamos de cada paciente com dedicação, respeito e profissionalismo.",
-    },
-    {
-      icon: Users,
-      title: "Equipe Especializada",
-      description:
-        "Profissionais experientes e capacitados para oferecer o melhor tratamento.",
-    },
-    {
-      icon: Award,
-      title: "Qualidade Garantida",
-      description:
-        "Mantemos os mais altos padrões de qualidade em todos os procedimentos.",
-    },
-    {
-      icon: Star,
-      title: "Tecnologia Avançada",
-      description:
-        "Utilizamos equipamentos de última geração para resultados excepcionais.",
-    },
-  ];
-
   return (
     <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto container-padding">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
             {/* Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -46,7 +18,6 @@ const PSVL = () => {
             >
               <div>
                 <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 mb-6 border border-white/30">
-                  <Heart className="w-5 h-5 text-accent-500" />
                   <span className="text-sm font-medium text-gray-700">
                     Programa Solidário
                   </span>
@@ -60,40 +31,54 @@ const PSVL = () => {
                 </h2>
 
                 <p className="text-xl text-gray-600 leading-relaxed mb-6">
-                  O PSVL é nosso programa de responsabilidade social que visa
-                  proporcionar atendimento oftalmológico de qualidade para
-                  pessoas em situação de vulnerabilidade social.
-                </p>
-
-                <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                  Acreditamos que a saúde visual é um direito de todos, e por
-                  isso desenvolvemos este programa para atender comunidades que
-                  necessitam de cuidados oftalmológicos especializados.
+                  O PSVL é um programa de inclusão criado pela Visual Laser,
+                  pensando em atender a necessidade de pacientes que estão sem
+                  um plano de saúde suplementar conveniado com a clínica e
+                  desejam atendimento oftalmológico de qualidade.
                 </p>
               </div>
 
               {/* Benefits Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {benefits.map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                    className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100"
-                  >
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary-950 to-accent-500 rounded-xl flex items-center justify-center mb-4">
-                      <benefit.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {benefit.description}
-                    </p>
-                  </motion.div>
-                ))}
+              <div className="space-y-6">
+                <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                    Quais os benefícios do PSVL?
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Os clientes inscritos no PSVL podem realizar consultas,
+                    exames e procedimentos clínicos ou cirúrgicos na Visual
+                    Laser com um valor diferenciado e acessível (estabelecido em
+                    tabela de preços específica) e condições facilitadas.
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                    Existe a necessidade de Taxa de Adesão ou Pagamento de
+                    Mensalidade?
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Não há necessidade de pagar taxa de adesão ou mensalidades,
+                    pois o PSVL não é um plano de saúde suplementar. Trata-se de
+                    um programa de inclusão no qual o cliente apto* e
+                    devidamente inscrito pode realizar consultas, exames e
+                    procedimentos clínicos ou cirúrgicos, mediante o pagamento
+                    do valor diferenciado no momento do atendimento.
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                    Como fazer para participar do PSVL?
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    O cliente apto* deve se inscrever no cadastro do PSVL. Para
+                    isso, basta agendar sua consulta e, no dia do seu
+                    atendimento, dirigir-se à recepção da clínica e apresentar o
+                    documento de identidade com foto e a carteirinha do plano de
+                    saúde, para comprovação.
+                  </p>
+                </div>
               </div>
 
               {/* CTA */}
@@ -104,9 +89,14 @@ const PSVL = () => {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="pt-4"
               >
-                <button className="bg-accent-500 hover:bg-accent-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
+                <a
+                  href="https://wa.me/5591988968201?text=Quero%20saber%20mais%20sobre%20o%20PSVL"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-accent-500 hover:bg-accent-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
+                >
                   Saiba Mais Sobre o PSVL
-                </button>
+                </a>
               </motion.div>
             </motion.div>
 
@@ -153,20 +143,27 @@ const PSVL = () => {
             className="mt-20 text-center"
           >
             <div className="bg-gradient-to-br from-primary-950 to-primary-900 rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-4">Como Funciona o PSVL?</h3>
+              <h3 className="text-2xl font-bold mb-4">
+                Quem pode participar do PSVL?
+              </h3>
               <p className="text-primary-200 mb-6 max-w-3xl mx-auto">
-                O programa funciona através de parcerias com organizações
-                sociais, igrejas e entidades comunitárias, que indicam pacientes
-                que necessitam de atendimento oftalmológico. Nossa equipe avalia
-                cada caso e oferece o tratamento adequado.
+                • Pacientes que possuem um plano de saúde suplementar não
+                conveniado com a Visual Laser
+                <br />
+                • Pacientes que já tiveram um plano de saúde suplementar
+                conveniado com a Visual Laser
+                <br />• Pacientes que já tiveram um plano de saúde suplementar
+                não conveniado com a Visual Laser
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-accent-500 hover:bg-accent-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300">
-                  Seja um Parceiro
-                </button>
-                <button className="bg-transparent hover:bg-white/10 text-white font-medium py-3 px-6 rounded-lg border border-white/30 hover:border-accent-400 transition-all duration-300">
-                  Solicitar Atendimento
-                </button>
+                <a
+                  href="https://wa.me/5591988968201?text=Quero%20saber%20mais%20sobre%20o%20PSVL"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-accent-500 hover:bg-accent-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
+                >
+                  Saiba Mais
+                </a>
               </div>
             </div>
           </motion.div>
