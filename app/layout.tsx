@@ -8,9 +8,9 @@ import BlurModal from "@/components/BlurModal";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Visual Laser - Clínica Oftalmológica de Excelência",
+  title: "Visual Laser - Clínica Oftalmológica de Excelência em Belém",
   description:
-    "A Visual Laser é uma clínica oftalmológica de referência, especializada em cirurgias refrativas, catarata e tratamentos oculares com tecnologia de última geração.",
+    "🚀 Transforme sua visão com a Visual Laser! Especialistas em cirurgias refrativas, catarata e tratamentos oculares com tecnologia de última geração. ✅ Resultados comprovados. 📍 Belém, Pará. Agende sua consulta!",
   keywords: [
     "oftalmologia",
     "cirurgia refrativa",
@@ -20,6 +20,10 @@ export const metadata: Metadata = {
     "Belém",
     "Pará",
     "Visual Laser",
+    "oftalmologista",
+    "tratamento ocular",
+    "cirurgia de olhos",
+    "clínica de olhos",
   ],
   authors: [{ name: "Visual Laser" }],
   creator: "Visual Laser",
@@ -34,29 +38,48 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Visual Laser - Clínica Oftalmológica de Excelência",
+    title: "👁️ Visual Laser - Transforme Sua Visão com Excelência!",
     description:
-      "A Visual Laser é uma clínica oftalmológica de referência, especializada em cirurgias refrativas, catarata e tratamentos oculares com tecnologia de última geração.",
+      "🚀 Clínica oftalmológica de referência em Belém! Especialistas em cirurgias refrativas, catarata e tratamentos oculares com tecnologia de última geração. ✅ Resultados comprovados. 📍 Agende sua consulta hoje mesmo!",
     url: "https://visuallaser.med.br",
-    siteName: "Visual Laser",
+    siteName: "Visual Laser - Clínica Oftalmológica",
     images: [
       {
-        url: "https://visuallaser.med.br/wp-content/uploads/2023/12/DSC7103.jpg",
+        url: "/images/social-preview.jpg",
         width: 1200,
         height: 630,
-        alt: "Visual Laser - Clínica Oftalmológica",
+        alt: "Visual Laser - Clínica Oftalmológica de Excelência em Belém, Pará",
+        type: "image/jpeg",
+      },
+      {
+        url: "/images/social-preview-square.jpg",
+        width: 1080,
+        height: 1080,
+        alt: "Visual Laser - Logo e Especialidades Oftalmológicas",
+        type: "image/jpeg",
       },
     ],
     locale: "pt_BR",
     type: "website",
+    countryName: "Brasil",
+    emails: ["contato@visuallaser.med.br"],
+    phoneNumbers: ["+55 91 99999-9999"],
+    streetAddress: "Av. Visconde de Souza Franco, 1000",
+    addressLocality: "Belém",
+    addressRegion: "Pará",
+    postalCode: "66093-000",
+    addressCountry: "BR",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Visual Laser - Clínica Oftalmológica de Excelência",
+    site: "@visuallaser",
+    creator: "@visuallaser",
+    title: "👁️ Visual Laser - Transforme Sua Visão com Excelência!",
     description:
-      "A Visual Laser é uma clínica oftalmológica de referência, especializada em cirurgias refrativas, catarata e tratamentos oculares com tecnologia de última geração.",
+      "🚀 Clínica oftalmológica de referência em Belém! Especialistas em cirurgias refrativas, catarata e tratamentos oculares com tecnologia de última geração. ✅ Resultados comprovados. 📍 Agende sua consulta hoje mesmo!",
     images: [
-      "https://visuallaser.med.br/wp-content/uploads/2023/12/DSC7103.jpg",
+      "/images/social-preview.jpg",
+      "/images/social-preview-square.jpg",
     ],
   },
   robots: {
@@ -77,6 +100,15 @@ export const metadata: Metadata = {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
     apple: "/logo-visual-branca.png",
+  },
+  other: {
+    "theme-color": "#163960",
+    "msapplication-TileColor": "#163960",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
+    "apple-mobile-web-app-title": "Visual Laser",
+    "application-name": "Visual Laser",
+    "msapplication-config": "/browserconfig.xml",
   },
 };
 

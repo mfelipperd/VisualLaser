@@ -1,7 +1,11 @@
 {
-  "extends": ["next/core-web-vitals"],
+  "extends": [
+    "next/core-web-vitals"
+  ],
   "rules": {
-    "react/no-unescaped-entities": "off",
-    "@next/next/no-img-element": "off"
+    "prefer-const": "warn",
+    "no-var": "warn",
+    "no-console": "warn",
+    "no-debugger": "error"
   }
 }

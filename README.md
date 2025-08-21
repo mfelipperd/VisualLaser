@@ -11,6 +11,8 @@ Site institucional moderno da Visual Laser, clínica oftalmológica de referênc
 - **Performance otimizada** com lazy loading e otimizações de imagem
 - **Acessibilidade** seguindo as melhores práticas
 - **Fácil manutenção** com componentes reutilizáveis
+- **Modal responsivo** para coleta de leads
+- **Previsualização atrativa** para compartilhamento em redes sociais
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -20,15 +22,21 @@ Site institucional moderno da Visual Laser, clínica oftalmológica de referênc
 - **Framer Motion** - Biblioteca de animações
 - **Lucide React** - Ícones modernos
 - **React Intersection Observer** - Animações baseadas em scroll
+- **ESLint + Prettier** - Qualidade e formatação de código
+- **Jest + Testing Library** - Testes automatizados
+- **Husky + lint-staged** - Git hooks para qualidade
 
 ## 📁 Estrutura do Projeto
 
 ```
 VisualLaser/
 ├── app/                    # App Router do Next.js
-│   ├── layout.tsx         # Layout principal
+│   ├── layout.tsx         # Layout principal com meta tags
 │   ├── page.tsx           # Página inicial
-│   └── globals.css        # Estilos globais
+│   ├── globals.css        # Estilos globais
+│   ├── manifest.ts        # Manifest para PWA
+│   ├── sitemap.ts         # Sitemap automático
+│   └── robots.ts          # Robots.txt
 ├── components/             # Componentes React
 │   ├── Header.tsx         # Cabeçalho com navegação
 │   ├── Hero.tsx           # Banner principal com slider
@@ -36,12 +44,29 @@ VisualLaser/
 │   ├── Services.tsx       # Serviços (exames e cirurgias)
 │   ├── PSVL.tsx           # Programa Solidário Visual Laser
 │   ├── Testimonials.tsx   # Avaliações dos pacientes
+│   ├── BlurModal.tsx      # Modal de coleta de leads
+│   ├── CookieConsent.tsx  # Consentimento de cookies
+│   ├── SchemaMarkup.tsx   # Schema markup para SEO
 │   └── Footer.tsx         # Rodapé com informações de contato
 ├── public/                 # Arquivos estáticos
+│   ├── images/            # Imagens otimizadas
+│   ├── favicon.png        # Favicon
+│   ├── logo-visual-branca.png # Logo principal
+│   └── browserconfig.xml  # Configuração Windows
+├── config/                 # Configurações
+├── hooks/                  # Hooks customizados
+├── types/                  # Tipos TypeScript
 ├── package.json            # Dependências do projeto
 ├── tailwind.config.js      # Configuração do Tailwind CSS
 ├── next.config.js          # Configuração do Next.js
-└── tsconfig.json           # Configuração do TypeScript
+├── tsconfig.json           # Configuração do TypeScript
+├── postcss.config.js       # Configuração do PostCSS
+├── jest.config.js          # Configuração do Jest
+├── .eslintrc.json          # Configuração do ESLint
+├── .prettierrc             # Configuração do Prettier
+├── .husky/                 # Git hooks
+├── vercel.json             # Configuração do Vercel
+└── .gitignore              # Arquivos ignorados pelo Git
 ```
 
 ## 🚀 Instalação e Execução
@@ -85,6 +110,14 @@ VisualLaser/
 - `npm run build` - Gera a build de produção
 - `npm run start` - Executa a build de produção
 - `npm run lint` - Executa o linter
+- `npm run lint:fix` - Corrige problemas do linter
+- `npm run type-check` - Verifica tipos TypeScript
+- `npm run format` - Formata o código com Prettier
+- `npm run format:check` - Verifica formatação
+- `npm run test` - Executa testes
+- `npm run test:watch` - Executa testes em modo watch
+- `npm run test:coverage` - Executa testes com cobertura
+- `npm run analyze` - Analisa o bundle
 
 ## 🎨 Personalização
 
@@ -118,6 +151,7 @@ O conteúdo pode ser facilmente editado nos arquivos de componentes:
 - **Services.tsx** - Lista de exames e cirurgias
 - **PSVL.tsx** - Detalhes do programa solidário
 - **Testimonials.tsx** - Avaliações dos pacientes
+- **BlurModal.tsx** - Modal de coleta de leads
 - **Footer.tsx** - Links e informações de contato
 
 ## 📱 Responsividade
@@ -129,17 +163,36 @@ O site é totalmente responsivo e funciona perfeitamente em:
 - 💻 Desktops
 - 🖥️ Telas grandes
 
+### Modal Responsivo
+
+O modal de coleta de leads foi otimizado para mobile:
+- ✅ Não estoura limites da tela
+- ✅ Botão de fechar fácil de clicar
+- ✅ Múltiplas formas de fechar (X, clicar fora, ESC)
+- ✅ Scroll interno quando necessário
+- ✅ Prevenção de scroll do body
+
 ## 🔍 SEO
 
 O projeto inclui otimizações completas para SEO:
 
-- Meta tags otimizadas
+- Meta tags otimizadas com emojis e call-to-actions
 - Open Graph para redes sociais
 - Twitter Cards
-- Schema markup
+- Schema markup médico completo
 - URLs amigáveis
-- Sitemap automático
+- Sitemap automático com alternates
 - Meta tags geo-localização
+- Robots.txt otimizado
+- Headers de segurança
+
+### Previsualização para Redes Sociais
+
+- **Títulos atrativos** com emojis e call-to-actions
+- **Descrições persuasivas** com benefícios claros
+- **Imagens otimizadas** para diferentes formatos
+- **Informações de contato** facilmente acessíveis
+- **Localização e horários** destacados
 
 ## 🚀 Deploy
 
@@ -195,3 +248,38 @@ O projeto foi otimizado para performance:
 - Bundle splitting automático
 - Cache otimizado
 - Compressão de assets
+- CSS minificado em produção
+- TypeScript otimizado
+- ESLint e Prettier para qualidade
+
+## 🧪 Testes
+
+O projeto inclui configuração completa de testes:
+
+- Jest como framework de teste
+- Testing Library para testes de componentes
+- Mocks para Next.js e APIs
+- Cobertura de código
+- Git hooks para qualidade
+
+## 🔒 Segurança
+
+Headers de segurança implementados:
+
+- X-Frame-Options: DENY
+- X-Content-Type-Options: nosniff
+- X-XSS-Protection: 1; mode=block
+- Referrer-Policy: strict-origin-when-cross-origin
+- Permissions-Policy: camera=(), microphone=(), geolocation=()
+- Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+## 📱 PWA
+
+Configuração PWA completa:
+
+- Manifest otimizado
+- Ícones em múltiplos tamanhos
+- Screenshots para app stores
+- Shortcuts para funcionalidades principais
+- Categorias médicas
+- Orientação portrait-primary

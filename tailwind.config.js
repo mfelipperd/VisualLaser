@@ -57,6 +57,8 @@ module.exports = {
         "slide-down": "slideDown 0.5s ease-out",
         "scale-in": "scaleIn 0.3s ease-out",
         "bounce-gentle": "bounceGentle 2s infinite",
+        "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "float": "float 6s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -79,8 +81,45 @@ module.exports = {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
         },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
+      },
+      spacing: {
+        '18': '4.5rem',
+        '88': '22rem',
+        '128': '32rem',
+      },
+      maxWidth: {
+        '8xl': '88rem',
+        '9xl': '96rem',
+      },
+      minHeight: {
+        'screen-75': '75vh',
+        'screen-50': '50vh',
+      },
+      zIndex: {
+        '60': '60',
+        '70': '70',
+        '80': '80',
+        '90': '90',
+        '100': '100',
+      },
+      backdropBlur: {
+        xs: '2px',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
+  experimental: {
+    optimizeUniversalDefaults: true,
+  },
 };

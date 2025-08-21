@@ -255,11 +255,11 @@ const Testimonials = () => {
 
                 {/* Content */}
                 <p className="text-primary-200 leading-relaxed mb-6 text-lg">
-                  "
+                  &quot;
                   {review.text.length > 200
                     ? `${review.text.substring(0, 200)}...`
                     : review.text}
-                  "
+                  &quot;
                 </p>
 
                 {/* Author */}

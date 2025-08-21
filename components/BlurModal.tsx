@@ -165,7 +165,7 @@ const BlurModal = () => {
               {!isSubmitted && (
                 <p className="text-primary-100 text-xs sm:text-sm">
                   Deixe seus dados para receber informações sobre como a Visual
-                  Laser pode ajudar sua visão, ou clique em "Ver Melhor" para
+                  Laser pode ajudar sua visão, ou clique em &quot;Ver Melhor&quot; para
                   continuar navegando
                 </p>
               )}
