@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, Cookie, Shield, CheckCircle } from 'lucide-react'
+import { Cookie, CheckCircle } from 'lucide-react'
 import { useLocalStorage } from '@/hooks/useLocalStorage'
 import { CookieConsent as CookieConsentType } from '@/types'
 

@@ -5,6 +5,7 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import CookieConsent from "@/components/CookieConsent";
 import BlurModal from "@/components/BlurModal";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -64,11 +65,6 @@ export const metadata: Metadata = {
     countryName: "Brasil",
     emails: ["contato@visuallaser.med.br"],
     phoneNumbers: ["+55 91 99999-9999"],
-    streetAddress: "Av. Visconde de Souza Franco, 1000",
-    addressLocality: "Belém",
-    addressRegion: "Pará",
-    postalCode: "66093-000",
-    addressCountry: "BR",
   },
   twitter: {
     card: "summary_large_image",
@@ -139,6 +135,7 @@ export default function RootLayout({
         <Footer />
         <CookieConsent />
         <BlurModal />
+        <WhatsAppButton />
       </body>
     </html>
   );

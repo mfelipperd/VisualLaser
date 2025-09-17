@@ -44,17 +44,17 @@ const Header = () => {
         <div className="container mx-auto container-padding">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <div className="flex items-center space-x-3">
+            <a href="/" className="flex items-center space-x-3 hover:opacity-90 transition-opacity duration-200">
               <img
                 src="/logo-visual-branca.png"
                 alt="Visual Laser"
                 className="h-12 w-auto"
               />
-              <div className="hidden sm:block">
+              <div className="hidden sm:block sr-only">
                 <h1 className="text-white text-xl font-bold">Visual Laser</h1>
                 <p className="text-accent-300 text-sm">Clínica Oftalmológica</p>
               </div>
-            </div>
+            </a>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">

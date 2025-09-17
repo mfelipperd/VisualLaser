@@ -199,19 +199,6 @@ export default function SchemaMarkup() {
     paymentAccepted: ["Cash", "Credit Card", "Debit Card", "Bank Transfer"],
     currenciesAccepted: "BRL",
     priceRange: "$$",
-    areaServed: [
-      {
-        "@type": "City",
-        name: "Belém",
-        addressRegion: "PA",
-        addressCountry: "BR",
-      },
-      {
-        "@type": "State",
-        name: "Pará",
-        addressCountry: "BR",
-      },
-    ],
   };
 
   return (

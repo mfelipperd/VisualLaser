@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Calendar, Phone, MessageCircle, Users } from "lucide-react";
+import { Calendar, MessageCircle, Users } from "lucide-react";
 import Link from "next/link";
 
 const CTA = () => {

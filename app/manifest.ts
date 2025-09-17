@@ -18,25 +18,25 @@ export default function manifest(): MetadataRoute.Manifest {
         src: '/favicon.png',
         sizes: '32x32',
         type: 'image/png',
-        purpose: 'any maskable'
+        purpose: 'maskable'
       },
       {
         src: '/logo-visual-branca.png',
         sizes: '192x192',
         type: 'image/png',
-        purpose: 'any maskable'
+        purpose: 'maskable'
       },
       {
         src: '/apple-touch-icon.png',
         sizes: '180x180',
         type: 'image/png',
-        purpose: 'any maskable'
+        purpose: 'maskable'
       },
       {
         src: '/icon.svg',
         sizes: 'any',
         type: 'image/svg+xml',
-        purpose: 'any maskable'
+        purpose: 'maskable'
       }
     ],
     screenshots: [
@@ -44,15 +44,11 @@ export default function manifest(): MetadataRoute.Manifest {
         src: '/images/social-preview.jpg',
         sizes: '1200x630',
         type: 'image/jpeg',
-        form_factor: 'wide',
-        label: 'Visual Laser - Clínica Oftalmológica'
       },
       {
         src: '/images/social-preview-square.jpg',
         sizes: '1080x1080',
         type: 'image/jpeg',
-        form_factor: 'narrow',
-        label: 'Visual Laser - Especialidades'
       }
     ],
     shortcuts: [
