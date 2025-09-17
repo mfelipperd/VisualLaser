@@ -77,20 +77,50 @@ const BlurModal = () => {
       // Se tem dados, salvar e mostrar mensagem de sucesso
       setIsLoading(true);
 
-      // Simular envio (aqui você pode integrar com sua API)
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      try {
+        // Enviar dados para a API
+        const response = await fetch('/api/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            ...formData,
+            source: 'blur-modal'
+          }),
+        });
 
-      // Salvar no localStorage que preencheu o formulário
-      localStorage.setItem("userContact", JSON.stringify(formData));
-      localStorage.setItem("formSubmitted", "true");
+        const result = await response.json();
 
-      setIsSubmitted(true);
-      setIsLoading(false);
+        if (!result.success) {
+          console.error('Erro ao enviar email:', result.message);
+          // Mesmo com erro, salvar localmente para não perder o lead
+        }
 
-      // Fechar modal após 2 segundos
-      setTimeout(() => {
-        setIsVisible(false);
-      }, 2000);
+        // Salvar no localStorage que preencheu o formulário
+        localStorage.setItem("userContact", JSON.stringify(formData));
+        localStorage.setItem("formSubmitted", "true");
+
+        setIsSubmitted(true);
+        setIsLoading(false);
+
+        // Fechar modal após 2 segundos
+        setTimeout(() => {
+          setIsVisible(false);
+        }, 2000);
+      } catch (error) {
+        console.error('Erro ao enviar dados:', error);
+        // Mesmo com erro, salvar localmente para não perder o lead
+        localStorage.setItem("userContact", JSON.stringify(formData));
+        localStorage.setItem("formSubmitted", "true");
+        
+        setIsSubmitted(true);
+        setIsLoading(false);
+
+        setTimeout(() => {
+          setIsVisible(false);
+        }, 2000);
+      }
     } else {
       // Se não tem dados, apenas fechar a modal SEM marcar como vista
       setIsVisible(false);
@@ -191,7 +221,7 @@ const BlurModal = () => {
                       onChange={(e) =>
                         setFormData({ ...formData, name: e.target.value })
                       }
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base text-gray-900 placeholder-gray-500"
                       placeholder="Digite seu nome completo (opcional)"
                     />
                   </div>
@@ -211,7 +241,7 @@ const BlurModal = () => {
                         onChange={(e) =>
                           setFormData({ ...formData, email: e.target.value })
                         }
-                        className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
+                        className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base text-gray-900 placeholder-gray-500"
                         placeholder="seu@email.com (opcional)"
                       />
                     </div>
@@ -232,7 +262,7 @@ const BlurModal = () => {
                         onChange={(e) =>
                           setFormData({ ...formData, phone: e.target.value })
                         }
-                        className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
+                        className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base text-gray-900 placeholder-gray-500"
                         placeholder="(91) 99999-9999 (opcional)"
                       />
                     </div>

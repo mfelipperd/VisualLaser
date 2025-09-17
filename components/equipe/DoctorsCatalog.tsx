@@ -15,97 +15,223 @@ import {
 const DoctorsCatalog = () => {
   const doctors = [
     {
-      name: "Dr. João Silva",
-      specialty: "Oftalmologia Geral e Catarata",
-      crm: "CRM-PA 1234",
+      name: "Dr. Roberto Carlei Lima",
+      specialty: "Especialista em Catarata, Córnea e Cirurgia Refrativa",
+      crm: "CRM-PA 5071",
       image:
-        "https://images.unsplash.com/photo-1559839734-2e71debbd8b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
+        "/images/doctors/roberto_carlei.png",
       description:
-        "Especialista em oftalmologia geral com mais de 15 anos de experiência. Especializado em cirurgias de catarata e tratamento de doenças oculares.",
-      expertise: ["Catarata", "Glaucoma", "Retina", "Córnea"],
+        "Especialista em oftalmologia com vasta experiência em cirurgias de catarata, transplantes de córnea e cirurgias refrativas. Reconhecido por sua excelência técnica e resultados excepcionais.",
+      expertise: ["Catarata", "Córnea", "Cirurgia Refrativa", "Transplante de Córnea"],
       education: "Universidade Federal do Pará",
       icon: Eye,
       color: "from-blue-500 to-cyan-500",
     },
     {
-      name: "Dra. Maria Santos",
-      specialty: "Retina e Vítreo",
-      crm: "CRM-PA 5678",
+      name: "Dra. Rosamélia Lima",
+      specialty: "Oftalmologia Clínica e Cirúrgica",
+      crm: "CRM-PA 5937",
       image:
-        "https://images.unsplash.com/photo-1594824475545-3a9abb74ae4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
+        "/images/doctors/rosa.png",
       description:
-        "Especialista em retina e vítreo com formação em centros de referência. Experiência em tratamentos complexos de doenças retinianas.",
-      expertise: ["Retina", "Vítreo", "Mácula", "Diabetes Ocular"],
-      education: "Universidade de São Paulo",
+        "Especialista em oftalmologia clínica e cirúrgica com ampla experiência no diagnóstico e tratamento de doenças oculares. Reconhecida por sua dedicação ao cuidado integral do paciente.",
+      expertise: ["Oftalmologia Clínica", "Cirurgia Oftalmológica", "Diagnóstico", "Tratamento"],
+      education: "Universidade Federal do Pará",
       icon: Target,
       color: "from-green-500 to-emerald-500",
     },
     {
-      name: "Dr. Carlos Oliveira",
-      specialty: "Glaucoma",
-      crm: "CRM-PA 9012",
+      name: "Dr. José Guilherme",
+      specialty: "Especialista em Glaucoma",
+      crm: "CRM-PA 6502",
       image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
+        "/images/doctors/joseguilherme.png",
       description:
-        "Especialista em glaucoma com mais de 20 anos de experiência. Especializado em diagnóstico precoce e tratamento avançado do glaucoma.",
+        "Especialista em glaucoma com vasta experiência no diagnóstico e tratamento desta condição. Reconhecido por sua expertise em técnicas avançadas de tratamento do glaucoma.",
       expertise: [
         "Glaucoma",
         "Pressão Ocular",
         "Cirurgias de Glaucoma",
         "Laser",
       ],
-      education: "Universidade Federal de Minas Gerais",
+      education: "Universidade Federal do Pará",
       icon: Heart,
       color: "from-red-500 to-pink-500",
     },
     {
-      name: "Dra. Ana Costa",
-      specialty: "Córnea e Cirurgia Refrativa",
-      crm: "CRM-PA 3456",
+      name: "Dr. Armando Vidonho",
+      specialty: "Especialista em Transplante de Córnea, Catarata e Cirurgia Refrativa",
+      crm: "CRM-PA 4665",
       image:
-        "https://images.unsplash.com/photo-1559839734-2e71debbd8b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
+        "/images/doctors/armandovidonho.png",
       description:
-        "Especialista em córnea e cirurgias refrativas. Experiência em LASIK, PRK e transplantes de córnea com tecnologia de ponta.",
-      expertise: ["LASIK", "PRK", "Transplante de Córnea", "Doenças Corneanas"],
-      education: "Universidade Federal de Pernambuco",
+        "Especialista em transplante de córnea, catarata e cirurgia refrativa com vasta experiência em procedimentos complexos. Reconhecido por sua expertise em técnicas avançadas de transplante e cirurgias refrativas.",
+      expertise: ["Transplante de Córnea", "Catarata", "Cirurgia Refrativa", "Doenças Corneanas"],
+      education: "Universidade Federal do Pará",
       icon: Shield,
       color: "from-purple-500 to-indigo-500",
     },
     {
-      name: "Dr. Roberto Lima",
-      specialty: "Oftalmopediatria",
-      crm: "CRM-PA 7890",
+      name: "Dr. Otávio Solano",
+      specialty: "Oftalmologia Clínica e Cirúrgica",
+      crm: "CRM-PA 5464",
       image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
+        "/images/doctors/otaviosolano.png",
       description:
-        "Especialista em oftalmopediatria com abordagem lúdica e equipamentos adaptados para crianças. Experiência em diagnóstico precoce de problemas visuais infantis.",
+        "Especialista em oftalmologia clínica e cirúrgica com ampla experiência no diagnóstico e tratamento de doenças oculares. Reconhecido por sua dedicação ao cuidado integral do paciente e excelência técnica.",
       expertise: [
-        "Oftalmopediatria",
-        "Estrabismo",
-        "Amblyopia",
-        "Erros Refrativos",
+        "Oftalmologia Clínica",
+        "Cirurgia Oftalmológica",
+        "Diagnóstico",
+        "Tratamento",
       ],
-      education: "Universidade Federal do Rio de Janeiro",
+      education: "Universidade Federal do Pará",
       icon: Zap,
       color: "from-yellow-500 to-orange-500",
     },
     {
-      name: "Dra. Lucia Ferreira",
-      specialty: "Neuro-oftalmologia",
-      crm: "CRM-PA 2345",
+      name: "Dra. Ana Paula",
+      specialty: "Especialista em Glaucoma",
+      crm: "CRM-PA 8278",
       image:
-        "https://images.unsplash.com/photo-1594824475545-3a9abb74ae4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
+        "/images/doctors/anapaula.png",
       description:
-        "Especialista em neuro-oftalmologia com formação em neurologia. Experiência em diagnóstico e tratamento de doenças neurológicas que afetam a visão.",
+        "Especialista em glaucoma com vasta experiência no diagnóstico e tratamento desta condição. Reconhecida por sua expertise em técnicas avançadas de tratamento do glaucoma e cuidado especializado dos pacientes.",
       expertise: [
-        "Neuro-oftalmologia",
-        "Nervo Óptico",
-        "Movimentos Oculares",
-        "Doenças Neurológicas",
+        "Glaucoma",
+        "Pressão Ocular",
+        "Cirurgias de Glaucoma",
+        "Laser",
       ],
-      education: "Universidade Federal de São Paulo",
+      education: "Universidade Federal do Pará",
       icon: Users,
       color: "from-indigo-500 to-purple-500",
+    },
+    {
+      name: "Dr. Carlos Lima",
+      specialty: "Especialista em Catarata, Plástica e Vias Lacrimais e Glaucoma",
+      crm: "CRM-PA 7967",
+      image:
+        "/images/doctors/carloslima.png",
+      description:
+        "Especialista em catarata, cirurgia plástica ocular, vias lacrimais e glaucoma com ampla experiência em procedimentos complexos. Reconhecido por sua expertise em múltiplas áreas da oftalmologia e excelência técnica.",
+      expertise: [
+        "Catarata",
+        "Plástica Ocular",
+        "Vias Lacrimais",
+        "Glaucoma",
+      ],
+      education: "Universidade Federal do Pará",
+      icon: Award,
+      color: "from-teal-500 to-cyan-500",
+    },
+    {
+      name: "Dr. Geraldo Carvalho",
+      specialty: "Especialista em Retina e Vítreo e Ultrassom Ocular",
+      crm: "CRM-PA 9692",
+      image:
+        "/images/doctors/geraldocarvalho.png",
+      description:
+        "Especialista em retina e vítreo com vasta experiência em ultrassom ocular e diagnóstico de doenças retinianas complexas. Reconhecido por sua expertise em técnicas avançadas de diagnóstico e tratamento da retina.",
+      expertise: [
+        "Retina",
+        "Vítreo",
+        "Ultrassom Ocular",
+        "Doenças Retinianas",
+      ],
+      education: "Universidade Federal do Pará",
+      icon: Target,
+      color: "from-emerald-500 to-green-500",
+    },
+    {
+      name: "Dr. Joacy David",
+      specialty: "Especialista em Retina Clínica, Uveíte e Oncologia Ocular",
+      crm: "CRM-PA 14662",
+      image:
+        "/images/doctors/joacydavid.png",
+      description:
+        "Especialista em retina clínica, uveíte e oncologia ocular com vasta experiência no diagnóstico e tratamento de doenças retinianas complexas e tumores oculares. Reconhecido por sua expertise em casos raros e complexos.",
+      expertise: [
+        "Retina Clínica",
+        "Uveíte",
+        "Oncologia Ocular",
+        "Tumores Oculares",
+      ],
+      education: "Universidade Federal do Pará",
+      icon: Stethoscope,
+      color: "from-rose-500 to-pink-500",
+    },
+    {
+      name: "Dr. João Paulo Bezerra",
+      specialty: "Especialista em Glaucoma e Catarata",
+      crm: "CRM-PA 12997",
+      image:
+        "/images/doctors/joaopaulo.png",
+      description:
+        "Especialista em glaucoma e catarata com vasta experiência no diagnóstico e tratamento dessas condições. Reconhecido por sua expertise em técnicas avançadas de cirurgia de catarata e tratamento do glaucoma.",
+      expertise: [
+        "Glaucoma",
+        "Catarata",
+        "Pressão Ocular",
+        "Cirurgias Oftalmológicas",
+      ],
+      education: "Universidade Federal do Pará",
+      icon: Heart,
+      color: "from-violet-500 to-purple-500",
+    },
+    {
+      name: "Dr. José Afonso",
+      specialty: "Oftalmologia Clínica e Cirúrgica",
+      crm: "CRM-PA 4503",
+      image:
+        "/images/doctors/joseafonso.png",
+      description:
+        "Especialista em oftalmologia clínica e cirúrgica com ampla experiência no diagnóstico e tratamento de doenças oculares. Reconhecido por sua dedicação ao cuidado integral do paciente e excelência técnica em procedimentos cirúrgicos.",
+      expertise: [
+        "Oftalmologia Clínica",
+        "Cirurgia Oftalmológica",
+        "Diagnóstico",
+        "Tratamento",
+      ],
+      education: "Universidade Federal do Pará",
+      icon: Eye,
+      color: "from-slate-500 to-gray-500",
+    },
+    {
+      name: "Dra. Juliana Meschede",
+      specialty: "Glaucoma Clínico e Cirurgia de Catarata",
+      crm: "CRM-PA 11702",
+      image:
+        "/images/doctors/julianameschede.png",
+      description:
+        "Especialista em glaucoma clínico e cirurgia de catarata com vasta experiência no diagnóstico e tratamento dessas condições. Reconhecida por sua expertise em técnicas avançadas de cirurgia de catarata e manejo clínico do glaucoma.",
+      expertise: [
+        "Glaucoma Clínico",
+        "Cirurgia de Catarata",
+        "Pressão Ocular",
+        "Cirurgias Oftalmológicas",
+      ],
+      education: "Universidade Federal do Pará",
+      icon: Shield,
+      color: "from-amber-500 to-yellow-500",
+    },
+    {
+      name: "Dr. Taurino Rodrigues",
+      specialty: "Especialista em Doenças da Retina e Vítreo",
+      crm: "CRM-PA 11098",
+      image:
+        "/images/doctors/taurinorodrigues.png",
+      description:
+        "Especialista em doenças da retina e vítreo com vasta experiência no diagnóstico e tratamento de condições retinianas complexas. Reconhecido por sua expertise em técnicas avançadas de diagnóstico e tratamento da retina.",
+      expertise: [
+        "Doenças da Retina",
+        "Vítreo",
+        "Diagnóstico Retiniano",
+        "Tratamento Retiniano",
+      ],
+      education: "Universidade Federal do Pará",
+      icon: Target,
+      color: "from-orange-500 to-red-500",
     },
   ];
 

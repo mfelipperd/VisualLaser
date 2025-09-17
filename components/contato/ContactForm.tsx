@@ -34,24 +34,53 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simular envio do formulário
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
-    // Simular sucesso
-    setSubmitStatus("success");
-    setIsSubmitting(false);
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setSubmitStatus("idle");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
+    try {
+      // Enviar dados para a API
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+          source: 'contact-form'
+        }),
       });
-    }, 3000);
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus("success");
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setSubmitStatus("idle");
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            subject: "",
+            message: "",
+          });
+        }, 3000);
+      } else {
+        setSubmitStatus("error");
+        setTimeout(() => {
+          setSubmitStatus("idle");
+        }, 3000);
+      }
+    } catch (error) {
+      console.error('Erro ao enviar formulário:', error);
+      setSubmitStatus("error");
+      setTimeout(() => {
+        setSubmitStatus("idle");
+      }, 3000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const subjects = [
