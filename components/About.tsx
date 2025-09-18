@@ -102,10 +102,11 @@ const About = () => {
             >
               <div className="relative h-full min-h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://visuallaser.med.br/wp-content/uploads/2024/07/DSC7103-2-2.jpg"
+                  src="/images/fundo_empresa.JPG"
                   alt="Clínica Visual Laser"
                   fill
                   className="object-cover"
+                  priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-950/60 via-transparent to-transparent"></div>
 

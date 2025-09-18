@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Phone,
@@ -109,11 +108,9 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <Image
+              <img
                 src="/logo-visual-branca.png"
                 alt="Visual Laser"
-                width={150}
-                height={48}
                 className="h-12 w-auto"
               />
               <div>

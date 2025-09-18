@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, Calendar, Home, Building2, Activity, Users, MessageCircle } from "lucide-react";
 import { usePathname } from "next/navigation";
@@ -47,11 +46,9 @@ const Header = () => {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <a href="/" className="flex items-center space-x-3 hover:opacity-90 transition-opacity duration-200">
-              <Image
+              <img
                 src="/logo-visual-branca.png"
                 alt="Visual Laser"
-                width={150}
-                height={48}
                 className="h-12 w-auto"
               />
               <div className="hidden sm:block sr-only">

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import AppointmentModal from "./AppointmentModal";
@@ -129,13 +128,10 @@ const Hero = () => {
             transition={{ duration: 1 }}
             className="absolute inset-0"
           >
-            <Image
+            <img
               src={slides[currentSlide].image}
               alt={slides[currentSlide].title}
-              fill
-              className="object-cover"
-              priority
-              sizes="100vw"
+              className="w-full h-full object-cover"
               onLoad={(e) => {
                 // Marcar imagem como carregada
                 e.currentTarget.style.opacity = "1";

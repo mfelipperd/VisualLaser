@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Star, Quote, ExternalLink, RefreshCw } from "lucide-react";
 import AppointmentModal from "./AppointmentModal";
@@ -270,11 +269,9 @@ const Testimonials = () => {
                 {/* Author */}
                 <div className="flex items-center space-x-4">
                   {review.profile_photo_url ? (
-                    <Image
+                    <img
                       src={review.profile_photo_url}
                       alt={review.author_name}
-                      width={48}
-                      height={48}
                       className="w-12 h-12 rounded-full object-cover border-2 border-accent-500/30"
                     />
                   ) : (
