@@ -60,12 +60,12 @@ const ContactInfo = () => {
       contacts: [
         {
           label: "Endereço",
-          value: "Travessa 14 de Março, 1622",
+          value: "Tv. 14 de Março, 1622",
           type: "address",
         },
         {
           label: "Bairro",
-          value: "Belém - Pará, 66055-490",
+          value: "Nazaré, Belém - PA, 66055-490",
           type: "address",
         },
       ],

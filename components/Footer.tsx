@@ -10,11 +10,65 @@ import {
   Facebook,
   Instagram,
   Youtube,
+  ChevronDown,
+  Navigation,
 } from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
-  const [isMapHovered, setIsMapHovered] = useState(false);
+  const [isMapVisible, setIsMapVisible] = useState(false);
+  const [userLocation, setUserLocation] = useState<{lat: number, lng: number} | null>(null);
+  const [mapKey, setMapKey] = useState(0);
+
+  // Função para solicitar localização do usuário automaticamente
+  const requestUserLocation = () => {
+    if (!navigator.geolocation) {
+      return; // Falha silenciosamente
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        setUserLocation({ lat: latitude, lng: longitude });
+        // Força o recarregamento do iframe para mostrar a rota
+        setMapKey(prev => prev + 1);
+      },
+      (error) => {
+        // Falha silenciosamente - não exibe mensagens de erro
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 300000 // 5 minutos
+      }
+    );
+  };
+
+  // Solicitar localização quando o mapa abrir
+  const handleMapToggle = () => {
+    const newMapVisible = !isMapVisible;
+    setIsMapVisible(newMapVisible);
+    
+    if (newMapVisible && !userLocation) {
+      requestUserLocation();
+    }
+  };
+
+  // Função para gerar URL do Google Maps com rota
+  const getGoogleMapsRouteUrl = () => {
+    if (userLocation) {
+      return `https://www.google.com/maps/dir/?api=1&origin=${userLocation.lat},${userLocation.lng}&destination=Tv.+14+de+Março,+1622+-+Nazaré,+Belém+-+PA,+66055-490&travelmode=driving`;
+    }
+    return `https://www.google.com/maps/dir/?api=1&destination=Tv.+14+de+Março,+1622+-+Nazaré,+Belém+-+PA,+66055-490`;
+  };
+
+  // Função para gerar URL do iframe com rota
+  const getMapIframeUrl = () => {
+    if (userLocation) {
+      return `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dLw0t1z0g1z0g1&origin=${userLocation.lat},${userLocation.lng}&destination=Tv.+14+de+Março,+1622+-+Nazaré,+Belém+-+PA,+66055-490&mode=driving`;
+    }
+    return "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.540759359148!2d-48.480729600000004!3d-1.4499849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a48e8191012757%3A0x8eca8a1e0508b6eb!2sVisual%20Laser!5e0!3m2!1spt-BR!2sbr!4v1758162242691!5m2!1spt-BR!2sbr";
+  };
 
   const quickLinks = [
     { name: "Início", href: "/" },
@@ -169,50 +223,68 @@ const Footer = () => {
           </div>
 
           {/* Map Section */}
-          <div className="relative">
+          <div>
             <h4 className="text-2xl font-bold text-accent-400 mb-6">
               Nossa Localização
             </h4>
 
-            <div className="relative">
-              <Link
-                href="https://maps.google.com/?q=Visual+Laser+Belém+Pará"
-                target="_blank"
-                rel="noopener noreferrer"
-                onMouseEnter={() => setIsMapHovered(true)}
-                onMouseLeave={() => setIsMapHovered(false)}
-                className="inline-flex items-center space-x-2 text-accent-400 hover:text-accent-300 transition-colors duration-200"
+            <div className="space-y-4">
+              {/* Address Clickable */}
+              <button
+                onClick={handleMapToggle}
+                className="inline-flex items-center space-x-2 text-accent-400 hover:text-accent-300 transition-colors duration-200 group"
               >
-                <MapPin className="w-5 h-5" />
+                <MapPin className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
                 <span className="font-medium">
-                  Av. Visconde de Souza Franco, 1000 - Belém, Pará
+                  Tv. 14 de Março, 1622 - Nazaré, Belém - PA
                 </span>
-              </Link>
+                <motion.div
+                  animate={{ rotate: isMapVisible ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ChevronDown className="w-4 h-4" />
+                </motion.div>
+              </button>
 
-              {/* Map Hover */}
+              {/* Map Container */}
               <AnimatePresence>
-                {isMapHovered && (
+                {isMapVisible && (
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ duration: 0.3 }}
-                    className="absolute bottom-full -right-20 mb-4 z-[9999]"
-                    style={{
-                      width: "min(400px, calc(100vw - 2rem))",
-                      height: "300px",
-                    }}
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="overflow-hidden"
                   >
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.540759359148!2d-48.480729600000004!3d-1.4499849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a48e8191012757%3A0x8eca8a1e0508b6eb!2sVisual%20Laser!5e0!3m2!1spt-BR!2sbr!4v1755712656992!5m2!1spt-BR!2sbr"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      className="rounded-lg shadow-2xl"
-                    />
+                    <div className="bg-white rounded-lg shadow-xl overflow-hidden">
+                      {/* Map */}
+                      <iframe
+                        key={mapKey}
+                        src={getMapIframeUrl()}
+                        width="100%"
+                        height="400"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        className="w-full"
+                      />
+                      
+                      {/* Open in Maps Button */}
+                      <div className="p-4 bg-gray-50 border-t">
+                        <Link
+                          href={getGoogleMapsRouteUrl()}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center space-x-2 bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition-colors duration-200 font-medium"
+                        >
+                          <Navigation className="w-4 h-4" />
+                          <span>
+                            {userLocation ? "Abrir rota no Google Maps" : "Abrir no Google Maps"}
+                          </span>
+                        </Link>
+                      </div>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>

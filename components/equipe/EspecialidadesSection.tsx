@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Eye, Target, Heart, Shield, Zap, Users } from "lucide-react";
+import { Eye, Target, Heart, Shield } from "lucide-react";
 
 const EspecialidadesSection = () => {
   const especialidades = [
@@ -34,18 +34,18 @@ const EspecialidadesSection = () => {
       color: "from-purple-500 to-indigo-500",
     },
     {
-      icon: Zap,
-      title: "Oftalmopediatria",
+      icon: Heart,
+      title: "Plástica Ocular",
       description:
-        "Cuidado especializado para crianças, com abordagem lúdica e equipamentos adaptados para pequenos pacientes.",
-      color: "from-yellow-500 to-orange-500",
+        "Especialistas em cirurgias plásticas oculares, correção de pálpebras e procedimentos estéticos e funcionais.",
+      color: "from-pink-500 to-rose-500",
     },
     {
-      icon: Users,
-      title: "Neuro-oftalmologia",
+      icon: Target,
+      title: "Oncologia Ocular",
       description:
-        "Diagnóstico e tratamento de doenças neurológicas que afetam a visão e os movimentos oculares.",
-      color: "from-indigo-500 to-purple-500",
+        "Diagnóstico e tratamento especializado de tumores oculares e orbitários com abordagem multidisciplinar.",
+      color: "from-orange-500 to-red-500",
     },
   ];
 
@@ -78,7 +78,7 @@ const EspecialidadesSection = () => {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className="group"
             >
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 h-full flex flex-col">
                 <div
                   className={`w-20 h-20 bg-gradient-to-br ${especialidade.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}
                 >
@@ -87,7 +87,7 @@ const EspecialidadesSection = () => {
                 <h3 className="text-2xl font-bold text-accent-200 mb-4 text-center">
                   {especialidade.title}
                 </h3>
-                <p className="text-primary-200 leading-relaxed text-center">
+                <p className="text-primary-200 leading-relaxed text-center flex-grow">
                   {especialidade.description}
                 </p>
               </div>

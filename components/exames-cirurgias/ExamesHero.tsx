@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Eye, Scissors, Microscope, Stethoscope } from "lucide-react";
+import { Eye, Activity, Microscope, Stethoscope } from "lucide-react";
 
 const ExamesHero = () => {
   const features = [
@@ -11,7 +11,7 @@ const ExamesHero = () => {
       description: "Tecnologia de última geração para diagnósticos precisos",
     },
     {
-      icon: Scissors,
+      icon: Activity,
       title: "Cirurgias Avançadas",
       description: "Procedimentos cirúrgicos com equipamentos modernos",
     },

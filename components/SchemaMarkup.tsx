@@ -11,10 +11,10 @@ export default function SchemaMarkup() {
     email: "marketing@visuallaser.com.br",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Av. Visconde de Souza Franco, 1000",
-      addressLocality: "Belém",
+      streetAddress: "Tv. 14 de Março, 1622",
+      addressLocality: "Nazaré, Belém",
       addressRegion: "PA",
-      postalCode: "66093-000",
+      postalCode: "66055-490",
       addressCountry: "BR",
     },
     geo: {

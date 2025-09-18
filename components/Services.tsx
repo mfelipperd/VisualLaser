@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Eye, Scissors, Microscope, Stethoscope } from "lucide-react";
+import { Eye, Activity, Microscope, Stethoscope } from "lucide-react";
 import { useState } from "react";
 import AppointmentModal from "./AppointmentModal";
 
@@ -24,7 +24,7 @@ const Services = () => {
       color: "from-primary-950 to-primary-800",
     },
     {
-      icon: Scissors,
+      icon: Activity,
       title: "Cirurgias Oftalmológicas",
       description:
         "Especialistas em cirurgias refrativas, catarata e outros procedimentos oftalmológicos com tecnologia avançada.",
@@ -63,8 +63,8 @@ const Services = () => {
         "Retina e Vítreo",
         "Glaucoma",
         "Córnea e Refrativa",
-        "Oftalmopediatria",
-        "Neuro-oftalmologia",
+        "Plástica Ocular",
+        "Oncologia Ocular",
       ],
       color: "from-primary-800 to-primary-600",
     },

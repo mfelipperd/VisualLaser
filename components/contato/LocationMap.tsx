@@ -67,8 +67,8 @@ const LocationMap = () => {
                     Endereço
                   </h3>
                   <div className="space-y-2 text-gray-600">
-                    <p className="text-lg">Travessa 14 de Março, 1622</p>
-                    <p className="text-lg">Belém - Pará</p>
+                    <p className="text-lg">Tv. 14 de Março, 1622</p>
+                    <p className="text-lg">Nazaré, Belém - PA</p>
                     <p className="text-lg">CEP: 66055-490</p>
                   </div>
                 </div>

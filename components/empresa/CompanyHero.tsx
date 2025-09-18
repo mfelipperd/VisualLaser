@@ -32,30 +32,31 @@ const CompanyHero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen overflow-hidden pt-20">
-      {/* Background Video */}
-      <div className="absolute inset-0">
+    <section className="relative min-h-screen overflow-hidden pt-0 sm:pt-20">
+      {/* Background Video - Hidden on Mobile */}
+      <div className="absolute inset-0 hidden sm:block">
         <div className="absolute inset-0 overflow-hidden">
           <div className="w-full h-full video-container">
             <iframe
               src="https://www.youtube.com/embed/Dw_8kJKcsrs?autoplay=1&mute=1&vq=hd1080&rel=0&modestbranding=1&controls=0&showinfo=0&loop=1&playlist=Dw_8kJKcsrs&end=0&disablekb=1&fs=0&iv_load_policy=3"
               title="Vídeo Institucional Visual Laser"
-              className="w-full h-full object-cover"
-              style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                width: '100%',
-                height: '100%',
-                transform: 'translate(-50%, -50%)',
-                minWidth: '100%',
-                minHeight: '100%',
-              }}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
           </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-800/70 to-primary-700/50"></div>
+        </div>
+      </div>
+
+      {/* Background Image for Mobile */}
+      <div className="absolute inset-0 sm:hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(/images/fundo_empresa.JPG)`,
+          }}
+        >
           <div className="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-800/70 to-primary-700/50"></div>
         </div>
       </div>
@@ -67,10 +68,28 @@ const CompanyHero = () => {
           overflow: hidden;
         }
         
+        .video-container iframe {
+          width: 100vw !important;
+          height: 56.25vw !important; /* 16:9 aspect ratio */
+          min-height: 100vh !important;
+          min-width: 177.78vh !important; /* 16:9 aspect ratio */
+          position: absolute !important;
+          top: 50% !important;
+          left: 50% !important;
+          transform: translate(-50%, -50%) !important;
+        }
+        
         @media (min-width: 768px) {
           .video-container {
             height: calc(100% + 15.625rem); /* 250px em tablet */
             transform: translateY(-7.8125rem); /* -125px em tablet */
+          }
+          
+          .video-container iframe {
+            width: 100% !important;
+            height: 100% !important;
+            min-width: 100% !important;
+            min-height: 100% !important;
           }
         }
         
@@ -83,7 +102,7 @@ const CompanyHero = () => {
       `}</style>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex items-center">
+      <div className="relative z-10 h-full flex items-center pt-20 sm:pt-0">
         <div className="container mx-auto container-padding">
           <div className="max-w-6xl mx-auto">
             <motion.div

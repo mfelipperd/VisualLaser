@@ -1,16 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Eye,
-  Target,
-  Heart,
-  Shield,
-  Zap,
-  Users,
-  Award,
-  Stethoscope,
-} from "lucide-react";
+import { Stethoscope, Eye, Shield } from "lucide-react";
 
 const DoctorsCatalog = () => {
   const doctors = [
@@ -22,10 +13,7 @@ const DoctorsCatalog = () => {
         "/images/doctors/roberto_carlei.png",
       description:
         "Especialista em oftalmologia com vasta experiência em cirurgias de catarata, transplantes de córnea e cirurgias refrativas. Reconhecido por sua excelência técnica e resultados excepcionais.",
-      expertise: ["Catarata", "Córnea", "Cirurgia Refrativa", "Transplante de Córnea"],
-      education: "Universidade Federal do Pará",
-      icon: Eye,
-      color: "from-blue-500 to-cyan-500",
+      expertise: ["Catarata", "Córnea", "Cirurgia Refrativa"],
     },
     {
       name: "Dra. Rosamélia Lima",
@@ -35,10 +23,7 @@ const DoctorsCatalog = () => {
         "/images/doctors/rosa.png",
       description:
         "Especialista em oftalmologia clínica e cirúrgica com ampla experiência no diagnóstico e tratamento de doenças oculares. Reconhecida por sua dedicação ao cuidado integral do paciente.",
-      expertise: ["Oftalmologia Clínica", "Cirurgia Oftalmológica", "Diagnóstico", "Tratamento"],
-      education: "Universidade Federal do Pará",
-      icon: Target,
-      color: "from-green-500 to-emerald-500",
+      expertise: ["Oftalmologia Clínica", "Cirurgia Oftalmológica"],
     },
     {
       name: "Dr. José Guilherme",
@@ -48,15 +33,7 @@ const DoctorsCatalog = () => {
         "/images/doctors/joseguilherme.png",
       description:
         "Especialista em glaucoma com vasta experiência no diagnóstico e tratamento desta condição. Reconhecido por sua expertise em técnicas avançadas de tratamento do glaucoma.",
-      expertise: [
-        "Glaucoma",
-        "Pressão Ocular",
-        "Cirurgias de Glaucoma",
-        "Laser",
-      ],
-      education: "Universidade Federal do Pará",
-      icon: Heart,
-      color: "from-red-500 to-pink-500",
+      expertise: ["Glaucoma"],
     },
     {
       name: "Dr. Armando Vidonho",
@@ -66,10 +43,7 @@ const DoctorsCatalog = () => {
         "/images/doctors/armandovidonho.png",
       description:
         "Especialista em transplante de córnea, catarata e cirurgia refrativa com vasta experiência em procedimentos complexos. Reconhecido por sua expertise em técnicas avançadas de transplante e cirurgias refrativas.",
-      expertise: ["Transplante de Córnea", "Catarata", "Cirurgia Refrativa", "Doenças Corneanas"],
-      education: "Universidade Federal do Pará",
-      icon: Shield,
-      color: "from-purple-500 to-indigo-500",
+      expertise: ["Transplante de Córnea", "Catarata", "Cirurgia Refrativa"],
     },
     {
       name: "Dr. Otávio Solano",
@@ -79,15 +53,7 @@ const DoctorsCatalog = () => {
         "/images/doctors/otaviosolano.png",
       description:
         "Especialista em oftalmologia clínica e cirúrgica com ampla experiência no diagnóstico e tratamento de doenças oculares. Reconhecido por sua dedicação ao cuidado integral do paciente e excelência técnica.",
-      expertise: [
-        "Oftalmologia Clínica",
-        "Cirurgia Oftalmológica",
-        "Diagnóstico",
-        "Tratamento",
-      ],
-      education: "Universidade Federal do Pará",
-      icon: Zap,
-      color: "from-yellow-500 to-orange-500",
+      expertise: ["Oftalmologia Clínica", "Cirurgia Oftalmológica"],
     },
     {
       name: "Dra. Ana Paula",
@@ -97,15 +63,7 @@ const DoctorsCatalog = () => {
         "/images/doctors/anapaula.png",
       description:
         "Especialista em glaucoma com vasta experiência no diagnóstico e tratamento desta condição. Reconhecida por sua expertise em técnicas avançadas de tratamento do glaucoma e cuidado especializado dos pacientes.",
-      expertise: [
-        "Glaucoma",
-        "Pressão Ocular",
-        "Cirurgias de Glaucoma",
-        "Laser",
-      ],
-      education: "Universidade Federal do Pará",
-      icon: Users,
-      color: "from-indigo-500 to-purple-500",
+      expertise: ["Glaucoma"],
     },
     {
       name: "Dr. Carlos Lima",
@@ -115,15 +73,7 @@ const DoctorsCatalog = () => {
         "/images/doctors/carloslima.png",
       description:
         "Especialista em catarata, cirurgia plástica ocular, vias lacrimais e glaucoma com ampla experiência em procedimentos complexos. Reconhecido por sua expertise em múltiplas áreas da oftalmologia e excelência técnica.",
-      expertise: [
-        "Catarata",
-        "Plástica Ocular",
-        "Vias Lacrimais",
-        "Glaucoma",
-      ],
-      education: "Universidade Federal do Pará",
-      icon: Award,
-      color: "from-teal-500 to-cyan-500",
+      expertise: ["Catarata", "Plástica Ocular", "Vias Lacrimais", "Glaucoma"],
     },
     {
       name: "Dr. Geraldo Carvalho",
@@ -133,15 +83,7 @@ const DoctorsCatalog = () => {
         "/images/doctors/geraldocarvalho.png",
       description:
         "Especialista em retina e vítreo com vasta experiência em ultrassom ocular e diagnóstico de doenças retinianas complexas. Reconhecido por sua expertise em técnicas avançadas de diagnóstico e tratamento da retina.",
-      expertise: [
-        "Retina",
-        "Vítreo",
-        "Ultrassom Ocular",
-        "Doenças Retinianas",
-      ],
-      education: "Universidade Federal do Pará",
-      icon: Target,
-      color: "from-emerald-500 to-green-500",
+      expertise: ["Retina", "Vítreo", "Ultrassom Ocular"],
     },
     {
       name: "Dr. Joacy David",
@@ -151,15 +93,7 @@ const DoctorsCatalog = () => {
         "/images/doctors/joacydavid.png",
       description:
         "Especialista em retina clínica, uveíte e oncologia ocular com vasta experiência no diagnóstico e tratamento de doenças retinianas complexas e tumores oculares. Reconhecido por sua expertise em casos raros e complexos.",
-      expertise: [
-        "Retina Clínica",
-        "Uveíte",
-        "Oncologia Ocular",
-        "Tumores Oculares",
-      ],
-      education: "Universidade Federal do Pará",
-      icon: Stethoscope,
-      color: "from-rose-500 to-pink-500",
+      expertise: ["Retina Clínica", "Uveíte", "Oncologia Ocular"],
     },
     {
       name: "Dr. João Paulo Bezerra",
@@ -169,15 +103,7 @@ const DoctorsCatalog = () => {
         "/images/doctors/joaopaulo.png",
       description:
         "Especialista em glaucoma e catarata com vasta experiência no diagnóstico e tratamento dessas condições. Reconhecido por sua expertise em técnicas avançadas de cirurgia de catarata e tratamento do glaucoma.",
-      expertise: [
-        "Glaucoma",
-        "Catarata",
-        "Pressão Ocular",
-        "Cirurgias Oftalmológicas",
-      ],
-      education: "Universidade Federal do Pará",
-      icon: Heart,
-      color: "from-violet-500 to-purple-500",
+      expertise: ["Glaucoma", "Catarata"],
     },
     {
       name: "Dr. José Afonso",
@@ -187,15 +113,7 @@ const DoctorsCatalog = () => {
         "/images/doctors/joseafonso.png",
       description:
         "Especialista em oftalmologia clínica e cirúrgica com ampla experiência no diagnóstico e tratamento de doenças oculares. Reconhecido por sua dedicação ao cuidado integral do paciente e excelência técnica em procedimentos cirúrgicos.",
-      expertise: [
-        "Oftalmologia Clínica",
-        "Cirurgia Oftalmológica",
-        "Diagnóstico",
-        "Tratamento",
-      ],
-      education: "Universidade Federal do Pará",
-      icon: Eye,
-      color: "from-slate-500 to-gray-500",
+      expertise: ["Oftalmologia Clínica", "Cirurgia Oftalmológica"],
     },
     {
       name: "Dra. Juliana Meschede",
@@ -205,15 +123,7 @@ const DoctorsCatalog = () => {
         "/images/doctors/julianameschede.png",
       description:
         "Especialista em glaucoma clínico e cirurgia de catarata com vasta experiência no diagnóstico e tratamento dessas condições. Reconhecida por sua expertise em técnicas avançadas de cirurgia de catarata e manejo clínico do glaucoma.",
-      expertise: [
-        "Glaucoma Clínico",
-        "Cirurgia de Catarata",
-        "Pressão Ocular",
-        "Cirurgias Oftalmológicas",
-      ],
-      education: "Universidade Federal do Pará",
-      icon: Shield,
-      color: "from-amber-500 to-yellow-500",
+      expertise: ["Glaucoma Clínico", "Cirurgia de Catarata"],
     },
     {
       name: "Dr. Taurino Rodrigues",
@@ -223,15 +133,7 @@ const DoctorsCatalog = () => {
         "/images/doctors/taurinorodrigues.png",
       description:
         "Especialista em doenças da retina e vítreo com vasta experiência no diagnóstico e tratamento de condições retinianas complexas. Reconhecido por sua expertise em técnicas avançadas de diagnóstico e tratamento da retina.",
-      expertise: [
-        "Doenças da Retina",
-        "Vítreo",
-        "Diagnóstico Retiniano",
-        "Tratamento Retiniano",
-      ],
-      education: "Universidade Federal do Pará",
-      icon: Target,
-      color: "from-orange-500 to-red-500",
+      expertise: ["Doenças da Retina", "Vítreo"],
     },
   ];
 
@@ -264,7 +166,7 @@ const DoctorsCatalog = () => {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className="group"
             >
-              <div className="bg-white rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105 overflow-hidden">
+              <div className="bg-white rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105 overflow-hidden h-full flex flex-col">
                 {/* Doctor Image */}
                 <div className="relative h-64 overflow-hidden">
                   <img
@@ -273,17 +175,10 @@ const DoctorsCatalog = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div
-                      className={`w-16 h-16 bg-gradient-to-br ${doctor.color} rounded-xl flex items-center justify-center mb-3`}
-                    >
-                      <doctor.icon className="w-8 h-8 text-white" />
-                    </div>
-                  </div>
                 </div>
 
                 {/* Doctor Info */}
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     {doctor.name}
                   </h3>
@@ -292,7 +187,7 @@ const DoctorsCatalog = () => {
                   </p>
                   <p className="text-sm text-gray-500 mb-4">{doctor.crm}</p>
 
-                  <p className="text-gray-600 leading-relaxed mb-4">
+                  <p className="text-gray-600 leading-relaxed mb-4 flex-grow">
                     {doctor.description}
                   </p>
 
@@ -313,11 +208,6 @@ const DoctorsCatalog = () => {
                     </div>
                   </div>
 
-                  {/* Education */}
-                  <div className="flex items-center space-x-2 text-sm text-gray-600">
-                    <Award className="w-4 h-4 text-accent-500" />
-                    <span>{doctor.education}</span>
-                  </div>
                 </div>
               </div>
             </motion.div>
