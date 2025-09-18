@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { Eye, Scissors, Microscope, Stethoscope } from "lucide-react";
+import { useState } from "react";
+import AppointmentModal from "./AppointmentModal";
 
 const Services = () => {
+  const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
   const services = [
     {
       icon: Eye,
@@ -134,7 +137,7 @@ const Services = () => {
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-white/20">
-                  <button className="text-accent-400 hover:text-accent-300 font-medium transition-colors duration-200 group-hover:translate-x-2 transform transition-transform duration-200">
+                  <button className="text-accent-400 hover:text-accent-300 font-medium transition-all duration-200 group-hover:translate-x-2 transform">
                     Saiba Mais →
                   </button>
                 </div>
@@ -161,13 +164,22 @@ const Services = () => {
               profissionalismo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-accent-500 hover:bg-accent-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
+              <button 
+                onClick={() => setIsAppointmentModalOpen(true)}
+                className="bg-accent-500 hover:bg-accent-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
+              >
                 Agendar Consulta
               </button>
             </div>
           </div>
         </motion.div>
       </div>
+
+      {/* Appointment Modal */}
+      <AppointmentModal
+        isOpen={isAppointmentModalOpen}
+        onClose={() => setIsAppointmentModalOpen(false)}
+      />
     </section>
   );
 };

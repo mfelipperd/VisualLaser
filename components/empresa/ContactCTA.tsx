@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Calendar, Phone, ArrowRight, Star } from "lucide-react";
+import { useState } from "react";
+import AppointmentModal from "../AppointmentModal";
 
 const ContactCTA = () => {
+  const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
   const benefits = [
     "Consulta com especialistas experientes",
     "Avaliação completa da sua saúde visual",
@@ -97,13 +100,13 @@ const ContactCTA = () => {
               </div>
 
               <div className="space-y-4 mb-8">
-                <Link
-                  href="/agende-sua-consulta"
+                <button
+                  onClick={() => setIsAppointmentModalOpen(true)}
                   className="w-full bg-accent-500 hover:bg-accent-600 text-white py-4 px-6 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center space-x-2 hover:scale-105"
                 >
                   <span>Agendar Consulta</span>
                   <ArrowRight className="w-5 h-5" />
-                </Link>
+                </button>
 
                 <Link
                   href="/contato"
@@ -144,6 +147,12 @@ const ContactCTA = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Appointment Modal */}
+      <AppointmentModal
+        isOpen={isAppointmentModalOpen}
+        onClose={() => setIsAppointmentModalOpen(false)}
+      />
     </section>
   );
 };

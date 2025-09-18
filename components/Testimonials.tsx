@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Star, Quote, ExternalLink, RefreshCw } from "lucide-react";
+import AppointmentModal from "./AppointmentModal";
 
 interface GoogleReview {
   author_name: string;
@@ -15,6 +16,7 @@ interface GoogleReview {
 const Testimonials = () => {
   const [reviews, setReviews] = useState<GoogleReview[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
   const [averageRating, setAverageRating] = useState(0);
   const [totalReviews, setTotalReviews] = useState(0);
   const [lastUpdated, setLastUpdated] = useState<string>("");
@@ -306,7 +308,10 @@ const Testimonials = () => {
               Visual Laser para cuidar da sua saúde visual.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-accent-500 hover:bg-accent-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
+              <button 
+                onClick={() => setIsAppointmentModalOpen(true)}
+                className="bg-accent-500 hover:bg-accent-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
+              >
                 Agendar Consulta
               </button>
               <a
@@ -322,6 +327,12 @@ const Testimonials = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Appointment Modal */}
+      <AppointmentModal
+        isOpen={isAppointmentModalOpen}
+        onClose={() => setIsAppointmentModalOpen(false)}
+      />
     </section>
   );
 };

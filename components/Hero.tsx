@@ -4,10 +4,28 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import AppointmentModal from "./AppointmentModal";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState<Set<string>>(new Set());
+  const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
+
+  const handleCTAClick = (ctaLink: string) => {
+    if (ctaLink === "/agendamento") {
+      setIsAppointmentModalOpen(true);
+    } else {
+      window.location.href = ctaLink;
+    }
+  };
+
+  const handleSecondaryClick = (secondaryLink: string) => {
+    if (secondaryLink === "/agendamento") {
+      setIsAppointmentModalOpen(true);
+    } else {
+      window.location.href = secondaryLink;
+    }
+  };
 
   const slides = [
     {
@@ -187,13 +205,13 @@ const Hero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.8 }}
                       >
-                        <Link
-                          href={slides[currentSlide].ctaLink}
+                        <button
+                          onClick={() => handleCTAClick(slides[currentSlide].ctaLink)}
                           className="inline-flex items-center space-x-2 bg-accent-500 hover:bg-accent-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
                         >
                           <span>{slides[currentSlide].ctaText}</span>
                           <ArrowRight className="w-5 h-5" />
-                        </Link>
+                        </button>
                       </motion.div>
 
                       <motion.div
@@ -201,12 +219,12 @@ const Hero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 1 }}
                       >
-                        <Link
-                          href={slides[currentSlide].secondaryLink}
+                        <button
+                          onClick={() => handleSecondaryClick(slides[currentSlide].secondaryLink)}
                           className="inline-flex items-center space-x-2 text-white hover:text-accent-400 font-medium py-4 px-8 border border-white/30 hover:border-accent-400 rounded-lg transition-all duration-300"
                         >
                           <span>{slides[currentSlide].secondaryText}</span>
-                        </Link>
+                        </button>
                       </motion.div>
                     </div>
                   </div>
@@ -246,6 +264,12 @@ const Hero = () => {
           />
         ))}
       </div>
+
+      {/* Appointment Modal */}
+      <AppointmentModal
+        isOpen={isAppointmentModalOpen}
+        onClose={() => setIsAppointmentModalOpen(false)}
+      />
     </section>
   );
 };

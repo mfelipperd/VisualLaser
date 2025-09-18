@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Calendar, Clock, Phone } from "lucide-react";
+import { X, Calendar } from "lucide-react";
 import { useState } from "react";
 
 interface AppointmentModalProps {
@@ -58,7 +58,7 @@ const AppointmentModal = ({ isOpen, onClose }: AppointmentModalProps) => {
             </div>
 
             {/* Content */}
-            <div className="flex-1 relative">
+            <div className="flex-1 relative h-fit">
               {/* Loading State */}
               {isLoading && (
                 <div className="absolute inset-0 bg-gray-50 flex items-center justify-center z-10">
@@ -74,42 +74,13 @@ const AppointmentModal = ({ isOpen, onClose }: AppointmentModalProps) => {
               {/* Iframe */}
               <iframe
                 src="https://visuallaser.agendamento.medplusweb.com.br/agendamento"
-                className="w-full h-full min-h-[600px] border-0"
+                className="w-full h-full min-h-[700px] border-0"
                 onLoad={handleIframeLoad}
                 title="Sistema de Agendamento Visual Laser"
                 allow="fullscreen"
               />
             </div>
 
-            {/* Footer */}
-            <div className="bg-gray-50 p-6 border-t border-gray-200">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div className="flex flex-col items-center space-y-2">
-                  <div className="w-10 h-10 bg-accent-500/20 rounded-full flex items-center justify-center">
-                    <Calendar className="w-5 h-5 text-accent-600" />
-                  </div>
-                  <span className="text-sm font-medium text-gray-700">
-                    Agendamento Online
-                  </span>
-                </div>
-                <div className="flex flex-col items-center space-y-2">
-                  <div className="w-10 h-10 bg-accent-500/20 rounded-full flex items-center justify-center">
-                    <Clock className="w-5 h-5 text-accent-600" />
-                  </div>
-                  <span className="text-sm font-medium text-gray-700">
-                    24h por dia
-                  </span>
-                </div>
-                <div className="flex flex-col items-center space-y-2">
-                  <div className="w-10 h-10 bg-accent-500/20 rounded-full flex items-center justify-center">
-                    <Phone className="w-5 h-5 text-accent-600" />
-                  </div>
-                  <span className="text-sm font-medium text-gray-700">
-                    Suporte disponível
-                  </span>
-                </div>
-              </div>
-            </div>
           </motion.div>
         </motion.div>
       )}

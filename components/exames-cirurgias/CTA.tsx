@@ -2,9 +2,11 @@
 
 import { motion } from "framer-motion";
 import { Calendar, Phone, MessageCircle } from "lucide-react";
-import Link from "next/link";
+import { useState } from "react";
+import AppointmentModal from "../AppointmentModal";
 
 const CTA = () => {
+  const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
   return (
     <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto container-padding">
@@ -28,13 +30,13 @@ const CTA = () => {
             </p>
 
             <div className="flex justify-center mb-8">
-              <Link
-                href="/agendamento"
+              <button
+                onClick={() => setIsAppointmentModalOpen(true)}
                 className="inline-flex items-center space-x-2 bg-accent-500 hover:bg-accent-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 <Calendar className="w-5 h-5" />
                 <span>Agendar Consulta Agora</span>
-              </Link>
+              </button>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
@@ -75,6 +77,12 @@ const CTA = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Appointment Modal */}
+      <AppointmentModal
+        isOpen={isAppointmentModalOpen}
+        onClose={() => setIsAppointmentModalOpen(false)}
+      />
     </section>
   );
 };
