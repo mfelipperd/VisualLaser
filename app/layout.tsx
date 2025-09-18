@@ -131,7 +131,7 @@ export default function RootLayout({
         <SchemaMarkup />
         <GoogleAnalytics />
         <Header />
-        <main className="mt-20">{children}</main>
+        <main className="mt-0 md:mt-20 pb-20 md:pb-0">{children}</main>
         <Footer />
         <CookieConsent />
         <BlurModal />
