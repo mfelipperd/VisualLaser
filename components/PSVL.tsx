@@ -45,7 +45,7 @@ const PSVL = () => {
                     Quais os benefícios do PSVL?
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Os clientes inscritos no PSVL podem realizar consultas,
+                    Os clientes do PSVL podem realizar consultas,
                     exames e procedimentos clínicos ou cirúrgicos na Visual
                     Laser com um valor diferenciado e acessível (estabelecido em
                     tabela de preços específica) e condições facilitadas.
@@ -60,8 +60,7 @@ const PSVL = () => {
                   <p className="text-gray-600 text-sm leading-relaxed">
                     Não há necessidade de pagar taxa de adesão ou mensalidades,
                     pois o PSVL não é um plano de saúde suplementar. Trata-se de
-                    um programa de inclusão no qual o cliente apto* e
-                    devidamente inscrito pode realizar consultas, exames e
+                    um programa de inclusão no qual o cliente apto* pode realizar consultas, exames e
                     procedimentos clínicos ou cirúrgicos, mediante o pagamento
                     do valor diferenciado no momento do atendimento.
                   </p>
@@ -72,7 +71,7 @@ const PSVL = () => {
                     Como fazer para participar do PSVL?
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    O cliente apto* deve se inscrever no cadastro do PSVL. Para
+                    O cliente apto* pode participar do PSVL. Para
                     isso, basta agendar sua consulta e, no dia do seu
                     atendimento, dirigir-se à recepção da clínica e apresentar o
                     documento de identidade com foto e a carteirinha do plano de

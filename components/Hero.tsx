@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
-import Link from "next/link";
 import AppointmentModal from "./AppointmentModal";
 
 const Hero = () => {
@@ -89,12 +88,14 @@ const Hero = () => {
     // Pré-carregar todas as imagens
     slides.forEach((slide) => {
       const img = new Image();
+      img.src = slide.image;
       img.onload = () => {
         setImagesLoaded((prev) => new Set(prev).add(slide.image));
       };
-      img.src = slide.image;
     });
+  }, []);
 
+  useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 8000);
@@ -115,7 +116,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen pt-20 overflow-hidden">
+    <section className="relative min-h-[50vh] sm:min-h-screen pt-20 overflow-hidden">
       {/* Background Image Carousel */}
       <div className="absolute inset-0">
         <AnimatePresence mode="wait">
@@ -151,112 +152,112 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen">
-        <div className="container mx-auto container-padding">
-          <div className="max-w-7xl mx-auto">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentSlide}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -30 }}
-                transition={{ duration: 0.8 }}
-                className="text-white"
-              >
-                <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-5 border border-white/20 max-w-6xl">
-                  <div className="flex flex-row justify-between items-end gap-8">
-                    {/* Text Content */}
-                    <div className="space-y-6 flex-1">
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                      >
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                          {slides[currentSlide].title}
-                        </h1>
-                      </motion.div>
+      <div className="relative z-10 flex items-start justify-center min-h-[50vh] sm:min-h-screen px-4 sm:px-6 lg:px-8 pt-[50px] sm:pt-0 sm:items-center">
+        <div className="w-full max-w-7xl mx-auto">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -30 }}
+              transition={{ duration: 0.8 }}
+              className="text-white"
+            >
+              <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8 border border-white/20 max-w-6xl mx-auto">
+                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 lg:gap-8">
+                  {/* Text Content */}
+                  <div className="space-y-3 sm:space-y-4 md:space-y-6 flex-1 text-center lg:text-left">
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+                        {slides[currentSlide].title}
+                      </h1>
+                    </motion.div>
 
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 }}
-                      >
-                        <h2 className="text-2xl md:text-3xl font-semibold text-accent-400 mb-4">
-                          {slides[currentSlide].subtitle}
-                        </h2>
-                      </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.4 }}
+                    >
+                      <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-accent-400 mb-3 md:mb-4">
+                        {slides[currentSlide].subtitle}
+                      </h2>
+                    </motion.div>
 
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.6 }}
-                      >
-                        <p className="text-lg md:text-xl text-gray-200 leading-relaxed max-w-2xl">
-                          {slides[currentSlide].description}
-                        </p>
-                      </motion.div>
-                    </div>
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.6 }}
+                    >
+                      <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto lg:mx-0">
+                        {slides[currentSlide].description}
+                      </p>
+                    </motion.div>
+                  </div>
 
-                    {/* Action Buttons */}
-                    <div className="flex flex-row gap-4 flex-shrink-0">
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.8 }}
+                  {/* Action Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 flex-shrink-0 justify-center lg:justify-end">
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.8 }}
+                      className="w-full sm:w-auto"
+                    >
+                      <button
+                        onClick={() => handleCTAClick(slides[currentSlide].ctaLink)}
+                        className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-accent-500 hover:bg-accent-600 text-white font-semibold py-3 px-6 md:py-4 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm md:text-base"
                       >
-                        <button
-                          onClick={() => handleCTAClick(slides[currentSlide].ctaLink)}
-                          className="inline-flex items-center space-x-2 bg-accent-500 hover:bg-accent-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
-                        >
-                          <span>{slides[currentSlide].ctaText}</span>
-                          <ArrowRight className="w-5 h-5" />
-                        </button>
-                      </motion.div>
+                        <span>{slides[currentSlide].ctaText}</span>
+                        <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
+                      </button>
+                    </motion.div>
 
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1 }}
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 1 }}
+                      className="w-full sm:w-auto"
+                    >
+                      <button
+                        onClick={() => handleSecondaryClick(slides[currentSlide].secondaryLink)}
+                        className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 text-white hover:text-accent-400 font-medium py-3 px-6 md:py-4 md:px-8 border border-white/30 hover:border-accent-400 rounded-lg transition-all duration-300 text-sm md:text-base"
                       >
-                        <button
-                          onClick={() => handleSecondaryClick(slides[currentSlide].secondaryLink)}
-                          className="inline-flex items-center space-x-2 text-white hover:text-accent-400 font-medium py-4 px-8 border border-white/30 hover:border-accent-400 rounded-lg transition-all duration-300"
-                        >
-                          <span>{slides[currentSlide].secondaryText}</span>
-                        </button>
-                      </motion.div>
-                    </div>
+                        <span>{slides[currentSlide].secondaryText}</span>
+                      </button>
+                    </motion.div>
                   </div>
                 </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
 
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110"
+        className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 text-white p-2 sm:p-3 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110"
       >
-        <ChevronLeft className="w-6 h-6" />
+        <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110"
+        className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 text-white p-2 sm:p-3 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110"
       >
-        <ChevronRight className="w-6 h-6" />
+        <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
       </button>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2 sm:space-x-3">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
               index === currentSlide
                 ? "bg-accent-500 scale-125"
                 : "bg-white/50 hover:bg-white/75"
