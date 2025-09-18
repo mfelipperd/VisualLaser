@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 
 const CompanyVideo = () => {
-  // URL do vídeo do YouTube da Visual Laser com autoplay
+  // URL do vídeo do YouTube da Visual Laser com autoplay e qualidade máxima
   const videoUrl =
-    "https://www.youtube.com/embed/Dw_8kJKcsrs?autoplay=1&mute=1";
+    "https://www.youtube.com/embed/Dw_8kJKcsrs?autoplay=1&mute=1&vq=hd1080&rel=0&modestbranding=1";
 
   return (
     <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
@@ -31,11 +31,11 @@ const CompanyVideo = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-6xl mx-auto"
         >
           {/* Video Container */}
           <div className="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl">
-            <div className="aspect-video">
+            <div className="h-[40vh]">
               <iframe
                 src={videoUrl}
                 title="Vídeo Institucional Visual Laser"
