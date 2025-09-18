@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const PSVL = () => {
   return (
@@ -108,9 +109,11 @@ const PSVL = () => {
               className="relative"
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img
+                <Image
                   src="https://visuallaser.med.br/wp-content/uploads/2023/09/Screenshot-from-2023-09-21-16-02-05-e1695323161519.png"
                   alt="PSVL - Programa Solidário Visual Laser"
+                  width={600}
+                  height={400}
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-950/40 via-transparent to-transparent"></div>

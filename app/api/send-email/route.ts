@@ -13,17 +13,23 @@ type EmailData = {
 }
 
 export async function POST(request: NextRequest) {
-  console.log('API send-email chamada via App Router')
+  if (process.env.NODE_ENV === 'development') {
+    console.log('API send-email chamada via App Router')
+  }
   
   try {
-    console.log('Variáveis de ambiente:', {
-      hasResendKey: !!process.env.RESEND_API_KEY,
-      fromEmail: process.env.FROM_EMAIL,
-      destinationEmail: process.env.DESTINATION_EMAIL
-    })
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Variáveis de ambiente:', {
+        hasResendKey: !!process.env.RESEND_API_KEY,
+        fromEmail: process.env.FROM_EMAIL,
+        destinationEmail: process.env.DESTINATION_EMAIL
+      })
+    }
 
     const body: EmailData = await request.json()
-    console.log('Dados recebidos:', body)
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Dados recebidos:', body)
+    }
 
     const { name, email, phone, subject, message, source } = body
 
@@ -96,7 +102,9 @@ export async function POST(request: NextRequest) {
       </div>
     `
 
-    console.log('Enviando email...')
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Enviando email...')
+    }
 
     // Enviar email usando Resend
     const { data, error } = await resend.emails.send({
@@ -107,14 +115,18 @@ export async function POST(request: NextRequest) {
     })
 
     if (error) {
-      console.error('Erro ao enviar email:', error)
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Erro ao enviar email:', error)
+      }
       return NextResponse.json({
         message: 'Erro interno do servidor ao enviar email',
         success: false
       }, { status: 500 })
     }
 
-    console.log('Email enviado com sucesso:', data)
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Email enviado com sucesso:', data)
+    }
 
     return NextResponse.json({
       message: 'Email enviado com sucesso!',
@@ -122,7 +134,9 @@ export async function POST(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('Erro na API de envio de email:', error)
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Erro na API de envio de email:', error)
+    }
     return NextResponse.json({
       message: 'Erro interno do servidor',
       success: false

@@ -2,10 +2,10 @@ export default function SchemaMarkup() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
-    name: "Visual Laser - Clínica Oftalmológica de Excelência",
-    alternateName: "Visual Laser",
+    name: "Visual Laser - Clínica Oftalmológica em Belém",
+    alternateName: ["Visual Laser", "Clínica Oftalmológica Belém", "Oftalmologista Belém", "Óculos Belém"],
     description:
-      "🚀 Transforme sua visão com a Visual Laser! Especialistas em cirurgias refrativas, catarata e tratamentos oculares com tecnologia de última geração. ✅ Resultados comprovados. 📍 Belém, Pará.",
+      "👁️ Clínica de Oftalmologia em Belém! Oftalmologistas especializados, consultas, exames, cirurgias e óculos. ✅ Melhor clínica oftalmológica de Belém-PA. 📍 Nazaré, Belém. Agende sua consulta!",
     url: "https://visuallaser.med.br",
     telephone: ["+559132254422", "+5591988968201"],
     email: "marketing@visuallaser.com.br",
@@ -19,15 +19,40 @@ export default function SchemaMarkup() {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: -1.4557,
-      longitude: -48.4902,
+      latitude: -1.4499849,
+      longitude: -48.4807296,
     },
     openingHours: ["Mo-Fr 08:00-18:00", "Sa 08:00-12:00"],
     medicalSpecialty: "Ophthalmology",
     availableService: [
       {
         "@type": "MedicalProcedure",
-        name: "Cirurgia Refrativa",
+        name: "Consulta Oftalmológica em Belém",
+        description: "Consulta com oftalmologista especializado em Belém",
+        procedureType: "Medical Consultation",
+        bodyLocation: "Eye",
+        preparation: "Agendamento prévio",
+        followup: "Retorno conforme orientação médica",
+      },
+      {
+        "@type": "MedicalProcedure",
+        name: "Exame de Vista em Belém",
+        description: "Exame completo de refração para prescrição de óculos",
+        procedureType: "Eye Examination",
+        bodyLocation: "Eye",
+        preparation: "Agendamento prévio",
+      },
+      {
+        "@type": "MedicalProcedure",
+        name: "Prescrição de Óculos em Belém",
+        description: "Prescrição e venda de óculos em Belém",
+        procedureType: "Optical Service",
+        bodyLocation: "Eye",
+        preparation: "Exame de refração",
+      },
+      {
+        "@type": "MedicalProcedure",
+        name: "Cirurgia Refrativa em Belém",
         description: "Correção de miopia, hipermetropia e astigmatismo com laser",
         procedureType: "Laser Eye Surgery",
         bodyLocation: "Eye",
@@ -36,19 +61,12 @@ export default function SchemaMarkup() {
       },
       {
         "@type": "MedicalProcedure",
-        name: "Cirurgia de Catarata",
+        name: "Cirurgia de Catarata em Belém",
         description: "Remoção da catarata com implante de lente intraocular",
         procedureType: "Cataract Surgery",
         bodyLocation: "Eye",
         preparation: "Exames pré-operatórios e orientações médicas",
         followup: "Consultas de acompanhamento pós-operatório",
-      },
-      {
-        "@type": "MedicalProcedure",
-        name: "Exame de Refração",
-        description: "Para prescrição de óculos e lentes de contato",
-        procedureType: "Eye Examination",
-        bodyLocation: "Eye",
       },
       {
         "@type": "MedicalProcedure",
@@ -191,14 +209,67 @@ export default function SchemaMarkup() {
       "@type": "GeoCircle",
       geoMidpoint: {
         "@type": "GeoCoordinates",
-        latitude: -1.4557,
-        longitude: -48.4902,
+        latitude: -1.4499849,
+        longitude: -48.4807296,
       },
       geoRadius: "50000",
     },
-    paymentAccepted: ["Cash", "Credit Card", "Debit Card", "Bank Transfer"],
+    paymentAccepted: ["Cash", "Credit Card", "Debit Card", "Bank Transfer", "PIX", "Boleto"],
     currenciesAccepted: "BRL",
     priceRange: "$$",
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "Medical License",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "Conselho Federal de Medicina",
+        },
+      },
+    ],
+    knowsAbout: [
+      "Cirurgia Refrativa",
+      "Cirurgia de Catarata",
+      "Oftalmologia Pediátrica",
+      "Retina",
+      "Glaucoma",
+      "Plástica Ocular",
+      "Oncologia Ocular",
+      "Exames Oftalmológicos",
+    ],
+    makesOffer: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "MedicalProcedure",
+          name: "Consulta Oftalmológica",
+        },
+        price: "150.00",
+        priceCurrency: "BRL",
+        availability: "InStock",
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "MedicalProcedure",
+          name: "Cirurgia Refrativa",
+        },
+        price: "3000.00",
+        priceCurrency: "BRL",
+        availability: "InStock",
+      },
+    ],
+    potentialAction: [
+      {
+        "@type": "ScheduleAction",
+        name: "Agendar Consulta",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: "https://visuallaser.med.br/agendamento",
+          actionPlatform: ["https://schema.org/DesktopWebPlatform", "https://schema.org/MobileWebPlatform"],
+        },
+      },
+    ],
   };
 
   return (

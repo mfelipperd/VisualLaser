@@ -7,24 +7,35 @@ import CookieConsent from "@/components/CookieConsent";
 import BlurModal from "@/components/BlurModal";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Footer from "@/components/Footer";
+import PerformanceOptimizer from "@/components/PerformanceOptimizer";
 
 export const metadata: Metadata = {
-  title: "Visual Laser - Clínica Oftalmológica de Excelência em Belém",
+  title: "Clínica Oftalmológica em Belém | Oftalmologista | Óculos | Visual Laser",
   description:
-    "🚀 Transforme sua visão com a Visual Laser! Especialistas em cirurgias refrativas, catarata e tratamentos oculares com tecnologia de última geração. ✅ Resultados comprovados. 📍 Belém, Pará. Agende sua consulta!",
+    "👁️ Clínica de Oftalmologia em Belém! Oftalmologistas especializados, consultas, exames, cirurgias e óculos. ✅ Melhor clínica oftalmológica de Belém. 📍 Nazaré, Belém-PA. Agende sua consulta!",
   keywords: [
-    "oftalmologia",
-    "cirurgia refrativa",
-    "catarata",
-    "laser",
     "clínica oftalmológica",
-    "Belém",
-    "Pará",
+    "clínica oftalmológica belém",
+    "clínica de oftalmologia",
+    "clínica de oftalmologia belém",
+    "oftalmologia belém",
+    "oftalmologista belém",
+    "oftalmologista em belém",
+    "oftalmologista perto de mim",
+    "óculos belém",
+    "óculos em belém",
+    "ótica belém",
+    "exame de vista belém",
+    "consulta oftalmológica belém",
+    "cirurgia de olhos belém",
+    "laser nos olhos belém",
+    "catarata belém",
+    "cirurgia refrativa belém",
     "Visual Laser",
-    "oftalmologista",
-    "tratamento ocular",
-    "cirurgia de olhos",
-    "clínica de olhos",
+    "oftalmologia pará",
+    "clínica de olhos belém",
+    "médico dos olhos belém",
+    "especialista em olhos belém",
   ],
   authors: [{ name: "Visual Laser" }],
   creator: "Visual Laser",
@@ -39,11 +50,11 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "👁️ Visual Laser - Transforme Sua Visão com Excelência!",
+    title: "👁️ Clínica Oftalmológica em Belém | Oftalmologista | Óculos | Visual Laser",
     description:
-      "🚀 Clínica oftalmológica de referência em Belém! Especialistas em cirurgias refrativas, catarata e tratamentos oculares com tecnologia de última geração. ✅ Resultados comprovados. 📍 Agende sua consulta hoje mesmo!",
+      "👁️ Melhor Clínica de Oftalmologia em Belém! Oftalmologistas especializados, consultas, exames, cirurgias e óculos. ✅ Clínica oftalmológica de referência em Belém-PA. 📍 Nazaré, Belém. Agende sua consulta!",
     url: "https://visuallaser.med.br",
-    siteName: "Visual Laser - Clínica Oftalmológica",
+    siteName: "Visual Laser - Clínica Oftalmológica em Belém",
     images: [
       {
         url: "/images/social-preview.jpg",
@@ -90,7 +101,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "verificado-via-dns-txt",
   },
   icons: {
     icon: "/favicon.png",
@@ -105,6 +116,11 @@ export const metadata: Metadata = {
     "apple-mobile-web-app-title": "Visual Laser",
     "application-name": "Visual Laser",
     "msapplication-config": "/browserconfig.xml",
+    "yandex-verification": "your-yandex-verification-code",
+    "msvalidate.01": "your-bing-verification-code",
+    "viewport": "width=device-width, initial-scale=1, maximum-scale=5",
+    "mobile-web-app-capable": "yes",
+    "format-detection": "telephone=no",
   },
 };
 
@@ -126,10 +142,22 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" as="style" />
+        <link rel="preload" href="/images/hero-1.jpg" as="image" type="image/jpeg" />
+        <link rel="preload" href="/images/hero-2.jpg" as="image" type="image/jpeg" />
+        <link rel="preload" href="/images/hero-3.jpg" as="image" type="image/jpeg" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       </head>
       <body className="font-poppins antialiased">
         <SchemaMarkup />
         <GoogleAnalytics />
+        <PerformanceOptimizer />
         <Header />
         <main className="mt-0 md:mt-20 pb-20 md:pb-0">{children}</main>
         <Footer />

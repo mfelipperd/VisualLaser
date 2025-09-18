@@ -73,7 +73,9 @@ const ContactForm = () => {
         }, 3000);
       }
     } catch (error) {
-      console.error('Erro ao enviar formulário:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Erro ao enviar formulário:', error);
+      }
       setSubmitStatus("error");
       setTimeout(() => {
         setSubmitStatus("idle");

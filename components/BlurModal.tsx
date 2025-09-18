@@ -93,7 +93,9 @@ const BlurModal = () => {
         const result = await response.json();
 
         if (!result.success) {
-          console.error('Erro ao enviar email:', result.message);
+          if (process.env.NODE_ENV === 'development') {
+            console.error('Erro ao enviar email:', result.message);
+          }
           // Mesmo com erro, salvar localmente para não perder o lead
         }
 
@@ -109,7 +111,9 @@ const BlurModal = () => {
           setIsVisible(false);
         }, 2000);
       } catch (error) {
-        console.error('Erro ao enviar dados:', error);
+        if (process.env.NODE_ENV === 'development') {
+          console.error('Erro ao enviar dados:', error);
+        }
         // Mesmo com erro, salvar localmente para não perder o lead
         localStorage.setItem("userContact", JSON.stringify(formData));
         localStorage.setItem("formSubmitted", "true");

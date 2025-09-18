@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import AppointmentModal from "./AppointmentModal";
@@ -87,7 +88,7 @@ const Hero = () => {
   useEffect(() => {
     // Pré-carregar todas as imagens
     slides.forEach((slide) => {
-      const img = new Image();
+      const img = new window.Image();
       img.src = slide.image;
       img.onload = () => {
         setImagesLoaded((prev) => new Set(prev).add(slide.image));
@@ -128,11 +129,12 @@ const Hero = () => {
             transition={{ duration: 1 }}
             className="absolute inset-0"
           >
-            <img
+            <Image
               src={slides[currentSlide].image}
               alt={slides[currentSlide].title}
-              className="w-full h-full object-cover"
-              loading="eager"
+              fill
+              className="object-cover"
+              priority
               sizes="100vw"
               onLoad={(e) => {
                 // Marcar imagem como carregada

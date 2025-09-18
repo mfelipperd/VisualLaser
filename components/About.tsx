@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Users, Award, Clock, Heart } from "lucide-react";
 
 const About = () => {
@@ -100,10 +101,11 @@ const About = () => {
               className="relative"
             >
               <div className="relative h-full min-h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-                <img
+                <Image
                   src="https://visuallaser.med.br/wp-content/uploads/2024/07/DSC7103-2-2.jpg"
                   alt="Clínica Visual Laser"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-950/60 via-transparent to-transparent"></div>
 

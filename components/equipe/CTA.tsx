@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Calendar, MessageCircle, Users } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
 import AppointmentModal from "../AppointmentModal";
 
