@@ -22,7 +22,7 @@ export default function SchemaMarkup() {
       latitude: -1.4499849,
       longitude: -48.4807296,
     },
-    openingHours: ["Mo-Fr 08:00-18:00", "Sa 08:00-12:00"],
+    openingHours: ["Mo-Th 08:00-18:00", "Fr 08:00-17:00"],
     medicalSpecialty: "Ophthalmology",
     availableService: [
       {

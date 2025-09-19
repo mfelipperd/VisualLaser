@@ -119,9 +119,9 @@ const ContactCTA = () => {
 
               <div className="text-center">
                 <p className="text-sm text-gray-400 mb-3">
-                  Atendimento de Segunda a Sexta: 8h às 18h
+                  Atendimento de Segunda a Quinta: 08h às 18h
                 </p>
-                <p className="text-sm text-gray-400">Sábado: 8h às 12h</p>
+                <p className="text-sm text-gray-400">Sexta: 08h às 17h</p>
               </div>
             </motion.div>
           </div>

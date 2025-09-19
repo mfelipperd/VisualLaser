@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     type: "website",
     countryName: "Brasil",
     emails: ["contato@visuallaser.med.br"],
-    phoneNumbers: ["+55 91 99999-9999"],
+    phoneNumbers: ["+55 91 3225-4422"],
   },
   twitter: {
     card: "summary_large_image",

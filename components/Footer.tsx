@@ -194,7 +194,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-primary-200 text-sm">Telefone</p>
-                  <p className="font-semibold">(91) 3241-0000</p>
+                  <p className="font-semibold">(91) 3225-4422</p>
                 </div>
               </div>
 
@@ -216,7 +216,8 @@ const Footer = () => {
                   <p className="text-primary-200 text-sm">
                     Horário de Funcionamento
                   </p>
-                  <p className="font-semibold">Segunda a Sexta: 8h às 18h</p>
+                  <p className="font-semibold">Segunda a Quinta: 08h às 18h</p>
+                  <p className="font-semibold">Sexta: 08h às 17h</p>
                 </div>
               </div>
             </div>

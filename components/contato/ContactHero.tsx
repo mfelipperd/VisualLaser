@@ -8,7 +8,7 @@ const ContactHero = () => {
     {
       icon: Phone,
       title: "Telefones",
-      info: ["(91) 3241-0000", "(91) 98896-8201"],
+      info: ["(91) 3225-4422", "(91) 98896-8201"],
       color: "from-blue-500 to-cyan-500",
     },
     {
@@ -26,7 +26,7 @@ const ContactHero = () => {
     {
       icon: Clock,
       title: "Horário de Funcionamento",
-      info: ["Segunda a Sexta: 8h às 18h", "Sábado: 8h às 12h"],
+      info: ["Segunda a Quinta: 08h às 18h", "Sexta: 08h às 17h"],
       color: "from-orange-500 to-red-500",
     },
   ];

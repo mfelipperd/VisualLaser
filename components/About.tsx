@@ -22,7 +22,7 @@ const About = () => {
       icon: Clock,
       number: "Seg-Sex",
       label: "Horário de Funcionamento",
-      description: "Segunda a quinta: 08h às 18h | Sexta: 08h às 17h",
+      description: "Segunda a Quinta: 08h às 18h | Sexta: 08h às 17h",
     },
     {
       icon: Heart,

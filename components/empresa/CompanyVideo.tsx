@@ -9,7 +9,7 @@ const CompanyVideo = () => {
 
   return (
     <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
-      <div className="container mx-auto container-padding">
+      <div className="w-full px-2 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -31,19 +31,18 @@ const CompanyVideo = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-6xl mx-auto"
+          className="w-full max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16"
         >
           {/* Video Container */}
-          <div className="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl">
-            <div className="h-[40vh]">
+          <div className="bg-gray-900 rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
               <iframe
                 src={videoUrl}
                 title="Vídeo Institucional Visual Laser"
-                className="w-full h-full"
+                className="absolute top-0 left-0 w-full h-full"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-
               />
             </div>
           </div>

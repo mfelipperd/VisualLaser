@@ -167,37 +167,37 @@ const BlurModal = () => {
         <div className="absolute inset-0 backdrop-blur-sm" />
 
         {/* Conteúdo da modal */}
-        <div className="relative h-full flex items-center justify-center p-2 sm:p-4 overflow-y-auto">
+        <div className="relative h-full flex items-center justify-center p-1 xs:p-2 sm:p-4 overflow-y-auto">
           <motion.div
             initial={{ scale: 0.8, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.8, opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-sm sm:max-w-md mx-auto my-2 sm:my-4 overflow-hidden max-h-[90vh] sm:max-h-[85vh]"
+            className="bg-white rounded-xl xs:rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-xs xs:max-w-sm sm:max-w-md mx-auto my-1 xs:my-2 sm:my-4 overflow-hidden max-h-[95vh] xs:max-h-[90vh] sm:max-h-[85vh] flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white p-4 sm:p-6 text-center relative">
+            <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white p-3 xs:p-4 sm:p-6 text-center relative flex-shrink-0">
               <button
                 onClick={closeModal}
-                className="absolute top-2 right-2 sm:top-4 sm:right-4 p-2 hover:bg-white/20 rounded-full transition-colors duration-200 z-10 min-w-[44px] min-h-[44px] flex items-center justify-center touch-manipulation"
+                className="absolute top-1 right-1 xs:top-2 xs:right-2 sm:top-4 sm:right-4 p-1.5 xs:p-2 hover:bg-white/20 rounded-full transition-colors duration-200 z-10 min-w-[40px] min-h-[40px] xs:min-w-[44px] xs:min-h-[44px] flex items-center justify-center touch-manipulation"
                 aria-label="Fechar modal"
               >
-                <X className="w-6 h-6 sm:w-5 sm:h-5" />
+                <X className="w-5 h-5 xs:w-6 xs:h-6 sm:w-5 sm:h-5" />
               </button>
 
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                <Eye className="w-8 h-8 sm:w-10 sm:h-10" />
+              <div className="w-12 h-12 xs:w-16 xs:h-16 sm:w-20 sm:h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2 xs:mb-3 sm:mb-4">
+                <Eye className="w-6 h-6 xs:w-8 xs:h-8 sm:w-10 sm:h-10" />
               </div>
 
-              <h2 className="text-xl sm:text-2xl font-bold mb-2">
+              <h2 className="text-lg xs:text-xl sm:text-2xl font-bold mb-1 xs:mb-2">
                 {isSubmitted
                   ? "Obrigado!"
                   : "Sua Visão Merece Cuidado Especial"}
               </h2>
 
               {!isSubmitted && (
-                <p className="text-primary-100 text-xs sm:text-sm">
+                <p className="text-primary-100 text-xs xs:text-xs sm:text-sm leading-relaxed">
                   Deixe seus dados para receber informações sobre como a Visual
                   Laser pode ajudar sua visão, ou clique em &quot;Ver Melhor&quot; para
                   continuar navegando
@@ -206,14 +206,14 @@ const BlurModal = () => {
             </div>
 
             {/* Body */}
-            <div className="p-4 sm:p-6 overflow-y-auto">
+            <div className="p-3 xs:p-4 sm:p-6 overflow-y-auto flex-1 min-h-0">
               {!isSubmitted ? (
                 <form
                   onSubmit={handleSubmit}
-                  className="space-y-3 sm:space-y-4"
+                  className="space-y-2 xs:space-y-3 sm:space-y-4"
                 >
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-xs xs:text-sm font-medium text-gray-700 mb-1 xs:mb-2">
                       Nome Completo{" "}
                       <span className="text-gray-500 font-normal">
                         (opcional)
@@ -225,48 +225,48 @@ const BlurModal = () => {
                       onChange={(e) =>
                         setFormData({ ...formData, name: e.target.value })
                       }
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base text-gray-900 placeholder-gray-500"
+                      className="w-full px-2.5 xs:px-3 sm:px-4 py-2 xs:py-2.5 sm:py-3 border border-gray-300 rounded-lg xs:rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 text-xs xs:text-sm sm:text-base text-gray-900 placeholder-gray-500 min-h-[40px] xs:min-h-[44px]"
                       placeholder="Digite seu nome completo (opcional)"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-xs xs:text-sm font-medium text-gray-700 mb-1 xs:mb-2">
                       Email{" "}
                       <span className="text-gray-500 font-normal">
                         (opcional)
                       </span>
                     </label>
                     <div className="relative">
-                      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
+                      <Mail className="absolute left-2.5 xs:left-3 sm:left-3 top-1/2 transform -translate-y-1/2 w-3.5 h-3.5 xs:w-4 xs:h-4 sm:w-5 sm:h-5 text-gray-400" />
                       <input
                         type="email"
                         value={formData.email}
                         onChange={(e) =>
                           setFormData({ ...formData, email: e.target.value })
                         }
-                        className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base text-gray-900 placeholder-gray-500"
+                        className="w-full pl-8 xs:pl-9 sm:pl-10 pr-2.5 xs:pr-3 sm:pr-4 py-2 xs:py-2.5 sm:py-3 border border-gray-300 rounded-lg xs:rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 text-xs xs:text-sm sm:text-base text-gray-900 placeholder-gray-500 min-h-[40px] xs:min-h-[44px]"
                         placeholder="seu@email.com (opcional)"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-xs xs:text-sm font-medium text-gray-700 mb-1 xs:mb-2">
                       Telefone{" "}
                       <span className="text-gray-500 font-normal">
                         (opcional)
                       </span>
                     </label>
                     <div className="relative">
-                      <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
+                      <Phone className="absolute left-2.5 xs:left-3 sm:left-3 top-1/2 transform -translate-y-1/2 w-3.5 h-3.5 xs:w-4 xs:h-4 sm:w-5 sm:h-5 text-gray-400" />
                       <input
                         type="tel"
                         value={formData.phone}
                         onChange={(e) =>
                           setFormData({ ...formData, phone: e.target.value })
                         }
-                        className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base text-gray-900 placeholder-gray-500"
+                        className="w-full pl-8 xs:pl-9 sm:pl-10 pr-2.5 xs:pr-3 sm:pr-4 py-2 xs:py-2.5 sm:py-3 border border-gray-300 rounded-lg xs:rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 text-xs xs:text-sm sm:text-base text-gray-900 placeholder-gray-500 min-h-[40px] xs:min-h-[44px]"
                         placeholder="(91) 99999-9999 (opcional)"
                       />
                     </div>
@@ -275,22 +275,22 @@ const BlurModal = () => {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full bg-primary-600 text-white py-2.5 sm:py-3 px-4 sm:px-6 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base min-h-[44px] touch-manipulation"
+                    className="w-full bg-primary-600 text-white py-2 xs:py-2.5 sm:py-3 px-3 xs:px-4 sm:px-6 rounded-lg xs:rounded-xl font-semibold hover:bg-primary-700 transition-all duration-200 flex items-center justify-center space-x-1.5 xs:space-x-2 disabled:opacity-50 disabled:cursor-not-allowed text-xs xs:text-sm sm:text-base min-h-[40px] xs:min-h-[44px] touch-manipulation"
                   >
                     {isLoading ? (
                       <>
-                        <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        <div className="w-3.5 h-3.5 xs:w-4 xs:h-4 sm:w-5 sm:h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
                         <span>Enviando...</span>
                       </>
                     ) : (
                       <>
                         <span>Ver Melhor</span>
-                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                        <ArrowRight className="w-3.5 h-3.5 xs:w-4 xs:h-4 sm:w-5 sm:h-5" />
                       </>
                     )}
                   </button>
 
-                  <p className="text-xs text-gray-500 text-center">
+                  <p className="text-xs text-gray-500 text-center leading-relaxed">
                     Ao enviar, você concorda em receber informações sobre nossos
                     serviços.
                     <br />
@@ -303,14 +303,14 @@ const BlurModal = () => {
                   </p>
                 </form>
               ) : (
-                <div className="text-center py-6 sm:py-8">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-7 h-7 sm:w-8 sm:h-8 text-green-600" />
+                <div className="text-center py-4 xs:py-6 sm:py-8">
+                  <div className="w-12 h-12 xs:w-14 xs:h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 xs:mb-4">
+                    <CheckCircle className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 text-green-600" />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-base xs:text-lg sm:text-xl font-semibold text-gray-900 mb-1 xs:mb-2">
                     Obrigado pelos seus dados!
                   </h3>
-                  <p className="text-gray-600 text-sm sm:text-base">
+                  <p className="text-gray-600 text-xs xs:text-sm sm:text-base leading-relaxed">
                     Nossa equipe entrará em contato em breve para ajudar sua
                     visão. Agora você pode navegar pelo site normalmente.
                   </p>

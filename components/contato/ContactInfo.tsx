@@ -24,7 +24,7 @@ const ContactInfo = () => {
       contacts: [
         {
           label: "Telefone Principal",
-          value: "(91) 3241-0000",
+          value: "(91) 3225-4422",
           type: "phone",
         },
         {
@@ -77,13 +77,13 @@ const ContactInfo = () => {
       description: "Confira nossos horários de atendimento",
       contacts: [
         {
-          label: "Segunda a Sexta",
-          value: "8h às 18h",
+          label: "Segunda a Quinta",
+          value: "08h às 18h",
           type: "time",
         },
         {
-          label: "Sábado",
-          value: "8h às 12h",
+          label: "Sexta",
+          value: "08h às 17h",
           type: "time",
         },
       ],

@@ -115,15 +115,15 @@ const LocationMap = () => {
                   </h3>
                   <div className="space-y-2 text-gray-600">
                     <div className="flex justify-between items-center">
-                      <span className="text-lg">Segunda a Sexta:</span>
-                      <span className="text-lg font-semibold">8h às 18h</span>
+                      <span className="text-lg">Segunda a Quinta:</span>
+                      <span className="text-lg font-semibold">08h às 18h</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-lg">Sábado:</span>
-                      <span className="text-lg font-semibold">8h às 12h</span>
+                      <span className="text-lg">Sexta:</span>
+                      <span className="text-lg font-semibold">08h às 17h</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-lg">Domingo:</span>
+                      <span className="text-lg">Sábado e Domingo:</span>
                       <span className="text-lg font-semibold text-red-500">
                         Fechado
                       </span>

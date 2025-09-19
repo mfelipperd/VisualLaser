@@ -27,7 +27,7 @@ const CompanyHero = () => {
       icon: Heart,
       value: "Seg-Sex",
       label: "Horário de Funcionamento",
-      description: "08h às 18h | Sexta até 17h",
+      description: "Segunda a Quinta: 08h às 18h | Sexta: 08h às 17h",
     },
   ];
 

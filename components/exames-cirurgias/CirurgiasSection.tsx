@@ -25,7 +25,6 @@ const CirurgiasSection = () => {
       icon: Target,
       items: [
         "Ceratectomia fotoablativa com excimer laser (Cirurgia refrativa - PRK)",
-        "Femto-LASIK (LASIK todo a laser)",
         "Trans-PRK (PRK todo a laser)",
         "PRK Topoguiado (PRK para irregularidades)",
         "Tratamento de aberrações corneanas",

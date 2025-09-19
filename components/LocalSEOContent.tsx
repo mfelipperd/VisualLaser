@@ -83,8 +83,8 @@ export default function LocalSEOContent() {
               </div>
               <div>
                 <h4 className="font-semibold mb-2">Horário de Funcionamento:</h4>
-                <p>Segunda a Sexta: 08:00 às 18:00</p>
-                <p>Sábado: 08:00 às 12:00</p>
+                <p>Segunda a Quinta: 08:00 às 18:00</p>
+                <p>Sexta: 08:00 às 17:00</p>
               </div>
             </div>
           </div>

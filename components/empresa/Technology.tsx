@@ -29,7 +29,7 @@ const Technology = () => {
     },
     {
       icon: Shield,
-      title: "Aberraômetro Ocular de Frente de Onda Total",
+      title: "Aberrômetro Ocular de Frente de Onda Total",
       description:
         "Avalia e demonstra de forma objetiva como o paciente enxerga, baseado no comportamento da luz da córnea até a retina.",
       features: [
@@ -52,7 +52,6 @@ const Technology = () => {
   ];
 
   const partnerships = [
-    "Femto-LASIK (LASIK todo a laser)",
     "Trans-PRK (PRK todo a laser)",
     "PRK Topoguiado (PRK para irregularidades)",
     "Tratamento de aberrações corneanas",

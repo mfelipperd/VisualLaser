@@ -8,7 +8,7 @@
 - **Endereço**: Tv. 14 de Março, 1622 - Nazaré, Belém - PA, 66055-490
 - **Telefone**: (91) 3225-4422 / (91) 98896-8201
 - **Website**: https://visuallaser.med.br
-- **Horário**: Seg-Sex 08:00-18:00, Sáb 08:00-12:00
+- **Horário**: Seg-Qui 08:00-18:00, Sex 08:00-17:00
 
 ### 2. Palavras-chave para Categorias Secundárias
 - Clínica Oftalmológica
@@ -90,7 +90,7 @@ R: Sim! Fazemos prescrição de óculos com exame de refração completo em noss
 R: Sim! Fazemos cirurgias oftalmológicas incluindo refrativa e catarata em Belém.
 
 **P: Qual o horário de funcionamento?**
-R: Segunda a Sexta das 08:00 às 18:00 e Sábado das 08:00 às 12:00.
+R: Segunda a Quinta das 08:00 às 18:00 e Sexta das 08:00 às 17:00.
 
 **P: Vocês atendem convênios?**
 R: Sim! Atendemos diversos convênios médicos.
