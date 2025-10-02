@@ -1,7 +1,7 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 
 const TrackingPixels = () => {
   // Pixels de rastreamento das variáveis de ambiente
@@ -12,7 +12,7 @@ const TrackingPixels = () => {
   const hotjarId = process.env.NEXT_PUBLIC_HOTJAR_ID;
 
   // Função para disparar eventos de conversão
-  const trackConversion = (eventName: string, value?: number) => {
+  const trackConversion = useCallback((eventName: string, value?: number) => {
     // Facebook Pixel
     if (facebookPixelId && typeof window !== 'undefined' && window.fbq) {
       window.fbq('track', eventName, value ? { value: value, currency: 'BRL' } : {});
@@ -39,14 +39,14 @@ const TrackingPixels = () => {
     if (linkedinPixelId && typeof window !== 'undefined' && window.lintrk) {
       window.lintrk('track', { conversion_id: linkedinPixelId });
     }
-  };
+  }, [facebookPixelId, googleAdsPixelId, tiktokPixelId, linkedinPixelId]);
 
   // Expor função globalmente para uso em outros componentes
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.trackConversion = trackConversion;
     }
-  }, []);
+  }, [trackConversion]);
 
   return (
     <>

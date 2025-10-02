@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Eye, Mail, Phone, X, CheckCircle, ArrowRight } from "lucide-react";
 import { UserContact } from "@/types";
@@ -49,22 +49,6 @@ const BlurModal = () => {
     };
   }, [isVisible]);
 
-  // Adicionar listener para tecla ESC
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && isVisible) {
-        closeModal();
-      }
-    };
-
-    if (isVisible) {
-      document.addEventListener("keydown", handleEscape);
-    }
-
-    return () => {
-      document.removeEventListener("keydown", handleEscape);
-    };
-  }, [isVisible]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -131,7 +115,7 @@ const BlurModal = () => {
     }
   };
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     // Verificar se pelo menos um campo foi preenchido
     const hasData =
       formData.name.trim() || formData.email.trim() || formData.phone.trim();
@@ -143,7 +127,24 @@ const BlurModal = () => {
     }
 
     setIsVisible(false);
-  };
+  }, [formData]);
+
+  // Adicionar listener para tecla ESC
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isVisible) {
+        closeModal();
+      }
+    };
+
+    if (isVisible) {
+      document.addEventListener("keydown", handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isVisible, closeModal]);
 
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {

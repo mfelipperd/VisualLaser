@@ -79,9 +79,9 @@ const Footer = () => {
   ];
 
   const services = [
-    { name: "Exames Oftalmológicos", href: "/servicos" },
-    { name: "Cirurgias Refrativas", href: "/servicos" },
-    { name: "Tratamento de Catarata", href: "/servicos" },
+    { name: "Exames Oftalmológicos", href: "/servicos/exames-oftalmologicos" },
+    { name: "Cirurgias Refrativas", href: "/servicos/cirurgias-refrativas" },
+    { name: "Tratamento de Catarata", href: "/servicos/tratamento-catarata" },
     { name: "PSVL", href: "/psvl" },
   ];
 
