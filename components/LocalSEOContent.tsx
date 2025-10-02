@@ -1,14 +1,14 @@
 export default function LocalSEOContent() {
   return (
-    <div className="bg-gray-50 py-16">
+    <div className="sr-only">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
             Clínica Oftalmológica em Belém - Visual Laser
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            A melhor clínica oftalmológica de Belém, especializada em consultas, exames, 
-            cirurgias e prescrição de óculos. Oftalmologistas experientes e tecnologia de ponta.
+            A melhor clínica oftalmológica de Belém, especializada em consultas, exames e 
+            cirurgias oftalmológicas. Oftalmologistas experientes e tecnologia de ponta.
           </p>
         </div>
 
@@ -33,17 +33,17 @@ export default function LocalSEOContent() {
           {/* Óculos em Belém */}
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold text-primary-900 mb-3">
-              Óculos em Belém
+              Prescrição de Óculos em Belém
             </h3>
             <p className="text-gray-600 mb-4">
-              Prescrição e venda de óculos em Belém. Exame de refração completo para 
-              prescrição precisa de lentes e armações de qualidade.
+              Exame de refração completo para prescrição precisa de lentes. Trabalhamos 
+              com óticas parceiras para aquisição de óculos em Belém.
             </p>
             <ul className="text-sm text-gray-600 space-y-1">
               <li>• Exame de refração completo</li>
               <li>• Prescrição de óculos</li>
-              <li>• Lentes de qualidade</li>
-              <li>• Armações modernas</li>
+              <li>• Indicação para óticas parceiras</li>
+              <li>• Orientações sobre lentes adequadas</li>
             </ul>
           </div>
 
@@ -54,7 +54,8 @@ export default function LocalSEOContent() {
             </h3>
             <p className="text-gray-600 mb-4">
               Clínica oftalmológica completa em Belém com todos os serviços: consultas, 
-              exames, cirurgias e prescrição de óculos. Tecnologia de última geração.
+              exames, cirurgias e prescrição de óculos. Tecnologia de última geração. 
+              Trabalhamos com óticas parceiras.
             </p>
             <ul className="text-sm text-gray-600 space-y-1">
               <li>• Consultas especializadas</li>
