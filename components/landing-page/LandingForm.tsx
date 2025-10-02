@@ -155,7 +155,7 @@ Fonte: Landing Page - Consulta Gratuita
         throw new Error(result.message || 'Erro ao enviar solicitação');
       }
     } catch (error) {
-      console.error('Erro ao enviar formulário:', error);
+      // Erro ao enviar formulário (removido para produção)
       alert('Erro ao enviar solicitação. Tente novamente ou entre em contato pelo WhatsApp.');
     } finally {
       setIsLoading(false);
