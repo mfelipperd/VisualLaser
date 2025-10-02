@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Heart, Users, CheckCircle, Clock, Star, ArrowRight, Shield } from "lucide-react";
+import { Heart, Users, CheckCircle, Star, ArrowRight, Shield } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -310,8 +310,8 @@ export default function PSVLPage() {
                     </div>
                   </div>
                   <p className="text-gray-600 mb-4 italic">
-                    "O PSVL me permitiu fazer minha consulta oftalmológica quando eu não tinha condições. 
-                    A qualidade do atendimento foi excepcional e o preço acessível."
+                    &ldquo;O PSVL me permitiu fazer minha consulta oftalmológica quando eu não tinha condições. 
+                    A qualidade do atendimento foi excepcional e o preço acessível.&rdquo;
                   </p>
                   <p className="font-semibold text-gray-900">- Maria Silva</p>
                 </div>
@@ -325,8 +325,8 @@ export default function PSVLPage() {
                     </div>
                   </div>
                   <p className="text-gray-600 mb-4 italic">
-                    "Excelente programa! Consegui fazer minha consulta oftalmológica com preço 
-                    justo. A equipe é muito atenciosa e profissional."
+                    &ldquo;Excelente programa! Consegui fazer minha consulta oftalmológica com preço 
+                    justo. A equipe é muito atenciosa e profissional.&rdquo;
                   </p>
                   <p className="font-semibold text-gray-900">- João Santos</p>
                 </div>

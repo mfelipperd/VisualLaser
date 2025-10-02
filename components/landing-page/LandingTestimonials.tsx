@@ -157,7 +157,7 @@ const LandingTestimonials = () => {
 
                   {/* Testimonial Text */}
                   <blockquote className="text-gray-700 leading-relaxed mb-6 flex-1">
-                    "{testimonial.text}"
+                    &ldquo;{testimonial.text}&rdquo;
                   </blockquote>
 
                   {/* Author Info */}
