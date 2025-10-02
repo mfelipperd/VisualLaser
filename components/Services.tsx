@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Eye, Activity, Microscope, Stethoscope } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
 import AppointmentModal from "./AppointmentModal";
 
 const Services = () => {
@@ -22,10 +23,11 @@ const Services = () => {
         "Angiografia Fluoresceínica",
       ],
       color: "from-primary-950 to-primary-800",
+      link: "/servicos/exames-oftalmologicos",
     },
     {
       icon: Activity,
-      title: "Cirurgias Oftalmológicas",
+      title: "Cirurgias Refrativas",
       description:
         "Especialistas em cirurgias refrativas, catarata e outros procedimentos oftalmológicos com tecnologia avançada.",
       features: [
@@ -37,21 +39,23 @@ const Services = () => {
         "Cirurgias da Retina",
       ],
       color: "from-secondary-950 to-accent-500",
+      link: "/servicos/cirurgias-refrativas",
     },
     {
       icon: Microscope,
-      title: "Tratamentos Especializados",
+      title: "Tratamento de Catarata",
       description:
-        "Oferecemos tratamentos especializados para diversas condições oftalmológicas com protocolos personalizados.",
+        "Oferecemos tratamentos especializados para catarata com as técnicas mais modernas e lentes de alta qualidade.",
       features: [
-        "Tratamento de Glaucoma",
-        "Terapia Fotodinâmica",
-        "Injeções Intravítreas",
-        "Tratamento de Retinopatia",
-        "Terapia com Laser",
-        "Tratamento de Ceratocone",
+        "Facoemulsificação",
+        "Lentes Intraoculares Premium",
+        "Cirurgia de Catarata",
+        "Tratamento Personalizado",
+        "Recuperação Rápida",
+        "Tecnologia Avançada",
       ],
       color: "from-accent-500 to-accent-600",
+      link: "/servicos/tratamento-catarata",
     },
     {
       icon: Stethoscope,
@@ -67,6 +71,7 @@ const Services = () => {
         "Oncologia Ocular",
       ],
       color: "from-primary-800 to-primary-600",
+      link: "/servicos",
     },
   ];
 
@@ -137,9 +142,13 @@ const Services = () => {
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-white/20">
-                  <button className="text-accent-400 hover:text-accent-300 font-medium transition-all duration-200 group-hover:translate-x-2 transform">
-                    Saiba Mais →
-                  </button>
+                  <Link 
+                    href={service.link}
+                    className="text-accent-400 hover:text-accent-300 font-medium transition-all duration-200 group-hover:translate-x-2 transform inline-flex items-center space-x-2"
+                  >
+                    <span>Saiba Mais</span>
+                    <span>→</span>
+                  </Link>
                 </div>
               </div>
             </motion.div>
