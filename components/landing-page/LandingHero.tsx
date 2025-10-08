@@ -2,10 +2,8 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Clock, Shield, Users } from "lucide-react";
-import { useState } from "react";
 
 const LandingHero = () => {
-  const [isFormVisible, setIsFormVisible] = useState(false);
 
   const handleCTAClick = () => {
     // Rastrear evento de clique no CTA principal

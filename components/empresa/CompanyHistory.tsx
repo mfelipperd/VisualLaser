@@ -1,33 +1,69 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Calendar, Target, Users, Award } from "lucide-react";
+import { Calendar, TrendingUp, Building2, ArrowUpRight, Radio, Heart, Award, Trophy, Zap } from "lucide-react";
 
 const CompanyHistory = () => {
   const milestones = [
     {
       year: "1997",
       title: "Fundação da Visual Laser",
-      description: "Nascimento com espírito de inovação e empatia",
+      description: "Fundação da Visual Laser na Travessa Curuzú no Bairro do Marco, como Centro Pioneiro de Cirurgia Refrativa, com o 1º equipamento de Excimer Laser a realizar PRK e LASIK no Pará.",
       icon: Calendar,
     },
     {
+      year: "1999",
+      title: "1000 Cirurgias Refrativas",
+      description: "Realização de 1000 cirurgias refrativas (PRK e LASIK).",
+      icon: Award,
+    },
+    {
       year: "2000",
-      title: "Primeira Expansão",
-      description: "Ampliação da estrutura e equipe médica",
-      icon: Users,
+      title: "2000 Cirurgias Refrativas",
+      description: "Marco na Realização de 2000 cirurgias refrativas (PRK e LASIK); ampliação de consultórios e implantação de sistemas de gerenciamento de qualidade total.",
+      icon: TrendingUp,
+    },
+    {
+      year: "2003",
+      title: "Nova Sede e Expansão",
+      description: "Mudança de endereço para a travessa 14 de Março e ampliação da estrutura para Clínica Oftalmológica com consultórios e centro cirúrgico.",
+      icon: Building2,
     },
     {
       year: "2010",
-      title: "Tecnologia Avançada",
-      description: "Investimento em equipamentos de última geração",
-      icon: Target,
+      title: "Ampliação das Instalações",
+      description: "Ampliação das instalações e dos recursos diagnósticos, terapêuticos e de gestão.",
+      icon: ArrowUpRight,
+    },
+    {
+      year: "2012",
+      title: "15 Anos de História",
+      description: "Campanha Publicitária comemorando 15 anos de excelência em oftalmologia.",
+      icon: Radio,
+    },
+    {
+      year: "2016",
+      title: "Criação do PSVL",
+      description: "Criação do PSVL (Programa Solidário Visual Laser).",
+      icon: Heart,
+    },
+    {
+      year: "2017",
+      title: "20 Anos de Excelência",
+      description: "Comemoração de 20 anos com Ação Solidária.",
+      icon: Trophy,
+    },
+    {
+      year: "2022",
+      title: "25 Anos de Dedicação",
+      description: "Comemoração de 25 anos com Ação Solidária.",
+      icon: Award,
     },
     {
       year: "2024",
-      title: "Referência Regional",
-      description: "25+ anos de excelência em oftalmologia",
-      icon: Award,
+      title: "Tecnologia de Ponta",
+      description: "Instalação do 1º aberrômetro raytracing da Região Norte (equipamento de análise avançada da qualidade visual para planejamento cirúrgico); instalação de equipamentos de última geração para cirurgia de catarata (facoemulsificação) com pressão fisiológica, marcação digital de lentes intraoculares na correção de astigmatismo e laser subliminar para tratamentos de glaucoma.",
+      icon: Zap,
     },
   ];
 
@@ -45,7 +81,7 @@ const CompanyHistory = () => {
             Nossa <span className="text-primary-600">História</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Uma jornada de 25+ anos dedicada à excelência em oftalmologia,
+            Uma jornada de mais de 27 anos dedicada à excelência em oftalmologia,
             sempre inovando e servindo com empatia e profissionalismo.
           </p>
         </motion.div>

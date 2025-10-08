@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { UserCheck, Award, Heart, Shield } from "lucide-react";
+import { UserCheck, Award, Heart, Shield, ArrowRight, Users } from "lucide-react";
+import Link from "next/link";
 
 const MedicalTeam = () => {
   const teamQualities = [
@@ -139,6 +140,35 @@ const MedicalTeam = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </motion.div>
+
+        {/* CTA Section - Link para Equipe Médica */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="mt-16 text-center"
+        >
+          <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-3xl p-8 md:p-12 text-white shadow-xl">
+            <div className="flex items-center justify-center mb-6">
+              <Users className="w-12 h-12 text-white mr-4" />
+              <h3 className="text-3xl md:text-4xl font-bold">
+                Conheça Nossa Equipe
+              </h3>
+            </div>
+            <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Descubra mais sobre nossos oftalmologistas especializados, suas qualificações 
+              e áreas de expertise. Uma equipe dedicada ao cuidado da sua visão.
+            </p>
+            <Link
+              href="/equipe"
+              className="inline-flex items-center space-x-3 bg-white hover:bg-gray-100 text-primary-700 font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              <span className="text-lg">Ver Equipe Médica</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </motion.div>
       </div>
