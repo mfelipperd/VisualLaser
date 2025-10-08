@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 
 const CompanyVideo = () => {
-  // URL do vídeo do YouTube da Visual Laser com autoplay e qualidade máxima
+  // URL do vídeo do YouTube da Visual Laser com qualidade máxima e áudio liberado
   const videoUrl =
-    "https://www.youtube.com/embed/Dw_8kJKcsrs?autoplay=1&mute=0&vq=hd1080&rel=0&modestbranding=1";
+    "https://www.youtube.com/embed/Dw_8kJKcsrs?mute=0&vq=hd1080&rel=0&modestbranding=1";
 
   return (
     <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
