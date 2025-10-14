@@ -181,7 +181,7 @@ const LandingTestimonials = () => {
                         {testimonial.name}
                       </div>
                       <div className="text-sm text-gray-600">
-                        {testimonial.age} • {testimonial.treatment}
+                        {testimonial.treatment}
                       </div>
                     </div>
                   </div>
