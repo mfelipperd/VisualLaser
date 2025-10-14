@@ -103,9 +103,9 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="group"
+              className="group h-full"
             >
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 h-full flex flex-col">
                 <div className="flex items-start space-x-4 mb-6">
                   <div
                     className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
@@ -122,7 +122,7 @@ const Services = () => {
                   </div>
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-3 flex-grow">
                   <h4 className="text-lg font-semibold text-accent-300 mb-4">
                     Principais Procedimentos:
                   </h4>
