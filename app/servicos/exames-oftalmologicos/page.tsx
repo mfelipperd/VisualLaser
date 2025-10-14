@@ -31,50 +31,86 @@ const exames = [
   {
     title: "Exame de Acuidade Visual",
     description: "Avaliação da capacidade de enxergar detalhes finos a diferentes distâncias.",
-    duracao: "10-15 minutos",
     preparacao: "Nenhuma preparação especial necessária",
     icon: Eye,
     color: "from-blue-500 to-blue-600"
   },
   {
-    title: "Refração",
-    description: "Determinação do grau necessário para correção de miopia, hipermetropia e astigmatismo.",
-    duracao: "15-20 minutos",
+    title: "Refratometria",
+    description: "Determinação precisa do grau necessário para prescrição de óculos e lentes de contato.",
     preparacao: "Evitar uso de lentes de contato por 24h",
     icon: Shield,
     color: "from-green-500 to-green-600"
   },
   {
     title: "Tonometria",
-    description: "Medição da pressão intraocular para detecção de glaucoma.",
-    duracao: "5-10 minutos",
+    description: "Medição da pressão intraocular através de aplanação ou rebote para detecção de glaucoma.",
     preparacao: "Nenhuma preparação especial",
     icon: Clock,
     color: "from-purple-500 to-purple-600"
   },
   {
-    title: "Fundoscopia",
-    description: "Exame detalhado do fundo do olho, retina, vasos e nervo óptico.",
-    duracao: "10-15 minutos",
-    preparacao: "Pode ser necessário dilatar a pupila",
+    title: "Mapeamento de Retina",
+    description: "Exame detalhado do fundo do olho, retina, vasos sanguíneos e nervo óptico.",
+    preparacao: "Dilatação pupilar necessária",
     icon: Star,
     color: "from-orange-500 to-orange-600"
   },
   {
-    title: "Biomicroscopia",
-    description: "Exame das estruturas oculares anteriores com lâmpada de fenda.",
-    duracao: "10-15 minutos",
+    title: "Campimetria Visual Computadorizada",
+    description: "Avaliação completa do campo visual para detecção de alterações periféricas e glaucoma.",
     preparacao: "Nenhuma preparação especial",
+    icon: Eye,
+    color: "from-indigo-500 to-indigo-600"
+  },
+  {
+    title: "Topografia de Córnea",
+    description: "Mapeamento detalhado da superfície corneana para diagnóstico de ceratocone e planejamento cirúrgico.",
+    preparacao: "Não usar lentes de contato por 3-7 dias",
     icon: CheckCircle,
     color: "from-red-500 to-red-600"
   },
   {
-    title: "Campimetria",
-    description: "Avaliação do campo visual para detecção de alterações periféricas.",
-    duracao: "20-30 minutos",
+    title: "OCT (Tomografia de Coerência Óptica)",
+    description: "Imagens de alta resolução da retina, nervo óptico e córnea para diagnósticos precisos.",
     preparacao: "Nenhuma preparação especial",
     icon: Eye,
-    color: "from-indigo-500 to-indigo-600"
+    color: "from-teal-500 to-teal-600"
+  },
+  {
+    title: "Angiografia Fluorescente",
+    description: "Exame com contraste para avaliar circulação sanguínea da retina e coroide.",
+    preparacao: "Jejum de 4 horas",
+    icon: Star,
+    color: "from-pink-500 to-pink-600"
+  },
+  {
+    title: "Paquimetria Ultrassônica",
+    description: "Medição precisa da espessura da córnea, essencial para cirurgias refrativas.",
+    preparacao: "Nenhuma preparação especial",
+    icon: CheckCircle,
+    color: "from-cyan-500 to-cyan-600"
+  },
+  {
+    title: "Biometria Óptica",
+    description: "Medição precisa das estruturas oculares para cálculo de lentes intraoculares.",
+    preparacao: "Não usar lentes de contato por 24h",
+    icon: Shield,
+    color: "from-amber-500 to-amber-600"
+  },
+  {
+    title: "Gonioscopia",
+    description: "Exame do ângulo da câmara anterior para avaliação de glaucoma.",
+    preparacao: "Nenhuma preparação especial",
+    icon: Eye,
+    color: "from-lime-500 to-lime-600"
+  },
+  {
+    title: "Microscopia Especular de Córnea",
+    description: "Análise das células endoteliais da córnea para avaliação de saúde corneana.",
+    preparacao: "Não usar lentes de contato por 24h",
+    icon: CheckCircle,
+    color: "from-violet-500 to-violet-600"
   }
 ];
 
@@ -152,13 +188,6 @@ export default function ExamesOftalmologicosPage() {
                     
                     {/* Details */}
                     <div className="space-y-3">
-                      <div className="flex items-center space-x-3">
-                        <Clock className="w-5 h-5 text-gray-400" />
-                        <span className="text-sm text-gray-600">
-                          <strong>Duração:</strong> {exame.duracao}
-                        </span>
-                      </div>
-                      
                       <div className="flex items-start space-x-3">
                         <Shield className="w-5 h-5 text-gray-400 mt-0.5" />
                         <span className="text-sm text-gray-600">
@@ -175,7 +204,7 @@ export default function ExamesOftalmologicosPage() {
             <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-16">
               <div className="text-center mb-12">
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  Por que Escolher Nossos Exames?
+                  Por que Escolher Nossos Exames e Procedimentos?
                 </h3>
               </div>
               

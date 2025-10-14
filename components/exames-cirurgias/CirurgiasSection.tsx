@@ -9,76 +9,80 @@ import {
   Target,
   Activity,
 } from "lucide-react";
+import { cirurgiasProcedimentos } from "@/data/exames-procedimentos";
 
 const CirurgiasSection = () => {
+  // Organizar cirurgias por categoria
+  const cirurgiasCatarata = cirurgiasProcedimentos.filter(c => 
+    c.nome.includes("Facoemulsificação") || c.nome.includes("lente intraocular fácica")
+  );
+  
+  const cirurgiasRefrativas = cirurgiasProcedimentos.filter(c => 
+    c.nome.includes("Ceratectomia fotoablativa") || c.nome.includes("Crosslinking")
+  );
+  
+  const cirurgiasGlaucoma = cirurgiasProcedimentos.filter(c => 
+    c.nome.includes("Iridotomia") || c.nome.includes("Iridectomia") || 
+    c.nome.includes("Trabeculectomia") || c.nome.includes("Ciclofotocoagulação")
+  );
+  
+  const cirurgiasRetina = cirurgiasProcedimentos.filter(c => 
+    c.nome.includes("Fotocoagulação a laser na retina") || 
+    c.nome.includes("Termofotocoagulação") || 
+    c.nome.includes("Vitreólise") ||
+    c.nome.includes("antiangiogênico")
+  );
+  
+  const cirurgiasCornea = cirurgiasProcedimentos.filter(c => 
+    c.nome.includes("Transplante") || 
+    c.nome.includes("corpo estranho") || 
+    c.nome.includes("Sutura de córnea")
+  );
+  
+  const cirurgiasPalpebras = cirurgiasProcedimentos.filter(c => 
+    c.nome.includes("Blefaroplastia") || c.nome.includes("Pterígio") || 
+    c.nome.includes("tumor palpebral") || c.nome.includes("Ptose palpebral")
+  );
+  
+  const procedimentosEspecializados = cirurgiasProcedimentos.filter(c => 
+    c.nome.includes("Capsulotomia") || c.nome.includes("Harmonização")
+  );
+
   const cirurgias = [
     {
       category: "Cirurgias de Catarata",
       icon: Eye,
-      items: [
-        "Facoemulsificação com Implante de lente intraocular (Cirurgia de catarata)",
-        "Implante de lente intraocular fácica",
-      ],
+      items: cirurgiasCatarata.map(c => c.nome),
     },
     {
       category: "Cirurgias Refrativas",
       icon: Target,
-      items: [
-        "Ceratectomia fotoablativa com excimer laser (Cirurgia refrativa - PRK)",
-        "Trans-PRK (PRK todo a laser)",
-        "PRK Topoguiado (PRK para irregularidades)",
-        "Tratamento de aberrações corneanas",
-      ],
+      items: cirurgiasRefrativas.map(c => c.nome),
     },
     {
       category: "Cirurgias de Glaucoma",
       icon: Activity,
-      items: [
-        "Iridotomia com YAG Laser",
-        "Iridectomia cirúrgica (Cirurgia de glaucoma)",
-        "Trabeculectomia (Cirurgia de glaucoma)",
-        "Ciclofotocoagulação com laser micropulsado (Cirurgia de glaucoma)",
-      ],
+      items: cirurgiasGlaucoma.map(c => c.nome),
     },
     {
       category: "Cirurgias de Retina",
       icon: Target,
-      items: [
-        "Fotocoagulação a laser na retina",
-        "Termofotocoagulação Transpupilar com laser (TTT)",
-        "Tratamento ocular quimioterápico com antiangiogênico",
-        "Vitreólise com YAG Laser",
-      ],
+      items: cirurgiasRetina.map(c => c.nome),
     },
     {
       category: "Cirurgias de Córnea",
       icon: Shield,
-      items: [
-        "Transplante Penetrante de córnea",
-        "Transplante Lamelar de córnea",
-        "Retirada de corpo estranho da córnea e superfície ocular",
-        "Retirada de corpo estranho do segmento anterior",
-        "Sutura de córnea",
-      ],
+      items: cirurgiasCornea.map(c => c.nome),
     },
     {
       category: "Cirurgias de Pálpebras",
       icon: Heart,
-      items: [
-        "Blefaroplastia (Cirurgia de pálpebra)",
-        "Exérese de Pterígio / tumor conjuntival com transplante autólogo de conjuntiva (Cirurgia de carne crescida)",
-        "Exérese de tumor palpebral / calázio",
-        "Cirurgia de Ptose palpebral",
-      ],
+      items: cirurgiasPalpebras.map(c => c.nome),
     },
     {
       category: "Procedimentos Especializados",
       icon: Zap,
-      items: [
-        "Capsulotomia posterior com YAG Laser",
-        "Harmonização Facial (com Botox e preenchedor facial)",
-        "Adaptação de lentes de contato",
-      ],
+      items: procedimentosEspecializados.map(c => c.nome),
     },
   ];
 
