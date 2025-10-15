@@ -1,82 +1,47 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Eye, Camera, Activity, Zap, Shield, Target } from "lucide-react";
+import { Eye, Focus, Scan, Activity, Droplet, Microscope } from "lucide-react";
+import { 
+  examesBasicos, 
+  examesCornea, 
+  examesRetina, 
+  examesGlaucoma, 
+  examesSuperficieOcular, 
+  examesEspecializados 
+} from "@/data/exames-procedimentos";
 
 const ExamesSection = () => {
   const exames = [
     {
       category: "Exames Básicos",
       icon: Eye,
-      items: [
-        "Exame de refração para prescrição de óculos e lentes de contato",
-        "Campimetria visual computadorizada",
-        "Mapeamento de retina",
-        "Retinografia simples",
-        "Tonometria",
-        "Biometria ultrassônica",
-        "Biometria óptica",
-      ],
+      items: examesBasicos.map(e => e.nome),
     },
     {
       category: "Exames de Córnea",
-      icon: Camera,
-      items: [
-        "Paquimetria ultrassônica de córnea",
-        "Mapa paquimétrico óptico",
-        "Microscopia especular de córnea",
-        "Ceratoscopia ou Topografia computadorizada de córnea",
-        "Tomografia de coerência óptica de córnea e ângulo camerular (OCT de segmento anterior)",
-      ],
+      icon: Focus,
+      items: examesCornea.map(e => e.nome),
     },
     {
       category: "Exames de Retina",
-      icon: Target,
-      items: [
-        "Autofluorescência",
-        "Angiografia fluorescente ou Angiofluoresceionografia",
-        "Angiotomografia (Angio-OCT)",
-        "Biomicroscopia de fundo",
-        "Fotocoagulação a laser na retina",
-        "Termofotocoagulação Transpupilar com laser (TTT)",
-      ],
+      icon: Scan,
+      items: examesRetina.map(e => e.nome),
     },
     {
       category: "Exames de Glaucoma",
       icon: Activity,
-      items: [
-        "Gonioscopia",
-        "Teste de sobrecarga hídrica (provocativo de glaucoma)",
-        "Curva tensional diária",
-        "Iridotomia com YAG Laser",
-        "Iridectomia cirúrgica",
-        "Trabeculectomia",
-        "Ciclofotocoagulação com laser micropulsado",
-      ],
-    },
-    {
-      category: "Exames Especializados",
-      icon: Zap,
-      items: [
-        "Avaliação de vias lacrimais",
-        "Ultrassonografia ocular",
-        "Aberraometria ocular por Raytracing (Análise da qualidade visual)",
-        "Teste de Schirmer (análise da produção lacrimal)",
-        "Teste de Lissamina Verde (análise de células caliciformes e apoptose)",
-        "Teste de Rosa Bengala (análise de apoptose celular)",
-      ],
+      items: examesGlaucoma.map(e => e.nome),
     },
     {
       category: "Exames de Superfície Ocular",
-      icon: Shield,
-      items: [
-        "Meibografia (Registro das glândulas de Meibomius com infravermelho)",
-        "Blink Time Test (medição de tempo do piscar)",
-        "Break-Up Time Test (medição do tempo de rotura do filme lacrimal)",
-        "Retirada de corpo estranho da córnea e superfície ocular",
-        "Retirada de corpo estranho do segmento anterior",
-        "Sutura de córnea",
-      ],
+      icon: Droplet,
+      items: examesSuperficieOcular.map(e => e.nome),
+    },
+    {
+      category: "Exames Especializados",
+      icon: Microscope,
+      items: examesEspecializados.map(e => e.nome),
     },
   ];
 
@@ -91,7 +56,7 @@ const ExamesSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Nossos <span className="text-primary-600">Exames</span>
+            Nossos <span className="text-primary-600">Exames e Procedimentos</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Oferecemos uma ampla gama de exames oftalmológicos com tecnologia de

@@ -34,7 +34,6 @@ VisualLaser/
 │   ├── layout.tsx         # Layout principal com meta tags
 │   ├── page.tsx           # Página inicial
 │   ├── globals.css        # Estilos globais
-│   ├── manifest.ts        # Manifest para PWA
 │   ├── sitemap.ts         # Sitemap automático
 │   └── robots.ts          # Robots.txt
 ├── components/             # Componentes React
@@ -51,8 +50,7 @@ VisualLaser/
 ├── public/                 # Arquivos estáticos
 │   ├── images/            # Imagens otimizadas
 │   ├── favicon.png        # Favicon
-│   ├── logo-visual-branca.png # Logo principal
-│   └── browserconfig.xml  # Configuração Windows
+│   └── logo-visual-branca.png # Logo principal
 ├── config/                 # Configurações
 ├── hooks/                  # Hooks customizados
 ├── types/                  # Tipos TypeScript
@@ -273,13 +271,3 @@ Headers de segurança implementados:
 - Permissions-Policy: camera=(), microphone=(), geolocation=()
 - Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 
-## 📱 PWA
-
-Configuração PWA completa:
-
-- Manifest otimizado
-- Ícones em múltiplos tamanhos
-- Screenshots para app stores
-- Shortcuts para funcionalidades principais
-- Categorias médicas
-- Orientação portrait-primary

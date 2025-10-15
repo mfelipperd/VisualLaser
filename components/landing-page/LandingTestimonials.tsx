@@ -6,65 +6,74 @@ import { Star, Quote, Heart } from "lucide-react";
 const LandingTestimonials = () => {
   const testimonials = [
     {
-      name: "Maria Silva",
-      age: "45 anos",
+      name: "Tereza Neves",
       treatment: "Cirurgia de Catarata",
       rating: 5,
-      text: "Excelente atendimento! A equipe da Visual Laser foi muito atenciosa e profissional. Minha cirurgia de catarata foi um sucesso e hoje vejo perfeitamente. Recomendo para toda a família!",
-      image: "/images/testimonials/maria-silva.jpg",
+      text: "Sou paciente do Dr. Armando Vidonho e há 20 dias passei por cirurgia de Catarata. Os exames clínicos pós operatório confirmam ótimo resultado. Sinto-me bem e feliz por estar conseguindo ler sem o auxílio de óculos. Fui muito bem atendida por toda a equipe da Clínica Visual Laser.",
       verified: true
     },
     {
-      name: "João Santos",
-      age: "38 anos",
+      name: "Ligia Paz",
       treatment: "Cirurgia Refrativa",
       rating: 5,
-      text: "Depois de anos usando óculos, finalmente me libertei! A cirurgia refrativa foi rápida e indolor. A Visual Laser tem tecnologia de última geração e médicos muito competentes.",
-      image: "/images/testimonials/joao-santos.jpg",
+      text: "Realizei a cirurgia refrativa há uns 35 dias e foi a melhor decisão e investimento que já fiz. É uma qualidade de vida diferente! Toda a assistência do Dr. Carlos foi fundamental, com orientações, disponibilidade e atenção em todo o processo.",
       verified: true
     },
     {
-      name: "Ana Costa",
-      age: "52 anos",
-      treatment: "Exames Oftalmológicos",
+      name: "Nay Barra",
+      treatment: "Cirurgia Refrativa PRK",
       rating: 5,
-      text: "Atendimento humanizado e exames completos. A equipe é muito cuidadosa e explica tudo detalhadamente. Fiquei muito satisfeita com o atendimento e os resultados.",
-      image: "/images/testimonials/ana-costa.jpg",
+      text: "Recentemente realizei a tão sonhada cirurgia refrativa/PRK com o Dr. Armando Vidonho. Desde a minha adolescência fui refém dos óculos de grau, e sempre foi bem acentuado (+5 graus). Minha experiência foi espetacular!",
       verified: true
     },
     {
-      name: "Carlos Lima",
-      age: "41 anos",
-      treatment: "Tratamento de Glaucoma",
+      name: "Rayanne Kathleem",
+      treatment: "Transplante de Córnea",
       rating: 5,
-      text: "O diagnóstico precoce salvou minha visão! A Visual Laser tem equipamentos modernos e médicos especialistas. O tratamento foi eficaz e o acompanhamento excelente.",
-      image: "/images/testimonials/carlos-lima.jpg",
+      text: "Sou paciente do Dr Armando vidonho comecei meu tratamento de ceratocone a 1 ano e pouco, fiz o transplante de córnea, uma ótima cirurgia, Dr muito atencioso, 100% cicatrisado, recuperação total. As meninas da recepção são super atenciosas, sempre bem atendida.",
       verified: true
     },
     {
-      name: "Fernanda Oliveira",
-      age: "29 anos",
-      treatment: "Consultas Preventivas",
+      name: "Brenda Natália Viana Porto",
+      treatment: "Cirurgia Refrativa",
       rating: 5,
-      text: "Faço consultas preventivas há 3 anos na Visual Laser. O atendimento é sempre excepcional, com horários pontuais e profissionais muito qualificados. Minha visão está perfeita!",
-      image: "/images/testimonials/fernanda-oliveira.jpg",
+      text: "Consegui me despedir dos óculos depois da cirurgia refrativa com o Dr. Carlos Lima. É impressionante como minha qualidade de vida melhorou! O procedimento foi rápido, sem dor, e a recuperação foi super tranquila. Sou imensamente grato por tudo.",
       verified: true
     },
     {
-      name: "Roberto Alves",
-      age: "56 anos",
-      treatment: "Implante de LIO",
+      name: "Igor Sudario",
+      treatment: "Cirurgia Refrativa",
       rating: 5,
-      text: "Cirurgia de catarata com implante de lente premium foi um sucesso! A recuperação foi rápida e hoje vejo melhor do que quando era jovem. Equipe técnica excepcional!",
-      image: "/images/testimonials/roberto-alves.jpg",
+      text: "Dr Armando Vidonho tem o Dom da cura. Foi um sucesso total o procedimento. Hoje eu não preciso de óculos, que profissional brilhante! Desejo todo o sucesso ao ilustríssimo médico!",
+      verified: true
+    },
+    {
+      name: "Marcino Fernandes",
+      treatment: "Blefaroplastia",
+      rating: 5,
+      text: "Realizei com o Dr Carlos Lima a cirurgia de blefaroplastia onde me encontro 100% satisfeito com o atendimento gentil, educado, humano e atencioso do Dr. Carlos Lima. O resultado final da cirurgia ficou excelente e acima do esperado.",
+      verified: true
+    },
+    {
+      name: "Lucas Viana",
+      treatment: "Tratamento de Ceratocone",
+      rating: 5,
+      text: "Tive problema de ceratocone e o tratamento que fiz com o Dr Armando Vidonho salvou minha visão, sou muito grato e recomendo a Visual Laser. Atendimento excelente.",
+      verified: true
+    },
+    {
+      name: "David Barroso",
+      treatment: "Consulta Oftalmológica",
+      rating: 5,
+      text: "Dr. Armando Vidonho prestou um atendimento excelente! Extremamente carismático e profissional. Além disso, toda a equipe foi incrível e teve toda a paciência de instruir os exames e os pacientes.",
       verified: true
     }
   ];
 
   const stats = [
     { number: "98%", label: "Taxa de Satisfação" },
-    { number: "4.9/5", label: "Avaliação Média" },
-    { number: "50.000+", label: "Pacientes Atendidos" },
+    { number: "4.6/5", label: "Avaliação Google" },
+    { number: "327+", label: "Avaliações Google" },
     { number: "25+", label: "Anos de Experiência" }
   ];
 
@@ -157,7 +166,7 @@ const LandingTestimonials = () => {
 
                   {/* Testimonial Text */}
                   <blockquote className="text-gray-700 leading-relaxed mb-6 flex-1">
-                    "{testimonial.text}"
+                    &ldquo;{testimonial.text}&rdquo;
                   </blockquote>
 
                   {/* Author Info */}
@@ -172,7 +181,7 @@ const LandingTestimonials = () => {
                         {testimonial.name}
                       </div>
                       <div className="text-sm text-gray-600">
-                        {testimonial.age} • {testimonial.treatment}
+                        {testimonial.treatment}
                       </div>
                     </div>
                   </div>

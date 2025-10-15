@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Eye, Activity, Microscope, Stethoscope } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
 import AppointmentModal from "./AppointmentModal";
 
 const Services = () => {
@@ -12,61 +13,65 @@ const Services = () => {
       icon: Eye,
       title: "Exames Oftalmológicos",
       description:
-        "Realizamos uma ampla gama de exames oftalmológicos com equipamentos de última geração para diagnósticos precisos.",
+        "Realizamos mais de 37 tipos de exames oftalmológicos com equipamentos de última geração para diagnósticos precisos.",
       features: [
-        "Tonometria (Pressão Intraocular)",
-        "Campimetria Computadorizada",
-        "Retinografia Digital",
-        "Topografia Corneana",
-        "Biometria Ultrassônica",
-        "Angiografia Fluoresceínica",
+        "Exames Básicos (Acuidade Visual, Refratometria)",
+        "Exames de Córnea (Topografia, Paquimetria)",
+        "Exames de Retina (Mapeamento, OCT, Angiografia)",
+        "Exames de Glaucoma (Campimetria, Gonioscopia)",
+        "Exames de Superfície Ocular",
+        "Exames Especializados (Aberrometria, Biometria)",
       ],
       color: "from-primary-950 to-primary-800",
+      link: "/exames-cirurgias",
     },
     {
       icon: Activity,
-      title: "Cirurgias Oftalmológicas",
+      title: "Cirurgias e Procedimentos",
       description:
-        "Especialistas em cirurgias refrativas, catarata e outros procedimentos oftalmológicos com tecnologia avançada.",
+        "Realizamos mais de 22 tipos de cirurgias e procedimentos oftalmológicos com tecnologia avançada e equipe especializada.",
       features: [
-        "Cirurgia de Catarata",
-        "Facoemulsificação",
-        "Implante de LIOs Premium",
-        "Cirurgias Refrativas",
-        "Tratamento de Glaucoma",
-        "Cirurgias da Retina",
+        "Cirurgia de Catarata (Facoemulsificação)",
+        "Cirurgia Refrativa (PRK, Crosslinking)",
+        "Cirurgias de Glaucoma",
+        "Transplante de Córnea",
+        "Cirurgias de Retina (Fotocoagulação a Laser)",
+        "Cirurgias de Pálpebras (Blefaroplastia)",
       ],
       color: "from-secondary-950 to-accent-500",
+      link: "/exames-cirurgias",
     },
     {
       icon: Microscope,
-      title: "Tratamentos Especializados",
+      title: "Tratamento de Catarata",
       description:
-        "Oferecemos tratamentos especializados para diversas condições oftalmológicas com protocolos personalizados.",
+        "Especialistas em tratamento de catarata com as técnicas mais modernas e lentes intraoculares de alta qualidade.",
       features: [
-        "Tratamento de Glaucoma",
-        "Terapia Fotodinâmica",
-        "Injeções Intravítreas",
-        "Tratamento de Retinopatia",
-        "Terapia com Laser",
-        "Tratamento de Ceratocone",
+        "Facoemulsificação com Lente Intraocular",
+        "Capsulotomia posterior com YAG Laser",
+        "Lentes Intraoculares Premium",
+        "Implante de Lente Intraocular Fácica",
+        "Avaliação Completa Pré-Operatória",
+        "Acompanhamento Pós-Cirúrgico",
       ],
       color: "from-accent-500 to-accent-600",
+      link: "/servicos/tratamento-catarata",
     },
     {
       icon: Stethoscope,
       title: "Consultas Especializadas",
       description:
-        "Consultas com oftalmologistas especialistas em diferentes áreas da oftalmologia para um atendimento completo.",
+        "Consultas com oftalmologistas especialistas em diferentes áreas da oftalmologia para um atendimento completo e personalizado.",
       features: [
         "Oftalmologia Geral",
         "Retina e Vítreo",
         "Glaucoma",
         "Córnea e Refrativa",
         "Plástica Ocular",
-        "Oncologia Ocular",
+        "Harmonização Facial",
       ],
       color: "from-primary-800 to-primary-600",
+      link: "/equipe",
     },
   ];
 
@@ -98,9 +103,9 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="group"
+              className="group h-full"
             >
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 h-full flex flex-col">
                 <div className="flex items-start space-x-4 mb-6">
                   <div
                     className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
@@ -117,7 +122,7 @@ const Services = () => {
                   </div>
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-3 flex-grow">
                   <h4 className="text-lg font-semibold text-accent-300 mb-4">
                     Principais Procedimentos:
                   </h4>
@@ -137,9 +142,13 @@ const Services = () => {
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-white/20">
-                  <button className="text-accent-400 hover:text-accent-300 font-medium transition-all duration-200 group-hover:translate-x-2 transform">
-                    Saiba Mais →
-                  </button>
+                  <Link 
+                    href={service.link}
+                    className="text-accent-400 hover:text-accent-300 font-medium transition-all duration-200 group-hover:translate-x-2 transform inline-flex items-center space-x-2"
+                  >
+                    <span>Saiba Mais</span>
+                    <span>→</span>
+                  </Link>
                 </div>
               </div>
             </motion.div>

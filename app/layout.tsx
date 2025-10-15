@@ -106,21 +106,10 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
-    apple: "/logo-visual-branca.png",
   },
   other: {
-    "theme-color": "#163960",
-    "msapplication-TileColor": "#163960",
-    "apple-mobile-web-app-capable": "yes",
-    "apple-mobile-web-app-status-bar-style": "default",
-    "apple-mobile-web-app-title": "Visual Laser",
-    "application-name": "Visual Laser",
-    "msapplication-config": "/browserconfig.xml",
     "yandex-verification": "your-yandex-verification-code",
     "msvalidate.01": "your-bing-verification-code",
-    "viewport": "width=device-width, initial-scale=1, maximum-scale=5",
-    "mobile-web-app-capable": "yes",
-    "format-detection": "telephone=no",
   },
 };
 
