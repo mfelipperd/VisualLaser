@@ -89,16 +89,21 @@ const Footer = () => {
     {
       name: "Facebook",
       icon: Facebook,
-      href: "#",
+      href: "https://www.facebook.com/VisualLaserOftalmologia/",
       color: "hover:text-blue-600",
     },
     {
       name: "Instagram",
       icon: Instagram,
-      href: "#",
+      href: "https://www.instagram.com/visuallaser/",
       color: "hover:text-pink-600",
     },
-    { name: "YouTube", icon: Youtube, href: "#", color: "hover:text-red-600" },
+    { 
+      name: "YouTube", 
+      icon: Youtube, 
+      href: "https://www.youtube.com/@VisualLaserClinica", 
+      color: "hover:text-red-600" 
+    },
   ];
 
   return (
@@ -131,6 +136,8 @@ const Footer = () => {
                 <a
                   key={social.name}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`w-10 h-10 bg-white/10 rounded-full flex items-center justify-center transition-all duration-300 ${social.color} hover:bg-white/20`}
                   aria-label={social.name}
                 >
