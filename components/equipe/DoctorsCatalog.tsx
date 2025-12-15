@@ -128,7 +128,7 @@ const DoctorsCatalog = () => {
       name: 'Dra. Taís Rocha',
       specialty: 'Oftalmologista Especialista em Córnea e Neuroftalmologia',
       crm: 'CRM-PA 9447',
-      image: '/images/doctors/taisrocha.png',
+      image: '/images/doctors/tais.jpeg',
       description:
         'Especialista em córnea e neuroftalmologia com vasta experiência no diagnóstico e tratamento de doenças corneanas e condições neurológicas que afetam a visão.',
       expertise: ['Córnea', 'Neuroftalmologia'],
