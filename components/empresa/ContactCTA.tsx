@@ -69,7 +69,7 @@ const ContactCTA = () => {
 
               <div className="bg-accent-500/20 rounded-xl p-6 border border-accent-500/30">
                 <h4 className="text-lg font-semibold text-accent-300 mb-3">
-                  🎯 Nossa Promessa
+                  🎯 Nossa Meta
                 </h4>
                 <p className="text-gray-300 text-sm leading-relaxed">
                   Oferecer o melhor atendimento oftalmológico com tecnologia de
