@@ -116,7 +116,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[50vh] sm:min-h-screen pt-20 overflow-hidden">
+    <section className="relative min-h-[50vh] sm:min-h-screen overflow-hidden">
       {/* Background Image Carousel */}
       <div className="absolute inset-0">
         <AnimatePresence mode="wait">

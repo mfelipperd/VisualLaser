@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, Calendar, Home, Building2, Activity, Users, MessageCircle } from "lucide-react";
+import { Menu, Phone, Calendar, MessageCircle, Home, Building2, Activity, Users } from "lucide-react";
 import { usePathname } from "next/navigation";
 import AppointmentModal from "@/components/AppointmentModal";
 
@@ -36,25 +36,21 @@ const Header = () => {
     <>
       {/* Header */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-[95%] max-w-7xl rounded-2xl ${
           isScrolled
-            ? "bg-primary-950/95 backdrop-blur-md border-b border-primary-800/50"
-            : "bg-primary-950/90 backdrop-blur-md border-b border-primary-800/30"
+            ? "bg-primary-950/80 backdrop-blur-lg border border-primary-800/50 shadow-2xl py-2"
+            : "bg-primary-950/40 backdrop-blur-md border border-white/10 py-3"
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 sm:h-20">
+          <div className="flex items-center justify-between h-12 md:h-14">
             {/* Logo */}
-            <a href="/" className="flex items-center space-x-2 sm:space-x-3 hover:opacity-90 transition-opacity duration-200">
+            <a href="/" className="flex items-center hover:opacity-80 transition-opacity duration-200">
               <img
                 src="/logo-visual-branca.png"
                 alt="Visual Laser"
-                className="h-8 sm:h-10 lg:h-12 w-auto"
+                className="h-7 sm:h-8 lg:h-9 w-auto"
               />
-              <div className="hidden sm:block">
-                <h1 className="text-white text-lg sm:text-xl font-bold">Visual Laser</h1>
-                <p className="text-accent-300 text-xs sm:text-sm">Clínica Oftalmológica</p>
-              </div>
             </a>
 
             {/* Desktop Navigation */}
@@ -63,10 +59,10 @@ const Header = () => {
                 <div key={item.path} className="relative">
                   <a
                     href={item.path}
-                    className={`text-lg font-medium transition-colors duration-200 ${
+                    className={`text-sm md:text-base font-medium transition-all duration-200 ${
                       isActivePage(item.path)
-                        ? "text-accent-400 font-semibold"
-                        : "text-white hover:text-accent-300"
+                        ? "text-accent-400"
+                        : "text-white/90 hover:text-accent-300"
                     }`}
                   >
                     {item.name}
@@ -88,19 +84,19 @@ const Header = () => {
             </nav>
 
             {/* Desktop CTA Buttons */}
-            <div className="hidden lg:flex items-center space-x-4">
+            <div className="hidden lg:flex items-center space-x-3">
               <button
                 onClick={() => setIsAppointmentModalOpen(true)}
-                className="inline-flex items-center space-x-2 bg-accent-500 hover:bg-accent-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center space-x-2 bg-accent-500 hover:bg-accent-600 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-sm"
               >
-                <Calendar className="w-4 h-4" />
-                <span>Agendar Consulta</span>
+                <Calendar className="w-3.5 h-3.5" />
+                <span>Agendar</span>
               </button>
               <a
                 href="/contato"
-                className="inline-flex items-center space-x-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 border border-white/20 text-sm"
               >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-3.5 h-3.5" />
                 <span>Contato</span>
               </a>
             </div>
@@ -108,13 +104,9 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden w-10 h-10 bg-accent-500 hover:bg-accent-600 rounded-lg flex items-center justify-center transition-colors duration-200"
+              className="lg:hidden w-9 h-9 bg-accent-500/90 hover:bg-accent-500 rounded-lg flex items-center justify-center transition-all duration-200"
             >
-              {isMobileMenuOpen ? (
-                <X className="w-5 h-5 text-white" />
-              ) : (
-                <Menu className="w-5 h-5 text-white" />
-              )}
+              <Menu className="w-5 h-5 text-white" />
             </button>
           </div>
         </div>
@@ -124,96 +116,81 @@ const Header = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-primary-950 lg:hidden z-50"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="fixed inset-x-4 top-20 z-50 lg:hidden"
           >
-            <div className="flex flex-col h-full">
-              {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b border-primary-800/50">
-                <div className="flex items-center space-x-3">
-                  <img
-                    src="/logo-visual-branca.png"
-                    alt="Visual Laser"
-                    className="h-12 w-auto"
-                  />
-                  <div>
-                    <h2 className="text-white font-bold text-2xl">Visual Laser</h2>
-                    <p className="text-accent-300 text-base">Clínica Oftalmológica</p>
-                  </div>
-                </div>
-                <button
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-12 h-12 bg-accent-500 hover:bg-accent-600 rounded-full flex items-center justify-center transition-colors duration-200"
-                >
-                  <X className="w-7 h-7 text-white" />
-                </button>
-              </div>
-
-              {/* Navigation */}
-              <div className="flex-1 overflow-y-auto py-8">
-                <nav className="space-y-4 px-6">
-                  {menuItems.map((item) => {
+            <div className="bg-primary-950/95 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+              <div className="p-6 space-y-4">
+                {/* Navigation Items */}
+                <nav className="space-y-2">
+                  {menuItems.map((item, index) => {
                     const IconComponent = item.icon;
                     return (
-                      <a
+                      <motion.a
                         key={item.path}
                         href={item.path}
-                        className={`flex items-center space-x-6 px-6 py-6 rounded-2xl transition-all duration-200 ${
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.05 }}
+                        className={`flex items-center space-x-4 p-4 rounded-xl transition-all duration-200 ${
                           isActivePage(item.path)
-                            ? "bg-accent-500 text-white"
-                            : "text-white hover:bg-white/10"
+                            ? "bg-accent-500/20 text-accent-400"
+                            : "text-white/80 hover:bg-white/5 hover:text-white"
                         }`}
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
-                        <IconComponent className={`w-8 h-8 ${isActivePage(item.path) ? "text-white" : "text-white/70"}`} />
-                        <span className="font-bold text-2xl">{item.name}</span>
+                        <div className={`p-2 rounded-lg ${isActivePage(item.path) ? "bg-accent-500/20" : "bg-white/5"}`}>
+                          <IconComponent className="w-5 h-5" />
+                        </div>
+                        <span className="font-semibold text-lg">{item.name}</span>
                         {isActivePage(item.path) && (
-                          <div className="ml-auto w-4 h-4 bg-white rounded-full"></div>
+                          <div className="ml-auto w-1.5 h-1.5 bg-accent-400 rounded-full" />
                         )}
-                      </a>
+                      </motion.a>
                     );
                   })}
                 </nav>
 
-                {/* Action Buttons */}
-                <div className="px-6 mt-12 space-y-6">
-                  {/* Agendar Consulta - DESTACADO */}
+                <div className="pt-4 border-t border-white/10 space-y-3">
                   <button
                     onClick={() => {
                       setIsAppointmentModalOpen(true);
                       setIsMobileMenuOpen(false);
                     }}
-                    className="w-full bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white font-bold py-6 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center justify-center space-x-4"
+                    className="w-full bg-accent-500 hover:bg-accent-600 text-white font-bold py-4 rounded-xl transition-all duration-300 flex items-center justify-center space-x-3 shadow-lg shadow-accent-500/20"
                   >
-                    <Calendar className="w-8 h-8" />
-                    <span className="text-2xl">Agendar Consulta</span>
+                    <Calendar className="w-5 h-5" />
+                    <span>Agendar Consulta</span>
                   </button>
-
-                  {/* Contato */}
                   <a
                     href="/contato"
-                    className="w-full bg-white/10 hover:bg-white/20 text-white font-semibold py-5 px-8 rounded-2xl transition-all duration-300 flex items-center justify-center space-x-4 border border-white/20"
+                    className="w-full bg-white/5 hover:bg-white/10 text-white font-semibold py-4 rounded-xl transition-all duration-300 flex items-center justify-center space-x-3 border border-white/10"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <MessageCircle className="w-7 h-7" />
-                    <span className="text-xl">Contato</span>
+                    <MessageCircle className="w-5 h-5 text-accent-400" />
+                    <span>Falar Conosco</span>
                   </a>
                 </div>
-              </div>
 
-              {/* Footer */}
-              <div className="p-8 border-t border-primary-800/50 text-center">
-                <p className="text-white text-xl font-medium">
-                  Visual Laser - Clínica Oftalmológica
-                </p>
-                <p className="text-accent-300 text-lg mt-2">
-                  Belém - Pará
-                </p>
+                <div className="text-center pt-2">
+                  <p className="text-white/40 text-xs font-medium uppercase tracking-widest">
+                    Visual Laser • Clínica Oftalmológica
+                  </p>
+                </div>
               </div>
             </div>
+
+            {/* Backdrop for closing */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="fixed inset-0 -z-10 bg-black/40 backdrop-blur-sm h-screen w-screen -m-4"
+            />
           </motion.div>
         )}
       </AnimatePresence>

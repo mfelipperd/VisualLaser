@@ -106,6 +106,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
+    apple: "/apple-touch-icon.png",
   },
   other: {
     "yandex-verification": "your-yandex-verification-code",
@@ -148,7 +149,7 @@ export default function RootLayout({
         <GoogleAnalytics />
         <PerformanceOptimizer />
         <Header />
-        <main className="mt-0 md:mt-20 pb-20 md:pb-0">{children}</main>
+        <main className="pb-20 md:pb-0">{children}</main>
         <Footer />
         <CookieConsent />
         <BlurModal />

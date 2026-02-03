@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, Calendar, ArrowRight } from "lucide-react";
+import { Menu, Phone, Calendar, MessageCircle } from "lucide-react";
 
 const LandingHeader = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,10 +60,10 @@ const LandingHeader = () => {
     <>
       {/* Header */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-[95%] max-w-7xl rounded-2xl ${
           isScrolled
-            ? "bg-primary-950/95 backdrop-blur-md border-b border-primary-800/50"
-            : "bg-transparent"
+            ? "bg-primary-950/80 backdrop-blur-lg border border-primary-800/50 shadow-2xl py-2"
+            : "bg-primary-950/20 backdrop-blur-md border border-white/5 py-3"
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,17 +77,13 @@ const LandingHeader = () => {
             >
               <button
                 onClick={() => scrollToSection('hero')}
-                className="flex items-center space-x-3 hover:opacity-90 transition-opacity duration-200"
+                className="flex items-center hover:opacity-80 transition-opacity duration-200"
               >
                 <img
                   src="/logo-visual-branca.png"
                   alt="Visual Laser"
-                  className="h-8 sm:h-10 lg:h-12 w-auto"
+                  className="h-7 sm:h-8 lg:h-9 w-auto"
                 />
-                <div className="hidden sm:block">
-                  <h1 className="text-white text-lg sm:text-xl font-bold">Visual Laser</h1>
-                  <p className="text-accent-300 text-xs sm:text-sm">Agende sua Consulta</p>
-                </div>
               </button>
             </motion.div>
 
@@ -97,10 +93,10 @@ const LandingHeader = () => {
                 <div key={item.id} className="relative">
                   <button
                     onClick={() => scrollToSection(item.id)}
-                    className={`text-lg font-medium transition-colors duration-200 ${
+                    className={`text-sm md:text-base font-medium transition-all duration-200 ${
                       activeSection === item.id
-                        ? "text-accent-400 font-semibold"
-                        : "text-white hover:text-accent-300"
+                        ? "text-accent-400"
+                        : "text-white/90 hover:text-accent-300"
                     }`}
                   >
                     {item.label}
@@ -122,19 +118,19 @@ const LandingHeader = () => {
             </nav>
 
             {/* Desktop CTA Buttons */}
-            <div className="hidden lg:flex items-center space-x-4">
+            <div className="hidden lg:flex items-center space-x-3">
               <button
                 onClick={handleCTAClick}
-                className="inline-flex items-center space-x-2 bg-accent-500 hover:bg-accent-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center space-x-2 bg-accent-500 hover:bg-accent-600 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-sm"
               >
-                <Calendar className="w-4 h-4" />
-                <span>Agendar Consulta</span>
+                <Calendar className="w-3.5 h-3.5" />
+                <span>Agendar</span>
               </button>
               <a
                 href="tel:+559132254422"
-                className="inline-flex items-center space-x-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 border border-white/20 text-sm"
               >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-3.5 h-3.5" />
                 <span>Ligar</span>
               </a>
             </div>
@@ -142,13 +138,9 @@ const LandingHeader = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden w-10 h-10 bg-accent-500 hover:bg-accent-600 rounded-lg flex items-center justify-center transition-colors duration-200"
+              className="lg:hidden w-9 h-9 bg-accent-500/90 hover:bg-accent-500 rounded-lg flex items-center justify-center transition-all duration-200"
             >
-              {isMobileMenuOpen ? (
-                <X className="w-5 h-5 text-white" />
-              ) : (
-                <Menu className="w-5 h-5 text-white" />
-              )}
+              <Menu className="w-5 h-5 text-white" />
             </button>
           </div>
         </div>
@@ -158,104 +150,83 @@ const LandingHeader = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-primary-950 lg:hidden z-50"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="fixed inset-x-4 top-20 z-50 lg:hidden"
           >
-            <div className="flex flex-col h-full">
-              
-              {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b border-primary-800/50">
-                <div className="flex items-center space-x-3">
-                  <img
-                    src="/logo-visual-branca.png"
-                    alt="Visual Laser"
-                    className="h-12 w-auto"
-                  />
-                  <div>
-                    <h2 className="text-white font-bold text-2xl">Visual Laser</h2>
-                    <p className="text-accent-300 text-base">Agende sua Consulta</p>
-                  </div>
-                </div>
-                <button
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-12 h-12 bg-accent-500 hover:bg-accent-600 rounded-full flex items-center justify-center transition-colors duration-200"
-                >
-                  <X className="w-7 h-7 text-white" />
-                </button>
-              </div>
-
-              {/* Navigation */}
-              <div className="flex-1 overflow-y-auto py-8">
-                <nav className="space-y-4 px-6">
-                  {navItems.map((item) => (
-                    <button
+            <div className="bg-primary-950/95 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+              <div className="p-6 space-y-4">
+                {/* Navigation Items */}
+                <nav className="space-y-2">
+                  {navItems.map((item, index) => (
+                    <motion.button
                       key={item.id}
                       onClick={() => scrollToSection(item.id)}
-                      className={`w-full flex items-center space-x-6 px-6 py-6 rounded-2xl transition-all duration-200 ${
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 }}
+                      className={`w-full flex items-center space-x-4 p-4 rounded-xl transition-all duration-200 ${
                         activeSection === item.id
-                          ? "bg-accent-500 text-white"
-                          : "text-white hover:bg-white/10"
+                          ? "bg-accent-500/20 text-accent-400"
+                          : "text-white/80 hover:bg-white/5"
                       }`}
                     >
-                      <span className="font-bold text-2xl">{item.label}</span>
+                      <span className="font-semibold text-lg">{item.label}</span>
                       {activeSection === item.id && (
-                        <div className="ml-auto w-4 h-4 bg-white rounded-full"></div>
+                        <div className="ml-auto w-1.5 h-1.5 bg-accent-400 rounded-full" />
                       )}
-                    </button>
+                    </motion.button>
                   ))}
                 </nav>
 
-                {/* Action Buttons */}
-                <div className="px-6 mt-12 space-y-6">
-                  {/* Agendar Consulta - DESTACADO */}
+                <div className="pt-4 border-t border-white/10 space-y-3">
                   <button
                     onClick={handleCTAClick}
-                    className="w-full bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white font-bold py-6 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center justify-center space-x-4"
+                    className="w-full bg-accent-500 hover:bg-accent-600 text-white font-bold py-4 rounded-xl transition-all duration-300 flex items-center justify-center space-x-3 shadow-lg shadow-accent-500/20"
                   >
-                    <Calendar className="w-8 h-8" />
-                    <span className="text-2xl">Agendar Consulta</span>
+                    <Calendar className="w-5 h-5" />
+                    <span>Agendar Consulta</span>
                   </button>
-
-                  {/* Telefone */}
+                  
                   <a
                     href="tel:+559132254422"
-                    className="w-full bg-white/10 hover:bg-white/20 text-white font-semibold py-5 px-8 rounded-2xl transition-all duration-300 flex items-center justify-center space-x-4 border border-white/20"
+                    className="w-full bg-white/5 hover:bg-white/10 text-white font-semibold py-4 rounded-xl transition-all duration-300 flex items-center justify-center space-x-3 border border-white/10"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <Phone className="w-7 h-7" />
-                    <span className="text-xl">Ligar Agora</span>
+                    <Phone className="w-5 h-5 text-accent-400" />
+                    <span>Ligar Agora</span>
                   </a>
 
-                  {/* WhatsApp */}
                   <a
                     href="https://wa.me/5591988968201?text=Olá!%20Vim%20através%20da%20landing%20page%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20consulta%20gratuita."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-5 px-8 rounded-2xl transition-all duration-300 flex items-center justify-center space-x-4"
+                    className="w-full bg-green-600/20 hover:bg-green-600/30 text-green-400 font-semibold py-4 rounded-xl transition-all duration-300 flex items-center justify-center space-x-3 border border-green-500/20"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <span className="text-xl">💬 WhatsApp</span>
-                    <ArrowRight className="w-5 h-5" />
+                    <MessageCircle className="w-5 h-5" />
+                    <span>WhatsApp</span>
                   </a>
                 </div>
-              </div>
 
-              {/* Footer */}
-              <div className="p-8 border-t border-primary-800/50 text-center">
-                <p className="text-white text-xl font-medium">
-                  Visual Laser - Clínica Oftalmológica
-                </p>
-                <p className="text-accent-300 text-lg mt-2">
-                  Belém - Pará
-                </p>
-                <p className="text-primary-200 text-sm mt-2">
-                  Agendamento Fácil • Tecnologia de Ponta • 25+ Anos
-                </p>
+                <div className="text-center pt-2">
+                  <p className="text-white/40 text-xs font-medium uppercase tracking-widest">
+                    Visual Laser • Agendamento
+                  </p>
+                </div>
               </div>
             </div>
+
+            {/* Backdrop for closing */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="fixed inset-0 -z-10 bg-black/40 backdrop-blur-sm h-screen w-screen -m-4"
+            />
           </motion.div>
         )}
       </AnimatePresence>
