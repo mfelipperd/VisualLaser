@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, Phone, Calendar, MessageCircle } from "lucide-react";
+import Image from "next/image";
 
 const LandingHeader = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -79,10 +80,13 @@ const LandingHeader = () => {
                 onClick={() => scrollToSection('hero')}
                 className="flex items-center hover:opacity-80 transition-opacity duration-200"
               >
-                <img
+                <Image
                   src="/logo-visual-branca.png"
                   alt="Visual Laser"
+                  width={150}
+                  height={36}
                   className="h-7 sm:h-8 lg:h-9 w-auto"
+                  priority
                 />
               </button>
             </motion.div>

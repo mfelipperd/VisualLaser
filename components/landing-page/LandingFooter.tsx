@@ -14,6 +14,7 @@ import {
   Award
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const LandingFooter = () => {
   const quickLinks = [
@@ -68,9 +69,11 @@ const LandingFooter = () => {
               transition={{ duration: 0.6 }}
               className="flex items-center space-x-3 mb-6"
             >
-              <img
+              <Image
                 src="/logo-visual-branca.png"
                 alt="Visual Laser"
+                width={120}
+                height={48}
                 className="h-12 w-auto"
               />
               <div>

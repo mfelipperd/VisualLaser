@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import Image from "next/image";
 
 const WhatsAppButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -92,9 +93,11 @@ const WhatsAppButton = () => {
               boxShadow: "0 10px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.1)",
             }}
           >
-            <img
+            <Image
               src="/images/whatsapp-logo-1.png"
               alt="WhatsApp"
+              width={32}
+              height={32}
               className="w-8 h-8"
             />
           </motion.button>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Clock, Shield, Users } from "lucide-react";
+import Image from "next/image";
 
 const LandingHero = () => {
 
@@ -159,11 +160,13 @@ const LandingHero = () => {
             >
               <div className="relative">
                 {/* Main Image Container */}
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                  <img
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] md:aspect-auto md:h-[600px]">
+                  <Image
                     src="/images/landing-hero.jpg"
                     alt="Agende sua Consulta Oftalmológica - Visual Laser"
-                    className="w-full h-auto object-cover"
+                    fill
+                    className="object-cover"
+                    priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary-950/60 via-transparent to-transparent"></div>
                 </div>

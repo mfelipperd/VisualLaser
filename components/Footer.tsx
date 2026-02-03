@@ -14,6 +14,7 @@ import {
   Navigation,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   const [isMapVisible, setIsMapVisible] = useState(false);
@@ -113,9 +114,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <img
+              <Image
                 src="/logo-visual-branca.png"
                 alt="Visual Laser"
+                width={120}
+                height={48}
                 className="h-12 w-auto"
               />
               <div>

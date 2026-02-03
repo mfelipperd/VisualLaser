@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { Star, Quote, ExternalLink, RefreshCw } from "lucide-react";
 import AppointmentModal from "./AppointmentModal";
+import Image from "next/image";
 
 interface GoogleReview {
   author_name: string;
@@ -25,11 +26,7 @@ const Testimonials = () => {
   const PLACE_ID = "ChIJVycBkYGOpJIR67YIBR6Kyo4";
   const GOOGLE_MAPS_URL = `https://www.google.com/maps/place/?q=place_id:${PLACE_ID}`;
 
-  useEffect(() => {
-    fetchGoogleReviews();
-  }, []);
-
-  const fetchGoogleReviews = async () => {
+  const fetchGoogleReviews = useCallback(async () => {
     try {
       setLoading(true);
 
@@ -52,7 +49,11 @@ const Testimonials = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    fetchGoogleReviews();
+  }, [fetchGoogleReviews]);
 
   // Simulação de reviews do Google (em produção seria web scraping real)
   const simulateGoogleReviews = async (): Promise<GoogleReview[]> => {
@@ -308,9 +309,11 @@ const Testimonials = () => {
                 {/* Author */}
                 <div className="flex items-center space-x-4">
                   {review.profile_photo_url ? (
-                    <img
+                    <Image
                       src={review.profile_photo_url}
                       alt={review.author_name}
+                      width={48}
+                      height={48}
                       className="w-12 h-12 rounded-full object-cover border-2 border-accent-500/30"
                     />
                   ) : (

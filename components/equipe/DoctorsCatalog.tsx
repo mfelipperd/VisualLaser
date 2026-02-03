@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Stethoscope, Eye, Shield } from 'lucide-react';
+import Image from 'next/image';
 
 const DoctorsCatalog = () => {
   const doctors = [
@@ -167,10 +168,11 @@ const DoctorsCatalog = () => {
               <div className='bg-white rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105 overflow-hidden h-full flex flex-col'>
                 {/* Doctor Image */}
                 <div className='relative h-64 overflow-hidden'>
-                  <img
+                  <Image
                     src={doctor.image}
                     alt={doctor.name}
-                    className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-300'
+                    fill
+                    className='object-cover group-hover:scale-110 transition-transform duration-300'
                   />
                   <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent'></div>
                 </div>

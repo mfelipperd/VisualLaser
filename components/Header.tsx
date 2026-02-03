@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, Phone, Calendar, MessageCircle, Home, Building2, Activity, Users } from "lucide-react";
 import { usePathname } from "next/navigation";
 import AppointmentModal from "@/components/AppointmentModal";
+import Image from "next/image";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,10 +47,13 @@ const Header = () => {
           <div className="flex items-center justify-between h-12 md:h-14">
             {/* Logo */}
             <a href="/" className="flex items-center hover:opacity-80 transition-opacity duration-200">
-              <img
+              <Image
                 src="/logo-visual-branca.png"
                 alt="Visual Laser"
+                width={150}
+                height={36}
                 className="h-7 sm:h-8 lg:h-9 w-auto"
+                priority
               />
             </a>
 

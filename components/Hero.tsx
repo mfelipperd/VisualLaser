@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import AppointmentModal from "./AppointmentModal";
+import Image from "next/image";
+import { useMemo } from "react";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -26,7 +28,7 @@ const Hero = () => {
     }
   };
 
-  const slides = [
+  const slides = useMemo(() => [
     {
       image: "/images/excelencia.jpg",
       title: "Excelência em Oftalmologia",
@@ -82,7 +84,7 @@ const Hero = () => {
       secondaryText: "Ver Horários",
       secondaryLink: "/agendamento",
     },
-  ];
+  ], []);
 
   useEffect(() => {
     // Pré-carregar todas as imagens
@@ -93,7 +95,7 @@ const Hero = () => {
         setImagesLoaded((prev) => new Set(prev).add(slide.image));
       };
     });
-  }, []);
+  }, [slides]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -128,13 +130,13 @@ const Hero = () => {
             transition={{ duration: 1 }}
             className="absolute inset-0"
           >
-            <img
+            <Image
               src={slides[currentSlide].image}
               alt={slides[currentSlide].title}
-              className="w-full h-full object-cover"
-              onLoad={(e) => {
-                // Marcar imagem como carregada
-                e.currentTarget.style.opacity = "1";
+              fill
+              className="object-cover"
+              priority={currentSlide === 0}
+              onLoadingComplete={() => {
                 setImagesLoaded((prev) =>
                   new Set(prev).add(slides[currentSlide].image)
                 );
