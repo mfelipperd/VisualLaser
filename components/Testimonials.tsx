@@ -30,19 +30,42 @@ const Testimonials = () => {
     try {
       setLoading(true);
 
-      // Simular busca de reviews (em produção, seria um endpoint do backend)
-      // Por enquanto, vamos usar os reviews estáticos mas com estrutura real
-      const mockReviews = await simulateGoogleReviews();
+      const accessToken = process.env.NEXT_PUBLIC_GOOGLE_ACCESS_TOKEN;
 
+      if (accessToken) {
+        try {
+          const response = await fetch('/api/google-business/reviews', {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            if (data.success && data.reviews) {
+              setReviews(data.reviews);
+              setAverageRating(data.averageRating || 0);
+              setTotalReviews(data.totalReviews || 0);
+              setLastUpdated(new Date().toLocaleDateString('pt-BR'));
+              return;
+            }
+          }
+        } catch (apiError) {
+          if (process.env.NODE_ENV === 'development') {
+            console.warn('Erro ao buscar reviews da API, usando fallback:', apiError);
+          }
+        }
+      }
+
+      const mockReviews = await simulateGoogleReviews();
       setReviews(mockReviews);
-      setAverageRating(4.6); // Rating médio da Visual Laser
-      setTotalReviews(327); // Total de avaliações
-      setLastUpdated(new Date().toLocaleDateString("pt-BR"));
+      setAverageRating(4.6);
+      setTotalReviews(327);
+      setLastUpdated(new Date().toLocaleDateString('pt-BR'));
     } catch (error) {
       if (process.env.NODE_ENV === 'development') {
-        console.error("Erro ao buscar reviews:", error);
+        console.error('Erro ao buscar reviews:', error);
       }
-      // Fallback para reviews estáticos
       setReviews(fallbackReviews);
       setAverageRating(4.6);
       setTotalReviews(327);
