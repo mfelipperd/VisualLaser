@@ -5,6 +5,7 @@ import PSVL from "@/components/PSVL";
 import Testimonials from "@/components/Testimonials";
 import LocalSEOContent from "@/components/LocalSEOContent";
 import HiddenSEOContent from "@/components/HiddenSEOContent";
+import ConveniosHighlight from "@/components/ConveniosHighlight";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -63,6 +64,7 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
+      <ConveniosHighlight />
       <LocalSEOContent />
       <PSVL />
       <Testimonials />

@@ -41,6 +41,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 0.95,
     },
+    {
+      url: `${baseUrl}/convenios`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+
     // Páginas de serviços específicos
     {
       url: `${baseUrl}/cirurgia-refrativa`,
