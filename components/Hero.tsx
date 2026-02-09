@@ -9,7 +9,6 @@ import { useMemo } from "react";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [imagesLoaded, setImagesLoaded] = useState<Set<string>>(new Set());
   const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
 
   const handleCTAClick = (ctaLink: string) => {
@@ -87,17 +86,6 @@ const Hero = () => {
   ], []);
 
   useEffect(() => {
-    // Pré-carregar todas as imagens
-    slides.forEach((slide) => {
-      const img = new window.Image();
-      img.src = slide.image;
-      img.onload = () => {
-        setImagesLoaded((prev) => new Set(prev).add(slide.image));
-      };
-    });
-  }, [slides]);
-
-  useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 8000);
@@ -118,7 +106,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[50vh] sm:min-h-screen overflow-hidden">
+    <section className="relative min-h-[50vh] sm:min-h-screen overflow-hidden overflow-x-hidden">
       {/* Background Image Carousel */}
       <div className="absolute inset-0">
         <AnimatePresence mode="wait">
@@ -136,15 +124,7 @@ const Hero = () => {
               fill
               className="object-cover"
               priority={currentSlide === 0}
-              onLoadingComplete={() => {
-                setImagesLoaded((prev) =>
-                  new Set(prev).add(slides[currentSlide].image)
-                );
-              }}
-              style={{
-                opacity: imagesLoaded.has(slides[currentSlide].image) ? 1 : 0,
-                transition: "opacity 0.3s ease-in-out",
-              }}
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary-950/60 via-primary-950/40 to-transparent" />
           </motion.div>

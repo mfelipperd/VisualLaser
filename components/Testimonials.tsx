@@ -211,7 +211,7 @@ const Testimonials = () => {
 
   if (loading) {
     return (
-      <section className="section-padding bg-gradient-to-br from-primary-950 via-primary-900 to-primary-950 text-white">
+      <section className="section-padding bg-gradient-to-br from-primary-950 via-primary-900 to-primary-950 text-white overflow-x-hidden">
         <div className="container mx-auto container-padding">
           <div className="text-center">
             <div className="w-16 h-16 border-4 border-accent-500 border-t-transparent rounded-full animate-spin mx-auto mb-8"></div>
@@ -225,7 +225,7 @@ const Testimonials = () => {
   }
 
   return (
-    <section className="section-padding bg-gradient-to-br from-primary-950 via-primary-900 to-primary-950 text-white">
+    <section className="section-padding bg-gradient-to-br from-primary-950 via-primary-900 to-primary-950 text-white overflow-x-hidden">
       <div className="container mx-auto container-padding">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

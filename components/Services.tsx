@@ -76,7 +76,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-br from-primary-950 via-primary-900 to-primary-950 text-white">
+    <section className="section-padding bg-gradient-to-br from-primary-950 via-primary-900 to-primary-950 text-white overflow-x-hidden">
       <div className="container mx-auto container-padding">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

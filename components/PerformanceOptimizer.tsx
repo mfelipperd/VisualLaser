@@ -7,9 +7,9 @@ export default function PerformanceOptimizer() {
     // Preload critical resources
     const preloadCriticalResources = () => {
       const criticalImages = [
-        "/images/hero-1.jpg",
-        "/images/hero-2.jpg", 
-        "/images/hero-3.jpg",
+        "/images/excelencia.jpg",
+        "/images/cirurgia_refrativa.jpg",
+        "/images/atendimento_humanizado.png",
         "/logo-visual-branca.png"
       ];
 
@@ -20,23 +20,6 @@ export default function PerformanceOptimizer() {
         link.href = src;
         document.head.appendChild(link);
       });
-    };
-
-    // Optimize images loading
-    const optimizeImageLoading = () => {
-      const images = document.querySelectorAll("img[data-src]");
-      const imageObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const img = entry.target as HTMLImageElement;
-            img.src = img.dataset.src || "";
-            img.classList.remove("lazy");
-            imageObserver.unobserve(img);
-          }
-        });
-      });
-
-      images.forEach((img) => imageObserver.observe(img));
     };
 
     // Preconnect to external domains
@@ -61,7 +44,6 @@ export default function PerformanceOptimizer() {
     // Initialize optimizations
     preloadCriticalResources();
     preconnectExternalDomains();
-    optimizeImageLoading();
 
     // Core Web Vitals monitoring is handled by Next.js built-in analytics
     if (process.env.NODE_ENV === 'development') {

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const PSVL = () => {
   return (
-    <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+    <section className="section-padding bg-gradient-to-br from-gray-50 to-white overflow-x-hidden">
       <div className="container mx-auto container-padding">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
@@ -115,6 +115,7 @@ const PSVL = () => {
                   width={600}
                   height={400}
                   className="w-full h-auto object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-950/40 via-transparent to-transparent"></div>
 

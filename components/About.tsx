@@ -33,7 +33,7 @@ const About = () => {
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+    <section className="section-padding bg-gradient-to-br from-gray-50 to-white overflow-x-hidden">
       <div className="container mx-auto container-padding">
         <div className="max-w-7xl mx-auto">
           {/* Main Content */}
@@ -107,6 +107,7 @@ const About = () => {
                   fill
                   className="object-cover"
                   priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-950/60 via-transparent to-transparent"></div>
 

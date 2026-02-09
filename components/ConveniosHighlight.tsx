@@ -21,7 +21,7 @@ const convenios = [
 
 const ConveniosHighlight = () => {
   return (
-    <section className="section-padding bg-gray-50">
+    <section className="section-padding bg-gray-50 overflow-x-hidden">
       <div className="container mx-auto container-padding">
         <div className="max-w-4xl mx-auto">
           

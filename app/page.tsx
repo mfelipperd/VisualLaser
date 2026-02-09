@@ -1,11 +1,13 @@
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
-import PSVL from "@/components/PSVL";
-import Testimonials from "@/components/Testimonials";
-import LocalSEOContent from "@/components/LocalSEOContent";
-import HiddenSEOContent from "@/components/HiddenSEOContent";
-import ConveniosHighlight from "@/components/ConveniosHighlight";
+import dynamic from "next/dynamic";
+
+const PSVL = dynamic(() => import("@/components/PSVL"));
+const Testimonials = dynamic(() => import("@/components/Testimonials"));
+const LocalSEOContent = dynamic(() => import("@/components/LocalSEOContent"));
+const HiddenSEOContent = dynamic(() => import("@/components/HiddenSEOContent"));
+const ConveniosHighlight = dynamic(() => import("@/components/ConveniosHighlight"));
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

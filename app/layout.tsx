@@ -162,7 +162,7 @@ export default function RootLayout({
         <GoogleAnalytics />
         <PerformanceOptimizer />
         <Header />
-        <main className="pb-20 md:pb-0">{children}</main>
+        <main className="pb-20 md:pb-0 overflow-x-hidden">{children}</main>
         <Footer />
         <CookieConsent />
         <BlurModal />
