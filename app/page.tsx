@@ -8,6 +8,8 @@ const Testimonials = dynamic(() => import("@/components/Testimonials"));
 const LocalSEOContent = dynamic(() => import("@/components/LocalSEOContent"));
 const HiddenSEOContent = dynamic(() => import("@/components/HiddenSEOContent"));
 const ConveniosHighlight = dynamic(() => import("@/components/ConveniosHighlight"));
+const SiteNavigationSchema = dynamic(() => import("@/components/json-ld/SiteNavigationSchema"));
+const WebSiteSchema = dynamic(() => import("@/components/json-ld/WebSiteSchema"));
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -71,6 +73,17 @@ export default function Home() {
       <PSVL />
       <Testimonials />
       <HiddenSEOContent />
+      <WebSiteSchema />
+      <SiteNavigationSchema
+        items={[
+          { name: "Agendamento de Consulta", url: "/contato" },
+          { name: "Corpo Clínico", url: "/equipe" },
+          { name: "Convênios Aceitos", url: "/convenios" },
+          { name: "Cirurgias Refrativas", url: "/servicos/cirurgias-refrativas" },
+          { name: "Tratamento de Catarata", url: "/servicos/tratamento-catarata" },
+          { name: "Exames Oftalmológicos", url: "/servicos/exames-oftalmologicos" },
+        ]}
+      />
     </main>
   );
 }

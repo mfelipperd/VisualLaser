@@ -6,6 +6,7 @@ import {
   DoctorsCatalog,
   CTA,
 } from "@/components/equipe";
+import BreadcrumbSchema from "@/components/json-ld/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Equipe Médica - Visual Laser",
@@ -35,6 +36,12 @@ export default function EquipePage() {
       <EspecialidadesSection />
       <DoctorsCatalog />
       <CTA />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", item: "/" },
+          { name: "Equipe", item: "/equipe" },
+        ]}
+      />
     </main>
   );
 }

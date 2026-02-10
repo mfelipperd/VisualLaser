@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Shield, Eye, CheckCircle, Clock, Star, ArrowRight, Zap } from "lucide-react";
 import Link from "next/link";
+import BreadcrumbSchema from "@/components/json-ld/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Cirurgias Refrativas | Visual Laser Belém | LASIK, PRK, SMILE",
@@ -289,6 +290,13 @@ export default function CirurgiasRefrativasPage() {
           </div>
         </div>
       </section>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", item: "/" },
+          { name: "Serviços", item: "/servicos" },
+          { name: "Cirurgias Refrativas", item: "/servicos/cirurgias-refrativas" },
+        ]}
+      />
     </main>
   );
 }

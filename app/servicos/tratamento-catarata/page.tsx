@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Users, Eye, CheckCircle, Clock, Star, ArrowRight, Shield } from "lucide-react";
 import Link from "next/link";
+import BreadcrumbSchema from "@/components/json-ld/BreadcrumbSchema";
+import FAQSchema from "@/components/json-ld/FAQSchema";
 
 export const metadata: Metadata = {
   title: "Tratamento de Catarata | Visual Laser Belém | Cirurgia de Catarata",
@@ -323,6 +325,30 @@ export default function TratamentoCatarataPage() {
           </div>
         </div>
       </section>
+
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", item: "/" },
+          { name: "Serviços", item: "/servicos" },
+          { name: "Tratamento de Catarata", item: "/servicos/tratamento-catarata" },
+        ]}
+      />
+      <FAQSchema
+        questions={[
+          {
+            question: "A cirurgia de catarata é segura?",
+            answer: "Sim, a facoemulsificação é uma das cirurgias mais seguras da medicina moderna, com altíssima taxa de sucesso e baixo risco de complicações.",
+          },
+          {
+            question: "Quanto tempo demora a recuperação?",
+            answer: "A recuperação é rápida. A maioria dos pacientes retorna às atividades normais em 2-3 dias, com melhoria gradual da visão nas primeiras semanas.",
+          },
+          {
+            question: "Preciso usar óculos após a cirurgia?",
+            answer: "Depende do tipo de lente escolhida. Lentes multifocais podem reduzir significativamente a dependência de óculos, enquanto monofocais podem exigir óculos para perto.",
+          },
+        ]}
+      />
     </main>
   );
 }

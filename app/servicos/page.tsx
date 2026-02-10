@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Eye, Shield, Users, Clock, CheckCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import BreadcrumbSchema from "@/components/json-ld/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Nossos Serviços | Exames e Cirurgias Oftalmológicas | Visual Laser Belém",
@@ -230,6 +231,12 @@ export default function ServicosPage() {
           </div>
         </div>
       </section>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", item: "/" },
+          { name: "Serviços", item: "/servicos" },
+        ]}
+      />
     </main>
   );
 }
