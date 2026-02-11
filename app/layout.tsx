@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import dynamic from "next/dynamic";
 import Header from "@/components/Header";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
-import CookieConsent from "@/components/CookieConsent";
-import BlurModal from "@/components/BlurModal";
-import WhatsAppButton from "@/components/WhatsAppButton";
-import Footer from "@/components/Footer";
+const CookieConsent = dynamic(() => import("@/components/CookieConsent"));
+const BlurModal = dynamic(() => import("@/components/BlurModal"));
+const WhatsAppButton = dynamic(() => import("@/components/WhatsAppButton"));
+const Footer = dynamic(() => import("@/components/Footer"));
 import PerformanceOptimizer from "@/components/PerformanceOptimizer";
 import { Poppins } from "next/font/google";
 

@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Services from "@/components/Services";
+const About = dynamic(() => import("@/components/About"));
+const Services = dynamic(() => import("@/components/Services"));
 import dynamic from "next/dynamic";
 
 const PSVL = dynamic(() => import("@/components/PSVL"));
