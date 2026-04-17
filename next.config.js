@@ -113,6 +113,42 @@ const nextConfig = {
         destination: "/",
         permanent: true,
       },
+      // SEO Redirecionamentos para rotas extintas/erradas do Sitemap anterior
+      {
+        source: "/agendamento",
+        destination: "/contato",
+        permanent: true,
+      },
+      {
+        source: "/equipe/:slug",
+        destination: "/equipe",
+        permanent: true,
+      },
+      {
+        source: "/cirurgia-refrativa",
+        destination: "/servicos/cirurgias-refrativas",
+        permanent: true,
+      },
+      {
+        source: "/catarata",
+        destination: "/servicos/tratamento-catarata",
+        permanent: true,
+      },
+      {
+        source: "/exames-oculares",
+        destination: "/servicos/exames-oftalmologicos",
+        permanent: true,
+      },
+      {
+        source: "/plastica-ocular",
+        destination: "/servicos",
+        permanent: true,
+      },
+      {
+        source: "/oncologia-ocular",
+        destination: "/servicos",
+        permanent: true,
+      },
     ];
   },
 

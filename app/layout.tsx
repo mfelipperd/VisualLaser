@@ -73,9 +73,6 @@ export const metadata: Metadata = {
     telephone: false,
   },
   metadataBase: new URL("https://visuallaser.med.br"),
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: "👁️ Clínica Oftalmológica em Belém | Oftalmologista | Óculos | Visual Laser",
     description:

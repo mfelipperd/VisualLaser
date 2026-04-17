@@ -83,3 +83,7 @@ coverage/
 # Bundle analyzer
 .next/analyze/
 .next/bundle-analyzer/
+
+# Analytics Data
+google-analytics/
+
