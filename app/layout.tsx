@@ -15,6 +15,9 @@ const Footer = dynamic(() => import("@/components/Footer"));
 const StickyAppointment = dynamic(() => import("../components/StickyAppointment"), { ssr: false });
 const PhysicianSchema = dynamic(() => import("@/components/json-ld/PhysicianSchema"));
 
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
@@ -172,6 +175,8 @@ export default function RootLayout({
         <BlurModal />
         <WhatsAppButton />
         <StickyAppointment />
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
