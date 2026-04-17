@@ -90,6 +90,7 @@ const Header = () => {
             {/* Desktop CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-3">
               <button
+                id="header-btn-agendamento"
                 onClick={() => setIsAppointmentModalOpen(true)}
                 className="inline-flex items-center space-x-2 bg-accent-500 hover:bg-accent-600 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-sm"
               >
@@ -160,6 +161,7 @@ const Header = () => {
 
                 <div className="pt-4 border-t border-white/10 space-y-3">
                   <button
+                    id="mobile-menu-btn-agendamento"
                     onClick={() => {
                       setIsAppointmentModalOpen(true);
                       setIsMobileMenuOpen(false);

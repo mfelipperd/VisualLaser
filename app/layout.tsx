@@ -4,12 +4,15 @@ import dynamic from "next/dynamic";
 import Header from "@/components/Header";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import PerformanceOptimizer from "@/components/PerformanceOptimizer";
+import { Poppins } from "next/font/google";
+import { GoogleTagManager } from "@next/third-parties/google";
+
 const CookieConsent = dynamic(() => import("@/components/CookieConsent"));
 const BlurModal = dynamic(() => import("@/components/BlurModal"));
 const WhatsAppButton = dynamic(() => import("@/components/WhatsAppButton"));
 const Footer = dynamic(() => import("@/components/Footer"));
-import PerformanceOptimizer from "@/components/PerformanceOptimizer";
-import { Poppins } from "next/font/google";
+const StickyAppointment = dynamic(() => import("../components/StickyAppointment"), { ssr: false });
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -143,6 +146,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+
   return (
     <html lang="pt-BR" className={poppins.variable}>
       <head>
@@ -153,6 +158,7 @@ export default function RootLayout({
         <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       </head>
+      {gtmId && <GoogleTagManager gtmId={gtmId} />}
       <body className="font-poppins antialiased">
         <SchemaMarkup />
         <GoogleAnalytics />
@@ -163,6 +169,7 @@ export default function RootLayout({
         <CookieConsent />
         <BlurModal />
         <WhatsAppButton />
+        <StickyAppointment />
       </body>
     </html>
   );

@@ -188,6 +188,7 @@ const Hero = () => {
                       className="w-full sm:w-auto"
                     >
                       <button
+                        id="btn-agendamento-principal"
                         onClick={() => handleCTAClick(slides[currentSlide].ctaLink)}
                         className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-accent-500 hover:bg-accent-600 text-white font-semibold py-3 px-6 md:py-4 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm md:text-base"
                       >
