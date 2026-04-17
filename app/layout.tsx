@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 import dynamic from "next/dynamic";
 import Header from "@/components/Header";
-import SchemaMarkup from "@/components/SchemaMarkup";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import PerformanceOptimizer from "@/components/PerformanceOptimizer";
 import { Poppins } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
+import UnifiedGraphSchema from "@/components/json-ld/UnifiedGraphSchema";
 
 const CookieConsent = dynamic(() => import("@/components/CookieConsent"));
 const BlurModal = dynamic(() => import("@/components/BlurModal"));
@@ -14,7 +14,6 @@ const WhatsAppButton = dynamic(() => import("@/components/WhatsAppButton"));
 const ReviewModal = dynamic(() => import("@/components/ReviewModal"));
 const Footer = dynamic(() => import("@/components/Footer"));
 const StickyAppointment = dynamic(() => import("../components/StickyAppointment"), { ssr: false });
-const PhysicianSchema = dynamic(() => import("@/components/json-ld/PhysicianSchema"));
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
@@ -168,8 +167,7 @@ export default function RootLayout({
       </head>
       {gtmId && <GoogleTagManager gtmId={gtmId} />}
       <body className="font-poppins antialiased">
-        <SchemaMarkup />
-        <PhysicianSchema />
+        <UnifiedGraphSchema />
         <GoogleAnalytics />
         <PerformanceOptimizer />
         <Header />

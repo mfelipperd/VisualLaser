@@ -7,23 +7,23 @@ import { ChevronDown, HelpCircle } from "lucide-react";
 const faqs = [
   {
     question: "Onde encontrar um oftalmologista Unimed em Belém (Nazaré/Umarizal)?",
-    answer: "A Visual Laser é referência no atendimento a pacientes Unimed em Belém. Localizada estrategicamente no bairro de Nazaré, atendemos moradores do Umarizal, Batista Campos e região metropolitana, oferecendo desde consultas de rotina até exames e cirurgias complexas pelo seu plano de saúde.",
+    answer: "A Visual Laser é a clínica oftalmológica de referência para pacientes Unimed em Belém. Localizada na Tv. 14 de Março (Nazaré), atendemos moradores do Umarizal, Batista Campos e Marco. Oferecemos o corpo clínico mais completo da região para consultas, exames e cirurgias complexas pelo seu plano de saúde.",
   },
   {
-    question: "A Visual Laser realiza cirurgia de catarata e refrativa (SMILE)?",
-    answer: "Sim, somos especialistas em cirurgias de alta tecnologia. Oferecemos as técnicas mais modernas do mundo, como a cirurgia refrativa SMILE (Small Incision Lenticule Extraction), LASIK e PRK, além de cirurgia de catarata com implante de lentes premium para recuperação total da visão.",
+    question: "A Visual Laser utiliza tecnologia Zeiss ou Alcon em suas cirurgias?",
+    answer: "Sim. A Visual Laser investe no que há de mais moderno no mundo. Utilizamos sistemas de diagnóstico e cirurgia de padrão mundial (padrão Zeiss e Alcon), incluindo a tecnologia para cirurgia refrativa SMILE, LASIK e PRK, além de facoemulsificadores de última geração para cirurgias de catarata com implante de lentes premium.",
   },
   {
-    question: "Quais são os principais convênios atendidos pela clínica?",
-    answer: "Aceitamos os principais planos de saúde do Pará e do Brasil, incluindo Unimed, Bradesco Saúde, Amil, Cassi, SulAmérica, IPEP, TRT, entre outros. Verifique a lista completa em nossa página de convênios.",
+    question: "Qual o diferencial da cirurgia de catarata na Visual Laser Belém?",
+    answer: "Nossa cirurgia de catarata utiliza microincisões (sem pontos) e implantes de lentes intraoculares multifocais e tóricas de alta tecnologia. O procedimento é realizado por cirurgiões especialistas como o Dr. Roberto Carlei e Dr. Armando Vidonho, garantindo segurança e recuperação rápida para o paciente.",
   },
   {
-    question: "A clínica possui tecnologia de padrão mundial (Zeiss/Alcon)?",
-    answer: "A Visual Laser investe constantemente em tecnologia de ponta, utilizando equipamentos e sistemas que seguem os padrões mundiais de excelência (similares aos sistemas Zeiss e Alcon). Nossa infraestrutura permite diagnósticos precisos e procedimentos cirúrgicos extremamente seguros.",
+    question: "A clínica realiza exames de alta complexidade como Mapeamento de Retina?",
+    answer: "Sim, realizamos uma gama completa de exames diagnósticos em Belém, incluindo Mapeamento de Retina, Campimetria Computadorizada, OCT e Ultrassom Ocular. Nossa infraestrutura permite um diagnóstico preciso para patologias de retina, glaucoma e córnea em um único local.",
   },
   {
-    question: "Como agendar uma consulta de urgência ou rotina?",
-    answer: "Você pode agendar sua consulta de forma rápida através do nosso WhatsApp (91) 98896-8201 ou telefone (91) 3225-4422. Oferecemos horários flexíveis para melhor atender sua rotina no centro de Belém.",
+    question: "Como funciona o atendimento para cirurgia refrativa a laser?",
+    answer: "O paciente passa por uma avaliação rigorosa com exames de topografia e paquimetria de córnea. A Visual Laser é pioneira em Belém no uso de lasers de alta precisão que corrigem miopia, astigmatismo e hipermetropia em poucos minutos, com altíssimos índices de satisfação e segurança.",
   },
 ];
 

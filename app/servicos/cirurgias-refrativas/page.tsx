@@ -100,6 +100,29 @@ export default function CirurgiasRefrativasPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       
+      {/* Medical Therapy Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalTherapy",
+            "name": "Cirurgia Refrativa a Laser (SMILE, LASIK, PRK)",
+            "description": "Correção de miopia, astigmatismo e hipermetropia com as tecnologias mais seguras do mundo (Zeiss e Alcon).",
+            "medicalSpecialty": "Ophthalmology",
+            "relevantSpecialty": {
+              "@type": "MedicalSpecialty",
+              "name": "Refractive Surgery"
+            },
+            "preparation": "Exames de topografia, paquimetria e mapeamento de retina.",
+            "howItWorks": "Remodelamento da córnea via laser de alta precisão para correção de erros refrativos.",
+            "provider": {
+              "@id": "https://visuallaser.med.br/#clinic"
+            }
+          })
+        }}
+      />
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary-950 via-primary-900 to-primary-950 py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -109,7 +132,7 @@ export default function CirurgiasRefrativasPage() {
             <div className="inline-flex items-center space-x-2 bg-accent-500/20 backdrop-blur-sm rounded-full px-6 py-3 mb-6 border border-accent-400/30">
               <Shield className="w-5 h-5 text-accent-400" />
               <span className="text-sm font-medium text-accent-300">
-                Cirurgias Modernas
+                Liderança em Laser de Alta Precisão (Zeiss)
               </span>
             </div>
             
@@ -122,8 +145,8 @@ export default function CirurgiasRefrativasPage() {
             </h1>
             
             <p className="text-xl lg:text-2xl text-primary-200 leading-relaxed max-w-3xl mx-auto">
-              Correção definitiva de miopia, hipermetropia, astigmatismo e presbiopia 
-              com as técnicas mais modernas e seguras da oftalmologia.
+              Correção definitiva de miopia, astigmatismo e hipermetropia 
+              com as técnicas Zeiss SMILE, LASIK e PRK na clínica mais tecnológica de Belém.
             </p>
           </div>
         </div>

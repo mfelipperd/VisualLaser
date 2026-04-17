@@ -118,6 +118,31 @@ export default function TratamentoCatarataPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       
+      {/* Medical Therapy Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalTherapy",
+            "name": "Cirurgia de Catarata com Facoemulsificação",
+            "description": "Procedimento de remoção da catarata com implante de lente intraocular de alta tecnologia (Zeiss/Alcon).",
+            "medicalSpecialty": "Ophthalmology",
+            "relevantSpecialty": {
+              "@type": "MedicalSpecialty",
+              "name": "Cataract Surgery"
+            },
+            "preparation": "Exames pré-operatórios de biometria e mapeamento de retina.",
+            "howItWorks": "Remoção do cristalino opaco via ultrassom e substituição por lente artificial personalizada.",
+            "provider": {
+              "@type": "MedicalBusiness",
+              "name": "Visual Laser Belém",
+              "url": "https://visuallaser.med.br"
+            }
+          })
+        }}
+      />
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary-950 via-primary-900 to-primary-950 py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -127,7 +152,7 @@ export default function TratamentoCatarataPage() {
             <div className="inline-flex items-center space-x-2 bg-accent-500/20 backdrop-blur-sm rounded-full px-6 py-3 mb-6 border border-accent-400/30">
               <Users className="w-5 h-5 text-accent-400" />
               <span className="text-sm font-medium text-accent-300">
-                Tratamento Moderno
+                Pioneirismo em Tecnologia Zeiss & Alcon
               </span>
             </div>
             
@@ -140,8 +165,8 @@ export default function TratamentoCatarataPage() {
             </h1>
             
             <p className="text-xl lg:text-2xl text-primary-200 leading-relaxed max-w-3xl mx-auto">
-              Cirurgia moderna de catarata com facoemulsificação e lentes intraoculares premium 
-              para recuperação rápida e qualidade visual excepcional.
+              Cirurgia de catarata com facoemulsificação e lentes intraoculares de nível mundial 
+              para total recuperação da nitidez e qualidade visual.
             </p>
           </div>
         </div>
