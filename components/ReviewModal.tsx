@@ -33,8 +33,8 @@ const ReviewModal = () => {
   };
 
   const handleReviewClick = () => {
-    // Direct link to Visual Laser's Google Maps profile
-    window.open("https://maps.app.goo.gl/hG9c2XyxB9Y9A8A8A", "_blank");
+    // Correct link to Visual Laser's Google Maps profile
+    window.open("https://www.google.com/maps/search/?api=1&query=Visual+Laser+Belém+Travessa+14+de+Março", "_blank");
     handleClose();
   };
 
