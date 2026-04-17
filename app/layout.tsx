@@ -16,7 +16,7 @@ const StickyAppointment = dynamic(() => import("../components/StickyAppointment"
 const PhysicianSchema = dynamic(() => import("@/components/json-ld/PhysicianSchema"));
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 
 const poppins = Poppins({
   subsets: ["latin"],
