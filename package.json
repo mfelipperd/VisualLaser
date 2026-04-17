@@ -4,9 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:fast": "next dev --port 3000",
-    "dev:legacy": "next dev",
-    "dev:debug": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

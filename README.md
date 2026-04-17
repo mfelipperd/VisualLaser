@@ -102,6 +102,29 @@ VisualLaser/
 4. **Acesse o projeto**
    Abra [http://localhost:3000](http://localhost:3000) no seu navegador
 
+
+## ⚙️ Configuração (Variáveis de Ambiente)
+
+Crie um arquivo `.env.local` na raiz do projeto com as seguintes chaves:
+
+```env
+# Google Analytics
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-8DS8VQZN8V
+
+# Google Search Console Verification
+NEXT_PUBLIC_GOOGLE_VERIFICATION=seu-codigo-de-verificacao
+
+# Envio de Emails (Resend)
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxx
+DESTINATION_EMAIL=contato@visuallaser.med.br
+FROM_EMAIL=no-reply@visuallaser.med.br
+
+# Redes Sociais
+NEXT_PUBLIC_FACEBOOK_URL=https://www.facebook.com/visuallaser
+NEXT_PUBLIC_INSTAGRAM_URL=https://www.instagram.com/visuallaser
+NEXT_PUBLIC_WHATSAPP_URL=https://wa.me/5591988968201
+```
+
 ### Scripts disponíveis
 
 - `npm run dev` - Executa o servidor de desenvolvimento
