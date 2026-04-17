@@ -140,6 +140,9 @@ export const metadata: Metadata = {
     shortcut: "/favicon.png",
     apple: "/apple-touch-icon.png",
   },
+  alternates: {
+    canonical: "https://visuallaser.med.br",
+  },
   other: {
     "yandex-verification": "your-yandex-verification-code",
     "msvalidate.01": "your-bing-verification-code",

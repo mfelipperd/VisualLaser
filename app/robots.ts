@@ -5,52 +5,21 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: "/",
+        allow: ["/", "/_next/static/", "/_next/image/"],
         disallow: [
           "/private/",
           "/admin/",
           "/api/",
-          "/_next/",
+          "/_next/data/",
           "*.json",
-          "*.xml",
         ],
       },
       {
         userAgent: "Googlebot",
-        allow: "/",
-        disallow: ["/private/", "/admin/", "/api/", "/_next/"],
-      },
-      {
-        userAgent: "Bingbot",
-        allow: "/",
-        disallow: ["/private/", "/admin/", "/api/", "/_next/"],
-      },
-      {
-        userAgent: "Slurp",
-        allow: "/",
-        disallow: ["/private/", "/admin/", "/api/", "/_next/"],
-        crawlDelay: 2,
-      },
-      {
-        userAgent: "DuckDuckBot",
-        allow: "/",
-        disallow: ["/private/", "/admin/", "/api/", "/_next/"],
-        crawlDelay: 1,
-      },
-      {
-        userAgent: "Baiduspider",
-        allow: "/",
-        disallow: ["/private/", "/admin/", "/api/", "/_next/"],
-        crawlDelay: 3,
-      },
-      {
-        userAgent: "YandexBot",
-        allow: "/",
-        disallow: ["/private/", "/admin/", "/api/", "/_next/"],
-        crawlDelay: 2,
+        allow: ["/", "/_next/static/", "/_next/image/"],
+        disallow: ["/private/", "/admin/", "/api/"],
       },
     ],
     sitemap: "https://visuallaser.med.br/sitemap.xml",
-    host: "https://visuallaser.med.br",
   };
 }

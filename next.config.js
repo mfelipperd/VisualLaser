@@ -149,6 +149,27 @@ const nextConfig = {
         destination: "/servicos",
         permanent: true,
       },
+      // Redirecionamentos de Legado / Crawl Budget Optimization
+      {
+        source: "/:path*.php",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/:path*.html",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/index",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/index-1.html",
+        destination: "/",
+        permanent: true,
+      },
     ];
   },
 
