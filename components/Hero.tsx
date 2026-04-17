@@ -30,10 +30,10 @@ const Hero = () => {
   const slides = useMemo(() => [
     {
       image: "/images/excelencia.jpg",
-      title: "Excelência em Oftalmologia",
-      subtitle: "Tecnologia de última geração para cuidar da sua visão",
+      title: "Oftalmologista em Belém | Visual Laser",
+      subtitle: "Referência em Cirurgia de Catarata e Refrativa (SMILE) no Pará",
       description:
-        "A Visual Laser oferece tratamentos oftalmológicos avançados com equipamentos de ponta e uma equipe médica altamente qualificada.",
+        "A Visual Laser é um centro hospitalar completo especializado em exames, consultas e cirurgias de alta precisão com tecnologia de padrão mundial.",
       ctaText: "Agendar Consulta",
       ctaLink: "/agendamento",
       secondaryText: "Conheça Nossa Clínica",

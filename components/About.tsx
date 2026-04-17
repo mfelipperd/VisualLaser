@@ -53,10 +53,10 @@ const About = () => {
                 <p className="text-xl text-gray-600 leading-relaxed mb-6">
                   Há quase 30 anos, somos referência em oftalmologia avançada e
                   humanizada na região Norte. Como um **centro hospitalar completo**, oferecemos
-                  infraestrutura de ponta para diagnósticos complexos e tratamentos cirúrgicos de última geração.
+                  infraestrutura de ponta para diagnósticos complexos e tratamentos cirúrgicos de última geração (com padrões tecnológicos mundiais como os sistemas **Zeiss** e **Alcon**).
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Com mais de 50.000 pacientes atendidos, nosso compromisso vai além da correção visual; cuidamos de todas as etapas da saúde ocular, da oftalmopediatria ao acompanhamento geriátrico especializado.
+                  Com mais de 50.000 pacientes atendidos, a Visual Laser é a escolha de confiança para moradores de bairros como **Nazaré, Umarizal, Batista Campos, Marco e Reduto** em Belém. Cuidamos de todas as etapas da saúde ocular, da oftalmopediatria ao acompanhamento geriátrico especializado.
                 </p>
               </div>
 

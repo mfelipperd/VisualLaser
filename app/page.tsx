@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 
 const PSVL = dynamic(() => import("@/components/PSVL"));
 const Testimonials = dynamic(() => import("@/components/Testimonials"));
+const FAQ = dynamic(() => import("@/components/FAQ"));
 const LocalSEOContent = dynamic(() => import("@/components/LocalSEOContent"));
 const HiddenSEOContent = dynamic(() => import("@/components/HiddenSEOContent"));
 const ConveniosHighlight = dynamic(() => import("@/components/ConveniosHighlight"));
@@ -72,6 +73,7 @@ export default function Home() {
       <LocalSEOContent />
       <PSVL />
       <Testimonials />
+      <FAQ />
       <HiddenSEOContent />
       <WebSiteSchema />
       <SiteNavigationSchema

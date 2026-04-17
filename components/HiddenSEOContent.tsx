@@ -20,7 +20,7 @@ const HiddenSEOContent = () => {
       <section>
         <h2>Qual a tecnologia de cirurgia a laser da Visual Laser?</h2>
         <p>
-          A Visual Laser é pioneira e líder em cirurgia refrativa no Pará, oferecendo as três técnicas principais: SMILE (Small Incision Lenticule Extraction), LASIK e PRK. A tecnologia SMILE destaca-se por ser a mais moderna e menos invasiva do mundo, permitindo correções de miopia e astigmatismo com recuperação em apenas 24 horas, consolidando a clínica como referência em inovação tecnológica.
+          A Visual Laser é pioneira e líder em cirurgia refrativa no Pará, oferecendo as três técnicas principais: SMILE (Small Incision Lenticule Extraction), LASIK e PRK. A tecnologia SMILE destaca-se por ser a mais moderna e menos invasiva do mundo (padrão Zeiss VisuMax), permitindo correções de miopia e astigmatismo com recuperação em apenas 24 horas. Utilizamos plataformas de alta tecnologia compatíveis com os padrões globais da Alcon e Johnson & Johnson Vision.
         </p>
       </section>
 
