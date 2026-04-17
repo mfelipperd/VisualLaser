@@ -146,9 +146,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={poppins.variable}>
       <head>
-        <link rel="preload" href="/images/hero-1.jpg" as="image" type="image/jpeg" />
-        <link rel="preload" href="/images/hero-2.jpg" as="image" type="image/jpeg" />
-        <link rel="preload" href="/images/hero-3.jpg" as="image" type="image/jpeg" />
+        <link rel="preload" href="/images/excelencia.jpg" as="image" type="image/jpeg" fetchPriority="high" />
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />

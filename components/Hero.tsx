@@ -112,7 +112,7 @@ const Hero = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
-            initial={{ opacity: 0 }}
+            initial={currentSlide === 0 ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1 }}
@@ -124,6 +124,7 @@ const Hero = () => {
               fill
               className="object-cover"
               priority={currentSlide === 0}
+              fetchPriority={currentSlide === 0 ? "high" : "auto"}
               sizes="100vw"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary-950/60 via-primary-950/40 to-transparent" />
