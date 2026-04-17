@@ -13,6 +13,7 @@ const BlurModal = dynamic(() => import("@/components/BlurModal"));
 const WhatsAppButton = dynamic(() => import("@/components/WhatsAppButton"));
 const Footer = dynamic(() => import("@/components/Footer"));
 const StickyAppointment = dynamic(() => import("../components/StickyAppointment"), { ssr: false });
+const PhysicianSchema = dynamic(() => import("@/components/json-ld/PhysicianSchema"));
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -161,6 +162,7 @@ export default function RootLayout({
       {gtmId && <GoogleTagManager gtmId={gtmId} />}
       <body className="font-poppins antialiased">
         <SchemaMarkup />
+        <PhysicianSchema />
         <GoogleAnalytics />
         <PerformanceOptimizer />
         <Header />

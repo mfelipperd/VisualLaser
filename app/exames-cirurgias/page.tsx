@@ -5,6 +5,7 @@ import {
   CirurgiasSection,
   CTA,
 } from "@/components/exames-cirurgias";
+import MedicalAuthorSignature from "@/components/MedicalAuthorSignature";
 
 export const metadata: Metadata = {
   title: "Exames e Cirurgias - Visual Laser",
@@ -35,6 +36,9 @@ export default function ExamesCirurgiasPage() {
       <ExamesHero />
       <ExamesSection />
       <CirurgiasSection />
+      <div className="container mx-auto container-padding">
+        <MedicalAuthorSignature />
+      </div>
       <CTA />
     </main>
   );

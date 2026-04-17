@@ -1,0 +1,144 @@
+/**
+ * PhysicianSchema Component
+ * Automatically generates Physician JSON-LD for the whole medical team.
+ * This helps IAs (ChatGPT, Gemini, etc.) and Google understand the expertise and authority of the clinic.
+ */
+
+const doctors = [
+  {
+    name: 'Dr. Roberto Carlei Lima',
+    specialty: 'Catarata, Córnea e Cirurgia Refrativa',
+    crm: 'CRM-PA 5071',
+    image: 'https://visuallaser.med.br/images/doctors/roberto_carlei.png',
+    description: 'Especialista em oftalmologia com vasta experiência em cirurgias de catarata, transplantes de córnea e cirurgias refrativas.',
+  },
+  {
+    name: 'Dra. Rosamélia Lima',
+    specialty: 'Oftalmologia Clínica e Cirúrgica',
+    crm: 'CRM-PA 5937',
+    image: 'https://visuallaser.med.br/images/doctors/rosa.png',
+    description: 'Especialista em oftalmologia clínica e cirúrgica com ampla experiência no diagnóstico e tratamento de doenças oculares.',
+  },
+  {
+    name: 'Dr. José Guilherme',
+    specialty: 'Glaucoma',
+    crm: 'CRM-PA 6502',
+    image: 'https://visuallaser.med.br/images/doctors/joseguilherme.png',
+    description: 'Especialista em glaucoma com vasta experiência no diagnóstico e tratamento desta condição.',
+  },
+  {
+    name: 'Dr. Armando Vidonho',
+    specialty: 'Transplante de Córnea, Catarata e Cirurgia Refrativa',
+    crm: 'CRM-PA 4665',
+    image: 'https://visuallaser.med.br/images/doctors/armandovidonho.png',
+    description: 'Especialista em transplante de córnea, catarata e cirurgia refrativa com vasta experiência em procedimentos complexos.',
+  },
+  {
+    name: 'Dr. Otávio Solano',
+    specialty: 'Oftalmologia Clínica e Cirúrgica',
+    crm: 'CRM-PA 5464',
+    image: 'https://visuallaser.med.br/images/doctors/otaviosolano.png',
+    description: 'Especialista em oftalmologia clínica e cirúrgica com ampla experiência no diagnóstico e tratamento de doenças oculares.',
+  },
+  {
+    name: 'Dra. Ana Paula',
+    specialty: 'Glaucoma',
+    crm: 'CRM-PA 8278',
+    image: 'https://visuallaser.med.br/images/doctors/anapaula.png',
+    description: 'Especialista em glaucoma com vasta experiência no diagnóstico e tratamento desta condição.',
+  },
+  {
+    name: 'Dr. Carlos Lima',
+    specialty: 'Catarata, Plástica e Vias Lacrimais e Glaucoma',
+    crm: 'CRM-PA 7967',
+    image: 'https://visuallaser.med.br/images/doctors/carloslima.png',
+    description: 'Especialista em catarata, cirurgia plástica ocular, vias lacrimais e glaucoma com ampla experiência em procedimentos complexos.',
+  },
+  {
+    name: 'Dr. Geraldo Carvalho',
+    specialty: 'Retina e Vítreo e Ultrassom Ocular',
+    crm: 'CRM-PA 9692',
+    image: 'https://visuallaser.med.br/images/doctors/geraldocarvalho.png',
+    description: 'Especialista em retina e vítreo com vasta experiência em ultrassom ocular e diagnóstico de doenças retinianas complexas.',
+  },
+  {
+    name: 'Dr. Joacy David',
+    specialty: 'Retina Clínica, Uveíte e Oncologia Ocular',
+    crm: 'CRM-PA 14662',
+    image: 'https://visuallaser.med.br/images/doctors/joacydavid.png',
+    description: 'Especialista em retina clínica, uveíte e oncologia ocular com vasta experiência no diagnóstico e tratamento de doenças retinianas complexas.',
+  },
+  {
+    name: 'Dr. João Paulo Bezerra',
+    specialty: 'Glaucoma e Catarata',
+    crm: 'CRM-PA 12997',
+    image: 'https://visuallaser.med.br/images/doctors/joaopaulo.png',
+    description: 'Especialista em glaucoma e catarata com vasta experiência no diagnóstico e tratamento dessas condições.',
+  },
+  {
+    name: 'Dr. José Afonso',
+    specialty: 'Oftalmologia Clínica e Cirúrgica',
+    crm: 'CRM-PA 4503',
+    image: 'https://visuallaser.med.br/images/doctors/joseafonso.png',
+    description: 'Especialista em oftalmologia clínica e cirúrgica com ampla experiência no diagnóstico e tratamento de doenças oculares.',
+  },
+  {
+    name: 'Dra. Juliana Meschede',
+    specialty: 'Glaucoma Clínico e Cirurgia de Catarata',
+    crm: 'CRM-PA 11702',
+    image: 'https://visuallaser.med.br/images/doctors/julianameschede.png',
+    description: 'Especialista em glaucoma clínico e cirurgia de catarata com vasta experiência no diagnóstico e tratamento dessas condições.',
+  },
+  {
+    name: 'Dr. Taurino Rodrigues',
+    specialty: 'Doenças da Retina e Vítreo',
+    crm: 'CRM-PA 11098',
+    image: 'https://visuallaser.med.br/images/doctors/taurinorodrigues.png',
+    description: 'Especialista em doenças da retina e vítreo com vasta experiência no diagnóstico e tratamento de condições retinianas complexas.',
+  },
+  {
+    name: 'Dra. Taís Rocha',
+    specialty: 'Córnea e Neuroftalmologia',
+    crm: 'CRM-PA 9447',
+    image: 'https://visuallaser.med.br/images/doctors/tais.jpeg',
+    description: 'Especialista em córnea e neuroftalmologia com vasta experiência no diagnóstico e tratamento de doenças corneanas e condições neurológicas.',
+  },
+];
+
+export default function PhysicianSchema() {
+  const schemas = doctors.map((doc) => ({
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": doc.name,
+    "image": doc.image,
+    "description": doc.description,
+    "medicalSpecialty": "Ophthalmology",
+    "occupationalCategory": "Physician",
+    "identifier": doc.crm,
+    "affiliation": {
+      "@type": "MedicalBusiness",
+      "name": "Visual Laser",
+      "url": "https://visuallaser.med.br"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Tv. 14 de Março, 1622",
+      "addressLocality": "Nazaré, Belém",
+      "addressRegion": "PA",
+      "postalCode": "66055-490",
+      "addressCountry": "BR"
+    }
+  }));
+
+  return (
+    <>
+      {schemas.map((schema, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+    </>
+  );
+}

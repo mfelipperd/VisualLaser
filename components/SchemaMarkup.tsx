@@ -264,14 +264,14 @@ export default function SchemaMarkup() {
       },
     ],
     knowsAbout: [
-      "Cirurgia Refrativa",
-      "Cirurgia de Catarata",
+      "Cirurgia Refrativa (LASIK, PRK)",
+      "Cirurgia de Catarata com Implante de Lente",
       "Oftalmologia Pediátrica",
-      "Retina",
-      "Glaucoma",
-      "Plástica Ocular",
-      "Oncologia Ocular",
-      "Exames Oftalmológicos",
+      "Tratamento de Glaucoma e Retina",
+      "Plástica Ocular e Vias Lacrimais",
+      "Oncologia Ocular e Uveítes",
+      "Transplante de Córnea e Ceratocone",
+      "Exames Oftalmológicos de Alta Tecnologia",
     ],
     makesOffer: [
       {

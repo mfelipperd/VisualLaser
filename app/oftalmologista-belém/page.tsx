@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
+import MedicalAuthorSignature from "@/components/MedicalAuthorSignature";
 
 export const metadata: Metadata = {
   title: "Oftalmologista em Belém | Médico dos Olhos | Consulta | Visual Laser",
@@ -58,6 +59,9 @@ export default function OftalmologistaBelem() {
     <main className="min-h-screen">
       <Hero />
       <Services />
+      <div className="container mx-auto container-padding">
+        <MedicalAuthorSignature />
+      </div>
       <Testimonials />
     </main>
   );

@@ -27,28 +27,18 @@ const ContactInfo = () => {
           value: "(91) 3225-4422",
           type: "phone",
         },
-        {
-          label: "WhatsApp",
-          value: "(91) 98896-8201",
-          type: "whatsapp",
-        },
       ],
       color: "from-blue-500 to-cyan-500",
     },
     {
-      icon: Mail,
-      title: "E-mail",
-      description: "Envie suas dúvidas e solicitações por e-mail",
+      icon: MessageCircle,
+      title: "WhatsApp",
+      description: "Atendimento rápido e agendamento via WhatsApp",
       contacts: [
         {
-          label: "Contato Geral",
-          value: "contato@visuallaser.med.br",
-          type: "email",
-        },
-        {
-          label: "Marketing",
-          value: "marketing@visuallaser.com.br",
-          type: "email",
+          label: "WhatsApp Oficial",
+          value: "(91) 98896-8201",
+          type: "whatsapp",
         },
       ],
       color: "from-green-500 to-emerald-500",
@@ -96,17 +86,29 @@ const ContactInfo = () => {
       icon: Calendar,
       title: "Agendar Consulta",
       description: "Agende sua consulta de forma rápida e fácil",
-      action: "Agendar",
+      action: "Agendar Online",
       color: "from-accent-500 to-accent-600",
       onClick: () => setIsAppointmentModalOpen(true),
     },
     {
       icon: MessageCircle,
-      title: "Tirar Dúvidas",
-      description: "Entre em contato para esclarecer suas dúvidas",
-      action: "Contatar",
+      title: "Falar no WhatsApp",
+      description: "Tire suas dúvidas agora pelo WhatsApp",
+      action: "Abrir WhatsApp",
+      color: "from-green-500 to-green-600",
+      onClick: () =>
+        window.open(
+          "https://wa.me/5591988968201?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Visual%20Laser.",
+          "_blank"
+        ),
+    },
+    {
+      icon: Mail,
+      title: "E-mail de Contato",
+      description: "Preferência por e-mail? Estamos à disposição",
+      action: "Enviar E-mail",
       color: "from-primary-600 to-primary-700",
-      onClick: () => (window.location.href = "#contact-form"),
+      onClick: () => (window.location.href = "mailto:contato@visuallaser.med.br"),
     },
   ];
 
