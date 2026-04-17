@@ -200,6 +200,30 @@ export default function SchemaMarkup() {
         addressCountry: "BR",
       },
       {
+        "@type": "AdministrativeArea",
+        name: "Nazaré",
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Umarizal",
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Batista Campos",
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "São Brás",
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Reduto",
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Marco",
+      },
+      {
         "@type": "State",
         name: "Pará",
         addressCountry: "BR",
@@ -264,14 +288,14 @@ export default function SchemaMarkup() {
       },
     ],
     knowsAbout: [
-      "Cirurgia Refrativa (LASIK, PRK)",
-      "Cirurgia de Catarata com Implante de Lente",
-      "Oftalmologia Pediátrica",
-      "Tratamento de Glaucoma e Retina",
-      "Plástica Ocular e Vias Lacrimais",
+      "Cirurgia Refrativa de Alta Precisão (SMILE, LASIK, PRK)",
+      "Cirurgia de Catarata com Implante de Lentes Premium",
+      "Oftalmologia Clínica e Pediátrica",
+      "Tratamento de Glaucoma, Retina e Vítreo",
+      "Plástica Ocular, Vias Lacrimais e Harmonização Facial",
       "Oncologia Ocular e Uveítes",
-      "Transplante de Córnea e Ceratocone",
-      "Exames Oftalmológicos de Alta Tecnologia",
+      "Transplante de Córnea e Tratamento de Ceratocone",
+      "Exames Diagnósticos com Tecnologia de Ponta",
     ],
     makesOffer: [
       {

@@ -52,15 +52,11 @@ const About = () => {
                 </h2>
                 <p className="text-xl text-gray-600 leading-relaxed mb-6">
                   Há quase 30 anos, somos referência em oftalmologia avançada e
-                  humanizada na região Norte. Nossa clínica oferece
-                  infraestrutura completa, tecnologia de última geração e uma
-                  equipe médica altamente especializada.
+                  humanizada na região Norte. Como um **centro hospitalar completo**, oferecemos
+                  infraestrutura de ponta para diagnósticos complexos e tratamentos cirúrgicos de última geração.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Nosso compromisso é proporcionar o melhor atendimento
-                  oftalmológico, sempre com foco na qualidade de vida dos nossos
-                  pacientes. Utilizamos as mais avançadas técnicas e
-                  equipamentos para garantir resultados excepcionais.
+                  Com mais de 50.000 pacientes atendidos, nosso compromisso vai além da correção visual; cuidamos de todas as etapas da saúde ocular, da oftalmopediatria ao acompanhamento geriátrico especializado.
                 </p>
               </div>
 
