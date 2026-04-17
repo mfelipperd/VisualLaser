@@ -11,6 +11,7 @@ import { GoogleTagManager } from "@next/third-parties/google";
 const CookieConsent = dynamic(() => import("@/components/CookieConsent"));
 const BlurModal = dynamic(() => import("@/components/BlurModal"));
 const WhatsAppButton = dynamic(() => import("@/components/WhatsAppButton"));
+const ReviewModal = dynamic(() => import("@/components/ReviewModal"));
 const Footer = dynamic(() => import("@/components/Footer"));
 const StickyAppointment = dynamic(() => import("../components/StickyAppointment"), { ssr: false });
 const PhysicianSchema = dynamic(() => import("@/components/json-ld/PhysicianSchema"));
@@ -174,6 +175,7 @@ export default function RootLayout({
         <CookieConsent />
         <BlurModal />
         <WhatsAppButton />
+        <ReviewModal />
         <StickyAppointment />
         <SpeedInsights />
         <Analytics />
