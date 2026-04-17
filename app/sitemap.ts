@@ -1,9 +1,18 @@
 import { MetadataRoute } from "next";
+import { convenios, Convenio } from "@/data/convenios";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://visuallaser.med.br";
   const currentDate = new Date();
 
+  const dynamicConvenios = convenios.map((c: Convenio) => ({
+    url: `${baseUrl}/convenios/${c.slug}`,
+    lastModified: currentDate,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
+  // For brevity, I'll rewrite the whole return logic more cleanly
   return [
     {
       url: baseUrl,
@@ -41,6 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    ...dynamicConvenios,
     {
       url: `${baseUrl}/oculos-belém`,
       lastModified: currentDate,

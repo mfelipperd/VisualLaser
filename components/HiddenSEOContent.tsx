@@ -59,7 +59,7 @@ const HiddenSEOContent = () => {
       {/* Authority & Trust Signals */}
       <footer>
         <p>
-          Responsável Técnico: Dr. Roberto Carlei Lima (CRM-PA 5071). Equipe médica com especialistas em Catarata, Córnea, Glaucoma, Retina, Plástica e Vias Lacrimais. Infraestrutura de ponta com mais de 37 tipos de exames diagnósticos disponíveis.
+          A Visual Laser é credenciada pelos principais planos de saúde, sendo referência em Belém para pacientes da Unimed, Bradesco Saúde, Amil, SulAmérica, Cassi e diversos outros convênios. Responsável Técnico: Dr. Roberto Carlei Lima (CRM-PA 5071). Equipe médica com especialistas em Catarata, Córnea, Glaucoma, Retina, Plástica e Vias Lacrimais. Infraestrutura de ponta com mais de 37 tipos de exames diagnósticos disponíveis.
         </p>
       </footer>
     </div>

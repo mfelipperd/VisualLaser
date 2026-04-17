@@ -26,40 +26,7 @@ export const metadata: Metadata = {
 };
 
 import Image from "next/image";
-
-const convenios = [
-  { name: "Amazônia Saúde", logo: "/images/convenios/amazonia_saude.png" },
-  { name: "Amil", logo: "/images/convenios/amil.svg" },
-  { name: "Aspara", logo: "/images/convenios/aspara.png" },
-  { name: "Assefaz", logo: "/images/convenios/assefaz.svg" },
-  { name: "Bacen", logo: "/images/convenios/bacen.png" },
-  { name: "Bradesco Saúde", logo: "/images/convenios/bradesco.png" },
-  { name: "Casembrapa", logo: "/images/convenios/casembrapa.png" },
-  { name: "CASF", logo: null },
-  { name: "CASSI", logo: "/images/convenios/cassi.webp" },
-  { name: "CEF (Saúde Caixa)", logo: null },
-  { name: "Conab", logo: null },
-  { name: "Correios", logo: "/images/convenios/correios.png" },
-  { name: "Eletronorte", logo: "/images/convenios/eletronorte_new.png" },
-  { name: "Embratel", logo: null },
-  { name: "Fusex", logo: null },
-  { name: "Garantia de Saúde", logo: null },
-  { name: "Infraero", logo: null },
-  { name: "Lider Saúde", logo: null },
-  { name: "Mediservice", logo: null },
-  { name: "Petrobras", logo: "/images/convenios/petrobras.svg" },
-  { name: "Proasa Saúde", logo: null },
-  { name: "Procuradoria (Plan-Assiste)", logo: null },
-  { name: "Pró-Social (TRF)", logo: null },
-  { name: "SulAmérica", logo: null },
-  { name: "TRE", logo: null },
-  { name: "TRT", logo: null },
-  { name: "Unafisco", logo: null },
-  { name: "Unimed", logo: "/images/convenios/unimed.svg" },
-  { name: "Vale (PASA)", logo: null }
-];
-
-const unimedException = "Exceto Dra. Rosamélia Lima, Dra. Tais Rocha e Dr. Joacy David";
+import { convenios } from "@/data/convenios";
 
 export default function ConveniosPage() {
   return (
@@ -77,7 +44,7 @@ export default function ConveniosPage() {
             Convênios <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-accent-400 to-accent-200">Atendidos</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Trabalhamos com os principais planos de saúde para oferecer o melhor atendimento oftalmológico para você e sua família.
+            Trabalhamos com os principais planos de saúde para oferecer o melhor atendimento oftalmológico para você e sua família em Belém.
           </p>
         </div>
       </section>
@@ -93,14 +60,15 @@ export default function ConveniosPage() {
                 </h2>
                 <p className="text-gray-600 max-w-2xl mx-auto">
                   Confira abaixo a relação de convênios que atendemos atualmente. 
-                  Para informações específicas sobre cobertura de procedimentos, entre em contato.
+                  Clique em um convênio para ver informações específicas de cobertura.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {convenios.map((convenio, index) => (
-                  <div 
+                  <Link
                     key={index}
+                    href={`/convenios/${convenio.slug}`}
                     className="flex flex-col items-center justify-center p-6 rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:border-accent-200 transition-all duration-300 group h-40"
                   >
                     {convenio.logo ? (
@@ -121,12 +89,12 @@ export default function ConveniosPage() {
                     <span className="font-bold text-gray-800 text-center group-hover:text-accent-700 transition-colors">
                       {convenio.name}
                     </span>
-                    {convenio.name === "Unimed" && (
+                    {convenio.exception && (
                       <p className="text-xs text-gray-500 text-center mt-2 px-2 leading-tight">
-                        *{unimedException}
+                        *{convenio.exception}
                       </p>
                     )}
-                  </div>
+                  </Link>
                 ))}
               </div>
 
