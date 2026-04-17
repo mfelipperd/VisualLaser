@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Cookie, CheckCircle } from 'lucide-react'
 import { useLocalStorage } from '@/hooks/useLocalStorage'
 import { CookieConsent as CookieConsentType } from '@/types'
+import Link from 'next/link'
 
 const CookieConsent = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -51,13 +52,13 @@ const CookieConsent = () => {
                 <p className="text-xs text-gray-600 leading-relaxed">
                   Utilizamos cookies para melhorar sua experiência em nosso site. 
                   Ao continuar navegando, você concorda com nossa{' '}
-                  <a href="/privacidade" className="text-primary-600 hover:text-primary-700 underline">
+                  <Link href="/privacidade" className="text-primary-600 hover:text-primary-700 underline">
                     política de privacidade
-                  </a>{' '}
+                  </Link>{' '}
                   e{' '}
-                  <a href="/termos" className="text-primary-600 hover:text-primary-700 underline">
+                  <Link href="/termos" className="text-primary-600 hover:text-primary-700 underline">
                     termos de uso
-                  </a>.
+                  </Link>.
                 </p>
               </div>
             </div>

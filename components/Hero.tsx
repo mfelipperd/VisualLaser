@@ -6,8 +6,10 @@ import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import AppointmentModal from "./AppointmentModal";
 import Image from "next/image";
 import { useMemo } from "react";
+import { useRouter } from "next/navigation";
 
 const Hero = () => {
+  const router = useRouter();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
 
@@ -15,7 +17,7 @@ const Hero = () => {
     if (ctaLink === "/agendamento") {
       setIsAppointmentModalOpen(true);
     } else {
-      window.location.href = ctaLink;
+      router.push(ctaLink);
     }
   };
 
@@ -23,7 +25,7 @@ const Hero = () => {
     if (secondaryLink === "/agendamento") {
       setIsAppointmentModalOpen(true);
     } else {
-      window.location.href = secondaryLink;
+      router.push(secondaryLink);
     }
   };
 

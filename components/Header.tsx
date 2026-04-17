@@ -6,6 +6,7 @@ import { Menu, Phone, Calendar, MessageCircle, Home, Building2, Activity, Users 
 import { usePathname } from "next/navigation";
 import AppointmentModal from "@/components/AppointmentModal";
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,7 +47,7 @@ const Header = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-12 md:h-14">
             {/* Logo */}
-            <a href="/" className="flex items-center hover:opacity-80 transition-opacity duration-200">
+            <Link href="/" className="flex items-center hover:opacity-80 transition-opacity duration-200">
               <Image
                 src="/logo-visual-branca.png"
                 alt="Visual Laser"
@@ -55,13 +56,13 @@ const Header = () => {
                 className="h-7 sm:h-8 lg:h-9 w-auto"
                 priority
               />
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
               {menuItems.map((item) => (
                 <div key={item.path} className="relative">
-                  <a
+                  <Link
                     href={item.path}
                     className={`text-sm md:text-base font-medium transition-all duration-200 ${
                       isActivePage(item.path)
@@ -70,7 +71,7 @@ const Header = () => {
                     }`}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                   {isActivePage(item.path) && (
                     <motion.div
                       layoutId="activePage"
@@ -97,13 +98,13 @@ const Header = () => {
                 <Calendar className="w-3.5 h-3.5" />
                 <span>Agendar</span>
               </button>
-              <a
+              <Link
                 href="/contato"
                 className="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 border border-white/20 text-sm"
               >
                 <Phone className="w-3.5 h-3.5" />
                 <span>Contato</span>
-              </a>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -134,27 +135,30 @@ const Header = () => {
                   {menuItems.map((item, index) => {
                     const IconComponent = item.icon;
                     return (
-                      <motion.a
+                      <Link
                         key={item.path}
                         href={item.path}
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.05 }}
-                        className={`flex items-center space-x-4 p-4 rounded-xl transition-all duration-200 ${
-                          isActivePage(item.path)
-                            ? "bg-accent-500/20 text-accent-400"
-                            : "text-white/80 hover:bg-white/5 hover:text-white"
-                        }`}
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
-                        <div className={`p-2 rounded-lg ${isActivePage(item.path) ? "bg-accent-500/20" : "bg-white/5"}`}>
-                          <IconComponent className="w-5 h-5" />
-                        </div>
-                        <span className="font-semibold text-lg">{item.name}</span>
-                        {isActivePage(item.path) && (
-                          <div className="ml-auto w-1.5 h-1.5 bg-accent-400 rounded-full" />
-                        )}
-                      </motion.a>
+                        <motion.div
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.05 }}
+                          className={`flex items-center space-x-4 p-4 rounded-xl transition-all duration-200 ${
+                            isActivePage(item.path)
+                              ? "bg-accent-500/20 text-accent-400"
+                              : "text-white/80 hover:bg-white/5 hover:text-white"
+                          }`}
+                        >
+                          <div className={`p-2 rounded-lg ${isActivePage(item.path) ? "bg-accent-500/20" : "bg-white/5"}`}>
+                            <IconComponent className="w-5 h-5" />
+                          </div>
+                          <span className="font-semibold text-lg">{item.name}</span>
+                          {isActivePage(item.path) && (
+                            <div className="ml-auto w-1.5 h-1.5 bg-accent-400 rounded-full" />
+                          )}
+                        </motion.div>
+                      </Link>
                     );
                   })}
                 </nav>
@@ -171,14 +175,14 @@ const Header = () => {
                     <Calendar className="w-5 h-5" />
                     <span>Agendar Consulta</span>
                   </button>
-                  <a
+                  <Link
                     href="/contato"
                     className="w-full bg-white/5 hover:bg-white/10 text-white font-semibold py-4 rounded-xl transition-all duration-300 flex items-center justify-center space-x-3 border border-white/10"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <MessageCircle className="w-5 h-5 text-accent-400" />
                     <span>Falar Conosco</span>
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="text-center pt-2">
