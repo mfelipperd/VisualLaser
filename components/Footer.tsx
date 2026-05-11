@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Phone,
@@ -17,9 +18,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Footer = () => {
+  const pathname = usePathname();
+
   const [isMapVisible, setIsMapVisible] = useState(false);
   const [userLocation, setUserLocation] = useState<{lat: number, lng: number} | null>(null);
   const [mapKey, setMapKey] = useState(0);
+
+  if (pathname?.startsWith("/lp-c1f9e3b2")) return null;
 
   // Função para solicitar localização do usuário automaticamente
   const requestUserLocation = () => {
@@ -271,6 +276,7 @@ const Footer = () => {
                       {/* Map */}
                       <iframe
                         key={mapKey}
+                        title="Mapa Visual Laser"
                         src={getMapIframeUrl()}
                         width="100%"
                         height="400"

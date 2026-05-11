@@ -1,11 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar } from "lucide-react";
 import AppointmentModal from "./AppointmentModal";
 
 const StickyAppointment = () => {
+  const pathname = usePathname();
+
   const [isVisible, setIsVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -22,6 +25,8 @@ const StickyAppointment = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (pathname?.startsWith("/lp-c1f9e3b2")) return null;
 
   return (
     <>

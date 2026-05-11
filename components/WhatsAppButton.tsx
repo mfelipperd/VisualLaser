@@ -1,11 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import Image from "next/image";
 
 const WhatsAppButton = () => {
+  const pathname = usePathname();
+
   const [isVisible, setIsVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -36,6 +39,7 @@ const WhatsAppButton = () => {
     setIsVisible(false);
   };
 
+  if (pathname?.startsWith("/lp-c1f9e3b2")) return null;
   if (!isVisible) return null;
 
   return (

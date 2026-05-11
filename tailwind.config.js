@@ -54,10 +54,18 @@ module.exports = {
           800: "#075985",
           900: "#0c4a6e",
         },
+        vl: {
+          dark: "#163653",
+          blue: "#1c4b73",
+          cyan: "#1db1d6",
+          "gray-bg": "#f8fafc",
+          text: "#475569",
+        },
       },
       fontFamily: {
         sans: ["Poppins", "ui-sans-serif", "system-ui", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
+        inter: ["var(--font-inter)", "sans-serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",
@@ -67,6 +75,7 @@ module.exports = {
         "bounce-gentle": "bounceGentle 2s infinite",
         "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "float": "float 6s ease-in-out infinite",
+        "marquee": "marquee 60s linear infinite",
       },
       keyframes: {
         fadeIn: {
@@ -92,6 +101,10 @@ module.exports = {
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-20px)" },
+        },
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
         },
       },
       spacing: {
