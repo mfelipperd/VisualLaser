@@ -22,8 +22,28 @@ export default function CustomLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className={`${inter.variable}`}>
-      {children}
+    <div className={inter.className}>
+      <style dangerouslySetInnerHTML={{ __html: `
+        /* Força override definitivo da landing page sobre o globals.css Poppins */
+        .lp-container, .lp-container * {
+          font-family: ${inter.style.fontFamily} !important;
+        }
+        .lp-container .font-black {
+          font-weight: 900 !important;
+        }
+        .lp-container .font-extrabold {
+          font-weight: 800 !important;
+        }
+        .lp-container .font-bold {
+          font-weight: 700 !important;
+        }
+        .lp-container .font-semibold {
+          font-weight: 600 !important;
+        }
+      ` }} />
+      <div className="lp-container">
+        {children}
+      </div>
     </div>
   );
 }
