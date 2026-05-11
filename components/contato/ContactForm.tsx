@@ -73,9 +73,8 @@ const ContactForm = () => {
         }, 3000);
       }
     } catch (error) {
-      if (process.env.NODE_ENV === 'development') {
-        console.error('Erro ao enviar formulário:', error);
-      }
+      // eslint-disable-next-line no-console
+      console.error('Erro ao enviar formulário:', error);
       setSubmitStatus("error");
       setTimeout(() => {
         setSubmitStatus("idle");

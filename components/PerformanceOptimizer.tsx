@@ -46,9 +46,6 @@ export default function PerformanceOptimizer() {
     preconnectExternalDomains();
 
     // Core Web Vitals monitoring is handled by Next.js built-in analytics
-    if (process.env.NODE_ENV === 'development') {
-      console.log('Performance optimizations initialized');
-    }
   }, []);
 
   return null;

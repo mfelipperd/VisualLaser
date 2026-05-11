@@ -14,6 +14,136 @@ interface GoogleReview {
   profile_photo_url?: string;
 }
 
+// Simulação de reviews do Google (em produção seria web scraping real)
+const simulateGoogleReviews = async (): Promise<GoogleReview[]> => {
+  // Simular delay de rede
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  return [
+    {
+      author_name: "Isabely Menezes",
+      rating: 5,
+      text: "A clínica oferece um atendimento de excelência. Minha avó foi muito bem tratada e nós duas ficamos extremamente satisfeitas com o cuidado médico prestado pelo Dr. Armando Vidonho.",
+      time: "há 2 semanas",
+      profile_photo_url: "",
+    },
+    {
+      author_name: "Marcino Fernandes",
+      rating: 5,
+      text: "Realizei com o Dr Carlos Lima na clinica Visual Laser a cirurgia de blefaroplastia onde me encontro 100% satisfeito com o atendimento gentil, educado, humano e atencioso do Dr. Carlos Lima, bem como de suas atendentes. O resultado final da cirurgia de blefaroplastia inferior ficou excelente e acima do esperado.",
+      time: "há 1 semana",
+      profile_photo_url: "",
+    },
+    {
+      author_name: "Tereza Neves",
+      rating: 5,
+      text: "Sou paciente do Dr. Armando Vidonho e há 20 dias passei por cirurgia de Catarata. Os exames clínicos pós operatório confirmam ótimo resultado. Sinto-me bem e feliz por estar conseguindo ler sem o auxílio de óculos. Fui muito bem atendida por toda a equipe da Clínica Visual Laser e em especial pelo Dr. Armando Vidonho.",
+      time: "há 3 semanas",
+      profile_photo_url: "",
+    },
+    {
+      author_name: "Rayanne Kathleem",
+      rating: 5,
+      text: "Sou paciente do Dr Armando vidonho comecei meu tratamento de ceratocone a 1 ano e pouco dia 21/08/25 fiz o transplante de córnea vou fazer 1 mês uma ótima cirurgia Dr muito atencioso 100% cicatrisado recuperação total. Não tenho do que reclamar as meninas da recepção são super atenciosas sempre bem atendida",
+      time: "há 3 semanas",
+      profile_photo_url: "",
+    },
+    {
+      author_name: "Rafael Salviano",
+      rating: 5,
+      text: "Atendimento humanizado, são super atenciosos, médico qualificado e com um tratamento ótimo, gostei muito do ambiente e da qualidade dos serviços oferecidos, recomendo que conheçam e sejam clientes dessa clínica, estão de parabéns!",
+      time: "há 3 semanas",
+      profile_photo_url: "",
+    },
+    {
+      author_name: "Ivana Souza",
+      rating: 5,
+      text: "Excelente atendimento... minha Cirurgia de blefaroplastia com o Dr.Carlos Lima foi excelente. Só gratidão.",
+      time: "há 3 semanas",
+      profile_photo_url: "",
+    },
+    {
+      author_name: "Tricia Almeida",
+      rating: 5,
+      text: "Visual Laser clínica especializada em oftalmologia avançada e humanizada, o atendimento é sempre diferenciado, clínica que a família toda é atendida a anos com o Dr Armando Vidonho, muito atencioso em seu atendimento",
+      time: "há 3 semanas",
+      profile_photo_url: "",
+    },
+    {
+      author_name: "Kaina Siqueira",
+      rating: 5,
+      text: "Uma clínica humanizada, com atendimento excelente, profissionais excepcionais. Dr. Armando Vidonho sempre atendeu toda nossa família com muito cuidado e atencioso. Recomendo Muito a clínica.",
+      time: "há 2 meses",
+      profile_photo_url: "",
+    },
+    {
+      author_name: "Gracemi Reis",
+      rating: 5,
+      text: "Dr. Carlos Henrique Lima foi muito competente e atencioso no atendimento pré e pós cirurgico.",
+      time: "há 2 meses",
+      profile_photo_url: "",
+    },
+  ];
+};
+
+// Reviews de fallback caso o scraping falhe
+const fallbackReviews: GoogleReview[] = [
+  {
+    author_name: "Isabely Menezes",
+    rating: 5,
+    text: "A clínica oferece um atendimento de excelência. Minha avó foi muito bem tratada e nós duas ficamos extremamente satisfeitas com o cuidado médico prestado pelo Dr. Armando Vidonho.",
+    time: "há 2 semanas",
+  },
+  {
+    author_name: "Marcino Fernandes",
+    rating: 5,
+    text: "Realizei com o Dr Carlos Lima na clinica Visual Laser a cirurgia de blefaroplastia onde me encontro 100% satisfeito com o atendimento gentil, educado, humano e atencioso do Dr. Carlos Lima, bem como de suas atendentes. O resultado final da cirurgia de blefaroplastia inferior ficou excelente e acima do esperado.",
+    time: "há 1 semana",
+  },
+  {
+    author_name: "Tereza Neves",
+    rating: 5,
+    text: "Sou paciente do Dr. Armando Vidonho e há 20 dias passei por cirurgia de Catarata. Os exames clínicos pós operatório confirmam ótimo resultado. Sinto-me bem e feliz por estar conseguindo ler sem o auxílio de óculos. Fui muito bem atendida por toda a equipe da Clínica Visual Laser e em especial pelo Dr. Armando Vidonho.",
+    time: "há 3 semanas",
+  },
+  {
+    author_name: "Rayanne Kathleem",
+    rating: 5,
+    text: "Sou paciente do Dr Armando vidonho comecei meu tratamento de ceratocone a 1 ano e pouco dia 21/08/25 fiz o transplante de córnea vou fazer 1 mês uma ótima cirurgia Dr muito atencioso 100% cicatrisado recuperação total. Não tenho do que reclamar as meninas da recepção são super atenciosas sempre bem atendida",
+    time: "há 3 semanas",
+  },
+  {
+    author_name: "Rafael Salviano",
+    rating: 5,
+    text: "Atendimento humanizado, são super atenciosos, médico qualificado e com um tratamento ótimo, gostei muito do ambiente e da qualidade dos serviços oferecidos, recomendo que conheçam e sejam clientes dessa clínica, estão de parabéns!",
+    time: "há 3 semanas",
+  },
+  {
+    author_name: "Ivana Souza",
+    rating: 5,
+    text: "Excelente atendimento... minha Cirurgia de blefaroplastia com o Dr.Carlos Lima foi excelente. Só gratidão.",
+    time: "há 3 semanas",
+  },
+  {
+    author_name: "Tricia Almeida",
+    rating: 5,
+    text: "Visual Laser clínica especializada em oftalmologia avançada e humanizada, o atendimento é sempre diferenciado, clínica que a família toda é atendida a anos com o Dr Armando Vidonho, muito atencioso em seu atendimento",
+    time: "há 3 semanas",
+  },
+  {
+    author_name: "Kaina Siqueira",
+    rating: 5,
+    text: "Uma clínica humanizada, com atendimento excelente, profissionais excepcionais. Dr. Armando Vidonho sempre atendeu toda nossa família com muito cuidado e atencioso. Recomendo Muito a clínica.",
+    time: "há 2 meses",
+  },
+  {
+    author_name: "Gracemi Reis",
+    rating: 5,
+    text: "Dr. Carlos Henrique Lima foi muito competente e atencioso no atendimento pré e pós cirurgico.",
+    time: "há 2 meses",
+  },
+];
+
 const Testimonials = () => {
   const [reviews, setReviews] = useState<GoogleReview[]>([]);
   const [loading, setLoading] = useState(true);
@@ -39,9 +169,8 @@ const Testimonials = () => {
       setTotalReviews(327); // Total de avaliações
       setLastUpdated(new Date().toLocaleDateString("pt-BR"));
     } catch (error) {
-      if (process.env.NODE_ENV === 'development') {
-        console.error("Erro ao buscar reviews:", error);
-      }
+      // eslint-disable-next-line no-console
+      console.error("Erro ao buscar reviews:", error);
       // Fallback para reviews estáticos
       setReviews(fallbackReviews);
       setAverageRating(4.6);
@@ -55,135 +184,6 @@ const Testimonials = () => {
     fetchGoogleReviews();
   }, [fetchGoogleReviews]);
 
-  // Simulação de reviews do Google (em produção seria web scraping real)
-  const simulateGoogleReviews = async (): Promise<GoogleReview[]> => {
-    // Simular delay de rede
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    return [
-      {
-        author_name: "Isabely Menezes",
-        rating: 5,
-        text: "A clínica oferece um atendimento de excelência. Minha avó foi muito bem tratada e nós duas ficamos extremamente satisfeitas com o cuidado médico prestado pelo Dr. Armando Vidonho.",
-        time: "há 2 semanas",
-        profile_photo_url: "",
-      },
-      {
-        author_name: "Marcino Fernandes",
-        rating: 5,
-        text: "Realizei com o Dr Carlos Lima na clinica Visual Laser a cirurgia de blefaroplastia onde me encontro 100% satisfeito com o atendimento gentil, educado, humano e atencioso do Dr. Carlos Lima, bem como de suas atendentes. O resultado final da cirurgia de blefaroplastia inferior ficou excelente e acima do esperado.",
-        time: "há 1 semana",
-        profile_photo_url: "",
-      },
-      {
-        author_name: "Tereza Neves",
-        rating: 5,
-        text: "Sou paciente do Dr. Armando Vidonho e há 20 dias passei por cirurgia de Catarata. Os exames clínicos pós operatório confirmam ótimo resultado. Sinto-me bem e feliz por estar conseguindo ler sem o auxílio de óculos. Fui muito bem atendida por toda a equipe da Clínica Visual Laser e em especial pelo Dr. Armando Vidonho.",
-        time: "há 3 semanas",
-        profile_photo_url: "",
-      },
-      {
-        author_name: "Rayanne Kathleem",
-        rating: 5,
-        text: "Sou paciente do Dr Armando vidonho comecei meu tratamento de ceratocone a 1 ano e pouco dia 21/08/25 fiz o transplante de córnea vou fazer 1 mês uma ótima cirurgia Dr muito atencioso 100% cicatrisado recuperação total. Não tenho do que reclamar as meninas da recepção são super atenciosas sempre bem atendida",
-        time: "há 3 semanas",
-        profile_photo_url: "",
-      },
-      {
-        author_name: "Rafael Salviano",
-        rating: 5,
-        text: "Atendimento humanizado, são super atenciosos, médico qualificado e com um tratamento ótimo, gostei muito do ambiente e da qualidade dos serviços oferecidos, recomendo que conheçam e sejam clientes dessa clínica, estão de parabéns!",
-        time: "há 3 semanas",
-        profile_photo_url: "",
-      },
-      {
-        author_name: "Ivana Souza",
-        rating: 5,
-        text: "Excelente atendimento... minha Cirurgia de blefaroplastia com o Dr.Carlos Lima foi excelente. Só gratidão.",
-        time: "há 3 semanas",
-        profile_photo_url: "",
-      },
-      {
-        author_name: "Tricia Almeida",
-        rating: 5,
-        text: "Visual Laser clínica especializada em oftalmologia avançada e humanizada, o atendimento é sempre diferenciado, clínica que a família toda é atendida a anos com o Dr Armando Vidonho, muito atencioso em seu atendimento",
-        time: "há 3 semanas",
-        profile_photo_url: "",
-      },
-      {
-        author_name: "Kaina Siqueira",
-        rating: 5,
-        text: "Uma clínica humanizada, com atendimento excelente, profissionais excepcionais. Dr. Armando Vidonho sempre atendeu toda nossa família com muito cuidado e atencioso. Recomendo Muito a clínica.",
-        time: "há 2 meses",
-        profile_photo_url: "",
-      },
-      {
-        author_name: "Gracemi Reis",
-        rating: 5,
-        text: "Dr. Carlos Henrique Lima foi muito competente e atencioso no atendimento pré e pós cirurgico.",
-        time: "há 2 meses",
-        profile_photo_url: "",
-      },
-    ];
-  };
-
-  // Reviews de fallback caso o scraping falhe
-  const fallbackReviews: GoogleReview[] = [
-    {
-      author_name: "Isabely Menezes",
-      rating: 5,
-      text: "A clínica oferece um atendimento de excelência. Minha avó foi muito bem tratada e nós duas ficamos extremamente satisfeitas com o cuidado médico prestado pelo Dr. Armando Vidonho.",
-      time: "há 2 semanas",
-    },
-    {
-      author_name: "Marcino Fernandes",
-      rating: 5,
-      text: "Realizei com o Dr Carlos Lima na clinica Visual Laser a cirurgia de blefaroplastia onde me encontro 100% satisfeito com o atendimento gentil, educado, humano e atencioso do Dr. Carlos Lima, bem como de suas atendentes. O resultado final da cirurgia de blefaroplastia inferior ficou excelente e acima do esperado.",
-      time: "há 1 semana",
-    },
-    {
-      author_name: "Tereza Neves",
-      rating: 5,
-      text: "Sou paciente do Dr. Armando Vidonho e há 20 dias passei por cirurgia de Catarata. Os exames clínicos pós operatório confirmam ótimo resultado. Sinto-me bem e feliz por estar conseguindo ler sem o auxílio de óculos. Fui muito bem atendida por toda a equipe da Clínica Visual Laser e em especial pelo Dr. Armando Vidonho.",
-      time: "há 3 semanas",
-    },
-    {
-      author_name: "Rayanne Kathleem",
-      rating: 5,
-      text: "Sou paciente do Dr Armando vidonho comecei meu tratamento de ceratocone a 1 ano e pouco dia 21/08/25 fiz o transplante de córnea vou fazer 1 mês uma ótima cirurgia Dr muito atencioso 100% cicatrisado recuperação total. Não tenho do que reclamar as meninas da recepção são super atenciosas sempre bem atendida",
-      time: "há 3 semanas",
-    },
-    {
-      author_name: "Rafael Salviano",
-      rating: 5,
-      text: "Atendimento humanizado, são super atenciosos, médico qualificado e com um tratamento ótimo, gostei muito do ambiente e da qualidade dos serviços oferecidos, recomendo que conheçam e sejam clientes dessa clínica, estão de parabéns!",
-      time: "há 3 semanas",
-    },
-    {
-      author_name: "Ivana Souza",
-      rating: 5,
-      text: "Excelente atendimento... minha Cirurgia de blefaroplastia com o Dr.Carlos Lima foi excelente. Só gratidão.",
-      time: "há 3 semanas",
-    },
-    {
-      author_name: "Tricia Almeida",
-      rating: 5,
-      text: "Visual Laser clínica especializada em oftalmologia avançada e humanizada, o atendimento é sempre diferenciado, clínica que a família toda é atendida a anos com o Dr Armando Vidonho, muito atencioso em seu atendimento",
-      time: "há 3 semanas",
-    },
-    {
-      author_name: "Kaina Siqueira",
-      rating: 5,
-      text: "Uma clínica humanizada, com atendimento excelente, profissionais excepcionais. Dr. Armando Vidonho sempre atendeu toda nossa família com muito cuidado e atencioso. Recomendo Muito a clínica.",
-      time: "há 2 meses",
-    },
-    {
-      author_name: "Gracemi Reis",
-      rating: 5,
-      text: "Dr. Carlos Henrique Lima foi muito competente e atencioso no atendimento pré e pós cirurgico.",
-      time: "há 2 meses",
-    },
-  ];
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }).map((_, index) => (
