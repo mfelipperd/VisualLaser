@@ -1,11 +1,5 @@
 import { doctors } from "@/data/doctors";
 
-interface Provider {
-  name: string;
-  image: string;
-  description: string;
-  crm: string;
-}
 
 /**
  * UnifiedGraphSchema Component
