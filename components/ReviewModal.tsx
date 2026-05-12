@@ -1,13 +1,17 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, X, MapPin, MessageSquare, Heart } from "lucide-react";
 
 const ReviewModal = () => {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
+    if (pathname?.startsWith("/lp-c1f9e3b2")) return;
+
     // Check if the user has already seen and closed the modal in the last 30 days
     const lastClosed = localStorage.getItem("google_review_modal_closed");
     const thirtyDaysInMs = 30 * 24 * 60 * 60 * 1000;
@@ -38,6 +42,7 @@ const ReviewModal = () => {
     handleClose();
   };
 
+  if (pathname?.startsWith("/lp-c1f9e3b2")) return null;
   return (
     <AnimatePresence>
       {isOpen && (

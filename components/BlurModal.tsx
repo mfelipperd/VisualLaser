@@ -1,11 +1,13 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Eye, Mail, Phone, X, CheckCircle, ArrowRight } from "lucide-react";
 import { UserContact } from "@/types";
 
 const BlurModal = () => {
+  const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState<UserContact>({
@@ -16,6 +18,8 @@ const BlurModal = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    if (pathname?.startsWith("/lp-c1f9e3b2")) return;
+
     // Verificar se o formulário já foi preenchido
     const formSubmitted = localStorage.getItem("formSubmitted");
     const sessionShown = sessionStorage.getItem("modalShownThisSession");
@@ -28,10 +32,12 @@ const BlurModal = () => {
       // Marcar que foi mostrada nesta sessão
       sessionStorage.setItem("modalShownThisSession", "true");
     }
-  }, []); // Array vazio = executa apenas uma vez quando o componente monta
+  }, [pathname]); // Array vazio = executa apenas uma vez quando o componente monta
 
   // Prevenir scroll do body quando modal estiver aberto
   useEffect(() => {
+    if (pathname?.startsWith("/lp-c1f9e3b2")) return;
+
     if (isVisible) {
       document.body.style.overflow = "hidden";
       document.body.style.position = "fixed";
@@ -129,6 +135,8 @@ const BlurModal = () => {
 
   // Adicionar listener para tecla ESC
   useEffect(() => {
+    if (pathname?.startsWith("/lp-c1f9e3b2")) return;
+
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape" && isVisible) {
         closeModal();
@@ -150,6 +158,7 @@ const BlurModal = () => {
     }
   };
 
+  if (pathname?.startsWith("/lp-c1f9e3b2")) return null;
   if (!isVisible) return null;
 
   return (
