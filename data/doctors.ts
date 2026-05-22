@@ -77,13 +77,6 @@ export const doctors = [
     description: 'Especialista em oftalmologia clínica e cirúrgica com ampla experiência no diagnóstico e tratamento de doenças oculares.',
   },
   {
-    name: 'Dra. Juliana Meschede',
-    specialty: 'Glaucoma Clínico e Cirurgia de Catarata',
-    crm: 'CRM-PA 11702',
-    image: 'https://visuallaser.med.br/images/doctors/julianameschede.png',
-    description: 'Especialista em glaucoma clínico e cirurgia de catarata com vasta experiência no diagnóstico e tratamento dessas condições.',
-  },
-  {
     name: 'Dr. Taurino Rodrigues',
     specialty: 'Doenças da Retina e Vítreo',
     crm: 'CRM-PA 11098',

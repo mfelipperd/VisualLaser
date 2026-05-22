@@ -11,6 +11,7 @@ export const convenios: Convenio[] = [
   { name: "Aspara", slug: "aspara", logo: "/images/convenios/aspara.png" },
   { name: "Assefaz", slug: "assefaz", logo: "/images/convenios/assefaz.svg" },
   { name: "Bacen", slug: "bacen", logo: "/images/convenios/bacen.png" },
+  { name: "Blue", slug: "blue", logo: "/images/convenios/blue.jpeg" },
   { name: "Bradesco Saúde", slug: "bradesco-saude", logo: "/images/convenios/bradesco.png" },
   { name: "Casembrapa", slug: "casembrapa", logo: "/images/convenios/casembrapa.png" },
   { name: "CASF", slug: "casf", logo: null },
@@ -33,9 +34,9 @@ export const convenios: Convenio[] = [
   { name: "TRE", slug: "tre", logo: null },
   { name: "TRT", slug: "trt", logo: null },
   { name: "Unafisco", slug: "unafisco", logo: null },
-  { 
-    name: "Unimed", 
-    slug: "unimed", 
+  {
+    name: "Unimed",
+    slug: "unimed",
     logo: "/images/convenios/unimed.svg",
     exception: "Exceto Dra. Rosamélia Lima, Dra. Tais Rocha e Dr. Joacy David"
   },

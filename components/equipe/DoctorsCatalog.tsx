@@ -108,15 +108,6 @@ const DoctorsCatalog = () => {
       expertise: ['Oftalmologia Clínica', 'Cirurgia Oftalmológica'],
     },
     {
-      name: 'Dra. Juliana Meschede',
-      specialty: 'Glaucoma Clínico e Cirurgia de Catarata',
-      crm: 'CRM-PA 11702',
-      image: '/images/doctors/julianameschede.png',
-      description:
-        'Especialista em glaucoma clínico e cirurgia de catarata com vasta experiência no diagnóstico e tratamento dessas condições. Reconhecida por sua expertise em técnicas avançadas de cirurgia de catarata e manejo clínico do glaucoma.',
-      expertise: ['Glaucoma Clínico', 'Cirurgia de Catarata'],
-    },
-    {
       name: 'Dr. Taurino Rodrigues',
       specialty: 'Especialista em Doenças da Retina e Vítreo',
       crm: 'CRM-PA 11098',
