@@ -1,0 +1,3 @@
+## 2024-06-25 - Next.js Image fill Performance Bottleneck
+**Learning:** When using Next.js `<Image>` with the `fill` property, omitting the `sizes` attribute causes Next.js to assume the image spans the entire viewport width (`100vw`). In grid or list layouts where the image is actually small, this results in unnecessarily generating and downloading massive image files, severely impacting frontend performance and load times.
+**Action:** Always provide an accurate `sizes` prop when using `fill` on `<Image>` components, especially inside lists, grids, or fixed-width containers. Use responsive media queries in `sizes` to match the CSS layout.
