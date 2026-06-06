@@ -1,0 +1,4 @@
+
+## 2024-06-06 - Unthrottled Scroll Event Listeners
+**Learning:** Found an anti-pattern in the codebase where `window.addEventListener('scroll', handleScroll)` was used directly inside `useEffect` across multiple components (`Header.tsx`, `StickyAppointment.tsx`, `LandingHeader.tsx`). This causes `handleScroll` to fire synchronously hundreds of times per second, potentially blocking the main thread and causing layout thrashing, especially when updating state (`setIsScrolled`) or reading DOM properties like `offsetTop` inside the loop.
+**Action:** Always wrap scroll event handlers using `window.requestAnimationFrame()` to sync the execution with the browser's render cycle, and add `{ passive: true }` to the event listener options so the browser knows the handler won't call `preventDefault()`, improving scroll performance.
