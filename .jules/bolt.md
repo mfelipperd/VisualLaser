@@ -1,0 +1,3 @@
+## 2024-06-08 - [Scroll Event Throttling Optimization]
+**Learning:** React state updates and repeated DOM queries inside synchronous `window` scroll event handlers without throttling trigger excessive re-renders and main-thread blocking, causing severe UI jank (especially on mobile and when rendering heavy components). Attaching handlers without `{ passive: true }` blocks the compositor thread until JS execution finishes.
+**Action:** Always wrap scroll event logic inside a boolean-guarded `window.requestAnimationFrame()` call to limit executions to the display refresh rate (~60fps). Always pass `{ passive: true }` to `window.addEventListener("scroll", ...)` to let the browser scroll independently of JS execution, ensuring smooth 60fps scrolling performance.
