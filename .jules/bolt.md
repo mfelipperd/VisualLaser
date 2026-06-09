@@ -1,0 +1,3 @@
+## 2024-05-18 - Missing sizes prop in Next.js Image components using fill
+**Learning:** Next.js `Image` component with `fill` attribute causes the browser to download the original largest size image at any breakpoint unless `sizes` prop is provided. This happens because the browser does not know the actual visual layout width for the image when calculating dimensions, thus defaults to 100vw, which hurts performance drastically.
+**Action:** Always provide `sizes` prop when using `<Image>` with `fill`. We implemented `sizes` matching the CSS layout size for `LandingHero.tsx`, `DoctorsCatalog.tsx`, and `ConveniosHighlight.tsx` today.
