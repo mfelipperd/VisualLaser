@@ -33,7 +33,7 @@ const Hero = () => {
     {
       image: "/images/excelencia.jpg",
       title: "Oftalmologista em Belém | Visual Laser",
-      subtitle: "Referência em Cirurgia de Catarata e Refrativa (SMILE) no Pará",
+      subtitle: "Referência em Cirurgia de Catarata e Refrativa no Pará",
       description:
         "A Visual Laser é um centro hospitalar completo especializado em exames, consultas e cirurgias de alta precisão com tecnologia de padrão mundial.",
       ctaText: "Agendar Consulta",
