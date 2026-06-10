@@ -69,6 +69,7 @@ const ConveniosHighlight = () => {
                         src={convenio.logo}
                         alt={`Logo ${convenio.name}`}
                         fill
+                        sizes="100px" // Performance optimization: Added sizes prop to prevent downloading unnecessarily large images when using fill
                         className="object-contain"
                       />
                     </div>
