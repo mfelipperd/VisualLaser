@@ -1,0 +1,3 @@
+## 2024-03-21 - [Image Performance] Next.js `<Image>` with `fill` missing `sizes`
+**Learning:** When using the Next.js `<Image>` component with the `fill` property, it's a critical anti-pattern to omit the `sizes` property. Without `sizes`, the browser will default to downloading the largest available image size (usually 100vw), which can severely impact page load times, especially for grid layouts or smaller containers on desktop devices.
+**Action:** Always ensure the `sizes` property is included alongside `fill` in Next.js `<Image>` components, accurately reflecting the image's container width at different breakpoints to prevent unnecessarily large image downloads.
