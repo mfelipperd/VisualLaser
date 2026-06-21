@@ -163,6 +163,8 @@ const DoctorsCatalog = () => {
                     src={doctor.image}
                     alt={doctor.name}
                     fill
+                    {/* ⚡ Bolt Performance Optimization: Explicit sizes defined to match the responsive 1/2/3 column grid and prevent oversized image downloads */}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className='object-cover group-hover:scale-110 transition-transform duration-300'
                   />
                   <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent'></div>

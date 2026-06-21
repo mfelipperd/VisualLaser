@@ -165,6 +165,8 @@ const LandingHero = () => {
                     src="/images/landing-hero.jpg"
                     alt="Agende sua Consulta Oftalmológica - Visual Laser"
                     fill
+                    {/* ⚡ Bolt Performance Optimization: Explicit sizes defined to ensure correct image size is downloaded based on viewport width */}
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                     priority
                   />
