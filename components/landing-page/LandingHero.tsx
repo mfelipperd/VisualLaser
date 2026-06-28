@@ -161,10 +161,12 @@ const LandingHero = () => {
               <div className="relative">
                 {/* Main Image Container */}
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] md:aspect-auto md:h-[600px]">
+                  {/* ⚡ Bolt: added sizes prop to optimize LCP and bandwidth */}
                   <Image
                     src="/images/landing-hero.jpg"
                     alt="Agende sua Consulta Oftalmológica - Visual Laser"
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                     priority
                   />
