@@ -1,0 +1,3 @@
+## 2024-06-25 - Missing sizes property in Next.js Image component
+**Learning:** When using the Next.js `<Image>` component with the `fill` property, failing to provide a `sizes` property causes the browser to download full-resolution images even on small screens, which is a performance anti-pattern.
+**Action:** Always include the `sizes` property when `fill` is used to provide the browser with layout hints and allow it to select the most appropriate image size for the viewport.

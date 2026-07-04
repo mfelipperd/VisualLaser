@@ -163,6 +163,7 @@ const DoctorsCatalog = () => {
                     src={doctor.image}
                     alt={doctor.name}
                     fill
+                    sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw' // ⚡ Bolt: Provide layout hints to prevent downloading unnecessarily large images
                     className='object-cover group-hover:scale-110 transition-transform duration-300'
                   />
                   <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent'></div>
