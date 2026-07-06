@@ -69,6 +69,7 @@ const ConveniosHighlight = () => {
                         src={convenio.logo}
                         alt={`Logo ${convenio.name}`}
                         fill
+                        sizes="80px"
                         className="object-contain"
                       />
                     </div>
