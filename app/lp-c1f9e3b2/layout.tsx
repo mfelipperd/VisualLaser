@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Visual Laser - Cirurgia de Catarata",
-  description: "Clínica Oftalmológica em Belém especializada em Cirurgia de Catarata.",
+  title: "Cirurgia de Catarata em Belém | Visual Laser",
+  description: "Cirurgia de catarata em Belém com equipe especializada, tecnologia de ponta e mais de 30 convênios aceitos. Agende sua consulta na Visual Laser.",
   robots: {
     index: false,
     follow: true,

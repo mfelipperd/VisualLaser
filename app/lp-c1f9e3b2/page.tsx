@@ -200,7 +200,7 @@ export default function App() {
         {/* HERO SECTION */}
         <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20">
           <div className="absolute inset-0 z-0">
-            <img src={heroBg} className="w-full h-full object-cover" alt="Oftalmologia" />
+            <img src={heroBg} className="w-full h-full object-cover" alt="Cirurgia de Catarata em Belém - Visual Laser" />
             <div className="absolute inset-0 bg-[#163653]/60 mix-blend-multiply"></div>
           </div>
 
@@ -213,10 +213,10 @@ export default function App() {
             >
               <span className="text-white font-bold tracking-widest text-xs uppercase mb-4 block">CLÍNICA OFTALMOLÓGICA EM BELÉM DESDE 1997</span>
               <h1 className="text-4xl md:text-5xl font-black leading-[1.1] mb-6">
-                Enxergar com clareza é ter mais qualidade de vida
+                Cirurgia de Catarata em Belém com Segurança e Tecnologia de Ponta
               </h1>
               <p className="text-lg md:text-xl text-blue-50 mb-10 max-w-2xl mx-auto leading-relaxed">
-                Atualmente o tratamento da catarata é um procedimento muito eficaz, pois o avanço da oftalmologia permite sua realização com segurança e precisão.
+                A <strong>cirurgia de catarata em Belém</strong> realizada pela Visual Laser é um procedimento muito eficaz, pois o avanço da oftalmologia permite sua realização com segurança e precisão.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <button onClick={() => setIsModalOpen(true)} className="bg-vl-cyan text-white px-8 py-3.5 rounded-md font-bold hover:bg-opacity-90 transition text-lg shadow-lg shadow-cyan-500/30">Agendar pelo WhatsApp</button>
@@ -285,7 +285,7 @@ export default function App() {
             >
               <h2 className="text-[2.5rem] font-black mb-6 leading-tight">
                 <span className="text-black">Referência em </span>
-                <span className="bg-gradient-to-r from-[#0C4A6E] to-[#38BCED] text-transparent bg-clip-text">oftalmologia em Belém</span>
+                <span className="bg-gradient-to-r from-[#0C4A6E] to-[#38BCED] text-transparent bg-clip-text">Cirurgia de Catarata em Belém</span>
               </h2>
 
               {/* Mobile Image */}
@@ -294,7 +294,7 @@ export default function App() {
               </div>
 
               <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-                A Visual Laser realiza cirurgias de catarata com uma equipe oftalmológica especializada e equipamentos modernos, oferecendo atendimento seguro e individualizado a cada paciente.
+                A Visual Laser realiza <strong>cirurgia de catarata em Belém</strong> com uma equipe oftalmológica especializada e equipamentos modernos, oferecendo atendimento seguro e individualizado a cada paciente.
               </p>
 
               <div className="space-y-4 mt-8">
@@ -375,7 +375,7 @@ export default function App() {
               <span className="text-[#38BCED]">Catarata</span>
             </h2>
             <p className="text-lg text-[#8baecf] max-w-3xl mx-auto">
-              A catarata é a principal causa de cegueira reversível no mundo.
+              A catarata é a principal causa de cegueira reversível no mundo. Entenda como funciona a <strong>cirurgia de catarata em Belém</strong> realizada pela Visual Laser.
             </p>
           </motion.div>
 
@@ -451,10 +451,10 @@ export default function App() {
             viewport={VP}
           >
              <h2 className="text-3xl md:text-4xl font-black mb-4">
-               <span className="text-white">Agende agora sua </span>
-               <span className="text-[#38BCED]">consulta</span>
+               <span className="text-white">Agende sua </span>
+               <span className="text-[#38BCED]">Cirurgia de Catarata em Belém</span>
              </h2>
-             <p className="text-lg text-blue-100 mb-10">Entre em contato conosco e agende sua consulta agora mesmo. Nossa equipe está pronta para cuidar da sua saúde visual.</p>
+             <p className="text-lg text-blue-100 mb-10">Entre em contato conosco e agende sua <strong>cirurgia de catarata em Belém</strong> agora mesmo. Nossa equipe está pronta para cuidar da sua saúde visual.</p>
              <button onClick={() => setIsModalOpen(true)} className="bg-vl-cyan text-white px-10 py-4 rounded-md font-bold text-lg hover:bg-opacity-90 transition w-full md:w-auto shadow-lg shadow-cyan-500/20">Quero agendar minha consulta</button>
           </motion.div>
         </div>
@@ -716,11 +716,11 @@ export default function App() {
           >
             <span className="text-vl-cyan font-bold tracking-widest text-xs uppercase mb-4 inline-block border border-vl-cyan/30 rounded-full px-4 py-1 bg-cyan-50">Onde Estamos</span>
             <h2 className="text-4xl md:text-5xl font-black mb-6">
-              <span className="text-black">Fácil acesso no </span>
-              <span className="bg-gradient-to-r from-[#0C4A6E] to-[#38BCED] text-transparent bg-clip-text">coração de Belém</span>
+              <span className="text-black">Onde fazer sua </span>
+              <span className="bg-gradient-to-r from-[#0C4A6E] to-[#38BCED] text-transparent bg-clip-text">Cirurgia de Catarata em Belém</span>
             </h2>
             <p className="text-lg text-gray-500 max-w-3xl mx-auto">
-              Localizada no bairro Nazaré, uma das regiões mais centrais e acessíveis de Belém do Pará.
+              A Visual Laser está localizada no bairro Nazaré, uma das regiões mais centrais e acessíveis de Belém do Pará, com fácil acesso para quem busca realizar sua <strong>cirurgia de catarata em Belém</strong>.
             </p>
           </motion.div>
 
