@@ -161,10 +161,12 @@ const LandingHero = () => {
               <div className="relative">
                 {/* Main Image Container */}
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] md:aspect-auto md:h-[600px]">
+                  {/* ⚡ Bolt: Added sizes attribute to next/image with fill property to prevent loading unnecessarily large images. This reduces bundle size and speeds up initial load time. */}
                   <Image
                     src="/images/landing-hero.jpg"
                     alt="Agende sua Consulta Oftalmológica - Visual Laser"
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                     priority
                   />
