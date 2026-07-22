@@ -1,0 +1,3 @@
+## 2024-06-12 - [Next.js Image component missing sizes with fill]
+**Learning:** Found several occurrences of Next.js `Image` component using the `fill` layout without providing a `sizes` property. This is a common performance anti-pattern. Next.js will warn about this or default to generating `100vw` images at all breakpoints if not specified, hurting performance by sending oversized images to clients.
+**Action:** When using `<Image fill />`, always explicitly evaluate the surrounding flex/grid containers to explicitly define correct `sizes` attribute mapping the layout dimensions to viewport widths.
