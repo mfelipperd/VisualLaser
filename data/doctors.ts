@@ -90,4 +90,11 @@ export const doctors = [
     image: 'https://visuallaser.med.br/images/doctors/tais.jpeg',
     description: 'Especialista em córnea e neuroftalmologia with vasta experiência no diagnóstico e tratamento de doenças corneanas e condições neurológicas.',
   },
+  {
+    name: 'Dra. Déborah Silva Nunes',
+    specialty: 'Oftalmologia Clínica e Cirúrgica',
+    crm: 'CRM-PA 16041',
+    image: 'https://visuallaser.med.br/images/doctors/Deborah.jpeg',
+    description: 'Especialista em oftalmologia clínica e cirúrgica com ampla experiência no diagnóstico e tratamento de doenças oculares.',
+  },
 ];

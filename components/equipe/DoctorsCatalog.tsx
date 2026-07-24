@@ -125,6 +125,15 @@ const DoctorsCatalog = () => {
         'Especialista em córnea e neuroftalmologia com vasta experiência no diagnóstico e tratamento de doenças corneanas e condições neurológicas que afetam a visão.',
       expertise: ['Córnea', 'Neuroftalmologia'],
     },
+    {
+      name: 'Dra. Déborah Silva Nunes',
+      specialty: 'Oftalmologia Clínica e Cirúrgica',
+      crm: 'CRM-PA 16041',
+      image: '/images/doctors/Deborah.jpeg',
+      description:
+        'Especialista em oftalmologia clínica e cirúrgica com ampla experiência no diagnóstico e tratamento de doenças oculares. Reconhecida por sua dedicação ao cuidado integral do paciente.',
+      expertise: ['Oftalmologia Clínica', 'Cirurgia Oftalmológica'],
+    },
   ];
 
   return (
