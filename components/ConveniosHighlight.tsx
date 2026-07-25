@@ -65,11 +65,13 @@ const ConveniosHighlight = () => {
               >
                   {convenio.logo ? (
                     <div className="w-20 h-10 relative mb-3 grayscale group-hover:grayscale-0 transition-all duration-300">
+                      {/* Bolt Performance: Added explicit 'sizes' prop to ensure browser requests tiny 80px image for this thumbnail */}
                       <Image 
                         src={convenio.logo}
                         alt={`Logo ${convenio.name}`}
                         fill
                         className="object-contain"
+                        sizes="80px"
                       />
                     </div>
                   ) : (
