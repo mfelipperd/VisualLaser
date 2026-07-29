@@ -1,0 +1,3 @@
+## 2024-05-24 - Missing sizes attribute on Next.js Images with fill
+**Learning:** Using the Next.js `<Image>` component with the `fill` attribute without providing the `sizes` attribute causes the browser to download unnecessarily large image sizes, acting as an anti-pattern that severely degrades the Largest Contentful Paint (LCP) and consumes excessive bandwidth.
+**Action:** Always verify that `<Image fill ... />` components include a `sizes` attribute that accurately reflects the image's layout width at different breakpoints to ensure the browser only downloads the appropriately sized image.
