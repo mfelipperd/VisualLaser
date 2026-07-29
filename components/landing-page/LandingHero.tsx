@@ -161,12 +161,14 @@ const LandingHero = () => {
               <div className="relative">
                 {/* Main Image Container */}
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] md:aspect-auto md:h-[600px]">
+                  {/* ⚡ Bolt: Added sizes prop to optimize image loading by preventing unnecessary large downloads when fill is used */}
                   <Image
                     src="/images/landing-hero.jpg"
                     alt="Agende sua Consulta Oftalmológica - Visual Laser"
                     fill
                     className="object-cover"
                     priority
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary-950/60 via-transparent to-transparent"></div>
                 </div>
