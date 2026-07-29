@@ -65,10 +65,12 @@ const ConveniosHighlight = () => {
               >
                   {convenio.logo ? (
                     <div className="w-20 h-10 relative mb-3 grayscale group-hover:grayscale-0 transition-all duration-300">
+                      {/* ⚡ Bolt: Added sizes attribute to next/image with fill property to prevent loading unnecessarily large images. This reduces bundle size and speeds up initial load time. */}
                       <Image 
                         src={convenio.logo}
                         alt={`Logo ${convenio.name}`}
                         fill
+                        sizes="80px"
                         className="object-contain"
                       />
                     </div>

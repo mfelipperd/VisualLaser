@@ -168,10 +168,12 @@ const DoctorsCatalog = () => {
               <div className='bg-white rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105 overflow-hidden h-full flex flex-col'>
                 {/* Doctor Image */}
                 <div className='relative h-64 overflow-hidden'>
+                  {/* ⚡ Bolt: Added sizes attribute to next/image with fill property to prevent loading unnecessarily large images. This reduces bundle size and speeds up initial load time. */}
                   <Image
                     src={doctor.image}
                     alt={doctor.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className='object-cover group-hover:scale-110 transition-transform duration-300'
                   />
                   <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent'></div>
