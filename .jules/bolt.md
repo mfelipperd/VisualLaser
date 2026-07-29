@@ -1,0 +1,3 @@
+## 2024-06-30 - [Missing `sizes` in Next.js Image with `fill` property]
+**Learning:** This application makes heavy use of the Next.js `Image` component with the `fill` property. However, in multiple locations, the required `sizes` property is missing. Without `sizes`, Next.js defaults to assuming the image takes up 100vw, which can lead to downloading unnecessarily large image sizes, hurting performance. This is specifically listed as an anti-pattern for this codebase in the memory.
+**Action:** Always include the `sizes` property when using the Next.js `Image` component with the `fill` property.
