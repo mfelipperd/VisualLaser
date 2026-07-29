@@ -1,0 +1,3 @@
+## 2024-05-24 - Next.js `<Image fill>` sizes anti-pattern
+**Learning:** When using the Next.js `<Image>` component with the `fill` property, omitting the `sizes` property causes the browser to download unnecessarily large image sizes, hurting performance. This is because without `sizes`, Next.js assumes the image will take up the entire viewport width (100vw).
+**Action:** Always ensure the `sizes` property is included when using `<Image fill />`. If the image container is responsive, use media queries in the `sizes` string (e.g., `sizes="(max-width: 768px) 100vw, 50vw"`). If the image container is fixed width, use a fixed size (e.g., `sizes="80px"`).
