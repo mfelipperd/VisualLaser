@@ -1,0 +1,3 @@
+## 2024-06-12 - Next.js Image component FCP/LCP degradation with `fill`
+**Learning:** Using the Next.js `<Image>` component with the `fill` property without providing the `sizes` property will cause the browser to download unnecessarily large image sizes by default (usually 100vw). This leads to significantly degraded FCP (First Contentful Paint) and LCP (Largest Contentful Paint) performance, particularly on mobile devices or when the image is rendered in a much smaller container than 100vw.
+**Action:** When using the Next.js `<Image>` component with the `fill` property, always ensure the `sizes` property is also included with media queries that match the visual constraints of the image across different breakpoints.

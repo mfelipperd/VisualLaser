@@ -69,6 +69,7 @@ const ConveniosHighlight = () => {
                         src={convenio.logo}
                         alt={`Logo ${convenio.name}`}
                         fill
+                        sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 20vw"
                         className="object-contain"
                       />
                     </div>
