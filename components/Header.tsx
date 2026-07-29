@@ -16,11 +16,23 @@ const Header = () => {
   const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          // ⚡ Bolt Performance Optimization: Throttled scroll event with requestAnimationFrame
+          // Reduces unnecessary re-renders by syncing state updates with the display refresh rate
+          setIsScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // ⚡ Bolt Performance Optimization: Added { passive: true }
+    // Improves scrolling performance by telling the browser we won't call preventDefault()
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
