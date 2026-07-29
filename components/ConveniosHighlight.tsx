@@ -69,6 +69,8 @@ const ConveniosHighlight = () => {
                         src={convenio.logo}
                         alt={`Logo ${convenio.name}`}
                         fill
+                        {/* ⚡ Bolt Performance Optimization: Explicit sizes defined to prevent downloading 100vw image for an 80px container */}
+                        sizes="80px"
                         className="object-contain"
                       />
                     </div>
