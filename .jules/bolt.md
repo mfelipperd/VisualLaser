@@ -1,0 +1,3 @@
+## 2024-05-18 - [Missing Image Sizes Property Anti-Pattern]
+**Learning:** Using the Next.js `<Image>` component with the `fill` property without also providing the `sizes` property causes the browser to download unnecessarily large image sizes, hurting performance. This anti-pattern was found across several key components like `LandingHero`, `DoctorsCatalog`, and `ConveniosHighlight`.
+**Action:** When using the Next.js `<Image>` component with the `fill` property, always ensure the `sizes` property is also included. Specify appropriate sizes based on the component's layout to optimize image loading and improve page performance.
