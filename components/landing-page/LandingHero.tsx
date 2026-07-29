@@ -161,10 +161,12 @@ const LandingHero = () => {
               <div className="relative">
                 {/* Main Image Container */}
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] md:aspect-auto md:h-[600px]">
+                  {/* Optimization: Added sizes property to prevent downloading unnecessarily large images when using fill */}
                   <Image
                     src="/images/landing-hero.jpg"
                     alt="Agende sua Consulta Oftalmológica - Visual Laser"
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
                     priority
                   />
