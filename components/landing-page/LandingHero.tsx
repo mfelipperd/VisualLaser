@@ -165,6 +165,7 @@ const LandingHero = () => {
                     src="/images/landing-hero.jpg"
                     alt="Agende sua Consulta Oftalmológica - Visual Laser"
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw" // Performance optimization: Added sizes prop to prevent downloading unnecessarily large images when using fill
                     className="object-cover"
                     priority
                   />
