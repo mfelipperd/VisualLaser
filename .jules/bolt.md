@@ -1,0 +1,3 @@
+## 2024-08-03 - Next.js Image Component 'fill' Property Anti-Pattern
+**Learning:** In Next.js, using the `<Image>` component with the `fill` property without providing a `sizes` attribute causes the browser to download unnecessarily large image sizes, assuming the image spans `100vw`. This was observed in `components/equipe/DoctorsCatalog.tsx`, leading to suboptimal frontend performance.
+**Action:** Always ensure the `sizes` property is included when using `<Image fill />` to define responsive image sizes based on the surrounding layout constraints (e.g., `sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"`).
