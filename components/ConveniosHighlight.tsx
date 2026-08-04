@@ -70,6 +70,7 @@ const ConveniosHighlight = () => {
                         alt={`Logo ${convenio.name}`}
                         fill
                         className="object-contain"
+                        sizes="80px" // ⚡ Bolt: added sizes prop to prevent downloading unnecessarily large images
                       />
                     </div>
                   ) : (
