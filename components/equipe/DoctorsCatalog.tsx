@@ -168,11 +168,13 @@ const DoctorsCatalog = () => {
               <div className='bg-white rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105 overflow-hidden h-full flex flex-col'>
                 {/* Doctor Image */}
                 <div className='relative h-64 overflow-hidden'>
+                  {/* ⚡ Bolt Performance Optimization: Added sizes to prevent unnecessarily large image downloads when using fill */}
                   <Image
                     src={doctor.image}
                     alt={doctor.name}
                     fill
                     className='object-cover group-hover:scale-110 transition-transform duration-300'
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent'></div>
                 </div>
