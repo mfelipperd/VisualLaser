@@ -65,10 +65,12 @@ const ConveniosHighlight = () => {
               >
                   {convenio.logo ? (
                     <div className="w-20 h-10 relative mb-3 grayscale group-hover:grayscale-0 transition-all duration-300">
+                      {/* ⚡ Bolt: Added sizes attribute to Next.js Image with fill property to prevent downloading oversized images, optimizing LCP and bandwidth. */}
                       <Image 
                         src={convenio.logo}
                         alt={`Logo ${convenio.name}`}
                         fill
+                        sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 20vw"
                         className="object-contain"
                       />
                     </div>
