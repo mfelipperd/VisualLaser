@@ -87,10 +87,10 @@ export default function PSVLPage() {
     <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-950 via-primary-900 to-primary-950 py-20">
+      <section className="relative bg-gradient-to-br from-primary-950 via-primary-900 to-primary-950 pt-28 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            
+
             {/* Badge */}
             <div className="inline-flex items-center space-x-2 bg-accent-500/20 backdrop-blur-sm rounded-full px-6 py-3 mb-6 border border-accent-400/30">
               <Heart className="w-5 h-5 text-accent-400" />

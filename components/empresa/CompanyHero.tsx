@@ -32,7 +32,7 @@ const CompanyHero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen overflow-hidden pt-0 sm:pt-20">
+    <section className="relative min-h-screen overflow-hidden pt-0 sm:pt-28">
       {/* Background Video - Hidden on Mobile */}
       <div className="absolute inset-0 hidden sm:block">
         <div className="absolute inset-0 overflow-hidden">
@@ -102,7 +102,7 @@ const CompanyHero = () => {
       `}</style>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex items-center pt-20 sm:pt-0">
+      <div className="relative z-10 h-full flex items-center pt-28 sm:pt-0">
         <div className="container mx-auto container-padding">
           <div className="max-w-6xl mx-auto">
             <motion.div

@@ -32,7 +32,7 @@ export default function ConveniosPage() {
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-900 to-primary-950 py-20 text-white">
+      <section className="bg-gradient-to-br from-primary-900 to-primary-950 pt-28 pb-20 text-white">
         <div className="container mx-auto px-4 text-center">
           <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 mb-6 border border-white/20">
             <Shield className="w-5 h-5 text-accent-400" />

@@ -50,7 +50,7 @@ export default function ConvenioDetailPage({ params }: Props) {
   return (
     <main className="min-h-screen bg-gray-50 pb-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-900 via-primary-950 to-primary-900 py-20 text-white relative overflow-hidden">
+      <section className="bg-gradient-to-br from-primary-900 via-primary-950 to-primary-900 pt-28 pb-20 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <Link 

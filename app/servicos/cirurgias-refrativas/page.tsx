@@ -124,7 +124,7 @@ export default function CirurgiasRefrativasPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-950 via-primary-900 to-primary-950 py-20">
+      <section className="relative bg-gradient-to-br from-primary-950 via-primary-900 to-primary-950 pt-28 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             

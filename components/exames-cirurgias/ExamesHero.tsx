@@ -28,7 +28,7 @@ const ExamesHero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen overflow-hidden pt-20">
+    <section className="relative min-h-screen overflow-hidden pt-28">
       {/* Background */}
       <div className="absolute inset-0">
         <div
