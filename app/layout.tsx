@@ -16,7 +16,7 @@ const Footer = dynamic(() => import("@/components/Footer"));
 const StickyAppointment = dynamic(() => import("../components/StickyAppointment"), { ssr: false });
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 
 const poppins = Poppins({
   subsets: ["latin"],
