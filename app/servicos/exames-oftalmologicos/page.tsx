@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Eye, CheckCircle, Clock, Shield, ArrowRight, Star } from "lucide-react";
 import Link from "next/link";
+import BreadcrumbSchema from "@/components/json-ld/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Exames Oftalmológicos | Visual Laser Belém | Exames de Vista Completos",
@@ -117,9 +118,30 @@ const exames = [
 export default function ExamesOftalmologicosPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-      
+
+      {/* Medical Test Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalTest",
+            "name": "Exames Oftalmológicos",
+            "description": "Exames oftalmológicos completos para diagnóstico preciso: acuidade visual, refratometria, tonometria, mapeamento de retina, OCT, topografia de córnea e outros.",
+            "medicalSpecialty": "Ophthalmology",
+            "relevantSpecialty": {
+              "@type": "MedicalSpecialty",
+              "name": "Ophthalmology"
+            },
+            "provider": {
+              "@id": "https://visuallaser.med.br/#clinic"
+            }
+          })
+        }}
+      />
+
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-950 via-primary-900 to-primary-950 py-20">
+      <section className="relative bg-gradient-to-br from-primary-950 via-primary-900 to-primary-950 pt-28 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             
@@ -273,6 +295,14 @@ export default function ExamesOftalmologicosPage() {
           </div>
         </div>
       </section>
+
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", item: "/" },
+          { name: "Serviços", item: "/servicos" },
+          { name: "Exames Oftalmológicos", item: "/servicos/exames-oftalmologicos" },
+        ]}
+      />
     </main>
   );
 }
