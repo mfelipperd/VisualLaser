@@ -50,6 +50,11 @@ export default function UnifiedGraphSchema() {
     ],
     medicalSpecialty: ["Ophthalmology", "Optometry"],
     isAccessibleForFree: false,
+    sameAs: [
+      "https://www.facebook.com/VisualLaserOftalmologia/",
+      "https://www.instagram.com/visuallaser/",
+      "https://www.youtube.com/@VisualLaserClinica",
+    ],
     knowsAbout: [
       "Cirurgia de Catarata com Lentes Premium",
       "Cirurgia Refrativa a Laser (SMILE, LASIK, PRK)",
@@ -77,11 +82,6 @@ export default function UnifiedGraphSchema() {
     url: domain,
     name: "Visual Laser",
     publisher: { "@id": clinicId },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${domain}/search?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
   };
 
   const graph = {

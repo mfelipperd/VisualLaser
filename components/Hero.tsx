@@ -135,7 +135,7 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex items-start justify-center min-h-[50vh] sm:min-h-screen px-4 sm:px-6 lg:px-8 pt-[50px] sm:pt-0 sm:items-center">
+      <div className="relative z-10 flex items-start justify-center min-h-[50vh] sm:min-h-screen px-4 sm:px-6 lg:px-8 pt-24 sm:pt-0 sm:items-center">
         <div className="w-full max-w-7xl mx-auto">
           <AnimatePresence mode="wait">
             <motion.div

@@ -10,7 +10,6 @@ const LocalSEOContent = dynamic(() => import("@/components/LocalSEOContent"));
 const HiddenSEOContent = dynamic(() => import("@/components/HiddenSEOContent"));
 const ConveniosHighlight = dynamic(() => import("@/components/ConveniosHighlight"));
 const SiteNavigationSchema = dynamic(() => import("@/components/json-ld/SiteNavigationSchema"));
-const WebSiteSchema = dynamic(() => import("@/components/json-ld/WebSiteSchema"));
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -75,7 +74,6 @@ export default function Home() {
       <Testimonials />
       <FAQ />
       <HiddenSEOContent />
-      <WebSiteSchema />
       <SiteNavigationSchema
         items={[
           { name: "Agendamento de Consulta", url: "/contato" },
