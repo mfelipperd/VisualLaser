@@ -120,7 +120,7 @@ const DoctorsCatalog = () => {
       name: 'Dra. Taís Rocha',
       specialty: 'Oftalmologista Especialista em Córnea e Neuroftalmologia',
       crm: 'CRM-PA 9447',
-      image: '/images/doctors/tais.jpeg',
+      image: '/images/doctors/tais.png',
       description:
         'Especialista em córnea e neuroftalmologia com vasta experiência no diagnóstico e tratamento de doenças corneanas e condições neurológicas que afetam a visão.',
       expertise: ['Córnea', 'Neuroftalmologia'],
@@ -129,7 +129,7 @@ const DoctorsCatalog = () => {
       name: 'Dra. Déborah Silva Nunes',
       specialty: 'Oftalmologia Clínica e Cirúrgica',
       crm: 'CRM-PA 16041',
-      image: '/images/doctors/Deborah.jpeg',
+      image: '/images/doctors/Deborah.png',
       description:
         'Especialista em oftalmologia clínica e cirúrgica com ampla experiência no diagnóstico e tratamento de doenças oculares. Reconhecida por sua dedicação ao cuidado integral do paciente.',
       expertise: ['Oftalmologia Clínica', 'Cirurgia Oftalmológica'],
@@ -167,16 +167,15 @@ const DoctorsCatalog = () => {
             >
               <div className='bg-white rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:scale-105 overflow-hidden h-full flex flex-col'>
                 {/* Doctor Image */}
-                <div className='relative h-64 overflow-hidden'>
+                <div className='relative aspect-[3/4] overflow-hidden bg-[#022440]'>
                   {/* Performance: Added sizes prop to prevent downloading unnecessarily large images for Next.js Image with fill */}
                   <Image
                     src={doctor.image}
                     alt={doctor.name}
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className='object-cover group-hover:scale-110 transition-transform duration-300'
+                    sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'
+                    className='object-cover object-top group-hover:scale-110 transition-transform duration-300'
                   />
-                  <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent'></div>
                 </div>
 
                 {/* Doctor Info */}
