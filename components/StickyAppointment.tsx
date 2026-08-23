@@ -13,16 +13,26 @@ const StickyAppointment = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      // Show button after scrolling 400px
-      if (window.scrollY > 400) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          // Optimization: wrap scroll event in requestAnimationFrame to prevent jank
+          // Show button after scrolling 400px
+          if (window.scrollY > 400) {
+            setIsVisible(true);
+          } else {
+            setIsVisible(false);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // Optimization: passive listener to prevent blocking main thread
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
