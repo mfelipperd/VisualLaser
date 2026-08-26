@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Shield, Eye, CheckCircle, Clock, Star, ArrowRight, Zap } from "lucide-react";
 import Link from "next/link";
 import BreadcrumbSchema from "@/components/json-ld/BreadcrumbSchema";
+import AgendarConsultaButton from "@/components/AgendarConsultaButton";
 
 export const metadata: Metadata = {
   title: "Cirurgias Refrativas | Visual Laser Belém | LASIK, PRK, SMILE",
@@ -294,13 +295,10 @@ export default function CirurgiasRefrativasPage() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contato"
-                  className="inline-flex items-center justify-center space-x-3 bg-accent-500 hover:bg-accent-600 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105"
-                >
+                <AgendarConsultaButton className="inline-flex items-center justify-center space-x-3 bg-accent-500 hover:bg-accent-600 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105">
                   <span>Agendar Consulta</span>
                   <ArrowRight className="w-5 h-5" />
-                </Link>
+                </AgendarConsultaButton>
                 
                 <Link
                   href="tel:+559132254422"

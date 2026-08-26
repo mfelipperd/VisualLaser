@@ -15,8 +15,12 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+import AppointmentModal from "@/components/AppointmentModal";
 
 const LandingFooter = () => {
+  const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
+
   const quickLinks = [
     { name: "Início", href: "/" },
     { name: "Empresa", href: "/empresa" },
@@ -277,14 +281,11 @@ const LandingFooter = () => {
             
             <button
               onClick={() => {
-                const formElement = document.getElementById('landing-form');
-                if (formElement) {
-                  formElement.scrollIntoView({ behavior: 'smooth' });
-                }
                 // Rastrear evento final
                 if (typeof window !== 'undefined' && window.trackConversion) {
                   window.trackConversion('Lead');
                 }
+                setIsAppointmentModalOpen(true);
               }}
               className="inline-flex items-center space-x-3 bg-white hover:bg-gray-50 text-accent-600 font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
@@ -334,6 +335,11 @@ const LandingFooter = () => {
           </div>
         </motion.div>
       </div>
+
+      <AppointmentModal
+        isOpen={isAppointmentModalOpen}
+        onClose={() => setIsAppointmentModalOpen(false)}
+      />
     </footer>
   );
 };

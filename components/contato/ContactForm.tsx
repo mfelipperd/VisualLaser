@@ -36,7 +36,7 @@ const ContactForm = () => {
 
     try {
       // Enviar dados para a API
-      const response = await fetch('/api/send-email', {
+      const response = await fetch('/api/lead', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

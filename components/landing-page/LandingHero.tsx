@@ -3,20 +3,19 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Clock, Shield, Users } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
+import AppointmentModal from "@/components/AppointmentModal";
 
 const LandingHero = () => {
+  const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
 
   const handleCTAClick = () => {
     // Rastrear evento de clique no CTA principal
     if (typeof window !== 'undefined' && window.trackConversion) {
       window.trackConversion('Lead');
     }
-    
-    // Scroll para o formulário
-    const formElement = document.getElementById('landing-form');
-    if (formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth' });
-    }
+
+    setIsAppointmentModalOpen(true);
   };
 
   return (
@@ -234,6 +233,11 @@ const LandingHero = () => {
           />
         </div>
       </motion.div>
+
+      <AppointmentModal
+        isOpen={isAppointmentModalOpen}
+        onClose={() => setIsAppointmentModalOpen(false)}
+      />
     </section>
   );
 };

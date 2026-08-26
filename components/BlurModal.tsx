@@ -69,7 +69,7 @@ const BlurModal = () => {
 
       try {
         // Enviar dados para a API
-        const response = await fetch('/api/send-email', {
+        const response = await fetch('/api/lead', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ const BlurModal = () => {
 
         if (!result.success) {
           // eslint-disable-next-line no-console
-          console.error('Erro ao enviar email:', result.message);
+          console.error('Erro ao registrar lead:', result.message);
           // Mesmo com erro, salvar localmente para não perder o lead
         }
 

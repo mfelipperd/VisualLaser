@@ -113,10 +113,8 @@ NEXT_PUBLIC_GA_MEASUREMENT_ID=G-8DS8VQZN8V
 # Google Search Console Verification
 NEXT_PUBLIC_GOOGLE_VERIFICATION=seu-codigo-de-verificacao
 
-# Envio de Emails (Resend)
-RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxx
-DESTINATION_EMAIL=contato@visuallaser.med.br
-FROM_EMAIL=no-reply@visuallaser.med.br
+# Captura de leads (Google Apps Script vinculado à planilha)
+LEADS_APPS_SCRIPT_URL=https://script.google.com/macros/s/xxxxxxxx/exec
 
 # Redes Sociais
 NEXT_PUBLIC_FACEBOOK_URL=https://www.facebook.com/visuallaser

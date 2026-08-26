@@ -1,20 +1,24 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  Eye, 
-  Clock, 
-  Shield, 
-  Award, 
-  Users, 
+import {
+  Eye,
+  Clock,
+  Shield,
+  Award,
+  Users,
   CheckCircle,
   Star,
   Heart,
   Zap,
   ArrowRight
 } from "lucide-react";
+import { useState } from "react";
+import AppointmentModal from "@/components/AppointmentModal";
 
 const LandingBenefits = () => {
+  const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
+
   const benefits = [
     {
       icon: Eye,
@@ -228,14 +232,11 @@ const LandingBenefits = () => {
               
               <button
                 onClick={() => {
-                  const formElement = document.getElementById('landing-form');
-                  if (formElement) {
-                    formElement.scrollIntoView({ behavior: 'smooth' });
-                  }
                   // Rastrear evento de interesse
                   if (typeof window !== 'undefined' && window.trackConversion) {
                     window.trackConversion('ViewContent');
                   }
+                  setIsAppointmentModalOpen(true);
                 }}
                 className="inline-flex items-center space-x-3 bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
@@ -246,6 +247,11 @@ const LandingBenefits = () => {
           </motion.div>
         </div>
       </div>
+
+      <AppointmentModal
+        isOpen={isAppointmentModalOpen}
+        onClose={() => setIsAppointmentModalOpen(false)}
+      />
     </section>
   );
 };

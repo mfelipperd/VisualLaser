@@ -3,9 +3,11 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Plus, Minus, CheckCircle, Clock, Shield, Users } from "lucide-react";
+import AppointmentModal from "@/components/AppointmentModal";
 
 const LandingFAQ = () => {
   const [openItems, setOpenItems] = useState<number[]>([]);
+  const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
 
   const toggleItem = (index: number) => {
     setOpenItems(prev => 
@@ -217,12 +219,7 @@ const LandingFAQ = () => {
                 </button>
                 
                 <button
-                  onClick={() => {
-                    const formElement = document.getElementById('landing-form');
-                    if (formElement) {
-                      formElement.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
+                  onClick={() => setIsAppointmentModalOpen(true)}
                   className="inline-flex items-center space-x-3 bg-accent-500 hover:bg-accent-600 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300"
                 >
                   <span>🎯 Agendar Consulta</span>
@@ -232,6 +229,11 @@ const LandingFAQ = () => {
           </motion.div>
         </div>
       </div>
+
+      <AppointmentModal
+        isOpen={isAppointmentModalOpen}
+        onClose={() => setIsAppointmentModalOpen(false)}
+      />
     </section>
   );
 };

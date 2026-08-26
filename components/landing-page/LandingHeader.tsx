@@ -4,11 +4,13 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, Phone, Calendar, MessageCircle } from "lucide-react";
 import Image from "next/image";
+import AppointmentModal from "@/components/AppointmentModal";
 
 const LandingHeader = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,11 +45,12 @@ const LandingHeader = () => {
   };
 
   const handleCTAClick = () => {
-    scrollToSection('form');
+    setIsMobileMenuOpen(false);
     // Rastrear evento de clique no CTA
     if (typeof window !== 'undefined' && window.trackConversion) {
       window.trackConversion('Lead');
     }
+    setIsAppointmentModalOpen(true);
   };
 
   const navItems = [
@@ -234,6 +237,11 @@ const LandingHeader = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <AppointmentModal
+        isOpen={isAppointmentModalOpen}
+        onClose={() => setIsAppointmentModalOpen(false)}
+      />
     </>
   );
 };
