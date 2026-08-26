@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, Phone, Calendar, MessageCircle, Home, Building2, Activity, Users } from "lucide-react";
+import { Menu, Phone, Calendar, MessageCircle, Home, Building2, Activity, Users, HelpCircle } from "lucide-react";
 import { usePathname } from "next/navigation";
 import AppointmentModal from "@/components/AppointmentModal";
 import Image from "next/image";
@@ -38,6 +38,7 @@ const Header = () => {
     { name: "Empresa", path: "/empresa", icon: Building2 },
     { name: "Procedimentos", path: "/exames-cirurgias", icon: Activity },
     { name: "Equipe", path: "/equipe", icon: Users },
+    { name: "Dúvidas", path: "/perguntas-frequentes", icon: HelpCircle },
   ];
 
   return (

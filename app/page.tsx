@@ -7,7 +7,7 @@ const PSVL = dynamic(() => import("@/components/PSVL"));
 const Testimonials = dynamic(() => import("@/components/Testimonials"));
 const FAQ = dynamic(() => import("@/components/FAQ"));
 const LocalSEOContent = dynamic(() => import("@/components/LocalSEOContent"));
-const HiddenSEOContent = dynamic(() => import("@/components/HiddenSEOContent"));
+const SEOContentSection = dynamic(() => import("@/components/SEOContentSection"));
 const ConveniosHighlight = dynamic(() => import("@/components/ConveniosHighlight"));
 const SiteNavigationSchema = dynamic(() => import("@/components/json-ld/SiteNavigationSchema"));
 import type { Metadata } from "next";
@@ -73,7 +73,7 @@ export default function Home() {
       <PSVL />
       <Testimonials />
       <FAQ />
-      <HiddenSEOContent />
+      <SEOContentSection />
       <SiteNavigationSchema
         items={[
           { name: "Agendamento de Consulta", url: "/contato" },

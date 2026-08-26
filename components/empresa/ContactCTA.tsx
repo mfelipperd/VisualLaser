@@ -139,7 +139,7 @@ const ContactCTA = () => {
                 Sua Visão Merece o Melhor
               </h3>
               <p className="text-lg text-primary-100 max-w-3xl mx-auto">
-                Há 27 anos cuidando da saúde visual da sua família. Agende sua
+                Há mais de 25 anos cuidando da saúde visual da sua família. Agende sua
                 consulta e venha comprovar por que somos referência em
                 oftalmologia em Belém.
               </p>

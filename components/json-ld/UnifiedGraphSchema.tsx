@@ -1,15 +1,36 @@
 import { doctors } from "@/data/doctors";
+import { getPlaceDetails, GooglePlacesConfigError } from "@/lib/google-places";
 
+const GOOGLE_PLACE_ID = "ChIJVycBkYGOpJIR67YIBR6Kyo4";
 
-/**
- * UnifiedGraphSchema Component
- * Generates a connected JSON-LD Graph for the entire clinic entity.
- * This is the "gold standard" for GEO (Generative Engine Optimization).
- */
-export default function UnifiedGraphSchema() {
+async function getAggregateRating() {
+  try {
+    const place = await getPlaceDetails(GOOGLE_PLACE_ID);
+
+    if (!place.rating || !place.userRatingCount) {
+      return null;
+    }
+
+    return {
+      "@type": "AggregateRating",
+      ratingValue: place.rating,
+      reviewCount: place.userRatingCount,
+      bestRating: 5,
+      worstRating: 1,
+    };
+  } catch (error) {
+    if (!(error instanceof GooglePlacesConfigError)) {
+      console.error("Erro ao buscar avaliação do Google para o schema:", error);
+    }
+    return null;
+  }
+}
+
+export default async function UnifiedGraphSchema() {
   const domain = "https://visuallaser.med.br";
   const clinicId = `${domain}/#clinic`;
   const websiteId = `${domain}/#website`;
+  const aggregateRating = await getAggregateRating();
 
   const clinicSchema = {
     "@type": "MedicalBusiness",
@@ -63,6 +84,7 @@ export default function UnifiedGraphSchema() {
       "Tecnologia Zeiss e Alcon em Oftalmologia",
     ],
     award: "Referência em Tecnologia Oftalmológica no Norte do Brasil",
+    ...(aggregateRating ? { aggregateRating } : {}),
   };
 
   const employeeSchemas = doctors.map((doc: any, index: number) => ({

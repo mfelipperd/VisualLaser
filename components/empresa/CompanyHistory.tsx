@@ -81,8 +81,10 @@ const CompanyHistory = () => {
             Nossa <span className="text-primary-600">História</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Uma jornada de mais de 27 anos dedicada à excelência em oftalmologia,
-            sempre inovando e servindo com empatia e profissionalismo.
+            A Visual Laser foi fundada em 1997, no bairro do Marco em Belém, como o
+            primeiro centro de cirurgia refrativa a laser do Pará. De lá para cá,
+            são mais de 25 anos dedicados à excelência em oftalmologia, sempre
+            inovando e servindo com empatia e profissionalismo.
           </p>
         </motion.div>
 

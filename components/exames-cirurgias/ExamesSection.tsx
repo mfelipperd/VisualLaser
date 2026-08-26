@@ -45,6 +45,8 @@ const ExamesSection = () => {
     },
   ];
 
+  const totalExames = exames.reduce((count, categoria) => count + categoria.items.length, 0);
+
   return (
     <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto container-padding">
@@ -59,8 +61,10 @@ const ExamesSection = () => {
             Nossos <span className="text-primary-600">Exames e Procedimentos</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Oferecemos uma ampla gama de exames oftalmológicos com tecnologia de
-            última geração para diagnósticos precisos e tratamentos eficazes.
+            A Visual Laser realiza {totalExames} exames oftalmológicos em Belém,
+            organizados em seis áreas: dos exames básicos de rotina aos exames
+            especializados de córnea, retina, glaucoma e superfície ocular, todos
+            com tecnologia de última geração.
           </p>
         </motion.div>
 

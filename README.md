@@ -45,7 +45,6 @@ VisualLaser/
 │   ├── Testimonials.tsx   # Avaliações dos pacientes
 │   ├── BlurModal.tsx      # Modal de coleta de leads
 │   ├── CookieConsent.tsx  # Consentimento de cookies
-│   ├── SchemaMarkup.tsx   # Schema markup para SEO
 │   └── Footer.tsx         # Rodapé com informações de contato
 ├── public/                 # Arquivos estáticos
 │   ├── images/            # Imagens otimizadas

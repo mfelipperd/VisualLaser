@@ -109,7 +109,7 @@ const EquipeSection = () => {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-accent-400 rounded-full"></div>
-                  <span>27 anos de experiência e confiança</span>
+                  <span>Mais de 25 anos de experiência e confiança</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-accent-400 rounded-full"></div>

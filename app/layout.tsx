@@ -144,7 +144,7 @@ export const metadata: Metadata = {
   },
   other: {
     "yandex-verification": "your-yandex-verification-code",
-    "msvalidate.01": "your-bing-verification-code",
+    "msvalidate.01": "8F961C430D23578FF85199E9129C3DC9",
   },
 };
 
