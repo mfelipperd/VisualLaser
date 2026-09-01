@@ -2,6 +2,36 @@ import type { Metadata } from "next";
 import { Eye, CheckCircle, Clock, Shield, ArrowRight, Star } from "lucide-react";
 import Link from "next/link";
 import BreadcrumbSchema from "@/components/json-ld/BreadcrumbSchema";
+import FAQSchema from "@/components/json-ld/FAQSchema";
+import FAQAccordionList from "@/components/faq/FAQAccordionList";
+
+const examesFaqs = [
+  {
+    question: "Preciso de preparo especial para os exames oftalmológicos?",
+    answer:
+      "Depende do exame. A maioria não exige preparo, mas alguns têm orientações específicas: mapeamento de retina exige dilatação pupilar, angiografia fluorescente exige jejum de 4 horas, e exames como refratometria, topografia de córnea, biometria e microscopia especular pedem para evitar lentes de contato por 24h a 7 dias antes.",
+  },
+  {
+    question: "A clínica realiza exames de alta complexidade como Mapeamento de Retina?",
+    answer:
+      "Sim, realizamos uma gama completa de exames diagnósticos em Belém, incluindo Mapeamento de Retina, Campimetria Computadorizada, OCT e Ultrassom Ocular. Nossa infraestrutura permite um diagnóstico preciso para patologias de retina, glaucoma e córnea em um único local.",
+  },
+  {
+    question: "Quais exames ajudam no diagnóstico de glaucoma?",
+    answer:
+      "Para investigação de glaucoma, realizamos Tonometria (medição da pressão intraocular), Campimetria Visual Computadorizada (avaliação do campo visual) e Gonioscopia (exame do ângulo da câmara anterior do olho).",
+  },
+  {
+    question: "Quanto tempo leva para sair o resultado dos exames?",
+    answer:
+      "Os resultados ficam disponíveis imediatamente após o exame, sem necessidade de retorno em outro dia para retirá-los.",
+  },
+  {
+    question: "A Visual Laser atende por convênio ou só particular?",
+    answer:
+      "Atende os dois. A clínica é credenciada a diversos convênios, como Unimed, Bradesco Saúde, Amil, SulAmérica e Cassi, entre outros, e também oferece atendimento particular.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Exames Oftalmológicos | Visual Laser Belém | Exames de Vista Completos",
@@ -173,7 +203,21 @@ export default function ExamesOftalmologicosPage() {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            
+
+            {/* O que é */}
+            <div className="max-w-3xl mx-auto mb-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                O que são os <span className="text-gradient">Exames Oftalmológicos</span>?
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Exames oftalmológicos são procedimentos diagnósticos que avaliam a saúde e o
+                funcionamento dos olhos — da acuidade visual à estrutura da retina e do nervo
+                óptico. Na Visual Laser, oferecemos uma gama completa de exames com equipamentos
+                de última geração, permitindo diagnóstico preciso de miopia, astigmatismo,
+                catarata, glaucoma e outras condições oculares em um único local.
+              </p>
+            </div>
+
             {/* Section Header */}
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -225,9 +269,9 @@ export default function ExamesOftalmologicosPage() {
             {/* Benefits Section */}
             <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-16">
               <div className="text-center mb-12">
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                   Por que Escolher Nossos Exames e Procedimentos?
-                </h3>
+                </h2>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -265,11 +309,24 @@ export default function ExamesOftalmologicosPage() {
               </div>
             </div>
 
+            {/* FAQ */}
+            <div className="mb-16">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  Perguntas Frequentes sobre Exames Oftalmológicos
+                </h2>
+              </div>
+              <div className="max-w-3xl mx-auto">
+                <FAQAccordionList items={examesFaqs} />
+              </div>
+            </div>
+            <FAQSchema questions={examesFaqs} />
+
             {/* CTA Section */}
             <div className="bg-gradient-to-r from-primary-950 to-primary-900 rounded-3xl p-8 md:p-12 text-center">
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Agende Seus Exames
-              </h3>
+              </h2>
               <p className="text-xl text-primary-200 mb-8 max-w-2xl mx-auto">
                 Entre em contato conosco e agende seus exames oftalmológicos. 
                 Nossa equipe está pronta para cuidar da sua saúde visual.

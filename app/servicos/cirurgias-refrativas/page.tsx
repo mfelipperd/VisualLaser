@@ -2,7 +2,20 @@ import type { Metadata } from "next";
 import { Shield, Eye, CheckCircle, Clock, Star, ArrowRight, Zap } from "lucide-react";
 import Link from "next/link";
 import BreadcrumbSchema from "@/components/json-ld/BreadcrumbSchema";
+import FAQSchema from "@/components/json-ld/FAQSchema";
+import FAQAccordionList from "@/components/faq/FAQAccordionList";
 import AgendarConsultaButton from "@/components/AgendarConsultaButton";
+import { faqs } from "@/data/faq";
+
+const cirurgiaRefrativaFaqs = faqs.filter((faq) =>
+  [
+    "A Visual Laser utiliza tecnologia Zeiss ou Alcon em suas cirurgias?",
+    "Como funciona o atendimento para cirurgia refrativa a laser?",
+    "Quanto tempo leva a recuperação da cirurgia refrativa (LASIK, PRK, SMILE)?",
+    "A Visual Laser atende por convênio ou só particular?",
+    "Preciso de acompanhante no dia da cirurgia?",
+  ].includes(faq.question)
+);
 
 export const metadata: Metadata = {
   title: "Cirurgia Refrativa em Belém | LASIK, PRK, SMILE | Visual Laser",
@@ -157,7 +170,22 @@ export default function CirurgiasRefrativasPage() {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            
+
+            {/* O que é */}
+            <div className="max-w-3xl mx-auto mb-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                O que é <span className="text-gradient">Cirurgia Refrativa</span>?
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Cirurgia refrativa é o nome dado aos procedimentos que corrigem miopia,
+                astigmatismo e hipermetropia — por remodelamento da córnea a laser (LASIK, PRK
+                ou SMILE) — e à substituição do cristalino por lentes intraoculares para casos
+                de presbiopia, reduzindo ou eliminando a dependência de óculos e lentes de
+                contato. Na Visual Laser, os procedimentos são feitos com tecnologia Zeiss e
+                Alcon, padrão mundial em cirurgia refrativa.
+              </p>
+            </div>
+
             {/* Section Header */}
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -231,9 +259,9 @@ export default function CirurgiasRefrativasPage() {
             {/* Benefits Section */}
             <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-16">
               <div className="text-center mb-12">
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                   Benefícios das Cirurgias Refrativas
-                </h3>
+                </h2>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -252,9 +280,9 @@ export default function CirurgiasRefrativasPage() {
             {/* Process Section */}
             <div className="bg-gradient-to-r from-gray-50 to-white rounded-3xl p-8 md:p-12 mb-16">
               <div className="text-center mb-12">
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                   Como Funciona o Processo
-                </h3>
+                </h2>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -284,11 +312,36 @@ export default function CirurgiasRefrativasPage() {
               </div>
             </div>
 
+            {/* Convênio ou Particular */}
+            <div className="max-w-3xl mx-auto mb-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Cirurgia Refrativa <span className="text-gradient">Particular ou por Convênio</span>
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                A Visual Laser atende os dois formatos. A clínica é credenciada a diversos
+                convênios, como Unimed, Bradesco Saúde, Amil, SulAmérica e Cassi, entre outros,
+                e também oferece atendimento particular.
+              </p>
+            </div>
+
+            {/* FAQ */}
+            <div className="mb-16">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  Perguntas Frequentes sobre Cirurgia Refrativa
+                </h2>
+              </div>
+              <div className="max-w-3xl mx-auto">
+                <FAQAccordionList items={cirurgiaRefrativaFaqs} />
+              </div>
+            </div>
+            <FAQSchema questions={cirurgiaRefrativaFaqs} />
+
             {/* CTA Section */}
             <div className="bg-gradient-to-r from-primary-950 to-primary-900 rounded-3xl p-8 md:p-12 text-center">
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Livre-se dos Óculos
-              </h3>
+              </h2>
               <p className="text-xl text-primary-200 mb-8 max-w-2xl mx-auto">
                 Agende uma consulta para avaliação e descubra se você é candidato 
                 a uma cirurgia refrativa. Transforme sua qualidade de vida!

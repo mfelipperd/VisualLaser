@@ -5,6 +5,19 @@ import {
   ContactForm,
   LocationMap,
 } from "@/components/contato";
+import BreadcrumbSchema from "@/components/json-ld/BreadcrumbSchema";
+import FAQSchema from "@/components/json-ld/FAQSchema";
+import FAQAccordionList from "@/components/faq/FAQAccordionList";
+import { faqs } from "@/data/faq";
+
+const contatoFaqs = faqs.filter((faq) =>
+  [
+    "Como agendar uma consulta pela internet?",
+    "A Visual Laser atende por convênio ou só particular?",
+    "Existe um oftalmologista perto de mim em Belém?",
+    "Quanto custa uma consulta particular na Visual Laser?",
+  ].includes(faq.question)
+);
 
 export const metadata: Metadata = {
   title: "Contato e Endereço | Agende sua Consulta | Visual Laser Belém",
@@ -38,6 +51,22 @@ export default function ContatoPage() {
       <ContactInfo />
       <ContactForm />
       <LocationMap />
+
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto container-padding max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+            Perguntas Frequentes
+          </h2>
+          <FAQAccordionList items={contatoFaqs} />
+        </div>
+      </section>
+      <FAQSchema questions={contatoFaqs} />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", item: "/" },
+          { name: "Contato", item: "/contato" },
+        ]}
+      />
     </main>
   );
 }

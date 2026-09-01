@@ -177,7 +177,20 @@ export default function TratamentoCatarataPage() {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            
+
+            {/* O que é */}
+            <div className="max-w-3xl mx-auto mb-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                O que é <span className="text-gradient">Catarata</span>?
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Catarata é a opacificação do cristalino, a lente natural do olho, causando visão
+                embaçada, sensibilidade à luz e dificuldade para enxergar à noite. O tratamento é
+                cirúrgico: a facoemulsificação remove o cristalino opaco e implanta uma lente
+                intraocular artificial no lugar, com tecnologia Zeiss e Alcon.
+              </p>
+            </div>
+
             {/* Section Header */}
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -241,9 +254,9 @@ export default function TratamentoCatarataPage() {
             {/* Benefits Section */}
             <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-16">
               <div className="text-center mb-12">
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                   Benefícios do Tratamento
-                </h3>
+                </h2>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -262,9 +275,9 @@ export default function TratamentoCatarataPage() {
             {/* Process Section */}
             <div className="bg-gradient-to-r from-gray-50 to-white rounded-3xl p-8 md:p-12 mb-16">
               <div className="text-center mb-12">
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                   Como Funciona o Processo
-                </h3>
+                </h2>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -283,9 +296,9 @@ export default function TratamentoCatarataPage() {
             {/* FAQ Section */}
             <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-16">
               <div className="text-center mb-12">
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                   Perguntas Frequentes
-                </h3>
+                </h2>
               </div>
               
               <div className="space-y-8 max-w-4xl mx-auto">
@@ -323,9 +336,9 @@ export default function TratamentoCatarataPage() {
 
             {/* CTA Section */}
             <div className="bg-gradient-to-r from-primary-950 to-primary-900 rounded-3xl p-8 md:p-12 text-center">
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Recupere Sua Visão
-              </h3>
+              </h2>
               <p className="text-xl text-primary-200 mb-8 max-w-2xl mx-auto">
                 Não deixe a catarata limitar sua qualidade de vida. Agende uma consulta 
                 e descubra como podemos ajudá-lo a recuperar uma visão clara e nítida.
