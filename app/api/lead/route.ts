@@ -45,9 +45,17 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify({ name, email, phone, subject, message, source }),
     })
 
-    if (!response.ok) {
+    const rawResult = await response.text()
+    let scriptResult: { success?: boolean; message?: string } | null = null
+    try {
+      scriptResult = JSON.parse(rawResult)
+    } catch {
+      scriptResult = null
+    }
+
+    if (!response.ok || !scriptResult || scriptResult.success !== true) {
       return NextResponse.json({
-        message: 'Erro ao registrar lead na planilha',
+        message: scriptResult?.message || 'Erro ao registrar lead na planilha',
         success: false
       }, { status: 502 })
     }
