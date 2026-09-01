@@ -29,8 +29,8 @@ function base64url(input: Buffer | string): string {
 }
 
 async function getAccessToken(): Promise<string> {
-  const clientEmail = process.env.GOOGLE_SA_CLIENT_EMAIL;
-  const privateKeyRaw = process.env.GOOGLE_SA_PRIVATE_KEY;
+  const clientEmail = process.env.GOOGLE_SA_CLIENT_EMAIL?.trim();
+  const privateKeyRaw = process.env.GOOGLE_SA_PRIVATE_KEY?.trim();
 
   if (!clientEmail || !privateKeyRaw) {
     throw new Error(
@@ -145,13 +145,13 @@ function diffByKey(
 
 export async function GET(request: NextRequest) {
   const authHeader = request.headers.get("authorization");
-  const expectedToken = process.env.SEO_REPORT_TOKEN;
+  const expectedToken = process.env.SEO_REPORT_TOKEN?.trim();
 
   if (!expectedToken || authHeader !== `Bearer ${expectedToken}`) {
     return NextResponse.json({ error: "Não autorizado" }, { status: 401 });
   }
 
-  const siteUrl = process.env.SEARCH_CONSOLE_SITE_URL || "https://visuallaser.med.br/";
+  const siteUrl = process.env.SEARCH_CONSOLE_SITE_URL?.trim() || "https://visuallaser.med.br/";
 
   try {
     const accessToken = await getAccessToken();
