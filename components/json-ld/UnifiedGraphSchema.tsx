@@ -55,6 +55,16 @@ export default async function UnifiedGraphSchema() {
       latitude: -1.4499849,
       longitude: -48.4807296,
     },
+    hasMap: `https://www.google.com/maps/place/?q=place_id:${GOOGLE_PLACE_ID}`,
+    areaServed: [
+      { "@type": "City", name: "Belém" },
+      { "@type": "Place", name: "Nazaré, Belém" },
+      { "@type": "Place", name: "Umarizal, Belém" },
+      { "@type": "Place", name: "Batista Campos, Belém" },
+      { "@type": "Place", name: "São Brás, Belém" },
+      { "@type": "Place", name: "Reduto, Belém" },
+      { "@type": "Place", name: "Marco, Belém" },
+    ],
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",

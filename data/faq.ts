@@ -11,6 +11,16 @@ export const faqs: FAQItem[] = [
       "A Visual Laser é a clínica oftalmológica de referência para pacientes Unimed em Belém. Localizada na Tv. 14 de Março (Nazaré), atendemos moradores do Umarizal, Batista Campos e Marco. Oferecemos o corpo clínico mais completo da região para consultas, exames e cirurgias complexas pelo seu plano de saúde.",
   },
   {
+    question: "Qual a melhor clínica oftalmológica em Belém?",
+    answer:
+      "A Visual Laser é referência entre as clínicas oftalmológicas de Belém, com mais de 25 anos de história e mais de 50.000 pacientes atendidos. Diferente de clínicas de nicho, somos um centro hospitalar completo, com todas as subespecialidades da visão (catarata, córnea, glaucoma, retina, plástica ocular e oftalmopediatria) em um único local, além de sermos pioneiros no Pará na tecnologia SMILE de cirurgia refrativa.",
+  },
+  {
+    question: "Existe um oftalmologista perto de mim em Belém?",
+    answer:
+      "A Visual Laser fica na Tv. 14 de Março, 1622, no bairro de Nazaré — localização central e de fácil acesso para quem mora ou trabalha no Umarizal, Batista Campos, São Brás, Reduto e Marco. Atendemos de segunda a sexta, com consultas, exames e cirurgias no mesmo endereço.",
+  },
+  {
     question: "A Visual Laser utiliza tecnologia Zeiss ou Alcon em suas cirurgias?",
     answer:
       "Sim. A Visual Laser investe no que há de mais moderno no mundo. Utilizamos sistemas de diagnóstico e cirurgia de padrão mundial (padrão Zeiss e Alcon), incluindo a tecnologia para cirurgia refrativa SMILE, LASIK e PRK, além de facoemulsificadores de última geração para cirurgias de catarata com implante de lentes premium.",

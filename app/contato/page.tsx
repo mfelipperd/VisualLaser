@@ -7,24 +7,27 @@ import {
 } from "@/components/contato";
 
 export const metadata: Metadata = {
-  title: "Contato - Visual Laser",
+  title: "Contato e Endereço | Agende sua Consulta | Visual Laser Belém",
   description:
-    "Entre em contato com a Visual Laser. Agende sua consulta, tire suas dúvidas ou visite nossa clínica em Belém, Pará.",
+    "📍 Visual Laser em Nazaré, Belém-PA. ☎️ (91) 3225-4422. Agende sua consulta por telefone, WhatsApp ou formulário. Atendimento rápido e equipe pronta para te ajudar.",
   keywords: [
-    "contato",
-    "agendamento",
-    "consulta",
-    "endereço",
-    "telefone",
+    "contato visual laser",
+    "telefone visual laser",
+    "endereço visual laser belém",
+    "agendar consulta oftalmologista belém",
+    "clínica oftalmológica nazaré belém",
     "Visual Laser",
     "Belém",
     "Pará",
   ],
   openGraph: {
-    title: "Contato - Visual Laser",
+    title: "Contato e Endereço | Visual Laser Belém",
     description:
-      "Entre em contato com a Visual Laser. Agende sua consulta ou visite nossa clínica.",
+      "📍 Nazaré, Belém-PA. ☎️ (91) 3225-4422. Agende sua consulta por telefone, WhatsApp ou formulário online.",
     url: "https://visuallaser.med.br/contato",
+  },
+  alternates: {
+    canonical: "https://visuallaser.med.br/contato",
   },
 };
 

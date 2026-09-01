@@ -5,13 +5,14 @@ import BreadcrumbSchema from "@/components/json-ld/BreadcrumbSchema";
 import AgendarConsultaButton from "@/components/AgendarConsultaButton";
 
 export const metadata: Metadata = {
-  title: "Nossos Serviços | Exames e Cirurgias Oftalmológicas | Visual Laser Belém",
-  description: "Conheça todos os nossos serviços oftalmológicos em Belém: exames completos, cirurgias refrativas, tratamento de catarata e muito mais. Tecnologia de ponta e equipe especializada.",
+  title: "Exames, Cirurgias e Catarata | Serviços Visual Laser Belém",
+  description: "👁️ Exames de vista, cirurgia refrativa (LASIK, PRK, SMILE) e tratamento de catarata em Belém. ✅ Tecnologia de ponta, equipe especializada e convênios aceitos. Agende!",
   keywords: [
-    "serviços oftalmológicos",
-    "exames de vista",
-    "cirurgias refrativas",
-    "tratamento de catarata",
+    "serviços oftalmológicos belém",
+    "exame de vista belém",
+    "cirurgia refrativa belém",
+    "tratamento de catarata belém",
+    "lasik belém",
     "oftalmologia belém",
     "clínica oftalmológica",
     "Visual Laser",
@@ -20,8 +21,8 @@ export const metadata: Metadata = {
     "laser nos olhos"
   ],
   openGraph: {
-    title: "Nossos Serviços | Visual Laser Belém",
-    description: "Conheça todos os nossos serviços oftalmológicos: exames completos, cirurgias refrativas, tratamento de catarata e muito mais.",
+    title: "Exames, Cirurgias e Catarata | Visual Laser Belém",
+    description: "👁️ Exames de vista, cirurgia refrativa (LASIK, PRK, SMILE) e tratamento de catarata em Belém. Tecnologia de ponta e convênios aceitos.",
     url: "https://visuallaser.med.br/servicos",
     type: "website",
     images: [

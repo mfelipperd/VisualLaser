@@ -5,8 +5,8 @@ import BreadcrumbSchema from "@/components/json-ld/BreadcrumbSchema";
 import AgendarConsultaButton from "@/components/AgendarConsultaButton";
 
 export const metadata: Metadata = {
-  title: "Cirurgias Refrativas | Visual Laser Belém | LASIK, PRK, SMILE",
-  description: "Cirurgias refrativas em Belém: LASIK, PRK, SMILE para correção de miopia, hipermetropia, astigmatismo e presbiopia. Tecnologia de ponta na Visual Laser.",
+  title: "Cirurgia Refrativa em Belém | LASIK, PRK, SMILE | Visual Laser",
+  description: "👁️ Livre-se dos óculos! Cirurgia refrativa a laser (LASIK, PRK, SMILE) com tecnologia Zeiss em Belém. ✅ Avaliação especializada e convênios aceitos. Agende sua consulta!",
   keywords: [
     "cirurgia refrativa",
     "LASIK",
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     "Visual Laser"
   ],
   openGraph: {
-    title: "Cirurgias Refrativas | Visual Laser Belém",
-    description: "Cirurgias refrativas com tecnologia de ponta: LASIK, PRK, SMILE para correção definitiva de problemas visuais.",
+    title: "Cirurgia Refrativa em Belém | LASIK, PRK, SMILE | Visual Laser",
+    description: "👁️ Livre-se dos óculos! Cirurgia refrativa a laser (LASIK, PRK, SMILE) com tecnologia Zeiss em Belém. Avaliação especializada e convênios aceitos.",
     url: "https://visuallaser.med.br/servicos/cirurgias-refrativas",
     type: "website",
   },

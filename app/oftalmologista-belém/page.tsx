@@ -5,8 +5,8 @@ import Testimonials from "@/components/Testimonials";
 import MedicalAuthorSignature from "@/components/MedicalAuthorSignature";
 
 export const metadata: Metadata = {
-  title: "Oftalmologista em Belém | Médico dos Olhos | Consulta | Visual Laser",
-  description: "👁️ Oftalmologista em Belém! Médico especialista em olhos, consultas, exames e cirurgias. ✅ Melhor oftalmologista de Belém-PA. 📍 Nazaré, Belém. Agende sua consulta!",
+  title: "Oftalmologista em Belém | Visual Laser",
+  description: "👁️ Oftalmologista em Belém há mais de 25 anos. Consultas, exames e cirurgias com equipe especializada. ✅ Convênios aceitos. 📍 Nazaré, Belém. Agende sua consulta!",
   keywords: [
     "oftalmologista belém",
     "oftalmologista em belém",
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     "Visual Laser",
   ],
   openGraph: {
-    title: "👁️ Oftalmologista em Belém | Médico dos Olhos | Consulta | Visual Laser",
-    description: "👁️ Oftalmologista em Belém! Médico especialista em olhos, consultas, exames e cirurgias. ✅ Melhor oftalmologista de Belém-PA. 📍 Nazaré, Belém. Agende sua consulta!",
+    title: "👁️ Oftalmologista em Belém | Visual Laser",
+    description: "👁️ Oftalmologista em Belém há mais de 25 anos. Consultas, exames e cirurgias com equipe especializada. ✅ Convênios aceitos. 📍 Nazaré, Belém.",
     url: "https://visuallaser.med.br/oftalmologista-belém",
     type: "website",
     images: [
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "👁️ Oftalmologista em Belém | Médico dos Olhos | Consulta | Visual Laser",
-    description: "👁️ Oftalmologista em Belém! Médico especialista em olhos, consultas, exames e cirurgias.",
+    title: "👁️ Oftalmologista em Belém | Visual Laser",
+    description: "👁️ Oftalmologista em Belém há mais de 25 anos. Consultas, exames e cirurgias com equipe especializada.",
     images: ["/images/social-preview.jpg"],
   },
   alternates: {
