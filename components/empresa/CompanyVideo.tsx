@@ -9,6 +9,25 @@ const CompanyVideo = () => {
 
   return (
     <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "VideoObject",
+            name: "Visual Laser - Oftalmologia Avançada e Humanizada",
+            description:
+              "Vídeo institucional da Visual Laser: conheça nossa equipe médica, infraestrutura e os valores que nos tornam referência em oftalmologia na região Norte.",
+            thumbnailUrl: "https://i.ytimg.com/vi/Dw_8kJKcsrs/hqdefault.jpg",
+            uploadDate: "2025-01-14T16:22:09-08:00",
+            duration: "PT54S",
+            embedUrl: "https://www.youtube.com/embed/Dw_8kJKcsrs",
+            publisher: {
+              "@id": "https://visuallaser.med.br/#clinic",
+            },
+          }),
+        }}
+      />
       <div className="w-full px-2 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

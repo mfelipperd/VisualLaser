@@ -37,7 +37,12 @@ export default async function UnifiedGraphSchema() {
     "@id": clinicId,
     name: "Visual Laser - Clínica Oftalmológica em Belém",
     url: domain,
-    logo: `${domain}/logo-visual-branca.png`,
+    logo: {
+      "@type": "ImageObject",
+      url: `${domain}/logo-visual-branca.png`,
+      width: 684,
+      height: 365,
+    },
     image: [`${domain}/images/social-preview.jpg`],
     telephone: ["+559132254422", "+5591988968201"],
     email: "marketing@visuallaser.com.br",
