@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Eye, Mail, Phone, X, CheckCircle, ArrowRight } from "lucide-react";
 import { UserContact } from "@/types";
+import { trackEvent } from "@/lib/gtag";
 
 const BlurModal = () => {
   const pathname = usePathname();
@@ -64,6 +65,8 @@ const BlurModal = () => {
       formData.name.trim() || formData.email.trim() || formData.phone.trim();
 
     if (hasData) {
+      trackEvent("generate_lead", { source: "blur_modal" });
+
       // Se tem dados, salvar e mostrar mensagem de sucesso
       setIsLoading(true);
 

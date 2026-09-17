@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import Image from "next/image";
+import { trackEvent } from "@/lib/gtag";
 
 const WhatsAppButton = () => {
   const pathname = usePathname();
@@ -32,6 +33,7 @@ const WhatsAppButton = () => {
   }, []);
 
   const handleWhatsAppClick = () => {
+    trackEvent("whatsapp_click", { location: "floating_button" });
     window.open(whatsappUrl, "_blank");
   };
 
@@ -82,10 +84,10 @@ const WhatsAppButton = () => {
             onClick={handleWhatsAppClick}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="bg-white hover:bg-gray-50 p-3 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-green-300 border-2 border-green-500"
+            className="bg-white hover:bg-gray-50 p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-green-300 border-[3px] border-green-500"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            animate={{ 
+            animate={{
               y: [0, -5, 0],
             }}
             transition={{
@@ -100,20 +102,20 @@ const WhatsAppButton = () => {
             <Image
               src="/images/whatsapp-logo-1.png"
               alt="WhatsApp"
-              width={32}
-              height={32}
-              className="w-8 h-8"
+              width={48}
+              height={48}
+              className="w-12 h-12"
             />
           </motion.button>
 
           {/* Botão de fechar */}
           <motion.button
             onClick={handleClose}
-            className="absolute -top-2 -right-2 bg-gray-500 hover:bg-gray-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs transition-colors duration-200"
+            className="absolute -top-2 -right-2 bg-gray-500 hover:bg-gray-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-xs transition-colors duration-200"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <X className="w-3 h-3" />
+            <X className="w-4 h-4" />
           </motion.button>
 
           {/* Indicador de notificação */}
@@ -124,9 +126,9 @@ const WhatsAppButton = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center"
+            className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center"
           >
-            <div className="w-2 h-2 bg-white rounded-full"></div>
+            <div className="w-2.5 h-2.5 bg-white rounded-full"></div>
           </motion.div>
         </div>
       </motion.div>

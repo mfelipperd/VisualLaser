@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar } from "lucide-react";
 import AppointmentModal from "./AppointmentModal";
+import { trackEvent } from "@/lib/gtag";
 
 const StickyAppointment = () => {
   const pathname = usePathname();
@@ -28,6 +29,11 @@ const StickyAppointment = () => {
 
   if (pathname?.startsWith("/lp-c1f9e3b2")) return null;
 
+  const handleClick = () => {
+    trackEvent("agendar_consulta_click", { location: "sticky_mobile" });
+    setIsModalOpen(true);
+  };
+
   return (
     <>
       <AnimatePresence>
@@ -40,7 +46,7 @@ const StickyAppointment = () => {
           >
             <button
               id="btn-sticky-agendamento-mobile"
-              onClick={() => setIsModalOpen(true)}
+              onClick={handleClick}
               className="w-full bg-accent-500 hover:bg-accent-600 text-white font-bold py-4 px-6 rounded-xl shadow-2xl flex items-center justify-center space-x-3 transform active:scale-95 transition-all duration-200 border border-white/20 backdrop-blur-sm"
             >
               <Calendar className="w-5 h-5" />

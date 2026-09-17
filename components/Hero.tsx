@@ -7,6 +7,7 @@ import AppointmentModal from "./AppointmentModal";
 import Image from "next/image";
 import { useMemo } from "react";
 import { useRouter } from "next/navigation";
+import { trackEvent } from "@/lib/gtag";
 
 const Hero = () => {
   const router = useRouter();
@@ -15,6 +16,7 @@ const Hero = () => {
 
   const handleCTAClick = (ctaLink: string) => {
     if (ctaLink === "/agendamento") {
+      trackEvent("agendar_consulta_click", { location: "hero_primary" });
       setIsAppointmentModalOpen(true);
     } else {
       router.push(ctaLink);
@@ -27,6 +29,17 @@ const Hero = () => {
     } else {
       router.push(secondaryLink);
     }
+  };
+
+  const whatsappUrl =
+    "https://wa.me/5591988968201?text=" +
+    encodeURIComponent(
+      "Olá! Vim através do site da Visual Laser e gostaria de agendar uma consulta. Podem me ajudar?"
+    );
+
+  const handleWhatsAppClick = () => {
+    trackEvent("whatsapp_click", { location: "hero" });
+    window.open(whatsappUrl, "_blank");
   };
 
   const slides = useMemo(() => [
@@ -146,8 +159,22 @@ const Hero = () => {
               transition={{ duration: 0.8 }}
               className="text-white"
             >
-              <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8 border border-white/20 max-w-6xl mx-auto">
-                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 lg:gap-8">
+              <div className="relative bg-black/40 backdrop-blur-sm rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8 border border-white/20 max-w-6xl mx-auto">
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.2 }}
+                  className="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-6 md:right-6"
+                >
+                  <button
+                    onClick={() => handleSecondaryClick(slides[currentSlide].secondaryLink)}
+                    className="inline-flex items-center justify-center space-x-2 text-white hover:text-accent-400 font-medium py-2 px-3 sm:py-2.5 sm:px-4 border border-white/30 hover:border-accent-400 rounded-lg transition-all duration-300 text-xs sm:text-sm bg-black/20 backdrop-blur-sm"
+                  >
+                    <span>{slides[currentSlide].secondaryText}</span>
+                  </button>
+                </motion.div>
+
+                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6 lg:gap-8 pt-10 sm:pt-12 lg:pt-0">
                   {/* Text Content */}
                   <div className="space-y-3 sm:space-y-4 md:space-y-6 flex-1 text-center lg:text-left">
                     <motion.div
@@ -206,10 +233,17 @@ const Hero = () => {
                       className="w-full sm:w-auto"
                     >
                       <button
-                        onClick={() => handleSecondaryClick(slides[currentSlide].secondaryLink)}
-                        className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 text-white hover:text-accent-400 font-medium py-3 px-6 md:py-4 md:px-8 border border-white/30 hover:border-accent-400 rounded-lg transition-all duration-300 text-sm md:text-base"
+                        onClick={handleWhatsAppClick}
+                        className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#25D366] hover:bg-[#1ebe57] text-white font-semibold py-3 px-6 md:py-4 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm md:text-base"
                       >
-                        <span>{slides[currentSlide].secondaryText}</span>
+                        <Image
+                          src="/images/whatsapp-logo-1.png"
+                          alt="WhatsApp"
+                          width={20}
+                          height={20}
+                          className="w-5 h-5"
+                        />
+                        <span>Falar no WhatsApp</span>
                       </button>
                     </motion.div>
                   </div>

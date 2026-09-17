@@ -2,6 +2,7 @@
 
 import Script from "next/script";
 import { useEffect, useCallback } from "react";
+import type { GtagEventParams } from "@/lib/gtag";
 
 const TrackingPixels = () => {
   // Pixels de rastreamento das variáveis de ambiente
@@ -179,7 +180,7 @@ const TrackingPixels = () => {
 declare global {
   interface Window {
     fbq: any;
-    gtag: any;
+    gtag?: (command: "event" | "config" | "js" | "set", targetOrEventName: string, params?: GtagEventParams) => void;
     ttq: any;
     lintrk: any;
     trackConversion: (eventName: string, value?: number) => void;
