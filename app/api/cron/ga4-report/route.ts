@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { computeSeoMetrics } from "@/lib/seo-metrics";
+import { computeGa4Metrics } from "@/lib/ga4-metrics";
 import { commitReportToGitHub } from "@/lib/github-report";
 
 export const runtime = "nodejs";
@@ -13,11 +13,11 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const metrics = await computeSeoMetrics();
+    const metrics = await computeGa4Metrics();
     await commitReportToGitHub(
-      "reports/seo-latest.json",
+      "reports/ga4-latest.json",
       JSON.stringify(metrics, null, 2),
-      "chore: atualiza relatório automático de SEO"
+      "chore: atualiza relatório automático do GA4"
     );
     return NextResponse.json({ ok: true, generatedAt: metrics.generatedAt });
   } catch (error) {

@@ -70,6 +70,10 @@
     {
       "path": "/api/cron/seo-report",
       "schedule": "0 10 * * 1"
+    },
+    {
+      "path": "/api/cron/ga4-report",
+      "schedule": "5 10 * * 1"
     }
   ],
   "redirects": [

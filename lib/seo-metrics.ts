@@ -1,6 +1,5 @@
-import crypto from "crypto";
+import { getGoogleAccessToken } from "./google-auth";
 
-const TOKEN_ENDPOINT = "https://oauth2.googleapis.com/token";
 const SCOPE = "https://www.googleapis.com/auth/webmasters.readonly";
 const WINDOW_DAYS = 28;
 const DATA_LAG_DAYS = 3;
@@ -15,60 +14,6 @@ interface SearchAnalyticsRow {
 
 interface SearchAnalyticsResponse {
   rows?: SearchAnalyticsRow[];
-}
-
-function base64url(input: Buffer | string): string {
-  return (Buffer.isBuffer(input) ? input : Buffer.from(input))
-    .toString("base64")
-    .replace(/\+/g, "-")
-    .replace(/\//g, "_")
-    .replace(/=+$/, "");
-}
-
-async function getAccessToken(): Promise<string> {
-  const clientEmail = process.env.GOOGLE_SA_CLIENT_EMAIL?.trim();
-  const privateKeyRaw = process.env.GOOGLE_SA_PRIVATE_KEY?.trim();
-
-  if (!clientEmail || !privateKeyRaw) {
-    throw new Error(
-      "GOOGLE_SA_CLIENT_EMAIL / GOOGLE_SA_PRIVATE_KEY não configuradas"
-    );
-  }
-
-  const privateKey = privateKeyRaw.replace(/\\n/g, "\n");
-  const now = Math.floor(Date.now() / 1000);
-
-  const header = base64url(JSON.stringify({ alg: "RS256", typ: "JWT" }));
-  const claim = base64url(
-    JSON.stringify({
-      iss: clientEmail,
-      scope: SCOPE,
-      aud: TOKEN_ENDPOINT,
-      exp: now + 3600,
-      iat: now,
-    })
-  );
-  const signingInput = `${header}.${claim}`;
-  const signature = base64url(
-    crypto.createSign("RSA-SHA256").update(signingInput).sign(privateKey)
-  );
-  const jwt = `${signingInput}.${signature}`;
-
-  const response = await fetch(TOKEN_ENDPOINT, {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({
-      grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
-      assertion: jwt,
-    }),
-  });
-
-  if (!response.ok) {
-    throw new Error(`Falha ao obter access token: ${await response.text()}`);
-  }
-
-  const data = await response.json();
-  return data.access_token;
 }
 
 async function querySearchAnalytics(
@@ -142,7 +87,7 @@ function diffByKey(
 
 export async function computeSeoMetrics() {
   const siteUrl = process.env.SEARCH_CONSOLE_SITE_URL?.trim() || "https://visuallaser.med.br/";
-  const accessToken = await getAccessToken();
+  const accessToken = await getGoogleAccessToken(SCOPE);
 
   const end = new Date();
   end.setDate(end.getDate() - DATA_LAG_DAYS);

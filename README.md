@@ -122,6 +122,31 @@ NEXT_PUBLIC_INSTAGRAM_URL=https://www.instagram.com/visuallaser
 NEXT_PUBLIC_WHATSAPP_URL=https://wa.me/5591988968201
 ```
 
+### Relatórios automáticos (SEO e GA4)
+
+Os crons `/api/cron/seo-report` e `/api/cron/ga4-report` (semanais, ver `vercel.json`) geram
+`reports/seo-latest.json` e `reports/ga4-latest.json` e commitam no repositório. Ambos usam a
+mesma service account do Google (com acesso concedido tanto ao Search Console quanto à
+propriedade do GA4):
+
+```env
+# Service account do Google (compartilhada entre Search Console e GA4)
+GOOGLE_SA_CLIENT_EMAIL=xxxxx@xxxxx.iam.gserviceaccount.com
+GOOGLE_SA_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
+
+# Search Console
+SEARCH_CONSOLE_SITE_URL=https://visuallaser.med.br/
+SEO_REPORT_TOKEN=token-para-consultar-/api/seo-metrics
+
+# GA4 Data API
+GA4_PROPERTY_ID=123456789
+GA4_REPORT_TOKEN=token-para-consultar-/api/ga4-metrics
+
+# Cron e commit do relatório
+CRON_SECRET=segredo-do-cron
+GITHUB_TOKEN=token-com-permissao-de-escrita-no-repo
+```
+
 ### Scripts disponíveis
 
 - `npm run dev` - Executa o servidor de desenvolvimento
