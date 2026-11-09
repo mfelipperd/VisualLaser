@@ -25,7 +25,9 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
-    formats: ["image/webp", "image/avif"],
+    // AVIF desabilitado como mitigação à CVE GHSA-2xp9-vwfh-vxw4 (RCE no libheif/sharp
+    // ao otimizar AVIF) até upgrade para Next.js >=15.5.24/16.3.3, que corrige a falha.
+    formats: ["image/webp"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
