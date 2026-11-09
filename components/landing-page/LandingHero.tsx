@@ -162,7 +162,7 @@ const LandingHero = () => {
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] md:aspect-auto md:h-[600px]">
                   {/* Performance: Added sizes prop to prevent downloading unnecessarily large images for Next.js Image with fill */}
                   <Image
-                    src="/images/landing-hero.jpg"
+                    src="/images/agendamento.jpg"
                     alt="Agende sua Consulta Oftalmológica - Visual Laser"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
