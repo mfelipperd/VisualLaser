@@ -306,7 +306,7 @@ const BlurModal = () => {
                     serviços.
                     <br />
                     <a
-                      href="/privacidade"
+                      href="/politica-privacidade"
                       className="text-primary-600 hover:underline"
                     >
                       Política de Privacidade

@@ -52,11 +52,11 @@ const CookieConsent = () => {
                 <p className="text-xs text-gray-600 leading-relaxed">
                   Utilizamos cookies para melhorar sua experiência em nosso site. 
                   Ao continuar navegando, você concorda com nossa{' '}
-                  <Link href="/privacidade" className="text-primary-600 hover:text-primary-700 underline">
+                  <Link href="/politica-privacidade" className="text-primary-600 hover:text-primary-700 underline">
                     política de privacidade
                   </Link>{' '}
                   e{' '}
-                  <Link href="/termos" className="text-primary-600 hover:text-primary-700 underline">
+                  <Link href="/termos-uso" className="text-primary-600 hover:text-primary-700 underline">
                     termos de uso
                   </Link>.
                 </p>
