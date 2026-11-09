@@ -1,132 +1,112 @@
 {
   "site": "sc-domain:visuallaser.med.br",
-  "generatedAt": "2026-11-02T10:16:44.190Z",
+  "generatedAt": "2026-11-09T10:16:44.184Z",
   "currentPeriod": {
-    "startDate": "2026-10-03",
-    "endDate": "2026-10-30",
-    "clicks": 226,
-    "impressions": 6093,
-    "ctr": 0.03709174462497949,
-    "position": 6.891022484818644
+    "startDate": "2026-10-10",
+    "endDate": "2026-11-06",
+    "clicks": 221,
+    "impressions": 5952,
+    "ctr": 0.03713037634408602,
+    "position": 6.716229838709677
   },
   "previousPeriod": {
-    "startDate": "2026-09-05",
-    "endDate": "2026-10-02",
-    "clicks": 247,
-    "impressions": 7729,
-    "ctr": 0.03195756242722215,
-    "position": 6.5431491784189415
+    "startDate": "2026-09-12",
+    "endDate": "2026-10-09",
+    "clicks": 245,
+    "impressions": 7269,
+    "ctr": 0.03370477369651947,
+    "position": 6.657862154354106
   },
   "topQueryMovers": {
     "gainers": [
       {
         "key": "visual laser",
-        "clicks": 85,
-        "impressions": 762,
-        "ctr": 0.1115485564304462,
-        "position": 1.7506561679790025,
-        "clicksDelta": 8,
-        "positionDelta": -0.6621878687182452,
+        "clicks": 96,
+        "impressions": 776,
+        "ctr": 0.12371134020618557,
+        "position": 1.7603092783505154,
+        "clicksDelta": 18,
+        "positionDelta": -0.6300650532002869,
         "isNew": false
       },
       {
-        "key": "oftalmologista em belém preço",
+        "key": "visual laser telefone",
+        "clicks": 3,
+        "impressions": 28,
+        "ctr": 0.10714285714285714,
+        "position": 1.3571428571428572,
+        "clicksDelta": 3,
+        "positionDelta": -0.8095238095238098,
+        "isNew": false
+      },
+      {
+        "key": "oftalmologista belém unimed",
         "clicks": 2,
-        "impressions": 55,
-        "ctr": 0.03636363636363636,
-        "position": 10.89090909090909,
+        "impressions": 16,
+        "ctr": 0.125,
+        "position": 6.5625,
         "clicksDelta": 2,
-        "positionDelta": -6.546590909090909,
+        "positionDelta": 0.9513888888888893,
         "isNew": false
       },
       {
         "key": "psvl",
         "clicks": 2,
-        "impressions": 12,
-        "ctr": 0.16666666666666666,
-        "position": 1.4166666666666667,
+        "impressions": 9,
+        "ctr": 0.2222222222222222,
+        "position": 1.2222222222222223,
         "clicksDelta": 2,
-        "positionDelta": -0.18333333333333335,
+        "positionDelta": -0.316239316239316,
         "isNew": false
       },
       {
-        "key": "visual laser telefone",
-        "clicks": 2,
-        "impressions": 20,
-        "ctr": 0.1,
-        "position": 1.3,
-        "clicksDelta": 2,
-        "positionDelta": -1.033333333333333,
-        "isNew": false
-      },
-      {
-        "key": "visual laser belem",
-        "clicks": 12,
-        "impressions": 62,
-        "ctr": 0.1935483870967742,
-        "position": 1,
-        "clicksDelta": 1,
-        "positionDelta": 0,
-        "isNew": false
-      },
-      {
-        "key": "oftalmologista",
-        "clicks": 2,
-        "impressions": 497,
-        "ctr": 0.004024144869215292,
-        "position": 9.839034205231389,
-        "clicksDelta": 1,
-        "positionDelta": -0.5891537142316974,
-        "isNew": false
-      },
-      {
-        "key": "visual laser belém",
-        "clicks": 2,
-        "impressions": 19,
-        "ctr": 0.10526315789473684,
-        "position": 1.0526315789473684,
-        "clicksDelta": 1,
-        "positionDelta": 0.05263157894736836,
-        "isNew": false
-      },
-      {
-        "key": "clinica de oftalmologista que atende unimed",
+        "key": "cirurgia refrativa belem",
         "clicks": 1,
         "impressions": 2,
         "ctr": 0.5,
-        "position": 3,
+        "position": 2.5,
         "clicksDelta": 1,
-        "positionDelta": -4,
+        "positionDelta": null,
+        "isNew": true
+      },
+      {
+        "key": "clinica laser oftalmologica",
+        "clicks": 1,
+        "impressions": 2,
+        "ctr": 0.5,
+        "position": 10.5,
+        "clicksDelta": 1,
+        "positionDelta": 9.5,
         "isNew": false
       },
       {
         "key": "clínica oftalmológica em belém",
         "clicks": 1,
-        "impressions": 7,
-        "ctr": 0.14285714285714285,
-        "position": 10.142857142857142,
+        "impressions": 5,
+        "ctr": 0.2,
+        "position": 9.8,
         "clicksDelta": 1,
-        "positionDelta": -1.0238095238095237,
-        "isNew": false
-      },
-      {
-        "key": "laser oftalmologia",
-        "clicks": 1,
-        "impressions": 1,
-        "ctr": 1,
-        "position": 2,
-        "clicksDelta": 1,
-        "positionDelta": 0,
+        "positionDelta": -1.299999999999999,
         "isNew": false
       },
       {
         "key": "neuroftalmologista",
         "clicks": 1,
-        "impressions": 9,
-        "ctr": 0.1111111111111111,
-        "position": 2.111111111111111,
+        "impressions": 4,
+        "ctr": 0.25,
+        "position": 2.5,
         "clicksDelta": 1,
-        "positionDelta": 0.11111111111111116,
+        "positionDelta": 0.6000000000000001,
+        "isNew": false
+      },
+      {
+        "key": "oftalmo",
+        "clicks": 1,
+        "impressions": 32,
+        "ctr": 0.03125,
+        "position": 8.5,
+        "clicksDelta": 1,
+        "positionDelta": 1.6111111111111107,
         "isNew": false
       },
       {
@@ -140,55 +120,65 @@
         "isNew": true
       },
       {
-        "key": "oftalmologista belém unimed",
+        "key": "oftalmologista unimed belém",
         "clicks": 1,
-        "impressions": 12,
-        "ctr": 0.08333333333333333,
-        "position": 6.25,
+        "impressions": 16,
+        "ctr": 0.0625,
+        "position": 7,
         "clicksDelta": 1,
-        "positionDelta": 0.9722222222222223,
+        "positionDelta": -0.882352941176471,
         "isNew": false
       },
       {
-        "key": "valor",
+        "key": "visual lazer",
         "clicks": 1,
-        "impressions": 1,
-        "ctr": 1,
-        "position": 2,
+        "impressions": 5,
+        "ctr": 0.2,
+        "position": 2.6,
         "clicksDelta": 1,
-        "positionDelta": null,
-        "isNew": true
+        "positionDelta": 1.35,
+        "isNew": false
       }
     ],
     "losers": [
       {
+        "key": "clinica visual laser",
+        "clicks": 7,
+        "impressions": 83,
+        "ctr": 0.08433734939759036,
+        "position": 5.301204819277109,
+        "clicksDelta": -4,
+        "positionDelta": 0.7283892852965259,
+        "isNew": false
+      },
+      {
+        "key": "visual laser belem",
+        "clicks": 9,
+        "impressions": 51,
+        "ctr": 0.17647058823529413,
+        "position": 1.0392156862745099,
+        "clicksDelta": -4,
+        "positionDelta": 0.03921568627450989,
+        "isNew": false
+      },
+      {
         "key": "clínica visual laser",
         "clicks": 2,
-        "impressions": 35,
-        "ctr": 0.05714285714285714,
-        "position": 1.3714285714285714,
-        "clicksDelta": -5,
-        "positionDelta": 0.13068783068783074,
+        "impressions": 47,
+        "ctr": 0.0425531914893617,
+        "position": 1.2765957446808511,
+        "clicksDelta": -3,
+        "positionDelta": 0.27659574468085113,
         "isNew": false
       },
       {
         "key": "oftalmologista belem",
         "clicks": 0,
-        "impressions": 30,
+        "impressions": 29,
         "ctr": 0,
-        "position": 12.1,
-        "clicksDelta": -3,
-        "positionDelta": -0.9000000000000004,
-        "isNew": false
-      },
-      {
-        "key": "clinica visual laser",
-        "clicks": 9,
-        "impressions": 82,
-        "ctr": 0.10975609756097561,
-        "position": 4.902439024390244,
+        "position": 13.068965517241379,
         "clicksDelta": -2,
-        "positionDelta": 0.6687941645771591,
+        "positionDelta": 1.4827586206896548,
         "isNew": false
       },
       {
@@ -202,52 +192,92 @@
         "isNew": false
       },
       {
+        "key": "oct onde fazer",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1,
+        "clicksDelta": -1,
+        "positionDelta": 0,
+        "isNew": false
+      },
+      {
+        "key": "laser oftalmologia",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1,
+        "clicksDelta": -1,
+        "positionDelta": -1,
+        "isNew": false
+      },
+      {
         "key": "clinica oftalmologica belem",
         "clicks": 0,
-        "impressions": 18,
+        "impressions": 14,
         "ctr": 0,
-        "position": 10.666666666666666,
+        "position": 13.428571428571429,
         "clicksDelta": -1,
-        "positionDelta": 0.24358974358974272,
+        "positionDelta": 3.6071428571428577,
+        "isNew": false
+      },
+      {
+        "key": "clinica de oftalmologista que atende unimed",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3,
+        "clicksDelta": -1,
+        "positionDelta": -2.666666666666667,
         "isNew": false
       },
       {
         "key": "clinica de oftalmologia",
         "clicks": 0,
-        "impressions": 10,
+        "impressions": 7,
         "ctr": 0,
-        "position": 11.5,
+        "position": 11.142857142857142,
         "clicksDelta": -1,
-        "positionDelta": 0.7631578947368425,
+        "positionDelta": 0.14285714285714235,
         "isNew": false
       },
       {
         "key": "cirurgia refrativa em belem",
         "clicks": 0,
-        "impressions": 37,
+        "impressions": 34,
         "ctr": 0,
-        "position": 1.4324324324324325,
+        "position": 1.4117647058823528,
         "clicksDelta": -1,
-        "positionDelta": 0.15743243243243255,
+        "positionDelta": 0.10224089635854328,
+        "isNew": false
+      },
+      {
+        "key": "oftalmologista",
+        "clicks": 1,
+        "impressions": 424,
+        "ctr": 0.0023584905660377358,
+        "position": 9.903301886792454,
+        "clicksDelta": -1,
+        "positionDelta": -0.3935280843891018,
         "isNew": false
       }
     ],
     "new": [
       {
-        "key": "oftalmo bradesco saude",
+        "key": "cirurgia refrativa belem",
         "clicks": 1,
         "impressions": 2,
         "ctr": 0.5,
-        "position": 2,
+        "position": 2.5,
         "clicksDelta": 1,
         "positionDelta": null,
         "isNew": true
       },
       {
-        "key": "valor",
+        "key": "oftalmo bradesco saude",
         "clicks": 1,
-        "impressions": 1,
-        "ctr": 1,
+        "impressions": 2,
+        "ctr": 0.5,
         "position": 2,
         "clicksDelta": 1,
         "positionDelta": null,
@@ -259,144 +289,154 @@
     "gainers": [
       {
         "key": "https://visuallaser.med.br/equipe",
-        "clicks": 37,
-        "impressions": 1417,
-        "ctr": 0.02611150317572336,
-        "position": 6.545518701482004,
-        "clicksDelta": 8,
-        "positionDelta": 2.3865372837256382,
-        "isNew": false
-      },
-      {
-        "key": "https://visuallaser.med.br/contato",
-        "clicks": 22,
-        "impressions": 1293,
-        "ctr": 0.017014694508894045,
-        "position": 4.955916473317865,
-        "clicksDelta": 6,
-        "positionDelta": 1.7431177069339023,
-        "isNew": false
-      },
-      {
-        "key": "https://visuallaser.med.br/psvl",
-        "clicks": 7,
-        "impressions": 102,
-        "ctr": 0.06862745098039216,
-        "position": 5.647058823529412,
+        "clicks": 36,
+        "impressions": 1382,
+        "ctr": 0.02604920405209841,
+        "position": 6.12301013024602,
         "clicksDelta": 5,
-        "positionDelta": 2.4258006890391735,
-        "isNew": false
-      },
-      {
-        "key": "https://visuallaser.med.br/servicos/cirurgias-refrativas",
-        "clicks": 6,
-        "impressions": 88,
-        "ctr": 0.06818181818181818,
-        "position": 8.227272727272727,
-        "clicksDelta": 2,
-        "positionDelta": 3.008094645080946,
+        "positionDelta": 1.2763202347756364,
         "isNew": false
       },
       {
         "key": "https://visuallaser.med.br/servicos/exames-oftalmologicos",
-        "clicks": 4,
-        "impressions": 677,
-        "ctr": 0.005908419497784343,
-        "position": 10.598227474150665,
-        "clicksDelta": 2,
-        "positionDelta": 1.5446560455792362,
+        "clicks": 6,
+        "impressions": 577,
+        "ctr": 0.010398613518197574,
+        "position": 10.447140381282496,
+        "clicksDelta": 3,
+        "positionDelta": 0.9022073028886144,
         "isNew": false
       },
       {
         "key": "https://visuallaser.med.br/convenios/unimed",
-        "clicks": 8,
-        "impressions": 399,
-        "ctr": 0.020050125313283207,
-        "position": 6.962406015037594,
-        "clicksDelta": 1,
-        "positionDelta": -0.21274673445324144,
-        "isNew": false
-      },
-      {
-        "key": "https://visuallaser.med.br/convenios/bradesco-saude",
-        "clicks": 4,
-        "impressions": 84,
-        "ctr": 0.047619047619047616,
-        "position": 5.785714285714286,
-        "clicksDelta": 1,
-        "positionDelta": -0.30519480519480524,
+        "clicks": 10,
+        "impressions": 417,
+        "ctr": 0.023980815347721823,
+        "position": 6.630695443645084,
+        "clicksDelta": 2,
+        "positionDelta": -0.23314384206920202,
         "isNew": false
       },
       {
         "key": "https://visuallaser.med.br/convenios/sulamerica",
-        "clicks": 1,
-        "impressions": 9,
-        "ctr": 0.1111111111111111,
-        "position": 3,
-        "clicksDelta": 1,
-        "positionDelta": 0.3999999999999999,
+        "clicks": 2,
+        "impressions": 14,
+        "ctr": 0.14285714285714285,
+        "position": 3.5714285714285716,
+        "clicksDelta": 2,
+        "positionDelta": 0.07142857142857162,
         "isNew": false
       },
       {
         "key": "https://visuallaser.med.br/convenios/vale-pasa",
         "clicks": 1,
-        "impressions": 6,
-        "ctr": 0.16666666666666666,
-        "position": 5,
+        "impressions": 5,
+        "ctr": 0.2,
+        "position": 7,
         "clicksDelta": 1,
-        "positionDelta": 2.6,
+        "positionDelta": 4.285714285714286,
+        "isNew": false
+      },
+      {
+        "key": "https://visuallaser.med.br/oftalmologista-bel%C3%A9m",
+        "clicks": 1,
+        "impressions": 364,
+        "ctr": 0.0027472527472527475,
+        "position": 5.274725274725275,
+        "clicksDelta": 1,
+        "positionDelta": -1.9144639144639148,
         "isNew": false
       },
       {
         "key": "https://www.visuallaser.med.br/",
         "clicks": 1,
-        "impressions": 6,
-        "ctr": 0.16666666666666666,
+        "impressions": 4,
+        "ctr": 0.25,
         "position": 1,
         "clicksDelta": 1,
         "positionDelta": 0,
+        "isNew": false
+      },
+      {
+        "key": "https://www.visuallaser.med.br/perguntas-frequentes",
+        "clicks": 1,
+        "impressions": 169,
+        "ctr": 0.005917159763313609,
+        "position": 5.189349112426036,
+        "clicksDelta": 1,
+        "positionDelta": -0.6869395473677793,
         "isNew": false
       }
     ],
     "losers": [
       {
         "key": "https://visuallaser.med.br/",
-        "clicks": 141,
-        "impressions": 5071,
-        "ctr": 0.02780516663380004,
-        "position": 6.6663380003944,
-        "clicksDelta": -40,
-        "positionDelta": 0.4189582223426118,
+        "clicks": 140,
+        "impressions": 4932,
+        "ctr": 0.028386050283860504,
+        "position": 6.486009732360097,
+        "clicksDelta": -28,
+        "positionDelta": 0.07757284550594434,
+        "isNew": false
+      },
+      {
+        "key": "https://visuallaser.med.br/servicos/cirurgias-refrativas",
+        "clicks": 3,
+        "impressions": 81,
+        "ctr": 0.037037037037037035,
+        "position": 8.345679012345679,
+        "clicksDelta": -3,
+        "positionDelta": 3.031725523973586,
+        "isNew": false
+      },
+      {
+        "key": "https://visuallaser.med.br/contato",
+        "clicks": 18,
+        "impressions": 1252,
+        "ctr": 0.01437699680511182,
+        "position": 4.302715654952077,
+        "clicksDelta": -3,
+        "positionDelta": 0.5226230623594841,
         "isNew": false
       },
       {
         "key": "https://visuallaser.med.br/empresa",
         "clicks": 1,
-        "impressions": 669,
-        "ctr": 0.0014947683109118087,
-        "position": 7.713004484304933,
+        "impressions": 643,
+        "ctr": 0.0015552099533437014,
+        "position": 7.0482115085536545,
         "clicksDelta": -2,
-        "positionDelta": 1.6955044843049327,
-        "isNew": false
-      },
-      {
-        "key": "https://visuallaser.med.br/convenios/garantia-de-saude",
-        "clicks": 0,
-        "impressions": 4,
-        "ctr": 0,
-        "position": 3.25,
-        "clicksDelta": -1,
-        "positionDelta": -1,
+        "positionDelta": 0.3967336760413396,
         "isNew": false
       },
       {
         "key": "https://visuallaser.med.br/convenios/proasa-saude",
         "clicks": 1,
-        "impressions": 9,
-        "ctr": 0.1111111111111111,
-        "position": 2.333333333333333,
+        "impressions": 19,
+        "ctr": 0.05263157894736842,
+        "position": 5.842105263157895,
         "clicksDelta": -1,
-        "positionDelta": -1.791666666666667,
+        "positionDelta": 3.699248120300752,
+        "isNew": false
+      },
+      {
+        "key": "https://visuallaser.med.br/convenios/bradesco-saude",
+        "clicks": 3,
+        "impressions": 97,
+        "ctr": 0.030927835051546393,
+        "position": 6.020618556701031,
+        "clicksDelta": -1,
+        "positionDelta": 0.43087496695744143,
+        "isNew": false
+      },
+      {
+        "key": "https://visuallaser.med.br/psvl",
+        "clicks": 4,
+        "impressions": 99,
+        "ctr": 0.04040404040404041,
+        "position": 5.96969696969697,
+        "clicksDelta": -1,
+        "positionDelta": 3.2888459058671824,
         "isNew": false
       }
     ]
@@ -404,63 +444,63 @@
   "missedClickOpportunities": [
     {
       "query": "cirurgia refrativa",
-      "impressions": 88,
-      "position": 3.8068181818181817
+      "impressions": 85,
+      "position": 3.823529411764706
     },
     {
       "query": "oftalmologista 24 horas belém",
-      "impressions": 44,
-      "position": 8.272727272727273
+      "impressions": 54,
+      "position": 7.888888888888889
     },
     {
       "query": "oftalmologista em belém unimed",
-      "impressions": 44,
-      "position": 7.659090909090909
+      "impressions": 47,
+      "position": 6.872340425531915
     },
     {
       "query": "clinica oftalmologica",
-      "impressions": 38,
-      "position": 9.131578947368421
+      "impressions": 37,
+      "position": 8.891891891891891
     },
     {
       "query": "cirurgia refrativa em belem",
-      "impressions": 37,
-      "position": 1.4324324324324325
-    },
-    {
-      "query": "clínica oftalmologista",
-      "impressions": 31,
-      "position": 9.612903225806452
-    },
-    {
-      "query": "lasik",
-      "impressions": 31,
-      "position": 2.225806451612903
-    },
-    {
-      "query": "avaliações sobre visual laser",
-      "impressions": 30,
-      "position": 7.2
+      "impressions": 34,
+      "position": 1.4117647058823528
     },
     {
       "query": "oftalmologista belem",
-      "impressions": 30,
-      "position": 12.1
+      "impressions": 29,
+      "position": 13.068965517241379
     },
     {
-      "query": "oftalmologista unimed belém",
-      "impressions": 28,
-      "position": 7.392857142857143
+      "query": "lasik",
+      "impressions": 26,
+      "position": 2.269230769230769
+    },
+    {
+      "query": "oftalmologista perto de mim",
+      "impressions": 26,
+      "position": 8.038461538461538
+    },
+    {
+      "query": "avaliações sobre visual laser",
+      "impressions": 23,
+      "position": 6.869565217391305
+    },
+    {
+      "query": "clinica de olhos",
+      "impressions": 23,
+      "position": 10.391304347826088
+    },
+    {
+      "query": "clínica oftalmologista",
+      "impressions": 23,
+      "position": 9.391304347826088
     },
     {
       "query": "yag laser",
-      "impressions": 26,
-      "position": 4.961538461538462
-    },
-    {
-      "query": "oftalmo",
-      "impressions": 23,
-      "position": 9.73913043478261
+      "impressions": 22,
+      "position": 5.045454545454546
     }
   ]
 }
