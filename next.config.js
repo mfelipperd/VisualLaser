@@ -128,6 +128,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/agendeonline",
+        destination: "/contato",
+        permanent: true,
+      },
+      {
         source: "/equipe/:slug",
         destination: "/equipe",
         permanent: true,
