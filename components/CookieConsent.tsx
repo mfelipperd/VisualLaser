@@ -3,30 +3,40 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Cookie, CheckCircle } from 'lucide-react'
-import { useLocalStorage } from '@/hooks/useLocalStorage'
 import { CookieConsent as CookieConsentType } from '@/types'
 import Link from 'next/link'
 
 const CookieConsent = () => {
   const [isVisible, setIsVisible] = useState(false)
-  const [cookieConsent, setCookieConsent] = useLocalStorage<CookieConsentType>('cookieConsent', { status: '', timestamp: Date.now() })
+  const [cookieConsent, setCookieConsent] = useState<CookieConsentType>({ status: '' })
 
   useEffect(() => {
-    // Verificar se o usuário já aceitou os cookies
-    if (!cookieConsent) {
-      setIsVisible(true)
+    try {
+      const saved = JSON.parse(localStorage.getItem('cookieConsent') || 'null')
+      if (saved?.status === 'accepted' || saved?.status === 'declined') {
+        setCookieConsent(saved)
+        return
+      }
+    } catch {
+      // Uma preferência inválida deve permitir uma nova escolha.
     }
-  }, [cookieConsent])
+    setIsVisible(true)
+  }, [])
 
-  const acceptCookies = () => {
-    setCookieConsent({ status: 'accepted', timestamp: Date.now() })
+  const saveConsent = (status: 'accepted' | 'declined') => {
+    const consent = { status, timestamp: Date.now() }
+    setCookieConsent(consent)
+    try {
+      localStorage.setItem('cookieConsent', JSON.stringify(consent))
+    } catch {
+      // A escolha também funciona nesta página quando o armazenamento está bloqueado.
+    }
+    window.dispatchEvent(new CustomEvent('cookie-consent-change', { detail: consent }))
     setIsVisible(false)
   }
 
-  const declineCookies = () => {
-    setCookieConsent({ status: 'declined', timestamp: Date.now() })
-    setIsVisible(false)
-  }
+  const acceptCookies = () => saveConsent('accepted')
+  const declineCookies = () => saveConsent('declined')
 
   if (!isVisible || cookieConsent?.status) return null
 
@@ -51,7 +61,7 @@ const CookieConsent = () => {
                 </h3>
                 <p className="text-xs text-gray-600 leading-relaxed">
                   Utilizamos cookies para melhorar sua experiência em nosso site. 
-                  Ao continuar navegando, você concorda com nossa{' '}
+                  Você pode aceitar ou recusar os cookies de análise. Consulte nossa{' '}
                   <Link href="/politica-privacidade" className="text-primary-600 hover:text-primary-700 underline">
                     política de privacidade
                   </Link>{' '}
