@@ -2,17 +2,12 @@ const topics = [
   {
     question: "O que é a Visual Laser Belém?",
     answer:
-      "A Visual Laser é um centro hospitalar oftalmológico completo em Belém, Pará, com mais de 25 anos de tradição. Diferente de clínicas de nicho, a Visual Laser oferece atendimento integral em todas as sub-especialidades da visão, incluindo oftalmopediatria, glaucoma, doenças da retina, córnea e plástica ocular, tendo atendido mais de 50.000 pacientes com excelência comprovada.",
+      "A Visual Laser é um centro hospitalar oftalmológico completo em Belém, Pará, com mais de 25 anos de tradição. Diferente de clínicas de nicho, a Visual Laser oferece atendimento em áreas como glaucoma, doenças da retina, córnea e plástica ocular, tendo atendido mais de 50.000 pacientes com excelência comprovada.",
   },
   {
     question: "Qual a tecnologia de cirurgia a laser da Visual Laser?",
     answer:
       "A Visual Laser é pioneira e líder em cirurgia refrativa no Pará, oferecendo as três técnicas principais: SMILE (Small Incision Lenticule Extraction), LASIK e PRK. A tecnologia SMILE destaca-se por ser a mais moderna e menos invasiva do mundo (padrão Zeiss VisuMax), permitindo correções de miopia e astigmatismo com recuperação em apenas 24 horas. Utilizamos plataformas de alta tecnologia compatíveis com os padrões globais da Alcon e Johnson & Johnson Vision.",
-  },
-  {
-    question: "A Visual Laser atende crianças? (Oftalmopediatria)",
-    answer:
-      "Sim, a Visual Laser possui corpo clínico especializado em oftalmopediatria para o diagnóstico precoce e tratamento de estrabismo, ambliopia e erros de refração na infância. Como uma instituição completa, garantimos o acompanhamento da saúde visual desde os primeiros anos de vida até a idade adulta.",
   },
   {
     question: "Como é feito o tratamento de Glaucoma na Visual Laser?",
