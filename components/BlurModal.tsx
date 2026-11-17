@@ -17,6 +17,7 @@ const BlurModal = () => {
     name: "",
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   useEffect(() => {
     if (pathname?.startsWith("/lp-c1f9e3b2")) return;
@@ -65,7 +66,7 @@ const BlurModal = () => {
       formData.name.trim() || formData.email.trim() || formData.phone.trim();
 
     if (hasData) {
-      trackEvent("generate_lead", { source: "blur_modal" });
+      setSubmitError("");
 
       // Se tem dados, salvar e mostrar mensagem de sucesso
       setIsLoading(true);
@@ -85,11 +86,11 @@ const BlurModal = () => {
 
         const result = await response.json();
 
-        if (!result.success) {
-          // eslint-disable-next-line no-console
-          console.error('Erro ao registrar lead:', result.message);
-          // Mesmo com erro, salvar localmente para não perder o lead
+        if (!response.ok || result.success !== true) {
+          throw new Error(result.message || "Não foi possível enviar seus dados.");
         }
+
+        trackEvent("generate_lead", { source: "blur_modal" });
 
         // Salvar no localStorage que preencheu o formulário
         localStorage.setItem("userContact", JSON.stringify(formData));
@@ -102,19 +103,9 @@ const BlurModal = () => {
         setTimeout(() => {
           setIsVisible(false);
         }, 2000);
-      } catch (error) {
-        // eslint-disable-next-line no-console
-        console.error('Erro ao enviar dados:', error);
-        // Mesmo com erro, salvar localmente para não perder o lead
-        localStorage.setItem("userContact", JSON.stringify(formData));
-        localStorage.setItem("formSubmitted", "true");
-        
-        setIsSubmitted(true);
+      } catch {
+        setSubmitError("Não foi possível enviar seus dados. Tente novamente ou fale conosco pelo WhatsApp.");
         setIsLoading(false);
-
-        setTimeout(() => {
-          setIsVisible(false);
-        }, 2000);
       }
     } else {
       // Se não tem dados, apenas fechar a modal SEM marcar como vista
@@ -123,18 +114,8 @@ const BlurModal = () => {
   };
 
   const closeModal = useCallback(() => {
-    // Verificar se pelo menos um campo foi preenchido
-    const hasData =
-      formData.name.trim() || formData.email.trim() || formData.phone.trim();
-
-    if (hasData) {
-      // Se tem dados, salvar e marcar como preenchido
-      localStorage.setItem("userContact", JSON.stringify(formData));
-      localStorage.setItem("formSubmitted", "true");
-    }
-
     setIsVisible(false);
-  }, [formData]);
+  }, []);
 
   // Adicionar listener para tecla ESC
   useEffect(() => {
@@ -210,8 +191,7 @@ const BlurModal = () => {
               {!isSubmitted && (
                 <p className="text-primary-100 text-xs xs:text-xs sm:text-sm leading-relaxed">
                   Deixe seus dados para receber informações sobre como a Visual
-                  Laser pode ajudar sua visão, ou clique em &quot;Ver Melhor&quot; para
-                  continuar navegando
+                  Laser pode ajudar sua visão. Para continuar navegando sem enviar dados, feche esta janela.
                 </p>
               )}
             </div>
@@ -227,17 +207,18 @@ const BlurModal = () => {
                     <label className="block text-xs xs:text-sm font-medium text-gray-700 mb-1 xs:mb-2">
                       Nome Completo{" "}
                       <span className="text-gray-500 font-normal">
-                        (opcional)
+                        (obrigatório)
                       </span>
                     </label>
                     <input
                       type="text"
+                      required
                       value={formData.name}
                       onChange={(e) =>
                         setFormData({ ...formData, name: e.target.value })
                       }
                       className="w-full px-2.5 xs:px-3 sm:px-4 py-2 xs:py-2.5 sm:py-3 border border-gray-300 rounded-lg xs:rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 text-xs xs:text-sm sm:text-base text-gray-900 placeholder-gray-500 min-h-[40px] xs:min-h-[44px]"
-                      placeholder="Digite seu nome completo (opcional)"
+                      placeholder="Digite seu nome completo (obrigatório)"
                     />
                   </div>
 
@@ -245,19 +226,20 @@ const BlurModal = () => {
                     <label className="block text-xs xs:text-sm font-medium text-gray-700 mb-1 xs:mb-2">
                       Email{" "}
                       <span className="text-gray-500 font-normal">
-                        (opcional)
+                        (obrigatório)
                       </span>
                     </label>
                     <div className="relative">
                       <Mail className="absolute left-2.5 xs:left-3 sm:left-3 top-1/2 transform -translate-y-1/2 w-3.5 h-3.5 xs:w-4 xs:h-4 sm:w-5 sm:h-5 text-gray-400" />
                       <input
                         type="email"
+                        required
                         value={formData.email}
                         onChange={(e) =>
                           setFormData({ ...formData, email: e.target.value })
                         }
                         className="w-full pl-8 xs:pl-9 sm:pl-10 pr-2.5 xs:pr-3 sm:pr-4 py-2 xs:py-2.5 sm:py-3 border border-gray-300 rounded-lg xs:rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 text-xs xs:text-sm sm:text-base text-gray-900 placeholder-gray-500 min-h-[40px] xs:min-h-[44px]"
-                        placeholder="seu@email.com (opcional)"
+                        placeholder="seu@email.com (obrigatório)"
                       />
                     </div>
                   </div>
@@ -266,22 +248,25 @@ const BlurModal = () => {
                     <label className="block text-xs xs:text-sm font-medium text-gray-700 mb-1 xs:mb-2">
                       Telefone{" "}
                       <span className="text-gray-500 font-normal">
-                        (opcional)
+                        (obrigatório)
                       </span>
                     </label>
                     <div className="relative">
                       <Phone className="absolute left-2.5 xs:left-3 sm:left-3 top-1/2 transform -translate-y-1/2 w-3.5 h-3.5 xs:w-4 xs:h-4 sm:w-5 sm:h-5 text-gray-400" />
                       <input
                         type="tel"
+                        required
                         value={formData.phone}
                         onChange={(e) =>
                           setFormData({ ...formData, phone: e.target.value })
                         }
                         className="w-full pl-8 xs:pl-9 sm:pl-10 pr-2.5 xs:pr-3 sm:pr-4 py-2 xs:py-2.5 sm:py-3 border border-gray-300 rounded-lg xs:rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 text-xs xs:text-sm sm:text-base text-gray-900 placeholder-gray-500 min-h-[40px] xs:min-h-[44px]"
-                        placeholder="(91) 99999-9999 (opcional)"
+                        placeholder="(91) 99999-9999 (obrigatório)"
                       />
                     </div>
                   </div>
+
+                  {submitError && <p role="alert" className="text-sm text-red-700">{submitError}</p>}
 
                   <button
                     type="submit"
