@@ -13,7 +13,7 @@ export const faqs: FAQItem[] = [
   {
     question: "Qual a melhor clínica oftalmológica em Belém?",
     answer:
-      "A Visual Laser é referência entre as clínicas oftalmológicas de Belém, com mais de 25 anos de história e mais de 50.000 pacientes atendidos. Diferente de clínicas de nicho, somos um centro hospitalar completo, com todas as subespecialidades da visão (catarata, córnea, glaucoma, retina, plástica ocular e oftalmopediatria) em um único local, além de sermos pioneiros no Pará na tecnologia SMILE de cirurgia refrativa.",
+      "A Visual Laser é referência entre as clínicas oftalmológicas de Belém, com mais de 25 anos de história e mais de 50.000 pacientes atendidos. Diferente de clínicas de nicho, somos um centro hospitalar completo, com atendimento em catarata, córnea, glaucoma, retina e plástica ocular em um único local, além de sermos pioneiros no Pará na tecnologia SMILE de cirurgia refrativa.",
   },
   {
     question: "Existe um oftalmologista perto de mim em Belém?",
